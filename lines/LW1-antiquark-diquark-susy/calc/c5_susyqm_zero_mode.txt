@@ -1,0 +1,18 @@
+1. Undeformed LFHQCD-type SUSY QM (lam = 1, g = 1)
+   H_M (meson side):   [-0.  4.  8. 12. 16. 20.]  exact 4n: [0, 4, 8, 12, 16, 20]
+   H_B (baryon side):  [ 4.  8. 12. 16. 20. 24.]  exact 4(n+1): [4, 8, 12, 16, 20, 24]
+   pairing: H_M level n+1 vs H_B level n, max diff = 1.19e-05; unpaired zero mode E0 = -7.03e-07
+
+2. Protection test. Same-size deformation, two ways:
+   (a) SUSY-preserving: W -> W + eps x^3 (H_M = W^2 - W', H_B = W^2 + W' recomputed)
+   (b) SUSY-breaking:   H_M -> H_M + 2 eps lam x^4 (the leading term (a) adds to W^2), H_B unchanged
+   eps     E0(a)       E0(b)       pair split (a)   pair split (b)
+   0.0    -7.03e-07   -7.03e-07   7.27e-06         7.27e-06
+   0.01   -7.31e-07   +7.13e-02   9.33e-06         1.43e+00
+   0.03   -7.87e-07   +1.97e-01   1.29e-05         3.48e+00
+   0.1    -9.81e-07   +5.39e-01   2.35e-05         7.97e+00
+   (a): E0 stays 0 to grid accuracy and towers stay paired for every eps. (b): E0 moves at O(eps).
+
+3. Explicit SUSY breaking by quark masses (paper eqs. 23-25): Delta M^2 depends on the constituents,
+   so each hadron gets its own shift. Then E0 = m_pi^2 != 0 and the pairing splits; the zero mode is
+   'protected' only in the chiral limit, which is the same statement as chiral symmetry (GMOR).

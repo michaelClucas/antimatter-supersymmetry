@@ -191,3 +191,56 @@ SUSY satisfies this channel by channel. In the SM it holds, at best, as one tota
 - **H2:** K² vs Λ² prefactors differ by 2. Only ratios, signs and zeros are used. The higher-loop scheme dependence of C is noted (Einhorn-Jones). The symmetry and RG-invariance arguments are regulator independent. Pass.
 - **H3:** all OFPT/hole statements reproduce the covariant results, and the conclusions are stated covariantly (STr, symmetry, RG). Pass.
 - **H4:** three scripts with saved outputs. Every number above appears in an `_out.txt`. Pass.
+
+## Cycle 4 calculator results
+
+Scripts: `calc/c4_rxi_split.py` → `calc/c4_rxi_split_out.txt` (task 1), `calc/c4_regulator_running.py` → `calc/c4_regulator_running_out.txt` (task 2). Running: `tools/rg_sm.py`, 3-loop. Normalization as above: C_i = (1/2) ∂²_φ STr M_i²(φ) at φ = v, C_top = −6y_t².
+
+### C4.1 Gauge dependence (R_ξ, Fermi, background-field R_ξ) [established; symbolic, c4_rxi_split.py]
+
+Method: Λ² coefficient of Σ_hh(0) = coefficient of 1/k² in the large-k expansion of ln det of the fluctuation operator, sector by sector, with the longitudinal-A/Goldstone mixing block written out for each gauge family.
+
+- Diagram identities: tr D_ξ = 3/(k²+M²) + ξ/(k²+ξM²) and k·D_ξ·k = ξk²/(k²+ξM²). So the vector seagull has Λ² weight (3+ξ) and the h–V–G bubble has Λ² weight ∝ ξ (zero only in Landau gauge).
+- Per diagram class, C is ξ-dependent. Ordinary R_ξ, charged sector: W seagull (3+ξ)g²/2, W–G bubble −ξg²/2, G seagull 2λ, ghosts 0 (ghost mass ξM_vM(φ) is linear in φ). Background R_ξ: W seagull (3+ξ)g²/2, G seagull 2λ + ξg²/2, ghosts −ξg². Fermi: longitudinal seagull +ξg²/2 cancels the bubble −ξg²/2. At M_t the "W seagull alone" is 0.629 (ξ=0), 0.839 (ξ=1), 1.258 (ξ=3).
+- Per sector, STr M²(φ) is ξ-independent **for all φ** in all three families (d/dξ = 0 symbolically), with ξ_W, ξ_Z independent:
+  - charged sector (W±, G±, ghosts): C_ch = 3/2 g² + 2λ
+  - neutral sector (Z, G⁰, ghosts) + h: C_sc = 3/4(g²+g'²) + λ + 3λ; photon 0
+- So the line's "charged pairs vs self-conjugate" split is gauge invariant, because it coincides with grouping by physical particle with Goldstones absorbed (W incl. eaten G±; Z incl. eaten G⁰; h). Landau gauge is the one gauge in each family where each diagram class already equals this grouping. Statements about "W pairs" or "Goldstone pairs" separately are gauge dependent and should not be made.
+- Validity: any U(1)_em-preserving linear gauge. In a gauge that mixes charged and neutral fields the field-by-field split is undefined, but the grouping by charge eigenstates (W1,W2 / G1,G2 vs W3,B / G3) is fixed by group theory and the total is invariant.
+- Running: MS-bar β functions of g, g', y, λ are gauge independent (Caswell & Wilczek, Phys. Lett. B 49, 291 (1974)), so R(μ) and μ₀ are gauge independent.
+
+**Corrected numbers: none.** Gauge-invariant R (bosons/top) = 0.344 at M_t, 0.508 at 10¹⁰, 0.667 at 10¹⁶, 0.790 at M_Pl; charged 0.169 + self-conjugate 0.175 at M_t. These equal the line's Landau values.
+
+### C4.2 Regulator dependence and the dim-reg version [c4_regulator_running.py]
+
+**(a) Quadratic level, R2 = C_bos/|C_top|** [established at one loop]
+- Per-species weight is n_i ∂²M_i²/∂φ² × a universal constant in hard cutoff (1/16π² × Λ²), Pauli-Villars (Λ² × const, M-independent) and dim reg via the residue of the pole at d = 2 (−1/2π, M-independent; Veltman 1981 identified quadratic divergences with these poles). So R2 = 0.344 (M_t) / 0.790 (M_Pl), μ₀ = 10^22.83 holds in three schemes (satisfies H2 at one loop).
+- It is a property of the tree spectrum, C = (1/2)∂²STr M²(φ). In DR at d = 4 there is no such term and the SM has no heavy threshold to supply one. So R2 has no d = 4 physical observable attached. Beyond one loop the Λ² coefficient is scheme dependent (Einhorn-Jones, PRD 46, 5206 (1992)).
+
+**(b) Log level, R4: the regulator-independent and gauge-invariant analogue** [established as a computation; interpretation conjecture]
+- The universal one-loop log is the φ⁴ coefficient of STr M⁴(φ), i.e. the non-wave-function part of 16π²β_λ^(1). In exact SUSY (m_t̃ = m_t) STr M⁴ = 0, so the stops also cancel the top here.
+- Gauge check: in Fermi gauge the mixed block gives Σm⁴ = m_G⁴ − 2ξM²m_G². So ∂²_φ STr M⁴ at v is ξ-dependent (Nielsen identity, Nielsen NPB 101, 173 (1975)), but the λ⁰ and λ² terms are not. Keep those:
+  R4 = [24λ² + (3/8)(2g⁴ + (g²+g'²)²)] / [6y_t⁴ (+6y_b⁴+2y_τ⁴)]; charged W(+G±) = (3/4)g⁴ + 4λ², self-conjugate Z(+G⁰)+h = (3/8)(g²+g'²)² + 20λ².
+
+| log₁₀ μ | R2 (quadratic) | R4 (log) | R4 charged | R4 self-conj |
+|---|---|---|---|---|
+| 2.24 (M_t) | 0.344 | **0.138** | 0.043 | 0.095 |
+| 10 | 0.508 | 0.345 | 0.163 | 0.182 |
+| 16 | 0.667 | 0.767 | 0.305 | 0.461 |
+| 19.09 (M_Pl) | 0.790 | **1.113** | 0.396 | 0.718 |
+
+- R4 = 1 at log₁₀ μ = 18.19 (3-loop; 18.24 at 2-loop, 19.15 at 1-loop). Input shifts: M_t ± 0.29 → ±0.07, α_s ± 0.0009 → ∓0.16, M_h ± 0.11 → ±0.01. This is close to the reduced Planck mass (10^18.39).
+- This is not new physics and not a new coincidence. With λ ≈ 0 at high scale, R4 = 1 is essentially β_λ ≈ 0, i.e. the known near-criticality of the SM: λ has its minimum at 10^17.56 GeV here (Buttazzo et al., arXiv:1307.3536). Treat it under H1: no mechanism. [established that it is near-criticality; any "matching" reading is speculation]
+- At M_t the log-level boson fraction (14%) is smaller than the quadratic one (34%), because couplings enter squared (g⁴ vs y_t⁴).
+
+### C4.3 What survives
+
+1. **Survives, gauge independent and (one-loop) regulator independent** [established]:
+   - All SM boson pair sectors enter with the stop sign.
+   - The quadratic-level fraction is R2 = 0.344 at M_t and 0.790 at M_Pl, with R2 = 1 at 10^22.83, and this is gauge invariant.
+   - The charged/self-conjugate split, 0.169 / 0.175 at M_t, is gauge invariant when Goldstones are counted with their W/Z.
+2. **Must be reworded:**
+   - Any per-diagram claim (W⁺W⁻ seagull, G⁺G⁻ loop, "Landau-gauge W piece") is gauge dependent.
+   - "Cancels 34% of the Λ² divergence" is a one-loop, regulator-class statement (cutoff/PV/d=2 pole), and it has no d = 4 DR content.
+   - The regulator-independent physical analogue is R4: 14% at M_t, 111% at M_Pl, crossing 1 at 10^18.2 GeV. That crossing is the known near-criticality of λ, not a new matching. [established computation; interpretation H1-flagged]
+3. **Unchanged:** the symmetry no-go (C invariant under all candidates, C = 0 not RG invariant) is gauge and regulator independent. The falsifiable M_t = 169.5 GeV refers to R2 (one-loop Λ² coefficient), so it inherits the scheme caveat above.

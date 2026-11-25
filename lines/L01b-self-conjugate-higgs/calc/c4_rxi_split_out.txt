@@ -1,0 +1,84 @@
+Part 0. Propagator identities (Euclidean, R_xi vector propagator D = [delta - (1-xi) kk/(k^2+xi M^2)]/(k^2+M^2))
+  tr D - [3/(k^2+M^2) + xi/(k^2+xi M^2)] = 0
+  k.D.k - xi k^2/(k^2+xi M^2)            = 0
+  => vector seagull Lambda^2 weight (3 + xi); V-G bubble Lambda^2 weight proportional to xi; Landau (xi=0): bubble has no Lambda^2.
+
+Part 1. STr M^2(phi) pieces and C_i = (1/2) d^2/dphi^2 at phi = v, three gauge families
+
+  --- Fermi gauge ---
+    charged (W+-, G+-, c+-)  V transverse seagull (3 pol.)    STr: 3*g**2*phi**2/2                        C: 3*g**2/2
+    charged (W+-, G+-, c+-)  V longitudinal seagull (xi)      STr: g**2*phi**2*xi/2                       C: g**2*xi/2
+    charged (W+-, G+-, c+-)  G seagull + GF mass              STr: 2*lambda*(phi**2 - v**2)               C: 2*lambda
+    charged (W+-, G+-, c+-)  V-G mixing bubble                STr: -g**2*phi**2*xi/2                      C: -g**2*xi/2
+    charged (W+-, G+-, c+-)  ghosts (-2 dof)                  STr: 0                                      C: 0
+    charged (W+-, G+-, c+-)  SECTOR TOTAL                     STr: -(-3*g**2*phi**2 - 4*lambda*phi**2 + 4*lambda*v**2)/2 C: 3*g**2/2 + 2*lambda   d/dxi STr = 0
+    neutral (Z, G0, cZ)      V transverse seagull (3 pol.)    STr: 3*phi**2*(g**2 + gp**2)/4              C: 3*g**2/4 + 3*gp**2/4
+    neutral (Z, G0, cZ)      V longitudinal seagull (xi)      STr: phi**2*xi*(g**2 + gp**2)/4             C: xi*(g**2 + gp**2)/4
+    neutral (Z, G0, cZ)      G seagull + GF mass              STr: lambda*(phi**2 - v**2)                 C: lambda
+    neutral (Z, G0, cZ)      V-G mixing bubble                STr: -phi**2*xi*(g**2 + gp**2)/4            C: -xi*(g**2 + gp**2)/4
+    neutral (Z, G0, cZ)      ghosts (-2 dof)                  STr: 0                                      C: 0
+    neutral (Z, G0, cZ)      SECTOR TOTAL                     STr: -(-3*g**2*phi**2 - 3*gp**2*phi**2 - 4*lambda*phi**2 + 4*lambda*v**2)/4 C: 3*g**2/4 + 3*gp**2/4 + lambda   d/dxi STr = 0
+
+  --- ordinary R_xi gauge ---
+    charged (W+-, G+-, c+-)  V transverse seagull (3 pol.)    STr: 3*g**2*phi**2/2                        C: 3*g**2/2
+    charged (W+-, G+-, c+-)  V longitudinal seagull (xi)      STr: g**2*phi**2*xi/2                       C: g**2*xi/2
+    charged (W+-, G+-, c+-)  G seagull + GF mass              STr: g**2*v**2*xi/2 + 2*lambda*(phi**2 - v**2) C: 2*lambda
+    charged (W+-, G+-, c+-)  V-G mixing bubble                STr: g**2*xi*(-phi**2 + 2*phi*v - v**2)/2   C: -g**2*xi/2
+    charged (W+-, G+-, c+-)  ghosts (-2 dof)                  STr: -g**2*phi*v*xi                         C: 0
+    charged (W+-, G+-, c+-)  SECTOR TOTAL                     STr: -(-3*g**2*phi**2 - 4*lambda*phi**2 + 4*lambda*v**2)/2 C: 3*g**2/2 + 2*lambda   d/dxi STr = 0
+    neutral (Z, G0, cZ)      V transverse seagull (3 pol.)    STr: 3*phi**2*(g**2 + gp**2)/4              C: 3*g**2/4 + 3*gp**2/4
+    neutral (Z, G0, cZ)      V longitudinal seagull (xi)      STr: phi**2*xi*(g**2 + gp**2)/4             C: xi*(g**2 + gp**2)/4
+    neutral (Z, G0, cZ)      G seagull + GF mass              STr: lambda*(phi**2 - v**2) + v**2*xi*(g**2 + gp**2)/4 C: lambda
+    neutral (Z, G0, cZ)      V-G mixing bubble                STr: xi*(-g**2*phi**2 + 2*g**2*phi*v - g**2*v**2 - gp**2*phi**2 + 2*gp**2*phi*v - gp**2*v**2)/4 C: -xi*(g**2 + gp**2)/4
+    neutral (Z, G0, cZ)      ghosts (-2 dof)                  STr: -phi*v*xi*(g**2 + gp**2)/2             C: 0
+    neutral (Z, G0, cZ)      SECTOR TOTAL                     STr: -(-3*g**2*phi**2 - 3*gp**2*phi**2 - 4*lambda*phi**2 + 4*lambda*v**2)/4 C: 3*g**2/4 + 3*gp**2/4 + lambda   d/dxi STr = 0
+
+  --- background-field R_xi gauge ---
+    charged (W+-, G+-, c+-)  V transverse seagull (3 pol.)    STr: 3*g**2*phi**2/2                        C: 3*g**2/2
+    charged (W+-, G+-, c+-)  V longitudinal seagull (xi)      STr: g**2*phi**2*xi/2                       C: g**2*xi/2
+    charged (W+-, G+-, c+-)  G seagull + GF mass              STr: g**2*phi**2*xi/2 + 2*lambda*(phi**2 - v**2) C: g**2*xi/2 + 2*lambda
+    charged (W+-, G+-, c+-)  V-G mixing bubble                STr: 0                                      C: 0
+    charged (W+-, G+-, c+-)  ghosts (-2 dof)                  STr: -g**2*phi**2*xi                        C: -g**2*xi
+    charged (W+-, G+-, c+-)  SECTOR TOTAL                     STr: -(-3*g**2*phi**2 - 4*lambda*phi**2 + 4*lambda*v**2)/2 C: 3*g**2/2 + 2*lambda   d/dxi STr = 0
+    neutral (Z, G0, cZ)      V transverse seagull (3 pol.)    STr: 3*phi**2*(g**2 + gp**2)/4              C: 3*g**2/4 + 3*gp**2/4
+    neutral (Z, G0, cZ)      V longitudinal seagull (xi)      STr: phi**2*xi*(g**2 + gp**2)/4             C: xi*(g**2 + gp**2)/4
+    neutral (Z, G0, cZ)      G seagull + GF mass              STr: lambda*(phi**2 - v**2) + phi**2*xi*(g**2 + gp**2)/4 C: lambda + xi*(g**2 + gp**2)/4
+    neutral (Z, G0, cZ)      V-G mixing bubble                STr: 0                                      C: 0
+    neutral (Z, G0, cZ)      ghosts (-2 dof)                  STr: -phi**2*xi*(g**2 + gp**2)/2            C: -xi*(g**2 + gp**2)/2
+    neutral (Z, G0, cZ)      SECTOR TOTAL                     STr: -(-3*g**2*phi**2 - 3*gp**2*phi**2 - 4*lambda*phi**2 + 4*lambda*v**2)/4 C: 3*g**2/4 + 3*gp**2/4 + lambda   d/dxi STr = 0
+
+  h (gauge independent at one loop: no gauge vertex in its own seagull): C_h = 3*lambda;  top: C_t = -6*y_t**2
+  CHECK: in all three families and for all xi (xi_W, xi_Z independent):
+     charged sector  C_ch = 3/2 g^2 + 2 lam          (xi-independent)
+     neutral sector  C_n  = 3/4 (g^2+g'^2) + lam,  + h: 3 lam  => self-conjugate C_sc = 3/4(g^2+g'^2) + 4 lam
+     total C = 9/4 g^2 + 3/4 g'^2 + 6 lam - 6 y_t^2   (Veltman, gauge independent)
+  Individual diagram classes ARE xi-dependent (see per-piece C above): e.g. ordinary R_xi, charged sector,
+  vector seagull = (3+xi) g^2/2 and V-G bubble = -xi g^2/2;  background R_xi: vector = (3+xi) g^2/2,
+  Goldstone = 2 lam + xi g^2/2, ghosts = -xi g^2.  Landau gauge (xi = 0) is the unique member of each family
+  in which every diagram class equals its 'physical' gauge-invariant grouping.
+
+Part 2. Gauge-invariant groupings (any U(1)_em-preserving linear gauge, any xi_W, xi_Z, xi_gamma)
+  (a) by physical particle, Goldstones absorbed (W = 3 pol. incl. eaten G+-; Z incl. eaten G0):
+        C_W = 3/2 g^2 + 2 lam,   C_Z = 3/4(g^2+g'^2) + lam,   C_h = 3 lam,   C_gamma = 0,   C_t = -6 y_t^2
+      => 'charged pairs' (W+W-) = C_W, 'self-conjugate' (Z, h, gamma) = C_Z + C_h: identical to the line's
+         Landau-gauge split, because each sector sum is xi-independent separately.
+  (b) by coupling structure: transverse-vector part (g^2 terms) vs scalar-curvature part (lam terms):
+        both xi-independent sector by sector (the mixed block + ghosts sum to m_G^2 in every family).
+  (c) NOT gauge invariant: 'W seagull alone', 'Goldstone alone', 'V-G bubble', 'ghosts'.
+  Limit of validity: a gauge fixing that breaks U(1)_em (e.g. axial n.A with charged-neutral mixing) makes
+  'charged sector' ill-defined field-by-field; the grouping by physical charge eigenstates is still fixed by
+  the SU(2)xU(1) group theory (W1,W2 vs W3/B; G1,G2 vs G3) and the total is invariant.
+
+Part 3. Gauge-invariant fractions (3-loop MS-bar couplings; MS-bar beta functions of g, g', y, lam are
+        gauge independent, Caswell-Wilczek PLB 49, 291 (1974), so R(mu) is gauge independent)
+  scale       C_W(ch)    C_Z+h    C_top   C_ferm   R_top  R_ferm
+  M_t          0.8815   0.9156  -5.2214  -5.2231  0.3442  0.3441
+  1e10         0.4917   0.3748  -1.7055  -1.7061  0.5081  0.5079
+  1e16         0.3925   0.3152  -1.0610  -1.0614  0.6670  0.6667
+  M_Pl         0.3626   0.3211  -0.8653  -0.8656  0.7901  0.7898
+
+  Diagram-level split is gauge dependent, e.g. at M_t, charged sector, ordinary R_xi:
+    xi = 0:  W seagull +0.6292  W-G bubble +0.0000  G seagull +0.2523  ghosts +0.0000  sum +0.8815
+    xi = 1:  W seagull +0.8389  W-G bubble -0.2097  G seagull +0.2523  ghosts +0.0000  sum +0.8815
+    xi = 3:  W seagull +1.2583  W-G bubble -0.6292  G seagull +0.2523  ghosts +0.0000  sum +0.8815
+  So a statement like 'W pairs alone cancel X%' is gauge dependent; 'W sector (W+G+ghost)' is not.

@@ -1,0 +1,47 @@
+Part A. Per-species weight of the quadratically sensitive term in three regulators
+  cutoff:  I(M^2) = int^Lambda d^4k/(2pi)^4 1/(k^2+M^2);  coefficient of Lambda^2 = 1/(16*pi**2)  (M-independent)
+  Pauli-Villars (2 regulators, Lambda, 2 Lambda): leading term = Lambda^2 x -log(2)/(6*pi**2)  (M-independent: d/dM2 = 0)
+  dim. reg.: A0 = Gamma(1-d/2)(M^2)^(d/2-1)/(4pi)^(d/2); residue at d = 2: -1/(2*pi)  (M-independent)
+  => weight of species i in d^2V/dphi^2 is n_i * d^2 M_i^2/dphi^2 x (universal constant) in all three.
+     Ratios of the C_i (hence R2, the 34% / 79%) are identical in cutoff, PV and DR(d=2 pole). [established]
+     Caveat: only at one loop; the 2-loop Lambda^2 coefficient is scheme dependent (Einhorn-Jones, PRD 46,
+     5206 (1992)), and at d = 4 in DR the term is absent.
+
+Part B. STr M^4 gauge dependence: Fermi-gauge mixed block, coefficient of 1/k^4 in ln det
+  mixed (A_L,G) block: sum m^4 = -2*M**2*mG2*xi + mG2**2  -> xi term proportional to m_G^2 = lam(phi^2 - v^2)
+  so d^2/dphi^2 STr M^4 at phi = v is xi-dependent (contains 2 m_G^2' M^2' ~ xi lam g^2 v^2), while the lam^0 and
+  lam^2 parts of the phi^4 coefficient are not. R4 below keeps only those. [established; Nielsen NPB 101, 173 (1975)]
+
+Part C. Fractions of the top (and all-fermion) sea cancelled by boson pairs, 3-loop MS-bar running
+  R2 = (C_W + C_Z+h)/C_top   [quadratic; = Lambda^2 / PV / DR(d=2) coefficient]
+  R4 = (W + Z + h + G pieces of beta_lambda, lam^0 and lam^2 terms)/(6 y_t^4)   [log; gauge + regulator invariant]
+  log10 mu  R2_top R2_ferm  R4_top R4_ferm   R4 ch   R4 sc      lam
+      2.24  0.3442  0.3441  0.1379  0.1379  0.0431  0.0948 +0.12617
+      4.00  0.3919  0.3917  0.1575  0.1575  0.0634  0.0940 +0.06930
+      6.00  0.4326  0.4325  0.1960  0.1960  0.0913  0.1047 +0.03484
+      8.00  0.4694  0.4693  0.2579  0.2579  0.1244  0.1335 +0.01484
+     10.00  0.5081  0.5079  0.3447  0.3447  0.1626  0.1822 +0.00279
+     12.00  0.5522  0.5520  0.4569  0.4569  0.2055  0.2514 -0.00438
+     14.00  0.6043  0.6041  0.5961  0.5961  0.2530  0.3431 -0.00837
+     16.00  0.6670  0.6667  0.7665  0.7665  0.3051  0.4614 -0.01020
+     18.00  0.7426  0.7423  0.9770  0.9770  0.3621  0.6148 -0.01055
+     19.09  0.7901  0.7898  1.1132  1.1132  0.3955  0.7178 -0.01027
+     20.00  0.8343  0.8339  1.2430  1.2430  0.4249  0.8181 -0.00983
+     22.00  0.9463  0.9460  1.5912  1.5912  0.4946  1.0967 -0.00834
+
+  Crossing scales (boson pairs = fermion seas), all fermions in the denominator:
+    1-loop RGEs: R2 = 1 at log10 mu = 26.788;  R4 = 1 at log10 mu = 19.147
+    2-loop RGEs: R2 = 1 at log10 mu = 22.983;  R4 = 1 at log10 mu = 18.235
+    3-loop RGEs: R2 = 1 at log10 mu = 22.832;  R4 = 1 at log10 mu = 18.194
+  Input dependence of the R4 crossing (3-loop):
+    {'Mt': 172.28}: log10 mu(R4=1) = 18.122
+    {'Mt': 172.85999999999999}: log10 mu(R4=1) = 18.257
+    {'als': 0.1171}: log10 mu(R4=1) = 18.349
+    {'als': 0.11889999999999999}: log10 mu(R4=1) = 18.026
+    {'Mh': 125.09}: log10 mu(R4=1) = 18.184
+    {'Mh': 125.31}: log10 mu(R4=1) = 18.203
+  (reference: log10 M_Pl = 19.087, reduced M_Pl = 18.386)
+
+  Charged-pair / self-conjugate split at M_t (gauge invariant in both formulations):
+    R2: charged W(+G+-) 0.1688, self-conjugate Z(+G0)+h 0.1754
+    R4: charged W(+G+-) 0.0431, self-conjugate Z(+G0)+h 0.0948

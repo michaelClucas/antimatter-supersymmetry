@@ -1,0 +1,84 @@
+0. Symbolic derivation: contribution of one field X (indices S_i, C_j) to b_ij, plus delta_ij pieces with C(G_i)=CG
+   Weyl fermion        : 10*CG*S_i*delta/3 + 2*C_j*S_i
+   complex scalar      : 2*CG*S_i*delta/3 + 4*C_j*S_i
+   real scalar         : CG*S_i*delta/3 + 2*C_j*S_i
+   gaugino Yukawa      : -2*CG*S_i*delta - 2*C_j*S_i
+   chiral (components) : 2*CG*S_i*delta + 4*C_j*S_i
+   chiral (SUSY form)  : 2*CG*S_i*delta + 4*C_j*S_i
+   vector multiplet    : -6*CG**2  (= -34/3 + 16/3 for the Majorana gaugino)
+   off-diagonal (delta=0): chiral/Weyl = 2, (2 chiral)/(complex scalar) = 2, chiral/(real scalar) = 2
+   one chiral per complex scalar gives ratio 1 (doubling FAILS)
+
+1. SM / MSSM two-loop gauge matrices with general n_G (checks against literature)
+   SM b_ij(n_G)   = [[19*n_G/15 + 9/50, 3*n_G/5 + 9/10, 44*n_G/15], [n_G/5 + 3/10, 49*n_G/3 - 259/6, 4*n_G], [11*n_G/30, 3*n_G/2, 76*n_G/3 - 102]]
+   MSSM b_ij(n_G) = [[38*n_G/15 + 9/25, 6*n_G/5 + 9/5, 88*n_G/15], [2*n_G/5 + 3/5, 14*n_G - 17, 8*n_G], [11*n_G/15, 3*n_G, 68*n_G/3 - 54]]
+   SM matrix == 16 x MSS 1201.5868 eq.(5) two-loop coefficients, for all n_G: OK
+   MSSM matrix == Ferreira-Jack-Jones hep-ph/9605440 b_ij(n_g), for all n_g: OK
+   MSSM - 2 SM (all n_G) = [[0, 0, 0], [0, 208/3 - 56*n_G/3, 0], [0, 0, 150 - 28*n_G]]
+   => off-diagonal and (1,1) doubling holds identically in n_G (term by term: matter part and Higgs part separately)
+   diagonal remainder (2,2), (3,3): 208/3 - 56*n_G/3 , 150 - 28*n_G
+   off-diag Higgs part: SM (one complex doublet) = [9/10, 3/10] ; one chiral H = [9/10, 3/10] ; chiral H + H^c = [9/5, 3/5]
+   H + (second Y=+1/2 doublet) gives the same off-diagonal numbers as H + H^c: the identity sees only (S_i, C_j),
+   which are invariant under R -> conj(R). The conjugate is selected by higgsino anomaly cancellation, not by b_ij.
+   n_G=3, Phi without H^c: off-diagonal ratios MSSM'/SM = [(1, 1, 389/199), (1, 2, 5/3), (1, 3, 2), (2, 1, 5/3), (2, 3, 2), (3, 1, 2), (3, 2, 2)]
+   non-abelian diagonal doubles iff 25 C(G) = 7 sum_F S - 4 sum_Sc S (from -6C^2+2C(SF+2Sc) = 2(-34/3 C^2 + 10/3 C SF + 2/3 C Sc))
+     SU2: 25C = 50,  7 S_F - 4 S_c = 40
+     SU3: 25C = 75,  7 S_F - 4 S_c = 42
+
+2. Two-loop Yukawa coefficients c_i (full result)
+   y_t: SM [17/10, 3/2, 2]  MSSM [26/5, 6, 4]  MSSM - 2 SM = [9/5, 3, 0] = Higgs-leg term [9/5, 3, 0]
+   y_b: SM [1/2, 3/2, 2]  MSSM [14/5, 6, 4]  MSSM - 2 SM = [9/5, 3, 0] = Higgs-leg term [9/5, 3, 0]
+   y_tau: SM [3/2, 1/2, 0]  MSSM [18/5, 2, 0]  MSSM - 2 SM = [3/5, 1, 0] = Higgs-leg term [3/5, 1, 0]
+   MSSM a_i match FJJ hep-ph/9605440 (26/5,6,4)trT, (14/5,6,4)trB, (18/5,2,0)trE: OK
+   => fermion legs double exactly; the Higgs leg (absent in non-SUSY two-loop Yukawa term) is extra. c_3 doubles
+      because the Higgs is colourless. Full b_ij g_j^2 - c y^2 does NOT double unless the Higgs-leg term is dropped.
+      (Also y_f^MSSM = y_f^SM / sin(beta) or cos(beta), so even c_3 y^2 is not 2x numerically.)
+
+3. Antimatter phrasing tests (n_G = 3)
+   A. T_dbl = SM matter + Higgs and an independent CP-conjugate copy of each (vector-like doubling, gauge fields once)
+      b_ij(T_dbl) = [[199/25, 27/5, 88/5], [9/5, 57, 24], [11/5, 9, 50]]
+      MSSM b_ij   = [[199/25, 27/5, 88/5], [9/5, 25, 24], [11/5, 9, 14]]
+      equal entries: [(1, 1), (1, 2), (1, 3), (2, 1), (2, 3), (3, 1), (3, 2)]
+      one loop: b(T_dbl) = [41/5, 1, -3]  b(MSSM) = [33/5, 1, -3]
+      one-loop b_2, b_3 coincide: condition 2C(G) = sum_F S - 4 sum_Sc S [T_dbl vs MSSM]: [('SU2', 4, 4), ('SU3', 6, 6)]
+      -> holds for SU(2), SU(3) only because n_G = 3 (SU(3): 6 = 2 n_G; SU(2): 4 = 2 n_G - 2); b_1 differs (41/5 vs 33/5).
+   B. per-state form: each Weyl field = particle states (R,h=-1/2) + antiparticle states (conj R,h=+1/2), weight 1 each;
+      each complex scalar = particle + antiparticle states, weight 2 each. b_ij(off) = sum_states w S_i C_j.
+      MSSM chiral multiplet: 1+1 (fermion) + 2+2 (scalar) - 2 (gaugino Yukawa) = 4 = 2 x (Weyl 1+1).
+      So off-diagonal MSSM = SM with each state's weight doubled, equivalently SM states + CP-conjugate states counted
+      as independent fields (test A). Content: S, C are CPT-blind, so 'conjugate copy' = 'any copy'.
+
+4. Generality tests
+   SM, n_H=0: Phi*: each complex doublet -> two chirals
+      off-diag/abelian (i,j, SUSY, nonSUSY, ratio): [((1, 1), 38/5, 19/5, 2), ((1, 2), 18/5, 9/5, 2), ((1, 3), 88/5, 44/5, 2), ((2, 1), 6/5, 3/5, 2), ((2, 3), 24, 12, 2), ((3, 1), 11/5, 11/10, 2), ((3, 2), 9, 9/2, 2)]
+      non-abelian diag (i, SUSY, nonSUSY): [(2, 18, 11/3), (3, 14, -26)]
+   SM, n_H=1: Phi*: each complex doublet -> two chirals
+      off-diag/abelian (i,j, SUSY, nonSUSY, ratio): [((1, 1), 199/25, 199/50, 2), ((1, 2), 27/5, 27/10, 2), ((1, 3), 88/5, 44/5, 2), ((2, 1), 9/5, 9/10, 2), ((2, 3), 24, 12, 2), ((3, 1), 11/5, 11/10, 2), ((3, 2), 9, 9/2, 2)]
+      non-abelian diag (i, SUSY, nonSUSY): [(2, 25, 35/6), (3, 14, -26)]
+   SM, n_H=2: Phi*: each complex doublet -> two chirals
+      off-diag/abelian (i,j, SUSY, nonSUSY, ratio): [((1, 1), 208/25, 104/25, 2), ((1, 2), 36/5, 18/5, 2), ((1, 3), 88/5, 44/5, 2), ((2, 1), 12/5, 6/5, 2), ((2, 3), 24, 12, 2), ((3, 1), 11/5, 11/10, 2), ((3, 2), 9, 9/2, 2)]
+      non-abelian diag (i, SUSY, nonSUSY): [(2, 32, 8), (3, 14, -26)]
+   SU(5) GUT: 3(5bar+10) + 5_H + real 24_H: Phi*: 5_H -> 5_H + 5bar_H ; real 24_H -> one chiral 24
+      off-diag/abelian (i,j, SUSY, nonSUSY, ratio): []
+      non-abelian diag (i, SUSY, nonSUSY): [(1, 794/5, -1184/15)]
+      (simple group: no off-diagonal entries; diagonal is not doubled, as for SU(2), SU(3) in the SM)
+   toy SU(2)xU(1), Weyl (2,+-1/2),(1,+-1); complex scalars (2,1/2),(3,1): Phi*
+      off-diag/abelian (i,j, SUSY, nonSUSY, ratio): [((1, 1), 34, 17, 2), ((1, 2), 54, 27, 2), ((2, 1), 18, 9, 2)]
+      non-abelian diag (i, SUSY, nonSUSY): [(2, 38, -49/3)]
+   toy SU(2)xSU(3), Weyl 2x(2,3) [+conj implied], complex scalar (3,8): MINIMAL SUSY (one chiral (3,8)): 
+      off-diag/abelian (i,j, SUSY, nonSUSY, ratio): [((1, 2), 208, 200, 26/25), ((2, 1), 78, 75, 26/25)]
+      non-abelian diag (i, SUSY, nonSUSY): [(1, 189, 257/2), (2, 392/3, 148/3)]
+   same, Phi* (two chirals (3,8)): 
+      off-diag/abelian (i,j, SUSY, nonSUSY, ratio): [((1, 2), 400, 200, 2), ((2, 1), 150, 75, 2)]
+      non-abelian diag (i, SUSY, nonSUSY): [(1, 381, 257/2), (2, 878/3, 148/3)]
+   same but scalar is REAL (3,8): minimal SUSY = one chiral: 
+      off-diag/abelian (i,j, SUSY, nonSUSY, ratio): [((1, 2), 208, 104, 2), ((2, 1), 78, 39, 2)]
+      non-abelian diag (i, SUSY, nonSUSY): [(1, 189, 323/6), (2, 392/3, -41/3)]
+
+   THEOREM (two loops, gauge part, any gauge group G = prod G_i, any matter): let T have Weyl fermions F,
+   complex scalars S_c, real scalars S_r. Let Phi*(T) = vector multiplets for each G_i + chiral multiplets
+   F u S_r u {s, s' : s in S_c} with s' any rep having the same (S_i, C_j) as s (e.g. conj(s)). Then
+   b_ij[Phi*(T)] = 2 b_ij[T] for all i != j and for every abelian i = j. Proof: per-field weights of section 0;
+   the delta_ij pieces are proportional to C(G_i), zero for U(1). Minimal supersymmetrization equals Phi*
+   exactly when every complex scalar needs a second chiral multiplet (anomaly / holomorphy), as for any scalar
+   with nonzero U(1) charge or in a complex rep; it fails for complex scalars in real reps (test d).

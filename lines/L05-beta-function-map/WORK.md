@@ -198,3 +198,97 @@ Open questions: (a) does the two-loop homothety extend to three loops (needs MSS
 - **H2** Regulator independence: one-loop b_i and two-loop b_ij for gauge couplings are scheme-independent in mass-independent schemes; the MS-bar vs DR-bar shift of the running is noted as [approx]. Pass.
 - **H3** Interpretations not mechanisms: the conjugate basis and per-state split are relabellings; Prop. 1 states they cannot change b. Pass.
 - **H4** Every quantitative claim is in calc/beta_map.py or calc/running.py with outputs committed alongside. Pass.
+
+---
+
+## Cycle 4: derivation of the doubling identity
+
+Scripts: `calc/c4_doubling.py` (output `c4_doubling.txt`) and `calc/c4_threeloop.py` (output `c4_threeloop.txt`). Both use exact sympy rationals and assert every identity. Literature coefficients were copied from the arXiv TeX sources, not from memory.
+
+### C4.1 Formulas used and how they were checked
+
+- Non-SUSY two-loop gauge coefficient (Machacek-Vaughn, NPB 222 (1983) 83, product-group form), with Weyl fermions F, complex scalars S_c and real scalars S_r:
+  b_ij = 2 Σ_F S_i C_j + 4 Σ_Sc S_i C_j + 2 Σ_Sr S_i C_j + δ_ij C(G_i) [−34/3 C(G_i) + 10/3 Σ_F S_i + 2/3 Σ_Sc S_i + 1/3 Σ_Sr S_i].
+  Yukawa term: c_i = (1/d(G_i)) Σ_triples |Y|² × (C_i of the two fermion legs only).
+  Checked [established]: it reproduces the full n_G-dependent SM two-loop matrix of Mihaila-Salomon-Steinhauser, PRL 108 (2012) 151602, arXiv:1201.5868, eq. (5), with b_ij = 16 × their coefficient. It also reproduces their y_t term (17/160 → c_1^t = 17/10).
+- SUSY two-loop (Jones PRD 25 (1982) 581 [unverified page]; Martin-Vaughn hep-ph/9311340): b_ij = −6 C(G_i)² δ_ij + Σ_chiral S_i [4 C_j + 2 C(G_i) δ_ij]. Yukawa term: c_i = (1/d(G_i)) Y^{ijk}Y_{ijk} C(k), summed over all three legs.
+  Checked [established]: it reproduces b_ij(n_g) and a_i = (26/5, 6, 4) tr T, (14/5, 6, 4) tr B, (18/5, 2, 0) tr E from Ferreira-Jack-Jones, PLB 387 (1996) 80, hep-ph/9605440. It was also re-derived from components, asserted equal for every model tested. The components are: Weyl fermion, complex scalar, Majorana gaugino, and the gaugino Yukawa −√2 g φ* T^a ψ λ^a entering through the MV Yukawa term.
+
+### C4.2 Derivation [established]
+
+Per-field weights in b_ij. Notation: S_i = index under G_i times the dimension under the other factors, C_j = Casimir under G_j, CG = C(G_i).
+
+| field | off-diagonal part | δ_ij part |
+|---|---|---|
+| Weyl fermion | 2 S_i C_j | 10/3 CG S_i |
+| complex scalar | 4 S_i C_j | 2/3 CG S_i |
+| real scalar | 2 S_i C_j | 1/3 CG S_i |
+| gaugino Yukawa (per chiral) | −2 S_i C_j | −2 CG S_i |
+| **chiral multiplet (sum)** | **4 S_i C_j** | **2 CG S_i** |
+| vector multiplet | 0 | −34/3 CG² + 16/3 CG² = −6 CG² |
+
+Off-diagonal: a chiral multiplet carries weight 4, twice the Weyl weight of 2. A complex scalar carries 4, so doubling it needs 8, i.e. two chiral multiplets with the same (S_i, C_j). In Φ, H → chiral H_u and H^c → chiral H_d gives exactly 8. Hence
+
+b_ij^MSSM = 4 Σ_Weyl S_iC_j + 4·[S_iC_j(H) + S_iC_j(H^c)] = 2·(2 Σ_Weyl S_iC_j + 4 S_iC_j(H)) = 2 b_ij^SM.
+
+This holds term by term (matter and Higgs separately) and identically in n_G. `c4_doubling.py` §1 gives MSSM − 2·SM = diag(0, 208/3 − 56 n_G/3, 150 − 28 n_G).
+
+- **Why b_11 doubles.** Every δ_ij term is proportional to C(G_i), and C(U(1)) = 0. So the abelian diagonal entry has the same form as an off-diagonal one: there is no gauge self-interaction and the U(1) gaugino is neutral.
+- **Why b_22, b_33 do not double.** The δ_ij parts are not in ratio 2. These are the gauge loop (−34/3 C²), the gaugino (+16/3 C²), and the C(G)-weighted matter terms (10/3 and 2/3 in the SM vs 2 in SUSY). A non-abelian diagonal entry doubles iff 25 C(G) = 7 Σ_F S − 4 Σ_Sc S. In the SM this fails: SU(2) gives 50 vs 40, SU(3) gives 75 vs 42.
+- **Role of H^c.** The identity needs the second Higgs chiral multiplet to have the same S_i, C_j as H. Conjugation guarantees this, since S and C are invariant under R → R̄. But b_ij cannot tell H^c from a second Y = +1/2 doublet: both give the same numbers (asserted). The conjugate is selected by higgsino anomaly cancellation and holomorphy, not by the beta function. Without H^c the off-diagonal ratios are 5/3 for (1,2) and (2,1), and 389/199 for (1,1).
+- **Yukawa terms (full result).** c_i^MSSM = 2 c_i^SM + (Higgs-leg term). Example, y_t: (26/5, 6, 4) = 2·(17/10, 3/2, 2) + (9/5, 3, 0). The fermion legs double exactly. The scalar leg is absent from the non-SUSY two-loop Yukawa term, so in the MSSM it is an extra contribution. Only c_3 doubles, because the Higgs is colourless. So the gauge-only part of b_ij doubles (off-diagonal entries and (1,1)), but the full two-loop gauge beta function (gauge + Yukawa) does not. Numerically there is also y_f^MSSM = y_f^SM / sinβ or / cosβ on top.
+
+### C4.3 Antimatter phrasing [established arithmetic; interpretation conjecture]
+
+Test A: let T_dbl = SM plus an independent CP-conjugate copy of every Weyl field and of H, with the gauge fields counted once. Then b_ij(T_dbl) = b_ij(MSSM) for every off-diagonal entry and for (1,1) (asserted). The diagonal entries (2,2), (3,3) are 57, 50 vs 25, 14. The statement that survives:
+
+> The off-diagonal (and abelian) two-loop MSSM coefficients equal the SM coefficients computed with every SM state and its CP conjugate counted as independent fields.
+
+This is true but says nothing specific to antimatter. S_i and C_j are CPT-blind, so an independent conjugate copy and an independent identical copy give the same numbers. In per-state language, b_ij(off) = Σ_states w S_iC_j, with w = 1 per fermion state set (particle (R, −1/2), antiparticle (R̄, +1/2)) and w = 2 per scalar state set. A chiral multiplet then has 1 + 1 + 2 + 2 − 2 (gaugino Yukawa) = 4 = 2 × Weyl. T_dbl is a vector-like (mirror) doubling of the SM, which A1 forbids as a mechanism.
+
+Side result: at one loop b(T_dbl) = (41/5, 1, −3) vs MSSM (33/5, 1, −3). The b_2 and b_3 entries coincide because 2C(G) = Σ_F S − 4 Σ_Sc S holds for SU(2) (4 = 4) and SU(3) (6 = 6), and that needs n_G = 3. [established arithmetic; coincidence of n_G = 3]
+
+### C4.4 Generality: theorem [established, proof above]
+
+**Theorem.** Let T be any gauge theory with group Π G_i, Weyl fermions F, complex scalars S_c and real scalars S_r. Let Φ*(T) be T supersymmetrized as follows:
+- a vector multiplet for every G_i;
+- one chiral multiplet for each Weyl fermion in F and each real scalar in S_r;
+- two chiral multiplets s, s′ for each complex scalar s in S_c, where s′ has the same (S_i, C_j) as s. The anomaly-safe choice is s′ = s̄.
+
+Then b_ij[Φ*(T)] = 2 b_ij[T] for all i ≠ j and for every abelian i = j. Proof: b_ij is linear in field content, and the weight table of C4.2 gives the factor 2 field by field.
+
+Tests (`c4_doubling.py` §4):
+- SM with n_H = 0, 1, 2 doublets: ratio 2 in every off-diagonal entry.
+- Toy SU(2)×U(1) with vector-like leptons and complex scalars (2,1/2) and (3,1): ratio 2.
+- SU(5) with 3(5̄+10) + 5_H + real 24_H: simple group, so there are no off-diagonal entries; the diagonal does not double.
+- Counterexample to "minimal supersymmetrization doubles": SU(2)×SU(3) with a complex scalar in the real rep (3,8). Its minimal SUSY completion is one chiral (3,8), since nothing in anomalies or holomorphy forces a second one, and the off-diagonal ratio is then 26/25. With two chirals (Φ*) the ratio is 2. With a real (3,8) scalar and one chiral it is also 2.
+
+So the identity is general, but it is a statement about Φ*, not about minimal SUSY. The two agree whenever each complex scalar's higgsino needs a partner, which is true for any U(1)-charged scalar and any scalar in a complex rep. The SM is such a case. The only SM-specific input is that the SM's one scalar carries U(1) charge.
+
+### C4.5 Three loops [established numbers; scheme caveat]
+
+Sources:
+- SM in MS-bar: arXiv:1201.5868 eq. (5), with c = 64 × their coefficient and y_b = y_τ = 0.
+- MSSM in DR-bar: hep-ph/9605440, whose gauge part comes from Jack-Jones-North hep-ph/9606323. Jack-Jones-Kord (hep-ph/0308231, PLB 579 (2004) 180, checked) covers soft-term running and points to hep-ph/9605440 for the gauge betas.
+
+Three-loop coefficients depend on the scheme. The one-loop conversion g_DR = g_MS(1 + C(G)g²/96π²) (Martin-Vaughn PLB 318 (1993) 331, hep-ph/9308222; formula [unverified from full text]) changes only c_i(jj) with j ≠ i, by −2 k_j b_ij (derived symbolically in §0). Both the raw and the converted comparisons are printed.
+
+Result: **no uniform ratio on the mixed block.** At n_G = 3 (MS-bar) the MSSM/SM ratios are −3.59, −1.54, −1.02, 0.29, 0.33, 0.62, 0.84, 5.21, 5.23, 5.29 and 8, including sign flips. The gauge × y_t terms are also non-uniform, with ratios from 0.64 to 4.6.
+
+Two uniform sub-structures remain:
+1. Fully mixed terms g_i³g_j²g_k² (i, j, k distinct) and the abelian single-matter-loop pieces have weight −2 S_iC_jC_k per Weyl fermion and −16 per chiral multiplet. The ratio is **8 = 2³**, and it does not change under any g_j → g_j(1 + k_j g_j²). Only Q contributes, so the scalar weight is not tested here (no SM scalar is coloured).
+2. The two-matter-loop (n_G²) parts of all mixed entries equal κ b_ij^m b_j^m, with κ_SM = −11/12 and κ_MSSM = −3/2. The ratio is **54/11** = 2 (two-loop doubling) × 3/2 (one-loop matter, chiral/Weyl) × 18/11. It is unchanged under the MS↔DR conversion, but not under general matter-dependent redefinitions.
+
+The pieces containing the Higgs (n_G⁰) break any uniform scaling, e.g. c_1(12) is 783/800 in the SM and −27/25 in the MSSM. Part of this is structural. The SM quartic λ appears as a separate term in the three-loop gauge betas, while the MSSM quartics are D-terms that already sit inside the gauge terms. A fair comparison of the Higgs sector would need the D-term substitution and tanβ, which was not done. [conjecture: it would not restore a uniform ratio]
+
+### C4.6 Conclusion
+
+1. **Theorem, not SM coincidence** [established]. The two-loop off-diagonal and abelian doubling holds for any gauge theory under Φ* (one chiral multiplet per Weyl fermion and per real scalar, two per complex scalar). It all follows from one fact: a chiral multiplet's mixed weight 4 S_iC_j is twice a Weyl fermion's and equal to a complex scalar's.
+2. **For D4.** The structure-preserving map is Φ* acting on field content. What it preserves is the two-loop mixed-gauge block, up to a factor 2 (a homothety). The only antimatter input is that the second Higgs multiplet must have H's (S, C), and the conjugate H^c has them. The beta function cannot tell H^c from any other copy, so the identity does not single out antimatter. At three loops it is no longer a uniform scaling: the per-multiplet factor becomes 2³ for single-matter-loop mixed terms and 54/11 for two-matter-loop terms, and the Higgs and gaugino pieces are non-uniform. [established arithmetic; interpretation conjecture]
+3. **Novelty.** Once the weight table is written down, the identity follows in two lines from standard formulas, so it is probably implicit in the literature. The literature check is running in parallel. [novelty unverified]
+4. **Checkable consequences.**
+   (a) Any model obtained from a non-SUSY parent by Φ* has b_ij^off = 2 b_ij^off(parent). This can be checked against published two-loop tables.
+   (b) A general three-loop product-group formula (e.g. Mihaila-Salomon-Steinhauser PRD 86 (2012) 096008, arXiv:1208.3357 [unverified]) would give the fully-mixed weight w_S of a complex scalar. Under Φ*, two chiral multiplets give −32, so a 2³ scaling would need w_S = −4. If w_S ≠ −4, Φ* has no uniform three-loop version even for the fully-mixed term. Not done here.
+   (c) There is no consequence for SM experiments, and nothing in this section is a mechanism.
+
+CONSTRAINTS: no change from the checklist above. Φ*, T_dbl and the MSSM are comparison targets only (A1). T_dbl and treating H^c as an independent field are A1-forbidden as mechanisms. H1: no fitting, every identity is exact. H2: the three-loop scheme dependence is stated and the MS↔DR shift is computed.

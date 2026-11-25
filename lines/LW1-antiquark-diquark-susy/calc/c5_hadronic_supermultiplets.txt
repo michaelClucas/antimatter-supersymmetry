@@ -1,0 +1,65 @@
+sector  meson            baryon               dM/M(m-b)  tetraquark         dM/M(t-b) tstat
+light   h1(1170)         N(939)                  +0.216  f0(500)               -0.656 DEB  pole 400-550
+light   eta2(1645)       N(1520)                 +0.065  -                            NONE I=0 1-+ slot empty
+light   a2(1320)         Delta(1232)             +0.068  a1(1260)              -0.002 QQB  
+light   rho3(1690)       Delta(1700)             -0.012  pi1(1600)             -0.029 EXO  1-+ exotic
+light   a4(1970)         Delta(1950)             +0.019  -                            NONE 
+light   K1(1270)         Lambda(1116)            +0.116  K0*(1430)             +0.243 DEB  
+light   K2(1770)         Lambda(1520)            +0.154  -                            NONE 
+light   K1(1270)         Sigma(1193)             +0.049  a0(980)/f0(980)       -0.191 DEB  K1(1270) used twice
+light   K2*(1430)        Sigma(1385)             +0.030  K1(1400)              +0.013 QQB  
+light   K3*(1780)        Sigma(1670)?n           +0.063  K2(1820)              +0.085 QQB  
+light   K4*(2045)        Sigma(2030)             +0.009  -                            NONE 
+light   h1(1415)         Xi(1318)                +0.071  f0(1370)/a0(1450)     +0.057 DEB  f0(1370) 1200-1500
+light   eta2(1870)       Xi(1620)?n              +0.128  -                            NONE Xi(1620) J^P unmeasured
+light   f2'(1525)        Xi(1530)                -0.010  f1(1420)/a1(1420)     -0.077 DEB  
+light   phi3(1850)       Xi(1820)                +0.017  -                            NONE 
+light   f2(1640)         Omega(1672)             -0.020  K1(1650)              -0.014 QQB  f2(1640) needs confirmation  (pair not both observed)
+charm   D1(2420)         Lambda_c(2286)          +0.058  D0*(2300)             +0.024 DEB  listed as D0*(2400)
+charm   D(2600)?n        Lambda_c(2625)          -0.000  -                            NONE J^P assumed 2-
+charm   D1(2420)         Sigma_c(2455)           -0.013  D0*(2300)             -0.046 DEB  same state used twice
+charm   D2*(2460)        Sigma_c(2520)           -0.023  D0(2550)              +0.012 QQB  J^P assumed 1+
+charm   D3*(2750)        Sigma_c(2800)           -0.013  -                            NONE 
+charm   Ds1(2460)        Xi_c(2470)              -0.004  Ds0*(2317)            -0.063 DEB  
+charm   Ds2(2830)?       Xi_c(2815)              +0.005  -                            NONE   (pair not both observed)
+charm   Ds2*(2573)       Xi_c(2645)              -0.029  Ds1(2536)             -0.043 QQB  
+charm   Ds3*(2860)       Xi_c(2930)              -0.028  -                            NONE 
+charm   Ds1(2700)?       Omega_c(2695)           +0.002  ??                           PRED   (pair not both observed)
+charm   Ds2(2750)?       Omega_c(2770)           -0.006  ??                           PRED   (pair not both observed)
+bottom  B1(5721)         Lambda_b(5620)          +0.019  B_J(5732)             +0.014 QQB  J^P assumed 1+
+bottom  B_J(5970)        Lambda_b(5920)          +0.009  -                            NONE J^P assumed 2-
+bottom  B1(5721)         Sigma_b(5815)           -0.015  B_J(5732)             -0.020 QQB  same state used twice
+bottom  B2*(5747)        Sigma_b*(5835)          -0.016  B_J(5840)             +0.005 QQB  J^P assumed 0+
+bottom  Bs1(5830)        Xi_b(5795)              +0.006  Bs0(~5800)?           +0.001 PRED D0 X(5568) not confirmed by LHCb/CMS
+bottom  Bs2*(5840)       Xi_b(5945)              -0.019  Bs1(~5900)?           -0.009 PRED 
+bottom  Bs1(6000)?       Omega_b(6046)           -0.008  ??                           PRED   (pair not both observed)
+2heavy  h_c(3525)        Xi_cc(3621)             -0.027  chi_c0(3415)          -0.059 QQB  alt. SELEX Xi_cc(3520): unconfirmed
+2heavy  chi_c2(3556)     Xi_cc(3621) as 3/2+     -0.018  chi_c1(3510)          -0.031 QQB  same baryon used twice
+2heavy  chi_c2(3930)     Xi_cc(~3900)?           +0.006  X(3872), Zc(3900)     -0.005 EXO  n=1; Zc charged -> exotic  (pair not both observed)
+2heavy  h_b(9899)        Xi_bb(~9900)?           -0.000  chi_b0(9859)          -0.004 QQB    (pair not both observed)
+2heavy  chi_b2(9912)     Xi_bb(~9900)?           +0.001  chi_b1(9893)          -0.001 QQB    (pair not both observed)
+2heavy  chi_b2(10269)    Xi_bb(~10300)?          -0.003  X_b(10250)?           -0.005 PRED n=1  (pair not both observed)
+
+Meson-baryon superpartner pairs
+  rows in tables: 40; both members observed: 31; meson predicted (unobserved): 4; baryon predicted (unobserved): 4; meson unconfirmed: 1
+  light   n=15  mean dM/M = +0.065  mean |dM/M| = 0.069  max |dM/M| = 0.216
+  charm   n= 8  mean dM/M = -0.007  mean |dM/M| = 0.021  max |dM/M| = 0.058
+  bottom  n= 6  mean dM/M = -0.003  mean |dM/M| = 0.014  max |dM/M| = 0.019
+  2heavy  n= 2  mean dM/M = -0.023  mean |dM/M| = 0.023  max |dM/M| = 0.027
+  in MeV (heavy sectors: the fractional number is diluted by the heavy-quark mass, so use MeV):
+  light   mean |dM| =    97 MeV  max |dM| =  254 MeV
+  charm   mean |dM| =    54 MeV  max |dM| =  136 MeV
+  bottom  mean |dM| =    81 MeV  max |dM| =  112 MeV
+  2heavy  mean |dM| =    81 MeV  max |dM| =   96 MeV
+  all     n=31  mean |dM/M| = 0.043  fraction within 5%: 0.71
+
+Tetraquark slots (the members with no conventional interpretation)
+  status counts over all rows: {'DEB': 8, 'NONE': 11, 'QQB': 13, 'EXO': 2, 'PRED': 6}
+  EXO: n=1  mean |dM/M(t-b)| = 0.029  states: pi1(1600)
+  DEB: n=8  mean |dM/M(t-b)| = 0.170  states: f0(500), K0*(1430), a0(980)/f0(980), f0(1370)/a0(1450), f1(1420)/a1(1420), D0*(2300), D0*(2300), Ds0*(2317)
+  QQB: n=11  mean |dM/M(t-b)| = 0.027  states: a1(1260), K1(1400), K2(1820), K1(1650), D0(2550), Ds1(2536), B_J(5732), B_J(5732), B_J(5840), chi_c0(3415), chi_c1(3510)
+  observed tetraquark candidates assigned: 23; of these, unambiguously non-q-qbar (EXO): 2; standard q-qbar states re-labelled as tetraquarks (QQB): 13
+
+Double use of one observed state for two partner slots: D0*(2300), B_J(5732), K1(1270), Xi_cc(3621).
+Conflict with QCD-derived superflavor (c2/c4): superflavor partners Xi_cc with D (cbar -> cc, light q spectator);
+LFHQCD partners Xi_cc with h_c(3525) (cbar -> [cq]). Different maps. Mismatch: Xi_cc - h_c = 96 MeV (0.027); Xi_cc - D is ~1755 MeV by construction (heavy mass not degenerate).

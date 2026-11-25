@@ -26,3 +26,10 @@
 - All new calc scripts rerun by overseer (exit 0).
 - Triage: L01b → continue (top priority). L01 → continue as support. L05 → continue (candidate novelty: two-loop off-diagonal b_ij doubling, checked by overseer against standard tables). LW1 → continue. L02, L03, L04 → scrap (restatement / out of scope).
 - Status: no verified result. Main thread: does SM antimatter (self-conjugate h, charged pairs, top sea) reproduce SUSY's Higgs-mass cancellation? Structure yes, magnitude and symmetry no so far.
+
+## Cycle 4, 2026-11-25
+- Spawns (5): referee 1 L01b; calculator L01b (R_ξ + regulator); lit check L01b+L05; explorer/calc L05 (derive doubling); explorer LW1 (constructive extension).
+- All c4/c5 scripts rerun by overseer (exit 0).
+- Results: L01b fractions are gauge- and regulator-independent at sector level (0.344 at M_t, 0.790 at M_Pl); referee found MAJOR fixable issues. L05 doubling is a general theorem of minimal SUSY completion, new per lit check, but antimatter-blind. LW1: hadronic SUSY is internal (no P in {Q,Q†}), so cannot protect masses; protects mass differences.
+- Triage: L05 → verification (negative result for D4 + new theorem). L01b → fix round. LW1 → continue (referee next).
+- Status: no verified result.

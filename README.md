@@ -36,13 +36,11 @@ A line becomes a result only if: it makes a specific claim about a SUSY result; 
 ## Status
 
 <!-- STATUS:BEGIN -->
-**Cycle 3 complete (2026-11-25).** No verified results yet. Dark matter removed from scope by the experimenter.
+**Cycle 4 complete (2026-11-25).** No verified results yet. Dark matter removed from scope by the experimenter.
 
-Main thread (L01b): SUSY's Higgs-mass protection is a cancellation of the top/antitop pair loop against stop/antistop pairs, sector by sector (self-conjugate bosons against Majorana neutralinos, charged pairs against charginos). The SM's own boson pairs (W⁺W⁻, Goldstones, Z, h) have the right sign and structure and cancel 34% of the top loop at the weak scale, 79% at the Planck scale, but couple ~3x too weakly, and no SM symmetry enforces the match. Exact match at the Planck scale would need m_t ≈ 169.5 GeV (measured 172.57).
-
-Beta functions (L05): writing the SM in the antimatter (conjugate-field) basis and mapping fields to supermultiplets gives the MSSM; every off-diagonal two-loop gauge beta coefficient exactly doubles. Being checked for novelty.
-
-LW1: QCD's antiquark-diquark supersymmetry; predicts Ξ_bb* − Ξ_bb = 30 ± 4 MeV (unmeasured).
+- **L01b (Higgs mass, main thread):** The SM's boson pair loops (W sector, Z sector + Higgs) carry the stop-like sign and cancel a gauge- and regulator-independent fraction of the top/antitop loop: 34% at the weak scale, 79% at the Planck scale, 100% only at 10²²·⁸ GeV. No SM symmetry enforces the match; the obstruction is that scalars carry no chirality. In fix round.
+- **L05 (beta functions, in verification):** Theorem: under minimal SUSY completion every mixed two-loop gauge beta coefficient (and the abelian diagonal) exactly doubles, in any gauge theory. Not found in the literature. It does not single out antimatter: counting each state's CP conjugate separately gives the same numbers as any duplicate copy. Answer to "is there an antimatter-SUSY beta-function isometry?": no antimatter-specific one.
+- **LW1 (hadronic SUSY):** QCD's antiquark↔diquark symmetry is internal (its anticommutator has no momentum), so it cannot protect masses the way SUSY does; it does protect partner mass differences (96% cancellation of SU(3) breaking).
 <!-- STATUS:END -->
 
 Every file distinguishes established physics, conjecture and speculation. Subagent output is a claim until a referee and a calculation back it.

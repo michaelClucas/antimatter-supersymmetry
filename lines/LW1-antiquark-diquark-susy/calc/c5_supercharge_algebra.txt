@@ -1,0 +1,26 @@
+==============================================================================
+(A) Constituent level: d_{a,s} fermions (6 modes), D_a bosons (3 modes, n<=2)
+  max |{Q_s,Q_t^dag} - (delta_st N_D + sum_a d_at^dag d_as)| on untruncated subspace = 1.8e-15
+  => {Q_up,Q_up^dag} + {Q_dn,Q_dn^dag} = 2 N_D + N_dbar   (number operators only)
+  [H, Q] - (m_D - m_dbar) Q = 1.1e-15  -> Q is a ladder operator: shifts energy by m_D - m_dbar,
+     so it maps meson-type to baryon-type states with a fixed energy offset (spectrum-generating, not [H,Q]=0).
+
+==============================================================================
+(B) QCD level: quark modes u,d (colour x spin = 12), antiquark modes abar_a (3)
+  diquark normalisation: <0|D_a D_a^dag|0> raw = 4.0 -> rescaled to 1
+  [N_quark, Q] - 2Q = 0.0e+00;  [N_antiquark, Q] + Q = 0.0e+00
+   -> Q adds 2 quarks, removes 1 antiquark: Delta(fermion number) = 3 (odd), Delta(B) = +1
+  [T3, Q] = 0.0e+00   (colour singlet)
+  [T1, Q] = 0.0e+00   (colour singlet)
+  [T2, Q] = 0.0e+00   (colour singlet)
+  {Q,Q^dag} - [sum D^dag D + sum abar_b^dag abar_a [D_b,D_a^dag]] = 0.0e+00  (exact identity)
+  max |[D_b, D_a^dag] - delta_ab| = 2.000   (nonzero: composite diquark is not a canonical boson)
+  K_00 = 1 - [D_0,D_0^dag] commutes with N_q: 0.0e+00; with N_qbar: 0.0e+00  (a quark bilinear: Pauli blocking of the diquark by quarks already present)
+  [{Q,Q^dag}, N_q] = 0.0e+00, [{Q,Q^dag}, N_qbar] = 0.0e+00, [{Q,Q^dag}, T3] = 0.0e+00
+  spectrum of {Q,Q^dag} in sector 1 antiquark (meson-side constituent): 1 (x3)
+  spectrum of {Q,Q^dag} in sector 2 quarks (diquark sector): -0 (x63), 1 (x3)
+  spectrum of {Q,Q^dag} in sector 2 quarks + 1 antiquark: 0.5 (x144), 1 (x27), 1.5 (x24), 2 (x3)
+
+Result: in both realisations {Q, Q^dag} is a sum of number, spin and colour-density operators.
+Compare Poincare SUSY: {Q_alpha, Qbar_betadot} = 2 sigma^mu P_mu. Here no P_mu appears.
+=> internal (spectrum-generating) superalgebra, of the same type as Iachello's nuclear U(m|n).

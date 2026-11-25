@@ -1,6 +1,6 @@
 # STATE (overseer working memory)
 
-**Current cycle:** 4 (cycle 3 complete and committed)
+**Current cycle:** 5 (cycle 4 complete and committed)
 **Next wildcard due:** cycle 6
 
 ## How to resume (for a fresh overseer)
@@ -26,20 +26,17 @@
 
 | Line | SUSY # | Status | Gate progress / notes |
 |---|---|---|---|
-| L01b-self-conjugate-higgs | 1 | CONTINUE, TOP PRIORITY (D2) | Explorer c3. Structure matches (pair-vs-pair; MSSM cancels sector by sector: self-conjugate Z,h vs Majorana neutralinos, charged W,G± vs charginos, exact symbolic); SM bosons 13 dof vs top 12, cancel 34% at M_t, 79% at M_Pl; couplings ~3x too weak; C invariant under all SM candidate symmetries; C=0 at 10^22.83 GeV not RG-invariant; exact match at M_Pl needs M_t=169.5 GeV (excluded; the "10σ" is exp. error only, add ~0.5 GeV pole-mass ambiguity). Open: gauge-independent (R_ξ) W/Z split; dim-reg version; reformulations tying couplings (note A3.2 forbids high-scale relations). Referees 0/3. |
-| L01-weisskopf-hierarchy | 1, 4 | CONTINUE as support for L01b | Fix round done c3 (all referee-1 items). Nothing new alone. Its trace argument (self-conj +0.92 vs charged +0.88) and OFPT scripts feed L01b. Will be merged into L01b at promotion. |
-| L05-beta-function-map | 2 (D4) | CONTINUE | Explorer c3. Map Φ (conjugate-basis Weyl fields → chiral multiplets, H and H^c separate, gauge → vector + Majorana gaugino) = MSSM. Exact identity: every off-diagonal two-loop b_ij and b_11 doubles SM→MSSM (overseer checked against standard tables); b_22, b_33 don't. Not an isometry, not RG-commuting; B 0.53→0.71 but 85% from gauginos/higgsino (BSM), 15% from H^c (= 2nd doublet, forbidden). Candidate novelty: the doubling identity. Needs lit check, analytic derivation, 3-loop test. |
-| LW1-antiquark-diquark-susy | 6, neg. #1 (D5 relevant) | CONTINUE | Lit c3: restatement (Lichtenberg hep-ph/9912280; BVR hep-ph/0506065 gives the Ξ splittings; Savage-Wise coefficient off by 1/2 per BVR); "only realised SUSY" false (nuclear SUSY: Iachello PRL 44, 772; Metz et al. PRL 83, 1542). New piece: explicit negative argument for #1. Corrected: Ξ_cc*−Ξ_cc = 107±32 MeV (lattice 83±9), Ξ_bb*−Ξ_bb = 30±4 MeV; unobserved, LHCb-falsifiable. |
+| L01b-self-conjugate-higgs | 1 | CONTINUE (fix round), TOP PRIORITY | Referee 1 (c4): MAJOR — sector-by-sector MSSM cancellation fails with sfermion D-terms, and where true it is [Q_em,SUSY]=0; "self-conjugacy blocks protection" is a non sequitur (φ†φ invariant too; the real obstacle is (c): no chirality for scalars); M_t=169.5 check ~4σ realistically and repeats HKO/MQ; "top-higgsino removes p² log" false; "Holds" items partly relabel Veltman (H3). Calculator (c4): per-sector STr M²(φ) is ξ-independent (W sector 3/2 g²+2λ, Z sector+h 3/4(g²+g'²)+4λ); R = 0.344 at M_t (0.169 charged + 0.175 self-conj), 0.790 at M_Pl, 1 at 10^22.83; same in cutoff/PV/d=2 pole; per-diagram claims gauge dependent. Log-level analogue: 14% at M_t, crosses 1 at 10^18.19 = λ near-criticality. Lit (c4): 8/8 cites OK; (a) mostly known (Martin §7.4), (b) known (Masina-Quiros Fig 1), (c) self-conjugacy-as-antimatter-analogue framing not found. Jegerlehner 10^17 vs 10^22.8 conflict must be resolved (L01 reproduced it with Δy_t=−0.029). Referees 0/3 clean. |
+| L01-weisskopf-hierarchy | 1, 4 | support for L01b | merge into L01b at promotion |
+| L05-beta-function-map | 2 (D4) | VERIFICATION | c4: identity derived and proven general (any gauge theory, minimal SUSY completion: one chiral per Weyl & per real scalar, two per complex scalar; fails for complex scalar in real rep). Mechanism: chiral multiplet adds 2+4−2=4 vs Weyl 2; H needs H+H^c; C(G)=0 makes b_11 double. Gauge-only part doubles; Yukawa part doesn't (Higgs-leg term). No uniform 3-loop factor. Antimatter phrasing true but empty (S, C are CPT-blind; identical copy gives same). Lit (c4): identity stated nowhere (new, elementary); 16 cites exist, minor fixes (Langacker-Polonsky 0.125; Jones PRD 25,581; Martin §1.3). Claim for gate = NEGATIVE result for D4/#2: no antimatter-specific structure-preserving map; plus the new general doubling theorem. Referees 0/3. |
+| LW1-antiquark-diquark-susy | 1 (neg.), 6 | CONTINUE | c4: supercharge in QCD fields; {Q,Q†} has no P_μ → internal (spectrum-generating) SUSY, cannot act on loop divergences (#1 negative strengthened: "wrong algebra"). Superflavor protects mass DIFFERENCES: SU(3) breaking 101 vs 105 MeV (96% cancel). T_cc LO predicts 3990-4005 vs observed 3874.7 (miss). #6 count: 31/40 meson-baryon pairs observed; tetraquark slots mostly relabelled ordinary mesons. Nuclear SUSY out (holes = missing nucleons). Needs data-table check. |
 
-Scrapped this cycle: L03 (D1), S1 (D3), L02 (restatement; superseded by L05), L04 (restatement; D3).
-
-## Queue (cycle 4)
-1. Referee 1 for L01b (fresh).
-2. Calculator for L01b: R_ξ gauge-independent split of W/Z/Goldstone pieces; dim-reg / heavy-threshold version of the matching question.
-3. Lit checker: L01b novelty (sector-by-sector MSSM cancellation; pair-matching fractions) + L05 novelty (two-loop off-diagonal b_ij doubling).
-4. Calculator/explorer for L05: analytic derivation of why off-diagonal b_ij and b_11 double; 3-loop test; antimatter interpretation of the doubling.
-5. LW1 explorer: constructive extension (nuclear SUSY, hadronic SUSY patterns) toward matching SUSY results, esp. #1 and #6.
-Wildcard due cycle 6.
+## Queue (cycle 5)
+1. Fixer L01b: address referee 1 c4 + lit c4; integrate calculator results; merge L01 support; resolve Jegerlehner conflict; reframe claim as the gauge-invariant pair-matching statement; honest "What is new" (the (c)-chirality obstruction and the self-conjugacy framing).
+2. Referee 1 for L05 (fresh).
+3. Referee 1 for LW1 (fresh; must check data tables: T_cc digits, Metz quartet, meson-baryon pairs vs PDG).
+4. L05 fixer for lit-check minor citation items (small; can combine with a clean CLAIM.md).
+Cycle 6: wildcard due; referees 2 for L05; referee 2 for L01b after fix.
 
 ## Open issues carried from explorers
 - L01: runner gives m(M_Pl)=139.4 GeV vs Buttazzo 129.4 (not load-bearing); Weisskopf 1939 detail unverified.

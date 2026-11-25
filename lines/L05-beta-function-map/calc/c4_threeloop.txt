@@ -1,0 +1,95 @@
+0. Scheme shift of three-loop coefficients under g_j -> g_j (1 + k_j g_j^2) (units 16pi^2 = 1)
+   new 3-loop: coeff G_i^3 G_j^4 = -2*b_ij*k_j + c2 ; coeff G_i^5 G_j^2 = c1
+   => only c_i(jj), j != i, shifts: delta c_i(jj) = -2 k_j b_ij ; c_i(ij) and c_i(jk) distinct are invariant
+      (three-coupling cross term g_i^3 g_j^2 g_k^2 with j != k both != i: no source at this order, invariant)
+
+1. Pure-gauge three-loop coefficients c_i(jk) of g_i^3 g_j^2 g_k^2, n_G general and n_G = 3
+   'mixed' = at least one of j,k differs from i, plus all of i = 1 (abelian), the analogue of the 2-loop identity
+   i=1 jk=(1, 1) mixed  SM(MS)=-209*n_G**2/135 - 58*n_G/75 + 489/8000  MSSM(DR)=-38*n_G**2/5 - 1261*n_G/225 - 54/125  MSSM(MS)=-38*n_G**2/5 - 1261*n_G/225 - 54/125
+        n_G=3: SM -388613/24000 (-16.19)  MSSM DR -32117/375 (-85.65)  ratio DR/SM 2055488/388613 (5.289)   MSSM MS -32117/375  ratio 2055488/388613 (5.289)
+   i=1 jk=(1, 2) mixed  SM(MS)=783/800 - 7*n_G/100  MSSM(DR)=-14*n_G/25 - 27/25  MSSM(MS)=-14*n_G/25 - 27/25
+        n_G=3: SM 123/160 (0.7688)  MSSM DR -69/25 (-2.76)  ratio DR/SM -736/205 (-3.59)   MSSM MS -69/25  ratio -736/205 (-3.59)
+   i=1 jk=(1, 3) mixed  SM(MS)=-137*n_G/225  MSSM(DR)=-1096*n_G/225  MSSM(MS)=-1096*n_G/225
+        n_G=3: SM -137/75 (-1.827)  MSSM DR -1096/75 (-14.61)  ratio DR/SM 8 (8)   MSSM MS -1096/75  ratio 8 (8)
+   i=1 jk=(2, 2) mixed  SM(MS)=-11*n_G**2/15 + 83*n_G/30 + 3401/320  MSSM(DR)=-18*n_G**2/5 + 9*n_G/5 + 54/5  MSSM(MS)=-18*n_G**2/5 + 13*n_G/5 + 12
+        n_G=3: SM 789/64 (12.33)  MSSM DR -81/5 (-16.2)  ratio DR/SM -1728/1315 (-1.314)   MSSM MS -63/5  ratio -1344/1315 (-1.022)
+   i=1 jk=(2, 3) mixed  SM(MS)=-n_G/5  MSSM(DR)=-8*n_G/5  MSSM(MS)=-8*n_G/5
+        n_G=3: SM -3/5 (-0.6)  MSSM DR -24/5 (-4.8)  ratio DR/SM 8 (8)   MSSM MS -24/5  ratio 8 (8)
+   i=1 jk=(3, 3) mixed  SM(MS)=-484*n_G**2/135 + 275*n_G/9  MSSM(DR)=-88*n_G**2/5 + 572*n_G/9  MSSM(MS)=-88*n_G**2/5 + 3124*n_G/45
+        n_G=3: SM 297/5 (59.4)  MSSM DR 484/15 (32.27)  ratio DR/SM 44/81 (0.5432)   MSSM MS 748/15  ratio 68/81 (0.8395)
+   i=2 jk=(1, 1) mixed  SM(MS)=-11*n_G**2/45 - 7*n_G/15 + 163/1600  MSSM(DR)=-6*n_G**2/5 - 169*n_G/75 - 18/25  MSSM(MS)=-6*n_G**2/5 - 169*n_G/75 - 18/25
+        n_G=3: SM -5597/1600 (-3.498)  MSSM DR -457/25 (-18.28)  ratio DR/SM 29248/5597 (5.226)   MSSM MS -457/25  ratio 29248/5597 (5.226)
+   i=2 jk=(1, 2) mixed  SM(MS)=13*n_G/20 + 561/160  MSSM(DR)=2*n_G/5 + 3/5  MSSM(MS)=2*n_G/5 + 3/5
+        n_G=3: SM 873/160 (5.456)  MSSM DR 9/5 (1.8)  ratio DR/SM 32/97 (0.3299)   MSSM MS 9/5  ratio 32/97 (0.3299)
+   i=2 jk=(1, 3) mixed  SM(MS)=-n_G/15  MSSM(DR)=-8*n_G/15  MSSM(MS)=-8*n_G/15
+        n_G=3: SM -1/5 (-0.2)  MSSM DR -8/5 (-1.6)  ratio DR/SM 8 (8)   MSSM MS -8/5  ratio 8 (8)
+   i=2 jk=(2, 2) diag   SM(MS)=-415*n_G**2/27 + 6412*n_G/27 - 667111/1728  MSSM(DR)=-26*n_G**2 + 123*n_G - 100  MSSM(MS)=-26*n_G**2 + 123*n_G - 100
+        n_G=3: SM 324953/1728 (188.1)  MSSM DR 35 (35)  ratio DR/SM 60480/324953 (0.1861)   MSSM MS 35  ratio 60480/324953 (0.1861)
+   i=2 jk=(2, 3) mixed  SM(MS)=13*n_G  MSSM(DR)=8*n_G  MSSM(MS)=8*n_G
+        n_G=3: SM 39 (39)  MSSM DR 24 (24)  ratio DR/SM 8/13 (0.6154)   MSSM MS 24  ratio 8/13 (0.6154)
+   i=2 jk=(3, 3) mixed  SM(MS)=-44*n_G**2/9 + 125*n_G/3  MSSM(DR)=-24*n_G**2 + 260*n_G/3  MSSM(MS)=-24*n_G**2 + 284*n_G/3
+        n_G=3: SM 81 (81)  MSSM DR 44 (44)  ratio DR/SM 44/81 (0.5432)   MSSM MS 68  ratio 68/81 (0.8395)
+   i=3 jk=(1, 1) mixed  SM(MS)=-121*n_G**2/270 - 13*n_G/120  MSSM(DR)=-11*n_G**2/5 - 217*n_G/225  MSSM(MS)=-11*n_G**2/5 - 217*n_G/225
+        n_G=3: SM -523/120 (-4.358)  MSSM DR -1702/75 (-22.69)  ratio DR/SM 13616/2615 (5.207)   MSSM MS -1702/75  ratio 13616/2615 (5.207)
+   i=3 jk=(1, 2) mixed  SM(MS)=-n_G/40  MSSM(DR)=-n_G/5  MSSM(MS)=-n_G/5
+        n_G=3: SM -3/40 (-0.075)  MSSM DR -3/5 (-0.6)  ratio DR/SM 8 (8)   MSSM MS -3/5  ratio 8 (8)
+   i=3 jk=(1, 3) mixed  SM(MS)=77*n_G/45  MSSM(DR)=22*n_G/45  MSSM(MS)=22*n_G/45
+        n_G=3: SM 77/15 (5.133)  MSSM DR 22/15 (1.467)  ratio DR/SM 2/7 (0.2857)   MSSM MS 22/15  ratio 2/7 (0.2857)
+   i=3 jk=(2, 2) mixed  SM(MS)=-11*n_G**2/6 + 241*n_G/24  MSSM(DR)=-9*n_G**2 + 18*n_G  MSSM(MS)=-9*n_G**2 + 20*n_G
+        n_G=3: SM 109/8 (13.62)  MSSM DR -27 (-27)  ratio DR/SM -216/109 (-1.982)   MSSM MS -21  ratio -168/109 (-1.541)
+   i=3 jk=(2, 3) mixed  SM(MS)=7*n_G  MSSM(DR)=2*n_G  MSSM(MS)=2*n_G
+        n_G=3: SM 21 (21)  MSSM DR 6 (6)  ratio DR/SM 2/7 (0.2857)   MSSM MS 6  ratio 2/7 (0.2857)
+   i=3 jk=(3, 3) diag   SM(MS)=-650*n_G**2/27 + 5033*n_G/9 - 2857/2  MSSM(DR)=-44*n_G**2 + 3236*n_G/9 - 567  MSSM(MS)=-44*n_G**2 + 3236*n_G/9 - 567
+        n_G=3: SM 65/2 (32.5)  MSSM DR 347/3 (115.7)  ratio DR/SM 694/195 (3.559)   MSSM MS 347/3  ratio 694/195 (3.559)
+
+2. Is there a uniform ratio on the mixed block?
+   DR/SM ratios on mixed entries (n_G=3): ['-3.59', '-1.982', '-1.314', '0.2857', '0.3299', '0.5432', '0.6154', '5.207', '5.226', '5.289', '8']
+   uniform? False
+   MS/SM ratios on mixed entries (n_G=3): ['-3.59', '-1.541', '-1.022', '0.2857', '0.3299', '0.6154', '0.8395', '5.207', '5.226', '5.289', '8']
+   uniform? False
+
+3. Coefficient-by-coefficient in n_G (n^1: one matter loop; n^2: two matter loops) for mixed entries
+   i=1 jk=(1, 1): SM [n^0,n^1,n^2]=[489/8000, -58/75, -209/135]  MSSM(MS)=[-54/125, -1261/225, -38/5]  ratio=[-1152/163, 1261/174, 54/11]
+   i=1 jk=(1, 2): SM [n^0,n^1,n^2]=[783/800, -7/100, 0]  MSSM(MS)=[-27/25, -14/25, 0]  ratio=[-32/29, 8, '0']
+   i=1 jk=(1, 3): SM [n^0,n^1,n^2]=[0, -137/225, 0]  MSSM(MS)=[0, -1096/225, 0]  ratio=['0', 8, '0']
+   i=1 jk=(2, 2): SM [n^0,n^1,n^2]=[3401/320, 83/30, -11/15]  MSSM(MS)=[12, 13/5, -18/5]  ratio=[3840/3401, 78/83, 54/11]
+   i=1 jk=(2, 3): SM [n^0,n^1,n^2]=[0, -1/5, 0]  MSSM(MS)=[0, -8/5, 0]  ratio=['0', 8, '0']
+   i=1 jk=(3, 3): SM [n^0,n^1,n^2]=[0, 275/9, -484/135]  MSSM(MS)=[0, 3124/45, -88/5]  ratio=['0', 284/125, 54/11]
+   i=2 jk=(1, 1): SM [n^0,n^1,n^2]=[163/1600, -7/15, -11/45]  MSSM(MS)=[-18/25, -169/75, -6/5]  ratio=[-1152/163, 169/35, 54/11]
+   i=2 jk=(1, 2): SM [n^0,n^1,n^2]=[561/160, 13/20, 0]  MSSM(MS)=[3/5, 2/5, 0]  ratio=[32/187, 8/13, '0']
+   i=2 jk=(1, 3): SM [n^0,n^1,n^2]=[0, -1/15, 0]  MSSM(MS)=[0, -8/15, 0]  ratio=['0', 8, '0']
+   i=2 jk=(2, 3): SM [n^0,n^1,n^2]=[0, 13, 0]  MSSM(MS)=[0, 8, 0]  ratio=['0', 8/13, '0']
+   i=2 jk=(3, 3): SM [n^0,n^1,n^2]=[0, 125/3, -44/9]  MSSM(MS)=[0, 284/3, -24]  ratio=['0', 284/125, 54/11]
+   i=3 jk=(1, 1): SM [n^0,n^1,n^2]=[0, -13/120, -121/270]  MSSM(MS)=[0, -217/225, -11/5]  ratio=['0', 1736/195, 54/11]
+   i=3 jk=(1, 2): SM [n^0,n^1,n^2]=[0, -1/40, 0]  MSSM(MS)=[0, -1/5, 0]  ratio=['0', 8, '0']
+   i=3 jk=(1, 3): SM [n^0,n^1,n^2]=[0, 77/45, 0]  MSSM(MS)=[0, 22/45, 0]  ratio=['0', 2/7, '0']
+   i=3 jk=(2, 2): SM [n^0,n^1,n^2]=[0, 241/24, -11/6]  MSSM(MS)=[0, 20, -9]  ratio=['0', 480/241, 54/11]
+   i=3 jk=(2, 3): SM [n^0,n^1,n^2]=[0, 7, 0]  MSSM(MS)=[0, 2, 0]  ratio=['0', 2/7, '0']
+
+4. Gauge x top-Yukawa three-loop terms g_i^3 g_j^2 y_t^2 (SM: n_t=1; MSSM: tr T, DRED)
+   i=1 j=1: SM -2827/800 (-3.534)  MSSM -169/75 (-2.253)  ratio 5408/8481 (0.6377)
+   i=1 j=2: SM -471/32 (-14.72)  MSSM -87/5 (-17.4)  ratio 928/785 (1.182)
+   i=1 j=3: SM -29/5 (-5.8)  MSSM -352/15 (-23.47)  ratio 352/87 (4.046)
+   i=2 j=1: SM -593/160 (-3.706)  MSSM -29/5 (-5.8)  ratio 928/593 (1.565)
+   i=2 j=2: SM -729/32 (-22.78)  MSSM -33 (-33)  ratio 352/243 (1.449)
+   i=2 j=3: SM -7 (-7)  MSSM -32 (-32)  ratio 32/7 (4.571)
+   i=3 j=1: SM -101/40 (-2.525)  MSSM -44/15 (-2.933)  ratio 352/303 (1.162)
+   i=3 j=2: SM -93/8 (-11.62)  MSSM -12 (-12)  ratio 32/31 (1.032)
+   i=3 j=3: SM -40 (-40)  MSSM -104/3 (-34.67)  ratio 13/15 (0.8667)
+   (y_t^MSSM = y_t^SM/sin beta in addition; scheme shift of these terms not applied)
+
+5. Structure of the uniform pieces
+   n^2 part i=1 jj=11: SM kappa = -11/12, MSSM kappa = -3/2
+   n^2 part i=1 jj=22: SM kappa = -11/12, MSSM kappa = -3/2
+   n^2 part i=1 jj=33: SM kappa = -11/12, MSSM kappa = -3/2
+   n^2 part i=2 jj=11: SM kappa = -11/12, MSSM kappa = -3/2
+   n^2 part i=2 jj=33: SM kappa = -11/12, MSSM kappa = -3/2
+   n^2 part i=3 jj=11: SM kappa = -11/12, MSSM kappa = -3/2
+   n^2 part i=3 jj=22: SM kappa = -11/12, MSSM kappa = -3/2
+   => n^2 part = kappa b_ij^m b_j^m with kappa_SM = -11/12, kappa_MSSM = -3/2; ratio = 2 (b_ij doubling) x 3/2
+      (one-loop matter chiral/Weyl) x 18/11 (kappa ratio) = 54/11 on every mixed entry. Invariant under the MS<->DR conversion (shift linear in n_G), NOT under general redefinitions with matter-dependent k_j.
+   i=1 jk=(2, 3): S_i C_j C_k (Q) = 1/10;  SM weight per Weyl = -2, MSSM weight per chiral = -16
+   i=2 jk=(1, 3): S_i C_j C_k (Q) = 1/30;  SM weight per Weyl = -2, MSSM weight per chiral = -16
+   i=3 jk=(1, 2): S_i C_j C_k (Q) = 1/80;  SM weight per Weyl = -2, MSSM weight per chiral = -16
+   => fully-mixed g_i^3 g_j^2 g_k^2 term: -2 S_i C_j C_k per Weyl, -16 per chiral: ratio 8 = 2^3, invariant under any redefinition g_j -> g_j(1 + k_j g_j^2).
+      The SM has no scalar charged under all three factors, so the scalar weight is not tested by these entries.
