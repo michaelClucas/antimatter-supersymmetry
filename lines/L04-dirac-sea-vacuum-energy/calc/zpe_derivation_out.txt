@@ -1,8 +1,14 @@
 Dirac h(k) eigenvalues {value: multiplicity}: {-sqrt(k**2 + m**2): 2, sqrt(k**2 + m**2): 2}
 Hole theory: filled sea energy per k = -2*sqrt(k**2 + m**2)
 Symmetrized (b b^dag - b^dag b)/2 ordering: E_vac per k = -2*sqrt(k**2 + m**2)
+   (note: this line restates the single-particle sum in the symmetrized form; it is not an independent derivation)
 => per real d.o.f. (Dirac field = 4 d.o.f.): -omega/2; per scalar d.o.f.: +omega/2
    Normal ordering sets it to 0 by subtracting a c-number = choice of bare cosmological constant.
+one fermion mode, H = w/2 (b^dag b - b b^dag): eigenvalues [-omega/2, omega/2] -> vacuum -w/2
+one boson mode,   H = w/2 (a^dag a + a a^dag): vacuum level omega/2 (truncation only affects the top level)
+Complex scalar = 2 boson modes per k (particle + antiparticle): vacuum +w, positive.
+Weyl fermion = 2 fermion modes per k: vacuum -w. Dirac = 4 fermion modes: -2w.
+=> sign set by the (anti)commutator, i.e. statistics; having a distinct antiparticle does not change it.
 
 cutoff rho per boson d.o.f. (to O(m^4)): Lambda**4/(16*pi**2) + Lambda**2*m**2/(16*pi**2) - m**4*log(Lambda)/(32*pi**2) + m**4*log(m)/(32*pi**2) - m**4*log(2)/(32*pi**2) + m**4/(128*pi**2)
 cutoff p   per boson d.o.f. (to O(m^4)): Lambda**4/(48*pi**2) - Lambda**2*m**2/(48*pi**2) + m**4*log(Lambda)/(32*pi**2) - m**4*log(m)/(32*pi**2) - 7*m**4/(384*pi**2) + m**4*log(2)/(32*pi**2)

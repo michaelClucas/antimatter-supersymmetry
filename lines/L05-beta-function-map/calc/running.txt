@@ -1,0 +1,43 @@
+alpha^-1(MZ) = 59.005, 29.589, 8.475;  y_t, y_b, y_tau (MZ) = 0.9692, 0.0166, 0.0100
+B required by data at one loop, (a2^-1 - a3^-1)/(a1^-1 - a2^-1) at MZ = 0.7178
+
+One-loop alpha_s(MZ) predicted by exact unification for each B (all fields at MZ):
+   SM                           B=0.5275  alpha_s = 0.0711
+   gauge->vector only           B=0.5337  alpha_s = 0.0720
+   H^c promoted only            B=0.5556  alpha_s = 0.0755
+   H->chiral only               B=0.5841  alpha_s = 0.0806
+   H,H^c chiral, no gaugino     B=0.6731  alpha_s = 0.1021
+   full Phi(SM)                 B=0.7143  alpha_s = 0.1166
+
+Two-loop gauge + one-loop Yukawa running from MZ:
+  SM                     1-loop: M12=10^13.00  M13=10^14.38  M23=10^16.99  min spread 3.66 at 10^14.38 (mean a^-1 41.56)
+  SM                     2-loop: M12=10^13.03  M13=10^14.23  M23=10^16.46  min spread 3.20 at 10^14.23 (mean a^-1 41.44)
+                         alpha_s(MZ) for exact unification (2-loop): 0.0738  (measured 0.1180 +- 0.0009)
+  Phi(SM) from M_Z       1-loop: M12=10^16.29  M13=10^16.32  M23=10^16.36  min spread 0.06 at 10^16.32 (mean a^-1 24.29)
+  Phi(SM) from M_Z       2-loop: M12=10^16.49  M13=10^16.30  M23=10^16.03  min spread 0.40 at 10^16.30 (mean a^-1 23.62)
+                         alpha_s(MZ) for exact unification (2-loop): 0.1289  (measured 0.1180 +- 0.0009)
+  Phi(SM) from 1 TeV     1-loop: M12=10^15.98  M13=10^16.16  M23=10^16.41  min spread 0.36 at 10^16.16 (mean a^-1 25.73)
+  Phi(SM) from 1 TeV     2-loop: M12=10^16.15  M13=10^16.11  M23=10^16.05  min spread 0.09 at 10^16.11 (mean a^-1 25.21)
+                         alpha_s(MZ) for exact unification (2-loop): 0.1202  (measured 0.1180 +- 0.0009)
+  Phi(SM) from 3 TeV     1-loop: M12=10^15.84  M13=10^16.09  M23=10^16.43  min spread 0.50 at 10^16.09 (mean a^-1 26.40)
+  Phi(SM) from 3 TeV     2-loop: M12=10^16.00  M13=10^16.02  M23=10^16.06  min spread 0.05 at 10^16.03 (mean a^-1 25.93)
+                         alpha_s(MZ) for exact unification (2-loop): 0.1168  (measured 0.1180 +- 0.0009)
+  Phi(SM) from 10 TeV    1-loop: M12=10^15.69  M13=10^16.00  M23=10^16.45  min spread 0.65 at 10^16.00 (mean a^-1 27.12)
+  Phi(SM) from 10 TeV    2-loop: M12=10^15.83  M13=10^15.93  M23=10^16.07  min spread 0.21 at 10^15.93 (mean a^-1 26.71)
+                         alpha_s(MZ) for exact unification (2-loop): 0.1130  (measured 0.1180 +- 0.0009)
+
+alpha_i^-1 at selected scales (2-loop):
+  SM             10^2  GeV:   58.94   29.63    8.58
+  SM             10^4  GeV:   55.89   31.88   13.85
+  SM             10^8  GeV:   49.81   36.44   24.26
+  SM             10^12 GeV:   43.75   41.01   34.62
+  SM             10^14 GeV:   40.73   43.31   39.78
+  SM             10^16 GeV:   37.70   45.61   44.94
+  SM             10^17 GeV:   36.19   46.75   47.52
+  Phi(SM)@1TeV   10^2  GeV:   58.94   29.63    8.58
+  Phi(SM)@1TeV   10^4  GeV:   54.95   30.31   12.28
+  Phi(SM)@1TeV   10^8  GeV:   45.12   28.58   16.55
+  Phi(SM)@1TeV   10^12 GeV:   35.31   26.88   20.83
+  Phi(SM)@1TeV   10^14 GeV:   30.41   26.04   22.98
+  Phi(SM)@1TeV   10^16 GeV:   25.51   25.19   25.12
+  Phi(SM)@1TeV   10^17 GeV:   23.06   24.77   26.19

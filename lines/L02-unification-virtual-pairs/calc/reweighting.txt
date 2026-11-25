@@ -1,0 +1,62 @@
+R measured at MZ = 0.7178 (alpha_em^-1 = 127.93); SM L(1) = -1.3826  (unification needs L = 0)
+l-values of complete SU(5) multiplets (per generation): 5bar 0.0e+00, 10 0.0e+00  -> both drop out (GQW 1974)
+
+Each sector reweighted alone (others = 1). w = loop weight giving one-loop unification; x = 2w-1 is the same
+thing written as a weight on the antiparticle states only. M_U, alpha_U^-1 from the one-loop alpha1=alpha2 crossing.
+
+gluon loops (SU3 gauge+ghost)           : w = +1.126 (x = +1.25); b = (+4.10, -3.17, -8.38); M_U = 10^13.01 GeV, alpha_U^-1 = 42.4
+                                          -> (conditional, SM has no X boson) d=6 proton lifetime at M_U ~ 5e+23 yr (excluded by F1, 2.4e34 yr)
+                                          -> b3(5 flavours) = -9.05; alpha_s(MZ) evolved from fixed alpha_s(m_tau) -> 0.1071 (meas. 0.1180+-0.0009)
+W loops (SU2 gauge+ghost)               : w = +0.890 (x = +0.78); b = (+4.10, -2.36, -7.00); M_U = 10^14.38 GeV, alpha_U^-1 = 40.3
+                                          -> (conditional, SM has no X boson) d=6 proton lifetime at M_U ~ 2e+29 yr (excluded by F1, 2.4e34 yr)
+                                          -> Delta b2 = +0.80; MZ -> 1 TeV Delta alpha_2^-1 = -0.31 (1.0%): no clean empirical kill from running; killed by equivalence (gauge+ghost weight fixed by BRST/Slavnov-Taylor; the vertices are the LEP2-tested triple gauge couplings)
+all gauge loops (w_V)                   : w = +0.134 (x = -0.73); b = (+4.10, +3.18, +2.52); M_U = 10^89.37 GeV, alpha_U^-1 = -72.3
+                                          -> B-test satisfied only formally: the 'meeting point' is beyond M_Pl or at negative alpha^-1, i.e. no physical unification at all
+                                          -> b3(5 flavours) = +1.86; alpha_s(MZ) evolved from fixed alpha_s(m_tau) -> 0.3990 (meas. 0.1180+-0.0009)
+                                          -> asymptotic freedom lost: alpha_s(m_tau) = 0.104 < alpha_s(MZ); measured alpha_s(m_tau) ~ 0.3
+Higgs doublet loops (w_S)               : w = +7.445 (x = +13.89); b = (+4.74, -2.09, -7.00); M_U = 10^13.70 GeV, alpha_U^-1 = 38.6
+                                          -> (conditional, SM has no X boson) d=6 proton lifetime at M_U ~ 3e+26 yr (excluded by F1, 2.4e34 yr)
+                                          -> as a doublet-coupling rescaling: kappa_V ~ sqrt(w) = 2.73 (meas. 1 within 5-10%)
+                                          -> as a multiplicity: 7.4 doublets = BSM (A1); the known version (Willenbrock hep-ph/0302168)
+                                          -> as a bare loop weight: violates unitarity; V* -> (W_L W_L, Z_L h, W_L h) rate would be 7.4x SM (equivalence theorem); measured VH rates and kappa_V consistent with SM
+                                          -> direct effect on running MZ -> 1 TeV: Delta alpha_1^-1 = 0.25, Delta alpha_2^-1 = 0.41 (1.4%): not tested by any measurement used here -> no clean kill from running alone
+fermions: Q, 3 gens                     : w = +1.459 (x = +1.92); b = (+4.19, -1.79, -6.08); M_U = 10^15.38 GeV, alpha_U^-1 = 38.4
+                                          -> (conditional, SM has no X boson) d=6 proton lifetime at M_U ~ 1e+33 yr (excluded by F1, 2.4e34 yr)
+                                          -> Gamma_had x1.424, Gamma_ll x1.000, Gamma_inv x1.000 (N_nu = 3.00; meas. 2.984+-0.008), R x1.230: up to 369 sigma from LEP Z-pole data
+                                          -> alpha_s(MZ) evolved from fixed alpha_s(m_tau) -> 0.1251 (meas. 0.1180+-0.0009)
+fermions: u^c, 3 gens                   : w = +0.356 (x = -0.29); b = (+3.07, -3.17, -7.64); M_U = 10^14.83 GeV, alpha_U^-1 = 44.5
+                                          -> (conditional, SM has no X boson) d=6 proton lifetime at M_U ~ 1e+31 yr (excluded by F1, 2.4e34 yr)
+                                          -> Gamma_had x0.964, Gamma_ll x1.000, Gamma_inv x1.000 (N_nu = 3.00; meas. 2.984+-0.008), R x0.766: up to 32 sigma from LEP Z-pole data
+                                          -> alpha_s(MZ) evolved from fixed alpha_s(m_tau) -> 0.1135 (meas. 0.1180+-0.0009)
+fermions: d^c, 3 gens                   : w = -0.074 (x = -1.15); b = (+3.67, -3.17, -8.07); M_U = 10^13.70 GeV, alpha_U^-1 = 43.2
+                                          -> (conditional, SM has no X boson) d=6 proton lifetime at M_U ~ 3e+26 yr (excluded by F1, 2.4e34 yr)
+                                          -> negative loop weight = negative pair-production rate (optical theorem) / wrong-sign kinetic term
+                                          -> Gamma_had x0.977, Gamma_ll x1.000, Gamma_inv x1.000 (N_nu = 3.00; meas. 2.984+-0.008), R x0.854: up to 20 sigma from LEP Z-pole data
+                                          -> alpha_s(MZ) evolved from fixed alpha_s(m_tau) -> 0.1107 (meas. 0.1180+-0.0009)
+fermions: L, 3 gens                     : w = +2.074 (x = +3.15); b = (+4.74, -2.09, -7.00); M_U = 10^13.70 GeV, alpha_U^-1 = 38.6
+                                          -> (conditional, SM has no X boson) d=6 proton lifetime at M_U ~ 3e+26 yr (excluded by F1, 2.4e34 yr)
+                                          -> Gamma_had x1.000, Gamma_ll x1.616, Gamma_inv x2.074 (N_nu = 6.22; meas. 2.984+-0.008), R x1.000: up to 602 sigma from LEP Z-pole data
+fermions: e^c, 3 gens                   : w = -0.605 (x = -2.21); b = (+2.17, -3.17, -7.00); M_U = 10^16.99 GeV, alpha_U^-1 = 47.0
+                                          -> (conditional, SM has no X boson) d=6 proton lifetime at M_U ~ 6e+39 yr (allowed by F1, 2.4e34 yr)
+                                          -> negative loop weight = negative pair-production rate (optical theorem) / wrong-sign kinetic term
+                                          -> Gamma_had x1.000, Gamma_ll x0.316, Gamma_inv x1.000 (N_nu = 3.00; meas. 2.984+-0.008), R x1.000: up to 668 sigma from LEP Z-pole data
+fermions: 5bar = d^c+L, 3 gens          : l = 0 -> drops out of the B-test; NO weight of this sector can unify
+fermions: 10 = Q+u^c+e^c, 3 gens        : l = 0 -> drops out of the B-test; NO weight of this sector can unify
+fermions: all quarks, 3 gens            : w = -2.247 (x = -5.49); b = (-3.04, -12.91, -19.99); M_U = 10^10.10 GeV, alpha_U^-1 = 68.1
+                                          -> (conditional, SM has no X boson) d=6 proton lifetime at M_U ~ 3e+12 yr (excluded by F1, 2.4e34 yr)
+                                          -> negative loop weight = negative pair-production rate (optical theorem) / wrong-sign kinetic term
+                                          -> Gamma_had x-2.247, Gamma_ll x1.000, Gamma_inv x1.000 (N_nu = 3.00; meas. 2.984+-0.008), R x-2.247: up to 2832 sigma from LEP Z-pole data
+                                          -> alpha_s(MZ) evolved from fixed alpha_s(m_tau) -> 0.0655 (meas. 0.1180+-0.0009)
+fermions: all leptons, 3 gens           : w = +4.247 (x = +7.49); b = (+9.95, +0.08, -7.00); M_U = 10^10.10 GeV, alpha_U^-1 = 29.3
+                                          -> (conditional, SM has no X boson) d=6 proton lifetime at M_U ~ 6e+11 yr (excluded by F1, 2.4e34 yr)
+                                          -> Gamma_had x1.000, Gamma_ll x4.247, Gamma_inv x4.247 (N_nu = 12.74; meas. 2.984+-0.008), R x1.000: up to 3171 sigma from LEP Z-pole data
+fermions: all fermions (uniform), 3 gens: l = 0 -> drops out of the B-test; NO weight of this sector can unify
+fermions: Q, 3rd gen only               : w = +2.378 (x = +3.76); b = (+4.19, -1.79, -6.08); M_U = 10^15.38 GeV, alpha_U^-1 = 38.4
+                                          -> (conditional, SM has no X boson) d=6 proton lifetime at M_U ~ 1e+33 yr (excluded by F1, 2.4e34 yr)
+                                          -> Gamma_had x1.293, Gamma_ll x1.000, Gamma_inv x1.000 (N_nu = 3.00; meas. 2.984+-0.008), R x1.063: up to 256 sigma from LEP Z-pole data
+                                          -> alpha_s(MZ) evolved from fixed alpha_s(m_tau) -> 0.1221 (meas. 0.1180+-0.0009)
+fermions: all quarks, 3rd gen only      : w = -8.742 (x = -18.48); b = (-3.04, -12.91, -19.99); M_U = 10^10.10 GeV, alpha_U^-1 = 68.1
+                                          -> (conditional, SM has no X boson) d=6 proton lifetime at M_U ~ 3e+12 yr (excluded by F1, 2.4e34 yr)
+                                          -> negative loop weight = negative pair-production rate (optical theorem) / wrong-sign kinetic term
+                                          -> Gamma_had x-1.140, Gamma_ll x1.000, Gamma_inv x1.000 (N_nu = 3.00; meas. 2.984+-0.008), R x0.114: up to 1867 sigma from LEP Z-pole data
+                                          -> alpha_s(MZ) evolved from fixed alpha_s(m_tau) -> 0.0797 (meas. 0.1180+-0.0009)

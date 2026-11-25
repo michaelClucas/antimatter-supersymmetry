@@ -2,7 +2,7 @@
 Weights s_i = (-1)^F g_i with physical (unitary-gauge) d.o.f.  Run: python sm_pauli_sums.py"""
 import sys, os, math
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..', '..', 'tools'))
-from sm_inputs import MZ, MW, MH, MT, MB, MC, MTAU, RHO_LAMBDA_GEV4, M_PLANCK
+from sm_inputs import MZ, MW, MH, MT, MB, MC, MTAU, RHO_LAMBDA_GEV4, M_PLANCK, V as VEV
 
 # PDG 2024 light masses (GeV); light quarks MS-bar at 2 GeV. They are irrelevant at the 1e-6 level for m^2, m^4 sums.
 MU_Q, MD_Q, MS_Q = 2.16e-3, 4.70e-3, 93.5e-3
@@ -30,13 +30,13 @@ def sums(sp, mu=1.0):
     S4L = sum(w * m**4 * math.log(m**2 / mu**2) for _, m, w, _ in sp if m > 0)
     return S0, S2, S4, S4L
 
-def rho_dimreg(sp, mu):
+def rho_dimreg(sp, mu, cV=5/6, cSF=3/2):
     """MS-bar one-loop vacuum energy at the physical vacuum (Landau gauge, Goldstones massless at tree minimum).
     Per d.o.f. constant: 3/2 for scalars and fermions, 5/6 for massive vectors (scheme constant)."""
     tot = 0.0
     for _, m, w, c in sp:
         if m == 0: continue
-        cst = 5/6 if c == 'V' else 3/2
+        cst = cV if c == 'V' else cSF
         tot += w * m**4 * (math.log(m**2 / mu**2) - cst)
     return tot / (64 * math.pi**2)
 
@@ -69,7 +69,7 @@ for name, L in [("1 TeV", 1e3), ("M_Pl", M_PLANCK)]:
     P(f"  Lambda={name}: quartic {q4:.3e}, quadratic {q2:.3e}, log {lg:.3e} GeV^4;"
       f" ratios to rho_Lambda: {abs(q4)/RHO_LAMBDA_GEV4:.1e}, {abs(q2)/RHO_LAMBDA_GEV4:.1e}, {abs(lg)/RHO_LAMBDA_GEV4:.1e}")
 
-P("\nDim-reg (MS-bar), Lorentz invariant: rho(mu) = sum s_i m_i^4 [ln(m_i^2/mu^2) - c_i]/(64 pi^2)")
+P("\nDim-reg (MS-bar, Landau), one-loop term ONLY, bare counterterm set to 0 (unphysical; shows mu-dependence): rho_1(mu) = sum s_i m_i^4 [ln(m_i^2/mu^2) - c_i]/(64 pi^2)")
 for mu in [MZ, MT, 1e3, 1e10, M_PLANCK]:
     r = rho_dimreg(sp, mu)
     P(f"  mu = {mu:.4g} GeV: rho = {r:+.4e} GeV^4,  |rho|/rho_Lambda = {abs(r)/RHO_LAMBDA_GEV4:.2e}")
@@ -82,7 +82,29 @@ P(f"  rho(mu)=0 at mu* = {mustar:.3f} GeV (scheme/scale artifact: bare Lambda co
 P(f"  d rho / d ln mu = -Str m^4/(32 pi^2) = {-S4/(32*pi2):+.3e} GeV^4  -> rho_Lambda tuned to 1 part in {abs(S4/(32*pi2))/RHO_LAMBDA_GEV4:.1e} per e-fold")
 
 P("\nWeak-scale normalisations:  Str m^4/(64 pi^2) / rho_Lambda =", f"{abs(S4)/(64*pi2)/RHO_LAMBDA_GEV4:.2e}")
-P("Classical Higgs potential depth lambda v^4/4 =", f"{(MH**2/(2*246.22**2))*246.22**4/4:.3e} GeV^4 (not a Pauli sum; CONSTRAINTS G)")
+lamv = MH**2 / (2 * VEV**2)
+Vtree = -lamv * VEV**4 / 4
+P("Tree Higgs potential at the minimum V_tree = -lambda v^4/4 =", f"{Vtree:.3e} GeV^4 (not a Pauli sum; negative)")
+
+P("\nScheme dependence of the fourth (finite-part) condition. Finite part per d.o.f. = m^4[ln(m^2/mu^2) - c]/(64 pi^2):")
+P("  MS-bar (Landau): c = 3/2 scalars/fermions, 5/6 vectors;  DR-bar: c = 3/2 for all;  3-momentum cutoff: mu^2 -> 4 Lambda^2, c = -1/2 for all")
+P("  If Str m^4 = 0, a uniform c drops out and rho_fin = Str m^4 ln m^2 /(64 pi^2); a non-uniform c leaves an extra term.")
+V4 = sum(w * m**4 for _, m, w, c in sp if c == 'V')
+P(f"  MS-bar minus DR-bar finite part = (2/3) sum_V g_V m_V^4 /(64 pi^2) = {(2/3)*V4/(64*pi2):.3e} GeV^4"
+  f"  [check: {rho_dimreg(sp, MT) - rho_dimreg(sp, MT, cV=1.5):.3e}]")
+P("  => 'Str m^4 ln m^2 = 0' is the rho = 0 condition only for schemes with a species-independent constant; scheme-dependent (H2).")
+
+P("\nRequired bare cosmological-constant counterterm Omega(mu) so that Omega + V_tree + rho_1loop(mu) = rho_Lambda")
+P("  (MS-bar, Landau gauge, one-loop with pole masses + tree with lambda = m_h^2/2v^2: mixed order, illustration only)")
+for mu in [MZ, MT]:
+    r1 = rho_dimreg(sp, mu)
+    Om = RHO_LAMBDA_GEV4 - Vtree - r1
+    P(f"  mu = {mu:.4g} GeV: V_tree = {Vtree:+.3e}, rho_1loop = {r1:+.3e}, Omega_req = {Om:+.3e} GeV^4 ;"
+      f" |Omega_req|/rho_Lambda = {abs(Om)/RHO_LAMBDA_GEV4:.1e}")
+P(f"  mu-independent tuning measure: |Str m^4|/(64 pi^2) per unit ln mu^2 = {abs(S4)/(64*pi2):.3e} GeV^4 = {abs(S4)/(64*pi2)/RHO_LAMBDA_GEV4:.2e} rho_Lambda")
+P("Scale of SUSY comparison (arithmetic only, not a spectrum calc): 90 real scalar d.o.f. (sfermions) at M_SUSY:")
+for Ms in [1e3, 2e3]:
+    P(f"   90 x M_SUSY^4 at M_SUSY = {Ms:.0f} GeV: {90*Ms**4:.1e} GeV^4 vs |SM Str m^4| {abs(S4):.1e}")
 others4 = fer4 + 12 * MT**4; others2 = fer2 + 12 * MT**2
 P(f"Top mass that would give Str m^4 = 0 (other masses fixed): {((bos4 + others4)/12)**0.25:.1f} GeV;"
   f" Str m^2 = 0: {((bos2 + others2)/12)**0.5:.1f} GeV (measured {MT})")

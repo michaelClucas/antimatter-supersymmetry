@@ -20,7 +20,7 @@ Hard cutoff terms (per Visser eq. structure): rho = [Str1 L^4 + Str m^2 L^2]/(16
   Lambda=1 TeV: quartic -3.926e+11, quadratic -1.762e+09, log 2.392e+08 GeV^4; ratios to rho_Lambda: 1.6e+58, 7.0e+55, 9.6e+54
   Lambda=M_Pl: quartic -8.723e+75, quadratic -2.626e+41, log 1.405e+09 GeV^4; ratios to rho_Lambda: 3.5e+122, 1.1e+88, 5.6e+55
 
-Dim-reg (MS-bar), Lorentz invariant: rho(mu) = sum s_i m_i^4 [ln(m_i^2/mu^2) - c_i]/(64 pi^2)
+Dim-reg (MS-bar, Landau), one-loop term ONLY, bare counterterm set to 0 (unphysical; shows mu-dependence): rho_1(mu) = sum s_i m_i^4 [ln(m_i^2/mu^2) - c_i]/(64 pi^2)
   mu = 91.19 GeV: rho = +2.7372e+06 GeV^4,  |rho|/rho_Lambda = 1.09e+53
   mu = 172.6 GeV: rho = +2.2811e+07 GeV^4,  |rho|/rho_Lambda = 9.12e+53
   mu = 1000 GeV: rho = +7.8102e+07 GeV^4,  |rho|/rho_Lambda = 3.12e+54
@@ -30,7 +30,22 @@ Dim-reg (MS-bar), Lorentz invariant: rho(mu) = sum s_i m_i^4 [ln(m_i^2/mu^2) - c
   d rho / d ln mu = -Str m^4/(32 pi^2) = +3.147e+07 GeV^4  -> rho_Lambda tuned to 1 part in 1.3e+54 per e-fold
 
 Weak-scale normalisations:  Str m^4/(64 pi^2) / rho_Lambda = 6.29e+53
-Classical Higgs potential depth lambda v^4/4 = 1.188e+08 GeV^4 (not a Pauli sum; CONSTRAINTS G)
+Tree Higgs potential at the minimum V_tree = -lambda v^4/4 = -1.188e+08 GeV^4 (not a Pauli sum; negative)
+
+Scheme dependence of the fourth (finite-part) condition. Finite part per d.o.f. = m^4[ln(m^2/mu^2) - c]/(64 pi^2):
+  MS-bar (Landau): c = 3/2 scalars/fermions, 5/6 vectors;  DR-bar: c = 3/2 for all;  3-momentum cutoff: mu^2 -> 4 Lambda^2, c = -1/2 for all
+  If Str m^4 = 0, a uniform c drops out and rho_fin = Str m^4 ln m^2 /(64 pi^2); a non-uniform c leaves an extra term.
+  MS-bar minus DR-bar finite part = (2/3) sum_V g_V m_V^4 /(64 pi^2) = 4.831e+05 GeV^4  [check: 4.831e+05]
+  => 'Str m^4 ln m^2 = 0' is the rho = 0 condition only for schemes with a species-independent constant; scheme-dependent (H2).
+
+Required bare cosmological-constant counterterm Omega(mu) so that Omega + V_tree + rho_1loop(mu) = rho_Lambda
+  (MS-bar, Landau gauge, one-loop with pole masses + tree with lambda = m_h^2/2v^2: mixed order, illustration only)
+  mu = 91.19 GeV: V_tree = -1.188e+08, rho_1loop = +2.737e+06, Omega_req = +1.160e+08 GeV^4 ; |Omega_req|/rho_Lambda = 4.6e+54
+  mu = 172.6 GeV: V_tree = -1.188e+08, rho_1loop = +2.281e+07, Omega_req = +9.597e+07 GeV^4 ; |Omega_req|/rho_Lambda = 3.8e+54
+  mu-independent tuning measure: |Str m^4|/(64 pi^2) per unit ln mu^2 = 1.573e+07 GeV^4 = 6.29e+53 rho_Lambda
+Scale of SUSY comparison (arithmetic only, not a spectrum calc): 90 real scalar d.o.f. (sfermions) at M_SUSY:
+   90 x M_SUSY^4 at M_SUSY = 1000 GeV: 9.0e+13 GeV^4 vs |SM Str m^4| 9.9e+09
+   90 x M_SUSY^4 at M_SUSY = 2000 GeV: 1.4e+15 GeV^4 vs |SM Str m^4| 9.9e+09
 Top mass that would give Str m^4 = 0 (other masses fixed): 87.5 GeV; Str m^2 = 0: 81.2 GeV (measured 172.57)
 Neutrino sector alone, dim-reg, sum s m^4 [ln(m^2/mu^2) - 3/2]/(64 pi^2):
    mu=1e-09 GeV: +1.496e-43 GeV^4 = 6.0e+03 rho_Lambda

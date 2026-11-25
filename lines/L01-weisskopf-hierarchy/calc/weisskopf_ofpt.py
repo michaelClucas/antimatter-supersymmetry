@@ -1,4 +1,5 @@
-"""Weisskopf (1939) electron self-energy in hole theory, old-fashioned (time-ordered) perturbation theory.
+"""Weisskopf electron self-energy in hole theory (one-loop log result: Z. Phys. 89, 27 (1934) + erratum Z. Phys. 90, 817;
+all orders and Bose case: Phys. Rev. 56, 72 (1939)), old-fashioned (time-ordered) perturbation theory.
 
 Electron at rest, Coulomb gauge, sharp cutoff K on photon 3-momentum k. Natural Heaviside-Lorentz units,
 e^2 = 4 pi alpha. Spin-averaged over the rest spinor (makes every integrand a rotation scalar, so k is put along z).
@@ -14,7 +15,8 @@ Pieces (Dirac Hamiltonian H(p) = alpha.p + beta m, E = sqrt(k^2+m^2), Lam_pm(p) 
       Pauli-blocked by the electron present; removing it from the vacuum energy gives
         + (e^2/2k) sum_pol <a.eps Lam_-(k) a.eps> / (m + E + k)
   Tneg (only for comparison) one-electron Dirac theory WITHOUT a sea, where the electron may jump
-      into negative-energy states: (e^2/2k) sum_pol <a.eps Lam_-(-k) a.eps>/(m + E - k)  -> quadratic divergence.
+      into negative-energy states: (e^2/2k) sum_pol <a.eps Lam_-(-k) a.eps>/(m + E - k)  -> quadratic divergence
+      (the 1930 one-electron-theory result of Waller and Oppenheimer, not Weisskopf 1934).
 """
 import sympy as sp
 

@@ -13,7 +13,7 @@ import sys
 
 import sympy as sp
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', 'tools')))
 from rg_sm import run, smi  # noqa: E402
 
 out = []
@@ -37,17 +37,24 @@ for label, S in (("W,Z,top", S_gauge + S_top), ("W,Z,top,h", S_gauge + S_top + S
     m2 = 8 * Bv * V**2
     msg = f"m_h = {math.sqrt(m2):.2f} GeV" if m2 > 0 else "B < 0: stationary point is a MAXIMUM, no radiative EWSB"
     P(f"    {label:20s}: sum n m^4 = {S:+.4e} GeV^4,  B = {Bv:+.3e},  m_h^2 = {m2:+.1f} GeV^2  -> {msg}")
+# Threshold on m_t. In a classically scale-invariant theory m_h is an OUTPUT (m_h^2 = 8 B v^2), so the measured
+# m_h must not be fed into B (Referee 1 finding 8). Self-consistently: S = S_gauge + m_h^4 - 12 m_t^4 with
+# m_h^2 = S/(8 pi^2 v^2). B -> 0 forces m_h -> 0, so the threshold is the W,Z-only value exactly.
+mt_sc = (S_gauge / 12) ** 0.25
+P(f"    top mass above which B<0, self-consistent (m_h output; = W,Z-only threshold): {mt_sc:.1f} GeV  (measured {MT})")
 mt_max = ((S_gauge + S_h) / 12) ** 0.25
-P(f"    top pole mass above which B<0 (with W,Z,h): {mt_max:.1f} GeV  (measured {MT})")
+P(f"    [for comparison, feeding measured m_h=125.2 into B (circular): {mt_max:.1f} GeV]")
 P("    Pure-scale-invariant SM would also need m_h ~ 10 GeV (Weinberg/Linde-type bound, W,Z only),")
 P("    in conflict with m_h = 125.2 GeV even if the top were absent.")
 
 # (B) sign of m^2 under MS-bar running
 f = run(nloops=3, mu_max=1e20)
-P("\n(B) MS-bar m^2(mu) (sign convention: m^2 > 0 is the broken phase):")
+P("\n(B) MS-bar m^2(mu) (sign convention: m^2 > 0 is the broken phase). GeV values are illustrative only:")
+P("    the shared runner gives m(M_Pl) = 139.4 GeV vs Buttazzo eq. (61f) 129.4 GeV (unresolved). The sign")
+P("    conclusion does not depend on this, since beta(m^2) is proportional to m^2 whatever its coefficients.")
 for x in (2.237, 5, 10, 15, 19.09, 20):
     c = f(10**x)
-    P(f"    log10 mu = {x:6.2f}: m(mu) = {math.sqrt(c['m2']):.2f} GeV   (m^2 > 0)")
+    P(f"    log10 mu = {x:6.2f}: m(mu) = {math.sqrt(c['m2']):.1f} GeV   (m^2 > 0)")
 P("    beta(m^2) is proportional to m^2 at every loop order (eq. 100 of 1307.3536): m^2 = 0 is a fixed")
 P("    point and the sign cannot change under running. In the MSSM, m_Hu^2 changes sign because its beta")
 P("    function contains additive soft masses (stop/squark masses), which the SM does not have.")

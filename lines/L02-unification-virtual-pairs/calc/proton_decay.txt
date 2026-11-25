@@ -1,5 +1,5 @@
 SM 3-loop M12                      : M=1.12e+13 GeV, alpha^-1=42.3 -> tau ~ 8.1e+23 yr  (excluded vs 2.4e34 yr)
-SM 3-loop M13 (best point)         : M=1.78e+14 GeV, alpha^-1=40.5 -> tau ~ 4.7e+28 yr  (excluded vs 2.4e34 yr)
-SM 3-loop M23                      : M=2.95e+16 GeV, alpha^-1=46.2 -> tau ~ 4.6e+37 yr  (allowed vs 2.4e34 yr)
-MSSM 2-loop Ms=2TeV (reference)    : M=1.26e+16 GeV, alpha^-1=25.7 -> tau ~ 4.7e+35 yr  (allowed vs 2.4e34 yr)
+SM 3-loop M13 (best point)         : M=1.76e+14 GeV, alpha^-1=40.5 -> tau ~ 4.5e+28 yr  (excluded vs 2.4e34 yr)
+SM 3-loop M23                      : M=2.93e+16 GeV, alpha^-1=46.2 -> tau ~ 4.5e+37 yr  (allowed vs 2.4e34 yr)
+MSSM 2-loop Ms=2TeV (reference)    : M=1.25e+16 GeV, alpha^-1=25.7 -> tau ~ 4.6e+35 yr  (allowed vs 2.4e34 yr)
 minimal M_X for tau > 2.4e34 yr with alpha^-1=42: 4.7e+15 GeV

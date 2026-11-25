@@ -1,0 +1,62 @@
+====================================================================================================
+1. SM one loop, standard formula  b = -11/3 C(G) + 2/3 sum_Weyl S + 1/3 sum_cscalar S
+  SM                                               b = (41/10, -19/6, -7)   B = 115/218 = 0.5275
+
+2. Nielsen-Hughes per-state form reproduces SM: [41/10, -19/6, -7] True
+   split by CPT class of the one-particle state:
+  self-conjugate states (gauge bosons)             b = (0, -22/3, -11)   B = 1/2 = 0.5000
+  particle states                                  b = (41/20, 25/12, 2)   B = -5/2 = -2.5000
+  antiparticle states  [definition (i)]            b = (41/20, 25/12, 2)   B = -5/2 = -2.5000
+   split by FIELD label in conjugate basis [definition (ii)] (each field = its 2 states):
+  antiparticle fields u^c,d^c,e^c (= SU(5) 5bar+10 pieces) b = (16/5, 0, 2)   B = -5/8 = -0.6250
+  particle fields Q,L                              b = (4/5, 4, 2)   B = -5/8 = -0.6250
+   spin / orbital split  b = -2 Str(s^2 T) + (1/6) Str(T):
+  SM spin (paramagnetic) part                      b = (6, -2, -6)   B = 1/2 = 0.5000
+  SM orbital (diamagnetic) part = Str(T)/6         b = (-19/10, -7/6, -1)   B = 5/22 = 0.2273
+
+3. Phi: Weyl -> chiral, H -> chiral H and chiral H^c, gauge -> vector multiplet
+  Phi(SM) via NSVZ  -3C(G) + sum_chiral S          b = (33/5, 1, -3)   B = 5/7 = 0.7143
+   components via Nielsen-Hughes: [33/5, 1, -3] True
+   orbital part of Phi(SM) = Str(T)/6 : [0, 0, 0] (cancels in every supermultiplet)
+   b[Phi(SM)] - b_spin[SM] = [3/5, 3, 3] = C(G) (Majorana gauginos) + 2 S(H) (Dirac higgsino pair): [3/5, 3, 3]
+
+4. B = (b2-b3)/(b1-b2). Complete SU(5) multiplets (each generation) shift b by k(1,1,1) and drop out.
+   one SM generation (Weyl): [4/3, 4/3, 4/3]  as chiral multiplets: [2, 2, 2]
+   General: B = (c - n h/2)/(2c + n h/5), c = gauge weight, h = weight per Higgs doublet, n = # doublets
+   SM                                                         r = nh/c = -1/11  B = 115/218  = 0.5275
+   gauge -> vector multiplet only                             r = nh/c = -1/9   B = 95/178   = 0.5337
+   H^c promoted to independent field only (antimatter step)   r = nh/c = -2/11  B = 5/9      = 0.5556
+   H -> chiral only (adds higgsino)                           r = nh/c = -3/11  B = 125/214  = 0.5841
+   H, H^c both chiral (no gaugino)                            r = nh/c = -6/11  B = 35/52    = 0.6731
+   full Phi(SM) = MSSM                                        r = nh/c = -2/3   B = 5/7      = 0.7143
+   SM spin part only                                          r = nh/c = 0      B = 1/2      = 0.5000
+   pure gauge + complete multiplets                           r = nh/c = 0      B = 1/2      = 0.5000
+   B for antiparticle-state part alone (def. i): -5/2 = -2.5
+   Ratio r_MSSM/r_SM = 22/3 = 2 (H^c doubling) x 3 (scalar -> chiral) x 11/9 (vector -> vector multiplet)
+
+5. Two loop b_ij
+   SM b_ij = [[199/50, 27/10, 44/5], [9/10, 35/6, 12], [11/10, 9/2, -26]]
+   Phi(SM) b_ij (SUSY formula -6C^2 d + sum_chiral (4C_j + 2C_i d) S_i) = [[199/25, 27/5, 88/5], [9/5, 25, 24], [11/5, 9, 14]]
+   components (MV, no Yukawa) = [[597/50, 81/10, 132/5], [27/10, 127/2, 36], [33/10, 27/2, 66]]
+   gaugino-Yukawa term -2 sum_Phi [S_i C_j + d_ij C_i S_i] = [[-199/50, -27/10, -44/5], [-9/10, -77/2, -12], [-11/10, -9/2, -52]]
+   components + gaugino Yukawa == SUSY formula: True
+   Per-field coefficient map (S_i weight on C_j, on C_i delta):
+     SM Weyl (2, 10/3) -> chiral (4, 2);  SM complex scalar (4, 2/3) -> chiral (4, 2);  gauge -34/3 -> -6
+   SM b_ij - Phi(SM) b_ij = [[-199/50, -27/10, -44/5], [-9/10, -115/6, -12], [-11/10, -9/2, -40]]
+
+6. Two-loop Yukawa coefficients c_i^f (subtracted in d g_i).
+   Conjugate labelling: SM  y_t Q H^c u^c, y_b Q H d^c, y_tau L H e^c.  Phi: H^c -> H_u, H -> H_d.
+   y_t  : SM c = ['17/10', '3/2', '2']   Phi(SM) c = ['26/5', '6', '4']   = 2*SM + ['9/5', '3', '0'] (Higgs leg)
+   y_b  : SM c = ['1/2', '3/2', '2']   Phi(SM) c = ['14/5', '6', '4']   = 2*SM + ['9/5', '3', '0'] (Higgs leg)
+   y_tau: SM c = ['3/2', '1/2', '0']   Phi(SM) c = ['18/5', '2', '0']   = 2*SM + ['3/5', '1', '0'] (Higgs leg)
+   SM: only the two fermion legs carry Casimirs (weight 1). SUSY: all three legs (weight 2).
+
+All assertions passed.
+
+7. Two-loop identity: Phi(SM) b_ij = 2 * SM b_ij for all i != j, and for (1,1).
+   Phi(SM) b_ij - 2 SM b_ij = [[0, 0, 0], [0, 40/3, 0], [0, 0, 66]]
+   diagonal remainder = C_i [50/3 C_i - 14/3 W_i + 8/3 S_H,i] = [0, 40/3, 66]
+   without H^c as independent field, off-diagonal ratios Phi'/SM = {(0, 1): '5/3', (0, 2): '2', (1, 0): '5/3', (1, 2): '2', (2, 0): '2', (2, 1): '2'}
+   -> uniform factor 2 requires H and H^c to be separate chiral fields.
+
+All assertions (incl. section 7) passed.

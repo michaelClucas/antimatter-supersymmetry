@@ -1,12 +1,15 @@
-"""Veltman coefficient: normalization, EW-scale value, and RG running with rg_sm.py.
+"""Veltman coefficient: normalization, self-conjugacy check, EW-scale value, RG running (tools/rg_sm.py).
 
-Convention: V = -(m^2/2)|H|^2 + lambda|H|^4, H = (0, (v+h)/sqrt2), m_h^2 = 2 lambda v^2.
-Quadratically divergent one-loop shift of the coefficient of h^2/2 in the effective potential
-(4D Euclidean cutoff Lambda on the loop momentum, Landau gauge):
-    delta m_h^2 = C * Lambda^2 / (16 pi^2),
-    C = 6 lambda + (9/4) g2^2 + (3/4) gY^2 - 6 yt^2 - 6 yb^2 - 2 ytau^2   (tree-level relations:)
+Convention (CONSTRAINTS G): V = -mu^2|H|^2 + lambda|H|^4, H = (0, (v+h)/sqrt2), phi = |H| sqrt2,
+m_h^2 = 2 mu^2 = 2 lambda v^2 at tree level (Buttazzo et al. write m^2 = 2 mu^2).
+4D Euclidean cutoff Lambda on the loop momentum, Landau gauge. The Lambda^2 term of the one-loop
+effective potential is (Lambda^2/32pi^2) STr M^2(phi) = (C Lambda^2/32pi^2) phi^2 + const, so
+    |H|^2 coefficient:  -mu^2 -> -mu^2 + C Lambda^2/(16 pi^2)     i.e. |delta mu^2| = |C| Lambda^2/(16 pi^2)
+    physical mass (fixed bare mu^2, lambda, tadpole included):  |delta m_h^2| = |C| Lambda^2/(8 pi^2)
+    C = 6 lambda + (9/4) g2^2 + (3/4) gY^2 - 6 yt^2 [- 6 yb^2 - 2 ytau^2 ...]
       = (3/v^2) (m_h^2 + 2 M_W^2 + M_Z^2 - 4 m_t^2)  [+ light fermions].
-Derived here from the Lambda^2 term of the one-loop effective potential, (Lambda^2/32pi^2) STr M^2(phi).
+So delta m_h^2 = (3 Lambda^2/(8 pi^2 v^2)) x bracket in magnitude, the standard form. The overall sign of
+"delta" depends on whether one quotes the correction or the counterterm; the zero of C does not.
 """
 import math
 import os
@@ -16,7 +19,7 @@ import numpy as np
 import sympy as sp
 from scipy.optimize import brentq
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..', 'tools')))
 from rg_sm import run, smi, couplings_at_mt  # noqa: E402
 
 out = []
@@ -39,9 +42,51 @@ v, mh, MW, MZ, mt = sp.symbols('v m_h M_W M_Z m_t', positive=True)
 Cm = sp.expand(C.subs({lam: mh**2 / (2 * v**2), g: 2 * MW / v, gp: 2 * sp.sqrt(MZ**2 - MW**2) / v,
                        yt: sp.sqrt(2) * mt / v}))
 P(f"  in masses: C = {sp.factor(Cm)}")
-P("  -> delta m_h^2 = (3 Lambda^2 / (16 pi^2 v^2)) (m_h^2 + 2 M_W^2 + M_Z^2 - 4 m_t^2)")
-P("  NOTE: the often-quoted prefactor 3/(8 pi^2 v^2) differs by 2; that version refers to a different")
-P("  cutoff convention or to the doublet parameter. Only the bracket (its zero) is convention independent.")
+P("  -> shift of the |H|^2 coefficient: delta mu^2 = C Lambda^2/(16 pi^2)  (= 1PI h self-energy at fixed v)")
+
+# physical m_h^2 with the tadpole / v-shift: fixed bare mu^2 and lambda
+m2b, l2 = sp.symbols('mu2_bare lambda_', positive=True)
+Ceff = sp.symbols('C_eff', real=True)
+Veff = -m2b / 2 * phi**2 + l2 / 4 * phi**4 + Ceff * Lam**2 / (32 * sp.pi**2) * phi**2
+vsol = sp.solve(sp.diff(Veff, phi), phi)
+vsol = [x for x in vsol if x != 0][0]
+mh2_phys = sp.simplify(sp.diff(Veff, phi, 2).subs(phi, vsol))
+P(f"  physical m_h^2 at the shifted minimum (bare mu^2, lambda fixed) = {mh2_phys}")
+P(f"  -> delta m_h^2 = {sp.simplify(mh2_phys - 2*m2b)}  = 2 x delta mu^2 in magnitude; i.e.")
+P("     |delta m_h^2| = (3 Lambda^2/(8 pi^2 v^2)) |m_h^2 + 2 M_W^2 + M_Z^2 - 4 m_t^2|, the standard form.")
+
+# --- 1b. self-conjugate vs charged particle-antiparticle pairs (Referee 1, finding 3)
+P("\nPer-species contributions to C (C_i = n_i (-1)^F a_i with M_i^2 = a_i phi^2 + const):")
+species = [  # name, self-conjugate?, dof n, sign, a
+    ("W+  (antiparticle: W-)", False, 3, +1, g**2 / 4), ("W-  (antiparticle: W+)", False, 3, +1, g**2 / 4),
+    ("G+  (antiparticle: G-)", False, 1, +1, lam), ("G-  (antiparticle: G+)", False, 1, +1, lam),
+    ("Z   (self-conjugate)", True, 3, +1, (g**2 + gp**2) / 4), ("h   (self-conjugate)", True, 1, +1, 3 * lam),
+    ("G0  (self-conjugate)", True, 1, +1, lam), ("photon (self-conj., massless)", True, 2, +1, 0),
+    ("t   (antiparticle: tbar)", False, 6, -1, yt**2 / 2), ("tbar (antiparticle: t)", False, 6, -1, yt**2 / 2),
+]
+Csum = 0
+_c = couplings_at_mt()
+num = {lam: _c['lam'], g: _c['g2'], gp: _c['g1'] * math.sqrt(3 / 5), yt: _c['yt']}  # MS-bar at mu = M_t
+for name, sc, n, sg, a in species:
+    Ci = n * sg * a
+    Csum += Ci
+    P(f"  {name:32s} C_i = {str(Ci):14s} = {float(Ci.subs(num)) if Ci != 0 else 0.0:+.4f} at M_t")
+assert sp.simplify(Csum - C) == 0
+P("  sum reproduces C. Signs: every boson +, every fermion -, whether or not the field is self-conjugate.")
+P("  Self-conjugate bosons (Z, h, G0) alone: "
+  f"{float(sum(n*sg*a for _, sc, n, sg, a in species if sc).subs(num)):+.4f};"
+  f" charged boson pairs (W+W-, G+G-) alone: {float(sum(n*sg*a for _, sc, n, sg, a in species if not sc and sg > 0).subs(num)):+.4f}")
+
+# basis independence: a degenerate charged pair = two real (self-conjugate) fields; STr is a trace
+M2s, i_ = sp.symbols('M2', positive=True), sp.I
+U = sp.Matrix([[1, i_], [1, -i_]]) / sp.sqrt(2)      # (W1, W2) -> (W+, W-) for each polarization
+Mreal = sp.diag(M2s, M2s)                             # M_W^2 (W1^2 + W2^2)/2 in the real basis
+Mcharge = sp.simplify(U * Mreal * U.H)
+P(f"  W mass matrix, real basis (W1,W2): trace {Mreal.trace()}; charge basis (W+,W-): {Mcharge.tolist()}, trace {sp.simplify(Mcharge.trace())}")
+P("  -> the Lambda^2 coefficient is Tr over the mass-squared matrix, invariant under the unitary map")
+P("     between 'particle/antiparticle' (charge) eigenstates and real self-conjugate components.")
+P("     A Dirac top (4 real-component dof per colour) = two degenerate Majorana components, same trace.")
+P("     So 'which states are antiparticles' is a basis label that C cannot depend on; the sign is (-1)^F.")
 
 # --- 2. EW-scale numbers with pole masses
 V = smi.V
@@ -75,7 +120,7 @@ c0 = f3(smi.MT)
 P(f"  at mu=M_t: lam={c0['lam']:.5f} yt={c0['yt']:.5f} g2={c0['g2']:.5f} gY={c0['gY']:.5f} g3={c0['g3']:.4f}")
 P(f"  C(M_t) MS-bar = {Cof(c0):.3f}")
 P("  C(mu) at selected scales (3-loop):")
-for x in (2.24, 4, 6, 8, 10, 12, 14, 16, 18, 19.087, 20, 22, 25, 30):
+for x in (math.log10(smi.MT), 4, 6, 8, 10, 12, 14, 16, 18, 19.087, 20, 22, 25, 30):
     c = f3(10**x)
     P(f"    log10 mu={x:6.2f}: C={Cof(c):+.4f}   [6lam={6*c['lam']:+.4f}, gauge={9/4*c['g2']**2+3/4*c['gY']**2:.4f},"
       f" -6yt^2={-6*c['yt']**2:+.4f}]")
@@ -118,6 +163,8 @@ P(f"To move the zero to 7e16 GeV (Jegerlehner 1305.6652) need y_t(M_t) shifted b
 P(f"  equivalent pole-mass shift via eq.(57) slope 0.00556/GeV: {dyt/0.00556:+.1f} GeV")
 dyt = brentq(lambda d: zero_with_yt(d)[0] - 19.087, -0.1, 0.0)
 P(f"To put the zero at M_Pl need delta y_t(M_t) = {dyt:+.4f}  (~ {dyt/0.00556:+.1f} GeV in M_t)")
+P("  (a shift in GeV; no significance quoted: the MC-vs-pole top-mass ambiguity (~0.5 GeV) and the")
+P("   y_t matching theory error are not included, and mu0 itself is scheme dependent)")
 
 # minimum of |C| region and lambda zero for context
 f = f3

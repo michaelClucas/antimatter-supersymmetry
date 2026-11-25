@@ -1,7 +1,9 @@
 """Particle/antiparticle state counting in the one-loop gauge beta coefficients, and what reweighting would be needed.
 
-Part 1: enumerate every SM on-shell state (particle AND antiparticle, each helicity) with its (SU3 rep, SU2 rep, Y),
-compute b_i from a per-state rule and check it equals the field-theory b_i = (41/10, -19/6, -7).
+Part 1 (BOOKKEEPING, not a verification): enumerate every SM on-shell state (particle AND antiparticle, each
+helicity) with its (SU3 rep, SU2 rep, Y). The per-state rule (1/3 T(R) per fermionic state, 1/6 T(R) per scalar state)
+is CHOSEN so that the sum reproduces b_i = (41/10, -19/6, -7); the assert only checks the bookkeeping is consistent.
+The non-trivial content is the particle-only sums Tr Y = Tr Y^3 = 0 over the 15 Weyl fields of a generation.
 Part 2: sympy: b_i(wV, wF, wS) with independent weights on gauge, fermion and scalar loops; show wF cancels from the
 unification condition; solve for the wS or wV that would be needed.
 Part 3: 2-loop gauge-only numerical check of 'antiparticles double counted' (wF=2) and 'particles only' (wF=wS=1/2).
@@ -50,16 +52,33 @@ def b_from_states(wfac=None):
     return [bV[i] + b[i] for i in range(3)]
 
 b = b_from_states()
-print("Part 1. b_i from explicit particle+antiparticle state sum:", [str(x) for x in b], " (SM: 41/10, -19/6, -7)")
+print("Part 1 (bookkeeping). b_i from explicit particle+antiparticle state sum:", [str(x) for x in b], " (SM: 41/10, -19/6, -7)")
 assert b == [Fr(41, 10), Fr(-19, 6), Fr(-7)]
-print("  Sum over fermion states of Y   =", sum(d3 * d2 * Y for (_, k, d3, d2, Y) in states if k.startswith("fermion")),
-      "(C-odd piece cancels between particle and antiparticle)")
+print("  Sum of Y over the 15 Weyl fields of one generation (particles only, non-trivial) =",
+      sum(d3 * d2 * Y for (_, d3, d2, Y) in gen),
+      "; sum of Y^3 =", sum(d3 * d2 * Y ** 3 for (_, d3, d2, Y) in gen))
+print("  (Sum of Y over particle+antiparticle states is 0 by construction, since antiparticle Y := -Y.)")
 print("  Sum of Y^2 over particles only =", sum(d3 * d2 * Y ** 2 for (_, k, d3, d2, Y) in states if k == "fermion-particle"),
       "; over antiparticles only =", sum(d3 * d2 * Y ** 2 for (_, k, d3, d2, Y) in states if k == "fermion-antiparticle"))
 bf_part = [x - y for x, y in zip(b_from_states({"fermion-antiparticle": 2}), b)]
 print("  Extra contribution if antifermion states counted twice: Delta b =", [str(x) for x in bf_part], "(equal for i=1,2,3)")
 bs_part = [x - y for x, y in zip(b_from_states({"scalar-antiparticle": 2}), b)]
 print("  Extra contribution if anti-Higgs states counted twice:  Delta b =", [str(x) for x in bs_part])
+# Non-uniform antiparticle weights (referee 1, finding 1): antiquark states only, antilepton states only
+def b_species(names):
+    b_ = [Fr(0)] * 3
+    for (n, kind, d3, d2, Y) in states:
+        if kind == "fermion-antiparticle" and n[:-len("-bar")] in names:
+            b_[0] += Fr(1, 3) * Fr(3, 5) * Y ** 2 * d3 * d2
+            b_[1] += Fr(1, 3) * T2(d2) * d3
+            b_[2] += Fr(1, 3) * T3(d3) * d2
+    return [x / 3 for x in b_]  # per generation
+daq = b_species({"Q", "u^c", "d^c"})
+dal = b_species({"L", "e^c"})
+print("  Antiquark states only, per generation:  Delta b =", [str(x) for x in daq], "(NOT proportional to (1,1,1))")
+print("  Antilepton states only, per generation: Delta b =", [str(x) for x in dal], "(NOT proportional to (1,1,1))")
+print("  -> 'any weighting' is wrong: only weights uniform within each complete SU(5) multiplet (5-bar, 10) drop out.")
+print("     Non-uniform weights are classified and killed in reweighting.py.")
 
 # Part 2
 wV, wF, wS = sp.symbols("w_V w_F w_S", positive=True)
@@ -71,12 +90,16 @@ a1, a2, a3 = smi.gauge_couplings_mz()
 A = [1 / a1, 1 / a2, 1 / a3]
 R_meas = (A[1] - A[2]) / (A[0] - A[1])
 Bratio = sp.simplify((bb[1] - bb[2]) / (bb[0] - bb[1]))
-print("\nPart 2. one-loop B-ratio (b2-b3)/(b1-b2) =", Bratio, " -> depends on w_F?", sp.diff(Bratio, wF) == 0 and "no" or "yes")
+print("\nPart 2. one-loop B-ratio (b2-b3)/(b1-b2) =", Bratio, " -> depends on w_F?", sp.diff(Bratio, wF) == 0 and "no" or "yes",
+      "\n  (w_F multiplies ALL fermion loops equally; non-uniform fermion weights DO change the ratio, see reweighting.py)")
 print(f"  measured (a2^-1-a3^-1)/(a1^-1-a2^-1) at MZ = {R_meas:.4f};  SM value = {float(Bratio.subs({wV:1,wS:1})):.4f};  MSSM value = {(1+3)/(33/5-1):.4f}")
 sol_S = sp.solve(sp.Eq(Bratio.subs(wV, 1), sp.Rational(str(round(R_meas, 6)))), wS)
 sol_V = sp.solve(sp.Eq(Bratio.subs(wS, 1), sp.Rational(str(round(R_meas, 6)))), wV)
 print(f"  scalar-loop weight needed (w_V=1): w_S = {[float(s) for s in sol_S]}  (i.e. ~{float(sol_S[0]):.1f} Higgs doublets)")
 print(f"  gauge-loop weight needed  (w_S=1): w_V = {[float(s) for s in sol_V]}")
+wv = float(sol_V[0])
+print(f"  with that w_V: b_3 = -11*{wv:.3f} + 4 = {-11*wv+4:+.2f} (6 flavours), {-11*wv+10/3:+.2f} (5 flavours) > 0:"
+      " QCD loses asymptotic freedom, alpha_s would DEcrease toward low energy; measured alpha_s(m_tau)~0.3 > alpha_s(MZ)=0.118")
 # scale for the w_S solution
 ws = float(sol_S[0])
 bnum = np.array([float(x) for x in bb.subs({wV: 1, wF: 1, wS: ws})])

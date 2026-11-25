@@ -6,8 +6,9 @@ has exactly two poles: positive frequency (particle, forward in time) and negati
 particle backward in time). Closing the contour gives exactly two time-ordered terms:
   (a) pair (particle+antiparticle) created by the external field and later absorbed  -> 1/(q0 - E1 - E2)
   (b) 'Z-graph': pair created from the vacuum before the external quantum arrives    -> 1/(q0 + E1 + E2)
-There is no third term in which 'the antiparticle loop' is added separately. Check: symbolic residue sum and direct
-numerical integration at finite eps.
+There is no third term. Both orderings contain one particle and one antiparticle line, so labelling either one
+'the antiparticle loop' is arbitrary (referee 1, finding 5). Check: symbolic residue sum, and direct numerical
+integration at finite eps, whose residual is a finite-eps effect that shrinks as eps -> 0.
 Also: the absorptive part (pair-production threshold) fixes the normalisation via unitarity; doubling the antiparticle
 contribution would double the pair-production rate (checked against data in WORK.md via R-ratio).
 """
@@ -26,15 +27,20 @@ print("residue result      :", sp.simplify(I_res))
 print("two time orderings  :", sp.simplify(topt))
 print("difference          :", sp.simplify(I_res - topt))
 
-# numerical check at finite eps, q0 below threshold
-def num(q0v, e1, e2, eps=1e-3):
+# numerical check at finite eps: the residual is a finite-eps effect and shrinks as eps -> 0
+def num(q0v, e1, e2, eps):
     def g(k):
         return (1j / (k * k - e1 * e1 + 1j * eps)) * (1j / ((k - q0v) ** 2 - e2 * e2 + 1j * eps))
-    re = quad(lambda k: g(k).real, -200, 200, points=[-e1, e1, q0v - e2, q0v + e2], limit=2000)[0]
-    im = quad(lambda k: g(k).imag, -200, 200, points=[-e1, e1, q0v - e2, q0v + e2], limit=2000)[0]
+    pts = [-e1, e1, q0v - e2, q0v + e2]
+    re = quad(lambda k: g(k).real, -200, 200, points=pts, limit=5000)[0]
+    im = quad(lambda k: g(k).imag, -200, 200, points=pts, limit=5000)[0]
     return (re + 1j * im) / (2 * np.pi)
 
 for (qv, a, b) in ((0.7, 1.0, 1.3), (1.5, 1.0, 1.0)):
     exact = complex(topt.subs({q0: qv, E1: a, E2: b}))
-    print(f"q0={qv}, E1={a}, E2={b}: numeric {num(qv, a, b):.5f}   two-ordering formula {exact:.5f}   "
-          f"(counting the Z-graph ordering twice would give {2*exact - complex((sp.I/(4*E1*E2)*(1/(q0-E1-E2))).subs({q0:qv,E1:a,E2:b})):.5f})")
+    print(f"q0={qv}, E1={a}, E2={b}: two-ordering formula {exact:.5f}")
+    for eps in (1e-2, 1e-3, 1e-4):
+        n = num(qv, a, b, eps)
+        print(f"    eps={eps:.0e}: numeric {n:.5f}   |numeric - formula| = {abs(n - exact):.1e}")
+print("The two poles of each propagator (two time orderings) exhaust the loop; both orderings contain one particle and")
+print("one antiparticle line, so neither ordering is 'the antiparticle loop'. Agreement is limited by finite eps (~eps).")

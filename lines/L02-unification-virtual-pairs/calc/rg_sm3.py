@@ -15,7 +15,7 @@ import os
 import numpy as np
 from scipy.integrate import solve_ivp
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "..", "tools"))
+import sm_path  # noqa: F401,E402  (puts tools/ on sys.path)
 import sm_inputs as smi  # noqa: E402
 
 K = 1.0 / (16.0 * math.pi ** 2)

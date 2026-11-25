@@ -1,0 +1,110 @@
+====================================================================================================
+PART 1. Lambda^2 (K^2) coefficient by species, particle/antiparticle resolved  [C_i = n_i (+-) a_i]
+====================================================================================================
+
+-- MS-bar couplings at mu = M_t: lambda=0.12617 g=0.64764 g'=0.35843 y_t=0.93286
+   W+ (3 pol.)                  charged pair         n= 3  C_i = +0.3146
+   W- (3 pol.)                  charged pair         n= 3  C_i = +0.3146
+   G+                           charged pair         n= 1  C_i = +0.1262
+   G-                           charged pair         n= 1  C_i = +0.1262
+   Z  (3 pol.)                  self-conjugate       n= 3  C_i = +0.4109
+   G0                           self-conjugate       n= 1  C_i = +0.1262
+   h                            self-conjugate       n= 1  C_i = +0.3785
+   photon (2 pol.)              self-conjugate       n= 2  C_i = +0.0000
+   t_L , t_L-bar (3 col.)       fermion pair (sea)   n= 6  C_i = -2.6107
+   t_R , t_R-bar (3 col.)       fermion pair (sea)   n= 6  C_i = -2.6107
+   charged boson pairs  (W+W-, G+G-)  n= 8  C = +0.8815
+   self-conjugate bosons (Z, G0, h)   n= 5  C = +0.9156  (photon excluded, a=0)
+   top sea pairs                      n=12  C = -5.2214
+   [SUSY target] stop/antistop pairs  n=12  C = +5.2214  -> top + stops = +0.00e+00
+   SM total C = -3.4242
+   matching ratio R = C_bosons / |C_top| = 0.3442   (SUSY: stops give R = 1 exactly)
+   massive-boson real dof coupling to h: 13 (vs 12 top-sea dof, 12 stop dof)
+   mean coupling a per boson dof = 0.1382;  top/stop a = y^2/2 = 0.4351;  ratio 0.318
+   'stop-equivalent' number of boson dof (C_bos / (y^2/2)) = 4.13 of the 12 needed
+   |C| top alone -> top + SM bosons: 5.2214 -> 3.4242  (reduction 34.4%)
+
+-- tree-level couplings from PDG pole masses: lambda=0.12928 g=0.65282 g'=0.34994 y_t=0.99119
+   W+ (3 pol.)                  charged pair         n= 3  C_i = +0.3196
+   W- (3 pol.)                  charged pair         n= 3  C_i = +0.3196
+   G+                           charged pair         n= 1  C_i = +0.1293
+   G-                           charged pair         n= 1  C_i = +0.1293
+   Z  (3 pol.)                  self-conjugate       n= 3  C_i = +0.4115
+   G0                           self-conjugate       n= 1  C_i = +0.1293
+   h                            self-conjugate       n= 1  C_i = +0.3878
+   photon (2 pol.)              self-conjugate       n= 2  C_i = +0.0000
+   t_L , t_L-bar (3 col.)       fermion pair (sea)   n= 6  C_i = -2.9474
+   t_R , t_R-bar (3 col.)       fermion pair (sea)   n= 6  C_i = -2.9474
+   charged boson pairs  (W+W-, G+G-)  n= 8  C = +0.8978
+   self-conjugate bosons (Z, G0, h)   n= 5  C = +0.9286  (photon excluded, a=0)
+   top sea pairs                      n=12  C = -5.8948
+   [SUSY target] stop/antistop pairs  n=12  C = +5.8948  -> top + stops = +0.00e+00
+   SM total C = -4.0683
+   matching ratio R = C_bosons / |C_top| = 0.3098   (SUSY: stops give R = 1 exactly)
+   massive-boson real dof coupling to h: 13 (vs 12 top-sea dof, 12 stop dof)
+   mean coupling a per boson dof = 0.1405;  top/stop a = y^2/2 = 0.4912;  ratio 0.286
+   'stop-equivalent' number of boson dof (C_bos / (y^2/2)) = 3.72 of the 12 needed
+   |C| top alone -> top + SM bosons: 5.8948 -> 4.0683  (reduction 31.0%)
+
+====================================================================================================
+PART 2. Mode-by-mode vacuum-energy (Dirac sea + boson zero-point) integrand d(d^2E0/dphi^2)/dk at phi = v
+====================================================================================================
+   per real dof: d^2/dphi^2 (omega/2) = a/(2 omega) - a^2 phi^2/(2 omega^3) [+ b-terms inside omega]
+   times k^2/(2 pi^2). Leading large-k term a k/(4pi^2) per dof -> C_i K^2/(8 pi^2).
+       k/GeV      top sea  W+Z (pairs)  h+G (scalars)  SM bosons/|top|  stops(soft=0)   top+stops
+          10  -2.8909e-04  +4.3984e-04    -7.6053e+00      -26306.5318    +2.8909e-04    +0.0e+00
+          50  -1.6091e-01  +1.7726e-01    -1.1022e+00          -5.7484    +1.6091e-01    +0.0e+00
+         100  -1.8819e+00  +1.1874e+00    +2.6408e-01           0.7713    +1.8819e+00    +0.0e+00
+         200  -1.2961e+01  +4.1575e+00    +2.5419e+00           0.5169    +1.2961e+01    +0.0e+00
+         500  -6.3061e+01  +1.2754e+01    +9.1013e+00           0.3466    +6.3061e+01    +0.0e+00
+        1000  -1.4289e+02  +2.6331e+01    +1.9270e+01           0.3191    +1.4289e+02    +0.0e+00
+       10000  -1.4925e+03  +2.6613e+02    +1.9644e+02           0.3099    +1.4925e+03    +0.0e+00
+      100000  -1.4932e+04  +2.6616e+03    +1.9648e+03           0.3098    +1.4932e+04    +0.0e+00
+     1000000  -1.4932e+05  +2.6616e+04    +1.9648e+04           0.3098    +1.4932e+05    +0.0e+00
+   -> With exact SUSY masses (m_stop = m_t) the stop/antistop zero-point modes cancel the top-sea modes at EVERY k
+      (not only the K^2 term). SM boson pairs have the right sign at every k but cancel only a fraction;
+      the fraction -> R (Part 1) as k -> infinity. At k ~ m_t the h/G modes become negative (their a^2 v^2 term).
+
+====================================================================================================
+PART 3. Higgs at rest, time-ordered pieces of Sigma_hh: top (F, B) vs stops (seagull, F, B), soft mass m_s
+====================================================================================================
+   top spin sum |u^+ beta v|^2 = 2*p**2/(m**2 + p**2)
+   top F (h -> t tbar):          large-p dSigma/dp -> -3*y**2/(4*pi**2) * p
+   top B (vacuum t tbar Z-graph): large-p dSigma/dp -> -3*y**2/(4*pi**2) * p
+   stop seagull (equal-time stop-antistop pair): large-p -> 3*y**2/(2*pi**2) * p
+   stop F, B bubbles (h -> stop antistop; vacuum pair): large-p ~ p^-1 (log only): -3*v**2*y**4/(8*pi**2)/p, -3*v**2*y**4/(8*pi**2)/p
+   m_soft =      0 GeV:   p      top(F+B)      top+stops(all orderings)   p*(top+stops)
+               100   -2.0876e+00     -8.1807e-01            -8.1807e+01
+              1000   -1.4343e+02     -5.6208e-01            -5.6208e+02
+             10000   -1.4926e+03     -5.8490e-02            -5.8490e+02
+            100000   -1.4932e+04     -5.8513e-03            -5.8513e+02
+           1000000   -1.4932e+05     -5.8513e-04            -5.8513e+02
+   m_soft =   1000 GeV:   p      top(F+B)      top+stops(all orderings)   p*(top+stops)
+               100   -2.0876e+00     -6.6535e-01            -6.6535e+01
+              1000   -1.4343e+02     -4.0167e+01            -4.0167e+04
+             10000   -1.4926e+03     -7.4589e+00            -7.4589e+04
+            100000   -1.4932e+04     -7.5237e-01            -7.5237e+04
+           1000000   -1.4932e+05     -7.5243e-02            -7.5243e+04
+   expected from Part 4 (m_Q = m_U = m_s, A_t = 0): d Sigma/dp -> -(3 y^2/(4 pi^2)) m_s^2 / p
+   = -7.4658e+04 / p for m_s = 1 TeV  (compare last column)
+   covariant (k0 Wick-rotated) vs time-ordered stop bubble F+B, m_s = 300 GeV:
+     p =    50.0:  covariant -2.685899e-01   F+B -2.685888e-01
+     p =   300.0:  covariant -4.243463e+00   F+B -4.244455e+00
+     p =  3000.0:  covariant -8.210329e-01   F+B -1.453751e+00
+
+====================================================================================================
+PART 4. SUSY comparison target: supertrace identities, top/stop and electroweak sectors
+====================================================================================================
+   STr M^2 (stops 2 complex x 3 col = 12 real dof; top 12 dof) = 6*m_Q**2 + 6*m_U**2  (phi-independent: no Lambda^2)
+   ln(Lambda^2) coefficient of d^2V/dphi^2 at phi=0: -3*y**2*(A_t**2 + m_Q**2 + m_U**2)/(8*pi**2)
+     -> delta m_H^2 (|H|^2 coeff = (1/2) d^2V/dphi^2... per ln Lambda): -(3 y^2/8pi^2)(m_Q^2 + m_U^2 + A_t^2) ln(Lambda/m)
+        the standard MSSM result (e.g. Martin, hep-ph/9709356). Only the SOFT mass, which splits stop from top, survives.
+   Higgs scalars (8 real, D-term quartics) Tr M_S^2 (field-dependent) = (3*g**2 + gp**2)*(v_d**2 + v_u**2)/4
+   gauge bosons  3 x Tr M_V^2                                 = 3*(3*g**2 + gp**2)*(v_d**2 + v_u**2)/4
+   neutralinos (4 Majorana, self-conjugate) 2 Tr M^+M (field-dep.) = (g**2 + gp**2)*(v_d**2 + v_u**2)
+   charginos   (2 Dirac, charged pairs)     4 Tr X^+X (field-dep.) = 2*g**2*(v_d**2 + v_u**2)
+   STr (bosons - fermions) = 0
+   -> In SUSY the SM-like boson loops (W, Z, h, Goldstones) are themselves cancelled, by electroweakinos.
+      The self-conjugate bosons (Z, photon, neutral Higgs) are partnered by self-conjugate (Majorana) neutralinos;
+      the charged pairs (W+-, H+-) by charged Dirac pairs (charginos). Self-conjugacy is carried across the multiplet.
+   e.g. Z alone (3*(g**2 + gp**2)*(v_d**2 + v_u**2)/4) vs gaugino-higgsino neutralino mixing part; total cancels only summed with scalars.

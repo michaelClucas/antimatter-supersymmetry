@@ -4,7 +4,10 @@ H_int = (y/sqrt2) h psibar psi, N_c = 3. Higgs at rest (energy m_h), sharp cutof
 Spinors normalized u^dag u = 1. Pair t(p) tbar(-p) <-> negative-energy top state of momentum +p being
 promoted to t(p): sum over spins = Tr[Lam_+(p) beta Lam_-(p) beta].
 
-Time orderings (per d^3p/(2pi)^3, contribution to delta m_h^2 = 2 m_h delta E):
+Normalization (cycle 3): the quantity computed is the 1PI h self-energy Sigma_hh at fixed v, which for the
+Lambda^2 term equals the shift of the |H|^2 coefficient (delta mu^2 = C Lambda^2/16pi^2 in CONSTRAINTS G),
+NOT the physical delta m_h^2 (= 2 x that, see veltman_running.py). Printed labels "Sigma" below.
+Time orderings (per d^3p/(2pi)^3, contribution to Sigma = 2 m_h delta E):
   F  forward:  h -> t tbar -> h                     denominator (m_h - 2E)
   B  backward: vacuum -> h' t tbar, then t tbar h -> 0   denominator -(m_h + 2E)  (the Z-graph)
 In hole language both are excitations of the filled top Dirac sea (sea top -> positive-energy top).
@@ -40,13 +43,13 @@ B = sp.simplify(2 * mh * meas * M2 / (-(mh + 2 * E)))
 x = sp.symbols('x', positive=True)
 for name, f in (('F (forward, h->t tbar)', F), ('B (backward / Z-graph / vacuum pair)', B), ('F+B', F + B)):
     ser = sp.series(sp.simplify(f.subs(p, 1 / x)), x, 0, 2).removeO().subs(x, 1 / p)
-    P(f"  {name}: d(delta m_h^2)/dp = {f}")
+    P(f"  {name}: dSigma/dp = {f}")
     P(f"      large p: {sp.expand(sp.simplify(ser))}")
 P(f"  coefficient of p (quadratic div, coefficient of K^2/2) in F: {sp.limit(F/p, p, sp.oo)}, in B: {sp.limit(B/p, p, sp.oo)}")
-P(f"  -> both orderings have the SAME sign; total delta m_h^2 ~ {sp.limit((F+B)/p, p, sp.oo)/2} K^2 (3-momentum cutoff)")
+P(f"  -> both orderings have the SAME sign; total Sigma ~ {sp.limit((F+B)/p, p, sp.oo)/2} K^2 (3-momentum cutoff)")
 P(f"  covariant 4D Euclidean cutoff gives -N_c y^2 Lambda^2/(8 pi^2) = {-Nc*y**2/(8*sp.pi**2)} Lambda^2;")
 P("  the K^2 coefficient differs by a factor 2: quadratic-divergence coefficients are regulator dependent.")
-P(f"  F+B at m_top = 0: {sp.simplify((F+B).subs(m, 0))}  (does NOT vanish: no symmetry forces delta m_h^2 ~ m_h^2)")
+P(f"  F+B at m_top = 0: {sp.simplify((F+B).subs(m, 0))}  (does NOT vanish: no symmetry forces Sigma ~ m_h^2)")
 
 # numerical cross-check against covariant integrand at fixed |p|, numerically integrating k0
 vals = {m: 1.0, mh: 0.72, y: 1.0}
@@ -73,6 +76,29 @@ def covariant(pp):
 P("\nCovariant (k0 integrated numerically, Wick-rotated) vs time-ordered F+B, m_t=1, m_h=0.72, y=1:")
 for pp in (0.1, 0.5, 1.0, 3.0, 10.0):
     P(f"  p={pp:5.1f}: covariant {covariant(pp):+.8f}   F+B {float(Fn(pp)):+.8f}")
+
+# --- Light fermions (2 m_f < m_h): Referee 1 finding 2. Sign of the forward ordering is not fixed.
+P("\nLight fermion (2 m_f < m_h), e.g. b, c, tau: forward ordering F has denominator (m_h - 2E)")
+ps = sp.sqrt(mh**2 / 4 - m**2)
+P(f"  F > 0 for p < p* = {ps}, pole at p* (on-shell h -> f fbar), F < 0 for p > p*; B < 0 for all p.")
+vals_b = {m: 1.0, mh: 125.20 / 4.18, y: 1.0}   # m_h/m_b with m_b = 4.18 (tools/sm_inputs.MB); y scales out
+Fb = sp.lambdify(p, F.subs(vals_b))
+Bb = sp.lambdify(p, B.subs(vals_b))
+psn = float(ps.subs(vals_b))
+P(f"  numerically (units of m_f, m_h/m_f = {125.20/4.18:.2f}): p* = {psn:.4f}")
+for pp in (0.5 * psn, 0.9 * psn, 1.1 * psn, 3 * psn, 30 * psn):
+    P(f"    p = {pp:9.3f}: F = {float(Fb(pp)):+.5e}   B = {float(Bb(pp)):+.5e}")
+P(f"  UV: coefficient of p in F and B is still {sp.limit(F/p, p, sp.oo)} each (independent of m_f, m_h):")
+P("  the Lambda^2 term from every fermion is negative. Pointwise sign-definiteness at all p holds only for 2m_f > m_h (top).")
+
+# The pole of F reproduces the LO decay width: Im Sigma = m_h Gamma(h -> f fbar)
+beta_ = sp.symbols('beta', positive=True)
+resid = sp.simplify((2 * mh * meas * M2) / sp.diff(2 * E, p))   # coefficient of delta(p - p*) after -i pi
+ImS = sp.simplify((sp.pi * resid).subs(p, ps))
+Gamma_std = Nc * y**2 * mh * (1 - 4 * m**2 / mh**2)**sp.Rational(3, 2) / (16 * sp.pi)  # y/sqrt2 h fbar f
+P(f"  |Im Sigma| from the F pole = {ImS}")
+P(f"  m_h Gamma_LO(h->f fbar) (standard, y = sqrt2 m_f/v) = {sp.simplify(mh*Gamma_std)}")
+P(f"  difference: {sp.simplify(ImS - mh*Gamma_std)}  -> the forward ordering's threshold pole is the physical decay.")
 
 with open(__file__.replace('.py', '_out.txt'), 'w') as fh:
     fh.write("\n".join(out) + "\n")

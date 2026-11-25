@@ -1,27 +1,44 @@
-Identity check 16pi^2 beta_lambda|_(no gamma) - 2 Str M^4(phi)/phi^4 = 0
-Str M^4(phi)/phi^4 from field-dependent masses minus A_phi = 0
+Identity (Landau gauge): 16pi^2 beta_lambda - 4 lambda (16pi^2 gamma_H^Landau) - 2 Str M^4(phi)/phi^4 = 0
+Str M^4(phi)/phi^4 from Landau-gauge field-dependent masses minus A_phi = 0
 Str M^2(phi)/phi^2 = 9*g**2/4 + 3*gp**2/4 + 6*lambda - 6*y_t**2
+16pi^2 beta_lambda - 2 A_phi = -3*lambda*(3*g**2 + gp**2 - 4*y_t**2)  (vanishes with lambda, so A_phi and beta_lambda cross zero close together by construction)
 
-Inputs at mu=M_t: lambda=0.12617 yt=0.93286 g2=0.64764 gY=0.35843 g3=1.16516
+Inputs at mu=M_t=172.57 (rg_sm.couplings_at_mt, PDG 2024): lambda=0.12617 yt=0.93286 g2=0.64764 gY=0.35843 g3=1.16516
 
- log10(mu)   lambda     A_vac      A_phi      B_vac      B_phi(Veltman)   gauge-part  3yt^4
-    2.24  +0.12617  -2.08594  -1.95858  -3.92891  -3.42422        0.12226   2.27188
-    3.00  +0.09600  -1.48363  -1.40989  -3.22535  -2.84134        0.11660   1.63709
-    5.00  +0.04442  -0.73498  -0.71919  -2.14278  -1.96508        0.10398   0.84685
-    8.00  +0.00323  -0.32620  -0.32612  -1.34333  -1.33040        0.08977   0.41602
-   10.00  -0.01190  -0.20198  -0.20085  -1.02812  -1.07571        0.08270   0.28525
-   12.00  -0.02119  -0.12593  -0.12233  -0.79709  -0.88186        0.07715   0.20487
-   14.00  -0.02651  -0.07631  -0.07068  -0.61748  -0.72353        0.07291   0.15202
-   16.00  -0.02908  -0.04232  -0.03555  -0.47125  -0.58755        0.06983   0.11553
-   17.00  -0.02959  -0.02920  -0.02220  -0.40708  -0.52542        0.06872   0.10142
-   18.00  -0.02969  -0.01797  -0.01091  -0.34750  -0.46626        0.06789   0.08938
-   19.00  -0.02945  -0.00822  -0.00128  -0.29172  -0.40951        0.06734   0.07903
-   20.00  -0.02891  +0.00036  +0.00705  -0.23904  -0.35467        0.06709   0.07008
-zero crossing of lam   : mu = 2.268e+08 GeV
-zero crossing of A_vac : mu = 9.027e+19 GeV
-zero crossing of A_phi : mu = 1.397e+19 GeV
-zero crossing of B_vac : none below 1e20 GeV
-zero crossing of B_phi : none below 1e20 GeV
+3-loop running (rg_sm.run(nloops=3)):
+ log10(mu)   lambda     A_vac      A_phi      B_vac      B_phi(Veltman)  16pi^2 b_lam(full)
+    2.24  +0.12617  -2.08594  -1.95858  -3.92891  -3.42422       -3.12790
+    3.00  +0.09671  -1.42235  -1.34753  -3.14030  -2.75346       -2.24678
+    5.00  +0.04959  -0.65568  -0.63601  -1.98194  -1.78359       -1.15953
+    8.00  +0.01484  -0.26973  -0.26797  -1.16383  -1.10446       -0.52619
+   10.00  +0.00279  -0.15889  -0.15883  -0.85014  -0.83900       -0.31721
+   12.00  -0.00438  -0.09307  -0.09291  -0.62416  -0.64170       -0.18385
+   14.00  -0.00837  -0.05108  -0.05052  -0.45125  -0.48472       -0.09510
+   16.00  -0.01020  -0.02274  -0.02191  -0.31254  -0.35334       -0.03436
+   17.00  -0.01053  -0.01186  -0.01097  -0.25227  -0.29438       -0.01124
+   18.00  -0.01055  -0.00254  -0.00165  -0.19665  -0.23883       +0.00827
+   19.00  -0.01030  +0.00557  +0.00642  -0.14484  -0.18604       +0.02486
+   20.00  -0.00983  +0.01275  +0.01352  -0.09611  -0.13544       +0.03912
+   22.00  -0.00834  +0.02524  +0.02580  -0.00548  -0.03883       +0.06253
+   23.00  -0.00735  +0.03094  +0.03137  +0.03752  +0.00812       +0.07248
+   24.00  -0.00623  +0.03651  +0.03682  +0.07968  +0.05478       +0.08174
 
-Calibration: Buttazzo et al. (3-loop RGE, 2-loop matching) find lambda=0 at ~1e10 GeV and beta_lambda=0 at ~1e17-1e18 GeV;
-the one-loop numbers above are only indicative of where these crossings sit.
+A_vac(M_t) v^4 = -7.666e+09 GeV^4 (MS-bar couplings at M_t)
+
+Zero crossings, log10(mu/GeV)   [3-loop]   [1-loop, same runner, comparison only]
+  lambda                            10.66       8.36
+  beta_lambda (full 3-loop)         17.56      17.78
+  beta_lambda (1-loop formula)      17.53      17.78
+  A_phi = Str M^4(phi)/phi^4        18.19      19.15
+  A_vac = Str M^4/v^4               18.30      19.96
+  B_vac = Str M^2/v^2               22.13       none
+  B_phi (Veltman)                   22.83       none
+
+m_t sensitivity of the Veltman zero (3-loop running, one-loop Veltman combination B_phi):
+  m_t = 172.28 GeV: B_phi = 0 at log10(mu) = 22.48
+  m_t = 172.57 GeV: B_phi = 0 at log10(mu) = 22.83
+  m_t = 172.86 GeV: B_phi = 0 at log10(mu) = 23.17
+  m_t = 173.00 GeV: B_phi = 0 at log10(mu) = 23.34
+  m_t = 173.34 GeV: B_phi = 0 at log10(mu) = 23.73
+Literature: Hamada-Kawai-Oda (arXiv:1210.2538) bare-mass coefficient zero ~1e23 GeV at M_t = 173 GeV (2-loop);
+Jegerlehner (arXiv:1304.7813) reports a much lower crossing with different matching. Scale is scheme/m_t sensitive.

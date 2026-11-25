@@ -7,8 +7,11 @@ import math
 mp = 0.938272
 hbar_s = 6.582119569e-25  # GeV s
 yr = 3.15576e7
-cases = [("SM 3-loop M12", 10 ** 13.05, 42.27), ("SM 3-loop M13 (best point)", 10 ** 14.25, 40.46),
-         ("SM 3-loop M23", 10 ** 16.47, 46.19), ("MSSM 2-loop Ms=2TeV (reference)", 10 ** 16.10, 25.66)]
+from unification import analyse  # scales computed live (inputs from tools/sm_inputs.py), not hard-coded
+o = analyse("SM", 3, "A")
+m = analyse("MSSM", 2, "A", msusy=2000.0)
+cases = [("SM 3-loop M12", 10 ** o["M12"][0], o["M12"][1]), ("SM 3-loop M13 (best point)", 10 ** o["M13"][0], o["M13"][1]),
+         ("SM 3-loop M23", 10 ** o["M23"][0], o["M23"][1]), ("MSSM 2-loop Ms=2TeV (reference)", 10 ** m["best"][0], m["best"][2])]
 for lab, M, ainv in cases:
     tau = M ** 4 * ainv ** 2 / mp ** 5 * hbar_s / yr
     print(f"{lab:35s}: M={M:.2e} GeV, alpha^-1={ainv:.1f} -> tau ~ {tau:.1e} yr  ({'excluded' if tau < 2.4e34 else 'allowed'} vs 2.4e34 yr)")

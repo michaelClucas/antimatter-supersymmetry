@@ -6,9 +6,11 @@
 Counting antiparticles a second time would double both.
 """
 import math
-alpha0 = 1 / 137.035999
-MZ = 91.1876
-ml = {"e": 0.51099895e-3, "mu": 0.1056583755, "tau": 1.77686}
+import sm_path  # noqa: F401
+import sm_inputs as smi
+alpha0 = 1 / 137.035999  # alpha(0), CODATA; not in tools/sm_inputs.py
+MZ = smi.MZ
+ml = {"e": 0.51099895e-3, "mu": 0.1056583755, "tau": smi.MTAU}
 d = sum(alpha0 / (3 * math.pi) * (math.log(MZ ** 2 / m ** 2) - 5 / 3) for m in ml.values())
 print(f"Delta alpha_lep(MZ), 1-loop, each lepton counted once : {d:.5f}   (3-loop literature 0.031498)")
 print(f"  same with antileptons counted a second time          : {2*d:.5f}")
