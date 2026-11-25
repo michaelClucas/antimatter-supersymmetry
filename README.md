@@ -36,15 +36,9 @@ A line becomes a result only if: it makes a specific claim about a SUSY result; 
 ## Status
 
 <!-- STATUS:BEGIN -->
-**Cycle 1 complete (2026-11-25).** No verified results yet.
+**Cycle 2 complete (2026-11-25).** No verified results yet.
 
-Four candidate **negative** results are in verification (0/3 referees each):
-- L01: SM antimatter gives no Higgs-mass protection (Weisskopf's positron cancellation is chiral symmetry and has no scalar analogue); no radiative EWSB in the SM. (#1, #4)
-- L02: no SM-equivalent counting of antiparticle loops changes gauge running; SM non-unification quantified at 3 loops. (#2)
-- L03: no SM antimatter dark matter candidate; symmetric freeze-out leaves Ω h² ~ 10⁻¹¹. (#3)
-- L04: Dirac-sea vacuum energy is negative by Fermi statistics, not antiparticles; SM Pauli sums fail, Str m⁴ ≈ −1×10¹⁰ GeV⁴. (#5)
-
-One wildcard line (LW1, hadronic antiquark-diquark supersymmetry) continues at low priority.
+Four candidate **negative** results (L01 hierarchy/EWSB, L02 unification, L03 dark matter, L04 vacuum energy) each survived their first adversarial referee without a fatal error, but each had fixable major issues and each largely restates known literature. They are in a fix round. A synthesis line (S1) will test whether the antimatter-specific pieces add something new: whether any SM-equivalent treatment can reweight antiparticle contributions, and whether the boson/fermion sign SUSY relies on comes from spin-statistics rather than charge conjugation.
 <!-- STATUS:END -->
 
 Every file distinguishes established physics, conjecture and speculation. Subagent output is a claim until a referee and a calculation back it.

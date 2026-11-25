@@ -11,3 +11,11 @@
 - Ruling R1: sexaquark = unobserved phenomenon, out of scope for mechanisms.
 - Triage: L01, L02, L03, L04 → promote to verification (all negative results). LW1 → continue (low priority). Nothing scrapped.
 - Status: four candidate negative results (SUSY #1/#4, #2, #3, #5) entering referee rounds.
+
+## Cycle 2, 2026-11-25
+- Spawns (6): referee #1 for L01, L02, L03, L04; literature checkers (L01+L04), (L02+L03).
+- Referees: all four MAJOR ISSUES (fixable), no fatal errors, central negative claims hold, all scripts reproduce.
+- Lit checks: all four lines restate known work (details in each LITCHECK.md); several citations corrected.
+- Overseer: CONSTRAINTS G Veltman note corrected (δμ² vs δm_h²). Rulings R4 (lepton asymmetry as bounded input), R5 (gate item 6 requires "What is new").
+- Triage: L01-L04 back to CONTINUE for fix round. LW1 continue. Planned synthesis line S1. Nothing scrapped.
+- Status: no line has passed referee round 1 cleanly; fix round next.
