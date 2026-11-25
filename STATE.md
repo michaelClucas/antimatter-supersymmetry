@@ -8,6 +8,13 @@
 2. Pick 3-6 spawns from the queue below. Explorers get `CONSTRAINTS.md` + `scrap/INDEX.md` + research question. Referees get ONLY the line folder path + `CONSTRAINTS.md` + `OVERSEER_PROMPT.md` scope section, never the explorer's summary or the overseer's opinion. Subagents write files but do not commit; the overseer commits.
 3. Triage by reading the line files, not the summaries. Rerun calc scripts (`for f in lines/*/calc/*.py` from each calc dir) before promoting. Update this file, append `LOG.md`, update README status block, commit `cycle <n>: ...`, push.
 
+## Experimenter directives (override the overseer prompt where they conflict)
+- D1 (2026-11-25, cycle 3): Dark matter (SUSY #3) is NOT part of the experiment. L03 scrapped as out of scope.
+- D2: Primary focus is L01 (Higgs mass protection / hierarchy). Experimenter's hypothesis to test seriously: the physical Higgs h is its own antiparticle, its Yukawa coupling acts symmetrically on left- and right-handed fermions, and bosons carry no chirality; so an antimatter-based analogue of Weisskopf's protection might still hold for the Higgs.
+- D3: Do not frame lines as "antiparticles vs Fermi statistics". The goal is to MATCH SM antimatter to SUSY predictions/results (positive constructions, structural maps), not to explain signs by statistics. S1 stopped and scrapped.
+- D4: Experimenter question to pursue: is there a mathematical relation (isometry or other structure-preserving map) between "antimatter" beta functions and SUSY beta functions?
+- D5: LW1 (antiquark-diquark hadronic SUSY) is very relevant; raise priority.
+
 ## Overseer rulings
 - R1 (cycle 1): Sexaquark / any hypothesized-but-unobserved SM bound state = "unobserved phenomenon" under CONSTRAINTS A1. Cannot be used in a mechanism. A line may discuss it only as a conditional appendix ("even if it existed, ...").
 - R2 (cycle 1): Shared inputs now PDG 2024 throughout (`tools/sm_inputs.py`, α_em⁻¹ = 127.930). L02's unification.py prints its own PDG line with 59.014/29.594 (old α_em); shift is 0.01 in α⁻¹, immaterial, but calculators should make L02 import from tools/ before final verification.
