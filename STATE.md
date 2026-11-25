@@ -1,7 +1,15 @@
 # STATE (overseer working memory)
 
-**Current cycle:** 0 (setup complete, cycle 1 not yet started)
-**Next wildcard due:** cycle 1 (then roughly every 5th cycle)
+**Current cycle:** 1 (in progress: 6 subagents spawned 2026-11-25)
+**Next wildcard due:** cycle 6
+
+Cycle 1 spawns (if overseer context was lost mid-cycle, check which folders exist and re-spawn missing ones):
+- Explorer+calc L01-weisskopf-hierarchy (SUSY #1, #4)
+- Explorer+calc L02-unification-virtual-pairs (SUSY #2)
+- Explorer+calc L03-sm-antimatter-dark-matter (SUSY #3)
+- Explorer+calc L04-dirac-sea-vacuum-energy (SUSY #5)
+- Wildcard LW1-* (own choice)
+- Literature checker on CONSTRAINTS.md -> CONSTRAINTS_LITCHECK.md
 
 ## How to resume (for a fresh overseer)
 1. Read `OVERSEER_PROMPT.md` (the rules), this file, the tail of `LOG.md`, `scrap/INDEX.md`. Check for `STOP` at repo root.
