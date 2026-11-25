@@ -1,0 +1,16 @@
+﻿LO superflavor hyperfine predictions  Delta_baryon = 3/4 Delta_meson
+  Xi_cc++ (ccu)  <-> D0bar (cbar u): meson hf =  142.01 MeV -> baryon 3/2-1/2 =  106.5 MeV
+  Xi_cc+  (ccd)  <-> D-    (cbar d): meson hf =  140.60 MeV -> baryon 3/2-1/2 =  105.4 MeV
+  Omega_cc (ccs) <-> Ds-   (cbar s): meson hf =  143.85 MeV -> baryon 3/2-1/2 =  107.9 MeV
+  Xi_bb   (bbu)  <-> B+    (bbar u): meson hf =   45.34 MeV -> baryon 3/2-1/2 =   34.0 MeV
+  Omega_bb (bbs) <-> Bs0   (bbar s): meson hf =   48.47 MeV -> baryon 3/2-1/2 =   36.4 MeV
+
+Comparison with lattice QCD (no experimental J=3/2 doubly-charmed state yet):
+  Xi_cc (Brown+ 2014): lattice 82.8 +- 9.2;  LO superflavor 106.5;  (LO - lat)/LO = +0.22;  pull = +2.6 sigma(lat)
+  Omega_cc (Brown+ 2014): lattice 83.8 +- 5.5;  LO superflavor 107.9;  (LO - lat)/LO = +0.22;  pull = +4.4 sigma(lat)
+  Xi_cc (UKQCD 2003): lattice 87.0 +- 18.5;  LO superflavor 106.5;  (LO - lat)/LO = +0.18;  pull = +1.1 sigma(lat)
+  naive O(Lambda/m_Q) correction band, charm: 0.20 - 0.33
+  naive O(Lambda/m_Q) correction band, bottom: 0.06 - 0.10
+
+Predicted Xi_cc*++ mass (LO) = 3728 MeV; lattice-informed ~ 3705 MeV
+Falsifier: a measured Xi_cc*++ - Xi_cc++ outside ~[60, 125] MeV would break LO superflavor plus a 30-40% correction.

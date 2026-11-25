@@ -1,0 +1,12 @@
+﻿(a) SU(3) colour
+  C2(3)    = 1.333333
+  C2(3bar) = 1.333333
+  C2 on antisym(3x3) nonzero eigs: [np.float64(1.333333)]  dim = 3
+  C2 on sym(3x3)     nonzero eigs: [np.float64(3.333333)]  dim = 6
+  <T_x.T_q> in singlet, x = antiquark or 3bar diquark: (0 - 4/3 - 4/3)/2 = -4/3
+  per-heavy-quark factor T_i.T_q in (QQ)_3bar q singlet = -2/3 (half of -4/3)
+
+(b) superflavor hyperfine ratio
+  meson  J=1 minus J=0      (units c T.T / m_Q): 1
+  baryon J=3/2 minus J=1/2  (units c T.T / m_Q): 3/4
+  ratio baryon/meson = 3/4

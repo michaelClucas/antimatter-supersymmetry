@@ -1,0 +1,28 @@
+﻿meson fit:  sqrt(lam) = 0.551 GeV, rms dM^2 = 0.304 GeV^2
+baryon fit: sqrt(lam) = 0.513 GeV, rms dM^2 = 0.192 GeV^2
+lam_meson / lam_baryon = 1.156  (exact SUSY: 1)
+  rho(770)     M^2=0.601  fit=0.608  resid=-0.007
+  b1(1235)     M^2=1.512  fit=1.216  resid=+0.295
+  a2(1320)     M^2=1.738  fit=1.825  resid=-0.087
+  pi2(1670)    M^2=2.791  fit=2.433  resid=+0.358
+  rho3(1690)   M^2=2.852  fit=3.041  resid=-0.189
+  a4(1970)     M^2=3.869  fit=4.258  resid=-0.389
+  pi(1300)     M^2=1.690  fit=1.216  resid=+0.474
+  rho(1450)    M^2=2.146  fit=1.825  resid=+0.322
+  N(939)       M^2=0.882  fit=1.052  resid=-0.170
+  N(1440)      M^2=2.074  fit=2.104  resid=-0.030
+  N(1520)      M^2=2.295  fit=2.104  resid=+0.191
+  N(1680)      M^2=2.839  fit=3.156  resid=-0.316
+  Delta(1232)  M^2=1.518  fit=1.578  resid=-0.060
+  Delta(1700)  M^2=2.924  fit=2.630  resid=+0.294
+  Delta(1950)  M^2=3.725  fit=3.682  resid=+0.043
+
+superpartner pairs (meson L_M = baryon L_B + 1, same s, same n):
+  b1(1235)    vs N(939)      : 1.230 vs 0.939 GeV  dM/M = +0.268  dM^2 = +0.630 GeV^2
+  a2(1320)    vs Delta(1232) : 1.318 vs 1.232 GeV  dM/M = +0.068  dM^2 = +0.220 GeV^2
+  pi2(1670)   vs N(1520)     : 1.671 vs 1.515 GeV  dM/M = +0.098  dM^2 = +0.496 GeV^2
+  rho3(1690)  vs Delta(1700) : 1.689 vs 1.710 GeV  dM/M = -0.012  dM^2 = -0.072 GeV^2
+  a4(1970)    vs Delta(1950) : 1.967 vs 1.930 GeV  dM/M = +0.019  dM^2 = +0.144 GeV^2
+mean |dM/M| = 0.093, mean dM/M = +0.088
+Comparison: an exact SUSY gives dM = 0; the hadronic 'breaking' is O(10%) of the mass, i.e. the
+breaking scale is of the same order as sqrt(lam) itself.
