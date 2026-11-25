@@ -170,15 +170,22 @@ for msoft in (0.0, 1000.0):
 yv = math.sqrt(2) * smi.MT / v
 P("   expected from Part 4 (m_Q = m_U = m_s, A_t = 0): d Sigma/dp -> -(3 y^2/(4 pi^2)) m_s^2 / p")
 P(f"   = {-3*yv**2*1000.0**2/(4*math.pi**2):+.4e} / p for m_s = 1 TeV  (compare last column)")
+P(f"   plus the external-momentum log present already at m_s = 0: -(3 y^2/(8 pi^2)) m_h^2 / p = {-3*yv**2*smi.MH**2/(8*math.pi**2):+.4e} / p")
+P(f"   sum = {-3*yv**2*1000.0**2/(4*math.pi**2) - 3*yv**2*smi.MH**2/(8*math.pi**2):+.4e} / p  (compare m_s = 1 TeV row at p = 1e6)")
+P("   The m_h^2 (p^2) log is a wave-function-type term; in the full MSSM it is cancelled by the top-higgsino loop")
+P("   (the self-conjugate h's fermionic partner). It is log, not K^2.")
 
 # covariant cross-check of the stop bubble (scalar loop) at fixed |p|
 def stop_bubble_cov(pp, M2, mh, c3):
     """Per real dof, vertex -i c3 (V = c3/2 h chi^2): -i Sigma = (1/2)(-i c3)^2 int i/D1 i/D2 = (c3^2/2) int d^4k/(2pi)^4 /(D1 D2).
     k0 = i w: Sigma = -(c3^2/2) int dw/(2pi) 1/(D1 D2) per d^3k/(2pi)^3; delta m^2 = +Sigma. 12 real stop dof."""
-    def integrand(wE):
+    om = math.sqrt(pp**2 + M2)
+
+    def integrand(th):  # w = om tan(th): maps the real line to (-pi/2, pi/2) with the right scale
+        wE = om * math.tan(th)
         k0 = 1j * wE
-        return 1.0 / ((k0**2 - pp**2 - M2) * ((k0 + mh)**2 - pp**2 - M2))
-    re = quad(lambda w: integrand(w).real, -np.inf, np.inf, limit=400)[0]
+        return (1.0 / ((k0**2 - om**2) * ((k0 + mh)**2 - om**2))).real * om / math.cos(th)**2
+    re = quad(integrand, -math.pi / 2, math.pi / 2, limit=400, epsabs=0, epsrel=1e-11)[0]
     return 12 * 0.5 * c3**2 * (-re) / (2 * np.pi) * pp**2 / (2 * np.pi**2)
 
 
@@ -233,8 +240,21 @@ P(f"   STr (bosons - fermions) = {sp.simplify(TrS + TrV - ferm)}")
 P("   -> In SUSY the SM-like boson loops (W, Z, h, Goldstones) are themselves cancelled, by electroweakinos.")
 P("      The self-conjugate bosons (Z, photon, neutral Higgs) are partnered by self-conjugate (Majorana) neutralinos;")
 P("      the charged pairs (W+-, H+-) by charged Dirac pairs (charginos). Self-conjugacy is carried across the multiplet.")
-gauge_sc = 3 * (g**2 + gp**2) * (vu**2 + vd**2) / 4
-P(f"   e.g. Z alone ({sp.factor(gauge_sc)}) vs gaugino-higgsino neutralino mixing part; total cancels only summed with scalars.")
+P(f"   boson side total = {sp.factor(TrS + TrV)};  fermion side total = {sp.factor(ferm)}")
+P("   (Tr Y = 0 over Hu, Hd; sfermion D-terms cancel separately since Tr Y = 0 per generation.)")
+# split by charge: neutral (self-conjugate after diagonalization: Z, photon, h, H, A, G0) vs charged pairs
+neutral_idx, charged_idx = (2, 3, 4, 5), (0, 1, 6, 7)
+TrS_n = sp.factor(sum(sp.diff(VD, re_[i], 2) for i in neutral_idx).subs(bg))
+TrS_c = sp.factor(sum(sp.diff(VD, re_[i], 2) for i in charged_idx).subs(bg))
+TrV_n = 3 * (g**2 + gp**2) * (vu**2 + vd**2) / 4
+TrV_c = 3 * 2 * g**2 * (vu**2 + vd**2) / 4
+neu = sp.expand(2 * TrN - 2 * (M1**2 + M2**2 + 2 * mu**2))
+cha = sp.expand(4 * TrC - 4 * (M2**2 + mu**2))
+P("   Charge-resolved (neutral = self-conjugate states; charged = particle/antiparticle pairs):")
+P(f"     neutral bosons  Z + neutral Higgs scalars: {sp.factor(TrV_n + TrS_n)}   vs neutralinos (Majorana): {sp.factor(neu)}"
+  f"   difference {sp.factor(TrV_n + TrS_n - neu)}")
+P(f"     charged bosons  W+- + charged Higgs scalars: {sp.factor(TrV_c + TrS_c)}   vs charginos (Dirac): {sp.factor(cha)}"
+  f"   difference {sp.factor(TrV_c + TrS_c - cha)}")
 
 with open(os.path.join(HERE, 'pair_matching_out.txt'), 'w', encoding='utf-8') as fh:
     fh.write("\n".join(out) + "\n")

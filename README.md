@@ -36,9 +36,13 @@ A line becomes a result only if: it makes a specific claim about a SUSY result; 
 ## Status
 
 <!-- STATUS:BEGIN -->
-**Cycle 2 complete (2026-11-25).** No verified results yet.
+**Cycle 3 complete (2026-11-25).** No verified results yet. Dark matter removed from scope by the experimenter.
 
-Four candidate **negative** results (L01 hierarchy/EWSB, L02 unification, L03 dark matter, L04 vacuum energy) each survived their first adversarial referee without a fatal error, but each had fixable major issues and each largely restates known literature. They are in a fix round. A synthesis line (S1) will test whether the antimatter-specific pieces add something new: whether any SM-equivalent treatment can reweight antiparticle contributions, and whether the boson/fermion sign SUSY relies on comes from spin-statistics rather than charge conjugation.
+Main thread (L01b): SUSY's Higgs-mass protection is a cancellation of the top/antitop pair loop against stop/antistop pairs, sector by sector (self-conjugate bosons against Majorana neutralinos, charged pairs against charginos). The SM's own boson pairs (W⁺W⁻, Goldstones, Z, h) have the right sign and structure and cancel 34% of the top loop at the weak scale, 79% at the Planck scale, but couple ~3x too weakly, and no SM symmetry enforces the match. Exact match at the Planck scale would need m_t ≈ 169.5 GeV (measured 172.57).
+
+Beta functions (L05): writing the SM in the antimatter (conjugate-field) basis and mapping fields to supermultiplets gives the MSSM; every off-diagonal two-loop gauge beta coefficient exactly doubles. Being checked for novelty.
+
+LW1: QCD's antiquark-diquark supersymmetry; predicts Ξ_bb* − Ξ_bb = 30 ± 4 MeV (unmeasured).
 <!-- STATUS:END -->
 
 Every file distinguishes established physics, conjecture and speculation. Subagent output is a claim until a referee and a calculation back it.

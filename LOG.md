@@ -19,3 +19,10 @@
 - Overseer: CONSTRAINTS G Veltman note corrected (δμ² vs δm_h²). Rulings R4 (lepton asymmetry as bounded input), R5 (gate item 6 requires "What is new").
 - Triage: L01-L04 back to CONTINUE for fix round. LW1 continue. Planned synthesis line S1. Nothing scrapped.
 - Status: no line has passed referee round 1 cleanly; fix round next.
+
+## Cycle 3, 2026-11-25
+- Experimenter directives D1-D5 received mid-cycle (dark matter out; focus L01; match antimatter to SUSY rather than statistics framing; pursue beta-function map; LW1 relevant). S1 and L03 fixer stopped.
+- Spawns (8 total): fixers L01, L02, L04 (L03 fixer stopped); S1 explorer (stopped, nothing written); LW1 lit check + subleading calc; new explorers L01b-self-conjugate-higgs, L05-beta-function-map.
+- All new calc scripts rerun by overseer (exit 0).
+- Triage: L01b → continue (top priority). L01 → continue as support. L05 → continue (candidate novelty: two-loop off-diagonal b_ij doubling, checked by overseer against standard tables). LW1 → continue. L02, L03, L04 → scrap (restatement / out of scope).
+- Status: no verified result. Main thread: does SM antimatter (self-conjugate h, charged pairs, top sea) reproduce SUSY's Higgs-mass cancellation? Structure yes, magnitude and symmetry no so far.

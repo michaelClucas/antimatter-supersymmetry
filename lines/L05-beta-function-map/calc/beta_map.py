@@ -235,10 +235,10 @@ print("   SM b_ij - Phi(SM) b_ij =", (B_SM - B_SUSY).tolist())
 
 # ---------------- 6. Yukawa two-loop coefficients ----------------
 print("\n6. Two-loop Yukawa coefficients c_i^f (subtracted in d g_i).")
-print("   Conjugate labelling: SM  y_t Q H^c u^c, y_b Q H d^c, y_tau L H e^c.  Phi: H^c -> H_u, H -> H_d.")
+print("   Conjugate labelling: SM (H has Y=+1/2)  y_t Q H u^c, y_b Q H^c d^c, y_tau L H^c e^c.  Phi: H -> H_u, H^c -> H_d.")
 dG = [1, 3, 8]
 F = {f[0]: f for f in MATTER + HIGGS + [Hc]}
-yuk = {"t": ("Q", "u^c", "H^c", 6), "b": ("Q", "d^c", "H", 6), "tau": ("L", "e^c", "H", 2)}
+yuk = {"t": ("Q", "u^c", "H", 6), "b": ("Q", "d^c", "H^c", 6), "tau": ("L", "e^c", "H^c", 2)}
 known_sm = {"t": [R(17, 10), R(3, 2), 2], "b": [R(1, 2), R(3, 2), 2], "tau": [R(3, 2), R(1, 2), 0]}
 known_mssm = {"t": [R(26, 5), 6, 4], "b": [R(14, 5), 6, 4], "tau": [R(18, 5), 2, 0]}
 for y, (f1, f2, h, N) in yuk.items():

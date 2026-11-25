@@ -1,0 +1,110 @@
+====================================================================================================
+(1) Candidate symmetries acting on the Higgs/top sector: allowed operators and coupling (spurion) map
+====================================================================================================
+
+  C (charge conjugation):  H -> H*, psi -> C psibar^T. Not a symmetry of the chiral gauge sector; acts on the Higgs/Yukawa sector as hermitian conjugation
+     mu^2 Hdag H                                          [mu^2   ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
+     lambda (Hdag H)^2                                    [lambda ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
+     y_t Qbar_L Htilde t_R (Htilde ~ H*)                  [y_t    ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
+     gauge kinetic |D H|^2 (g, g')                        [g, g'  ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
+     Dirac mass m Qbar_L t_R (comparison; not gauge inv.) [m      ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
+     odd power of H (comparison; not gauge inv.)          [-      ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
+
+  CP:  H(t,x) -> H*(t,-x); fermion bilinears -> their hermitian conjugates. Exact up to the CKM phase
+     mu^2 Hdag H                                          [mu^2   ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
+     lambda (Hdag H)^2                                    [lambda ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
+     y_t Qbar_L Htilde t_R (Htilde ~ H*)                  [y_t    ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
+     gauge kinetic |D H|^2 (g, g')                        [g, g'  ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
+     Dirac mass m Qbar_L t_R (comparison; not gauge inv.) [m      ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
+     odd power of H (comparison; not gauge inv.)          [-      ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
+
+  P (parity, L<->R exchange):  maps Qbar_L t_R <-> tbar_R Q_L, i.e. each Yukawa term to its h.c. (observation (b)); not a symmetry of the SM gauge sector (L doublet, R singlet)
+     mu^2 Hdag H                                          [mu^2   ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
+     lambda (Hdag H)^2                                    [lambda ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
+     y_t Qbar_L Htilde t_R (Htilde ~ H*)                  [y_t    ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
+     gauge kinetic |D H|^2 (g, g')                        [g, g'  ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
+     Dirac mass m Qbar_L t_R (comparison; not gauge inv.) [m      ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
+     odd power of H (comparison; not gauge inv.)          [-      ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
+
+  Z2: h -> -h  (H -> -H) alone:  sign flip of the self-conjugate field only
+     mu^2 Hdag H                                          [mu^2   ]: ALLOWED, coupling invariant
+     lambda (Hdag H)^2                                    [lambda ]: ALLOWED, coupling invariant
+     y_t Qbar_L Htilde t_R (Htilde ~ H*)                  [y_t    ]: forbidden unless coupling -> -coupling (spurion sign flip)
+     gauge kinetic |D H|^2 (g, g')                        [g, g'  ]: ALLOWED, coupling invariant
+     Dirac mass m Qbar_L t_R (comparison; not gauge inv.) [m      ]: ALLOWED, coupling invariant
+     odd power of H (comparison; not gauge inv.)          [-      ]: forbidden unless coupling -> -coupling (spurion sign flip)
+
+  Z2: H -> -H, t_R -> -t_R  ('h -> -h with L<->R sign'):  discrete chiral transformation; extended to all fields it equals the SU(2) centre element (-1 on doublets) times a (3B+L)-rotation by pi, i.e. an exact SM symmetry
+     mu^2 Hdag H                                          [mu^2   ]: ALLOWED, coupling invariant
+     lambda (Hdag H)^2                                    [lambda ]: ALLOWED, coupling invariant
+     y_t Qbar_L Htilde t_R (Htilde ~ H*)                  [y_t    ]: ALLOWED, coupling invariant
+     gauge kinetic |D H|^2 (g, g')                        [g, g'  ]: ALLOWED, coupling invariant
+     Dirac mass m Qbar_L t_R (comparison; not gauge inv.) [m      ]: forbidden unless coupling -> -coupling (spurion sign flip)
+     odd power of H (comparison; not gauge inv.)          [-      ]: forbidden unless coupling -> -coupling (spurion sign flip)
+
+  U(1) phase on H: H -> e^{i a} H:  hypercharge-like phase on H only
+     mu^2 Hdag H                                          [mu^2   ]: ALLOWED, coupling invariant
+     lambda (Hdag H)^2                                    [lambda ]: ALLOWED, coupling invariant
+     y_t Qbar_L Htilde t_R (Htilde ~ H*)                  [y_t    ]: forbidden for generic alpha (picks up exp(-I*alpha)); coupling -> coupling x exp(I*alpha)
+     gauge kinetic |D H|^2 (g, g')                        [g, g'  ]: ALLOWED, coupling invariant
+     Dirac mass m Qbar_L t_R (comparison; not gauge inv.) [m      ]: ALLOWED, coupling invariant
+     odd power of H (comparison; not gauge inv.)          [-      ]: forbidden for generic alpha (picks up exp(I*alpha)); coupling -> coupling x exp(-I*alpha)
+
+  Chiral U(1)_A on top: Q_L -> e^{i a}Q_L, t_R -> e^{-i a}t_R:  protects a Dirac top mass
+     mu^2 Hdag H                                          [mu^2   ]: ALLOWED, coupling invariant
+     lambda (Hdag H)^2                                    [lambda ]: ALLOWED, coupling invariant
+     y_t Qbar_L Htilde t_R (Htilde ~ H*)                  [y_t    ]: forbidden for generic alpha (picks up exp(-2*I*alpha)); coupling -> coupling x exp(2*I*alpha)
+     gauge kinetic |D H|^2 (g, g')                        [g, g'  ]: ALLOWED, coupling invariant
+     Dirac mass m Qbar_L t_R (comparison; not gauge inv.) [m      ]: forbidden for generic alpha (picks up exp(-2*I*alpha)); coupling -> coupling x exp(2*I*alpha)
+     odd power of H (comparison; not gauge inv.)          [-      ]: ALLOWED, coupling invariant
+
+  Chiral U(1)_A + H -> e^{-2 i a} H (PQ-like, combined):  the Yukawa's own chiral symmetry
+     mu^2 Hdag H                                          [mu^2   ]: ALLOWED, coupling invariant
+     lambda (Hdag H)^2                                    [lambda ]: ALLOWED, coupling invariant
+     y_t Qbar_L Htilde t_R (Htilde ~ H*)                  [y_t    ]: ALLOWED, coupling invariant
+     gauge kinetic |D H|^2 (g, g')                        [g, g'  ]: ALLOWED, coupling invariant
+     Dirac mass m Qbar_L t_R (comparison; not gauge inv.) [m      ]: forbidden for generic alpha (picks up exp(-2*I*alpha)); coupling -> coupling x exp(2*I*alpha)
+     odd power of H (comparison; not gauge inv.)          [-      ]: forbidden for generic alpha (picks up exp(-2*I*alpha)); coupling -> coupling x exp(2*I*alpha)
+
+  Result: mu^2 |H|^2 is ALLOWED with mu^2 invariant under every candidate. No candidate flips the sign of
+  mu^2 or rotates it by a phase. Under the ones that act on couplings at all, lambda, g, g' are invariant and
+  y_t -> -y_t or y_t -> y_t e^{i a} (spurion). C = 6 lambda + 9/4 g^2 + 3/4 g'^2 - 6|y_t|^2 is invariant under
+  all of these maps, so none of them can force C = 0 (a symmetry can only force to zero a quantity that is ODD
+  under it or that carries a nonzero charge).
+
+  C under spurion maps:
+     y_t -> -y_t                 : C -> 9*g**2/4 + 3*gprime**2/4 + 6*lambda - 6*y_t*conjugate(y_t)  (changed: False)
+     y_t -> e^{ia} y_t           : C -> 9*g**2/4 + 3*gprime**2/4 + 6*lambda - 6*y_t*conjugate(y_t)  (changed: False)
+     y_t -> y_t*                 : C -> 9*g**2/4 + 3*gprime**2/4 + 6*lambda - 6*y_t*conjugate(y_t)  (changed: False)
+     g -> -g, g' -> -g'          : C -> 9*g**2/4 + 3*gprime**2/4 + 6*lambda - 6*y_t*conjugate(y_t)  (changed: False)
+     custodial limit g' -> 0     : C -> 9*g**2/4 + 6*lambda - 6*y_t*conjugate(y_t)  (changed: True)
+     (custodial SU(2)_L x SU(2)_R: g' and y_t - y_b are spurions that break it; |H|^2 is the O(4)-invariant
+      bidoublet norm, so custodial symmetry allows the mass term. Setting g' -> 0 only removes the 3/4 g'^2 piece.)
+
+====================================================================================================
+(2) Self-conjugate scalar vs chiral fermion: invariant quadratic forms
+====================================================================================================
+  group-averaged quadratic form for the real 4-component Higgs (SU(2)xU(1), h->-h, CP):
+[[ 1.0000e+00 -1.5995e-17  2.7902e-19  2.9257e-17]
+ [-1.5995e-17  1.0000e+00 -2.0152e-17 -1.6334e-18]
+ [ 2.7902e-19 -2.0152e-17  1.0000e+00 -1.5166e-17]
+ [ 2.9257e-17 -1.6334e-18 -1.5166e-17  1.0000e+00]]
+  -> proportional to the identity: sum_i phi_i^2 = 2|H|^2 is invariant under all of them. Every linear
+     symmetry of a real field preserves a positive quadratic form, so it can never forbid the mass term.
+  Weyl fermion psi under U(1): psi -> e^{i a} psi. Majorana mass psi psi -> e^{2 i a} psi psi (forbidden for a != 0, pi).
+  A self-conjugate (Majorana) fermion such as a gaugino still has this phase (R-symmetry), so self-conjugacy
+  does not remove fermion mass protection; for a self-conjugate SCALAR the only 1-dim real reps are +-1,
+  under which h^2 is even. The obstruction is the absence of a chiral phase for a spin-0 field (observation (c)).
+
+====================================================================================================
+(3) Is C = 0 an RG-invariant surface? (it must be, if a symmetry enforced it)
+====================================================================================================
+  16pi^2 dC/dln mu on C = 0 (lambda eliminated):
+    33*g**4 + 63*g**2*gp**2/2 - 162*g**2*y**2 + 96*g3**2*y**2 + 17*gp**4 - 46*gp**2*y**2 + 126*y**4
+  Not identically zero -> C = 0 is not RG invariant at one loop; no symmetry of the SM can enforce it.
+  3-loop running (tools/rg_sm.py, incl. y_b, y_tau in C): C = 0 at log10(mu0/GeV) = 22.832
+    dC/dln mu at mu0 (3-loop, numerical)        = +0.02032
+    1-loop formula above at the mu0 couplings   = +0.02018
+    couplings at mu0: lambda=-0.00753 y_t=0.33881 g=0.48460 g'=0.52384 g3=0.44808
+  Compare SUSY: the stop quartic lambda_{h stop stop} = y_t^2 is an F-term identity, preserved by RG running
+  (non-renormalization theorem); the SUSY cancellation is RG-stable, the SM's C = 0 is a crossing point.

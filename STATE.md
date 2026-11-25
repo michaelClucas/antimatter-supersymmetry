@@ -1,6 +1,6 @@
 # STATE (overseer working memory)
 
-**Current cycle:** 3 (cycle 2 complete and committed)
+**Current cycle:** 4 (cycle 3 complete and committed)
 **Next wildcard due:** cycle 6
 
 ## How to resume (for a fresh overseer)
@@ -24,21 +24,22 @@
 
 ## Lines
 
-| Line | SUSY # | Status | Gate progress |
+| Line | SUSY # | Status | Gate progress / notes |
 |---|---|---|---|
-| L01-weisskopf-hierarchy | 1, 4 | CONTINUE (fix round) | R1 c2: MAJOR (δμ² vs δm_h² factor 2; "all fermions negative pointwise" only true for top; W+W-/G+G- loops not argued; no real prediction). Lit c2: restatement (Murayama hep-ph/0002232 §1.3; Snowmass 2205.05708; HKO/Masina-Quiros). 2 citations wrong. |
-| L02-unification-virtual-pairs | 2 | CONTINUE (fix round) | R1 c2: MAJOR ("ANY weighting" false for non-uniform weights, antiquark-only Δb=(11/30,1/2,2/3)/gen; w_V=0.134, w_S=7.45 not empirically killed; stale inputs, must import tools/). Lit c2: restatement (1991 papers; Georgi-Quinn-Weinberg 1974; Willenbrock hep-ph/0302168); Furey cite wrong (use 1603.04078). |
-| L03-sm-antimatter-dark-matter | 3 | CONTINUE (fix round) | R1 c2: MAJOR (stability = "lightest per sector" false; pion stars / pion condensation missing, Brandt et al. 1802.06685, see R4). Minor: Thomson ∝ q⁴; ν "antimatter" label depends on A2; B9/B10/F3/511 keV not addressed. Lit c2: restatement (Gross et al. 1803.10242); 2404.12094 nuggets need stable strange matter (unobserved); Byrnes et al. factor wrong. |
-| L04-dirac-sea-vacuum-energy | 5 | CONTINUE (fix round) | R1 c2: MAJOR (10^53-55 ρ_Λ headline assumes zero counterterm; Str m⁴ ln m² scheme dependent; falsifiable check (b) false; uses own 1-loop RGE not tools/rg_sm.py; identity Landau-gauge only). Lit c2: restatement (Alberghi et al. JETP Lett 88, 705; Visser §10.1; Koksma-Prokopec; Martin 2012; Masina-Quiros); CCM Λ², Λ⁰ coefficients Majorana-only. |
-| LW1-antiquark-diquark-susy | 6 (neg. #1) | CONTINUE, low priority | needs lit check + 1/m_c correction calc |
+| L01b-self-conjugate-higgs | 1 | CONTINUE, TOP PRIORITY (D2) | Explorer c3. Structure matches (pair-vs-pair; MSSM cancels sector by sector: self-conjugate Z,h vs Majorana neutralinos, charged W,G± vs charginos, exact symbolic); SM bosons 13 dof vs top 12, cancel 34% at M_t, 79% at M_Pl; couplings ~3x too weak; C invariant under all SM candidate symmetries; C=0 at 10^22.83 GeV not RG-invariant; exact match at M_Pl needs M_t=169.5 GeV (excluded; the "10σ" is exp. error only, add ~0.5 GeV pole-mass ambiguity). Open: gauge-independent (R_ξ) W/Z split; dim-reg version; reformulations tying couplings (note A3.2 forbids high-scale relations). Referees 0/3. |
+| L01-weisskopf-hierarchy | 1, 4 | CONTINUE as support for L01b | Fix round done c3 (all referee-1 items). Nothing new alone. Its trace argument (self-conj +0.92 vs charged +0.88) and OFPT scripts feed L01b. Will be merged into L01b at promotion. |
+| L05-beta-function-map | 2 (D4) | CONTINUE | Explorer c3. Map Φ (conjugate-basis Weyl fields → chiral multiplets, H and H^c separate, gauge → vector + Majorana gaugino) = MSSM. Exact identity: every off-diagonal two-loop b_ij and b_11 doubles SM→MSSM (overseer checked against standard tables); b_22, b_33 don't. Not an isometry, not RG-commuting; B 0.53→0.71 but 85% from gauginos/higgsino (BSM), 15% from H^c (= 2nd doublet, forbidden). Candidate novelty: the doubling identity. Needs lit check, analytic derivation, 3-loop test. |
+| LW1-antiquark-diquark-susy | 6, neg. #1 (D5 relevant) | CONTINUE | Lit c3: restatement (Lichtenberg hep-ph/9912280; BVR hep-ph/0506065 gives the Ξ splittings; Savage-Wise coefficient off by 1/2 per BVR); "only realised SUSY" false (nuclear SUSY: Iachello PRL 44, 772; Metz et al. PRL 83, 1542). New piece: explicit negative argument for #1. Corrected: Ξ_cc*−Ξ_cc = 107±32 MeV (lattice 83±9), Ξ_bb*−Ξ_bb = 30±4 MeV; unobserved, LHCb-falsifiable. |
 
-Robust so far: all four central negative claims survived referee 1 (no fatal errors). The cores reproduce known literature. The antimatter-specific pieces (antiparticle-loop reweighting no-go, Feynman-Stueckelberg/OFPT decomposition, "sign is from statistics, not C") are the only candidates for novelty.
+Scrapped this cycle: L03 (D1), S1 (D3), L02 (restatement; superseded by L05), L04 (restatement; D3).
 
-## Queue (cycle 3)
-1. Fixers for L01, L02, L03, L04: address every REVIEWS.md + LITCHECK.md item, add "What is new" section (R5), full CONSTRAINTS checklist incl. B9/B10/F3, switch to tools/ inputs and runner.
-2. Explorer S1-antiparticle-reweighting-no-go: synthesis line. Claim to test: in any SM-equivalent formulation, the contribution of antiparticle states to every SUSY-relevant quantity (beta functions, Higgs self-energy, vacuum energy) is fixed by CPT + spin-statistics; the sign SUSY exploits comes from statistics, not charge conjugation; empirically bound any reweighting of antiparticle loops. Target #1, #2, #5, #6.
-3. LW1 lit check + 1/m_c calc (combined agent).
-Cycle 4+: referees round 2 on fixed lines (fresh agents), S1 referee + lit check.
+## Queue (cycle 4)
+1. Referee 1 for L01b (fresh).
+2. Calculator for L01b: R_ξ gauge-independent split of W/Z/Goldstone pieces; dim-reg / heavy-threshold version of the matching question.
+3. Lit checker: L01b novelty (sector-by-sector MSSM cancellation; pair-matching fractions) + L05 novelty (two-loop off-diagonal b_ij doubling).
+4. Calculator/explorer for L05: analytic derivation of why off-diagonal b_ij and b_11 double; 3-loop test; antimatter interpretation of the doubling.
+5. LW1 explorer: constructive extension (nuclear SUSY, hadronic SUSY patterns) toward matching SUSY results, esp. #1 and #6.
+Wildcard due cycle 6.
 
 ## Open issues carried from explorers
 - L01: runner gives m(M_Pl)=139.4 GeV vs Buttazzo 129.4 (not load-bearing); Weisskopf 1939 detail unverified.

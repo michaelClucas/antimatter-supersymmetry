@@ -45,7 +45,7 @@
    SM b_ij - Phi(SM) b_ij = [[-199/50, -27/10, -44/5], [-9/10, -115/6, -12], [-11/10, -9/2, -40]]
 
 6. Two-loop Yukawa coefficients c_i^f (subtracted in d g_i).
-   Conjugate labelling: SM  y_t Q H^c u^c, y_b Q H d^c, y_tau L H e^c.  Phi: H^c -> H_u, H -> H_d.
+   Conjugate labelling: SM (H has Y=+1/2)  y_t Q H u^c, y_b Q H^c d^c, y_tau L H^c e^c.  Phi: H -> H_u, H^c -> H_d.
    y_t  : SM c = ['17/10', '3/2', '2']   Phi(SM) c = ['26/5', '6', '4']   = 2*SM + ['9/5', '3', '0'] (Higgs leg)
    y_b  : SM c = ['1/2', '3/2', '2']   Phi(SM) c = ['14/5', '6', '4']   = 2*SM + ['9/5', '3', '0'] (Higgs leg)
    y_tau: SM c = ['3/2', '1/2', '0']   Phi(SM) c = ['18/5', '2', '0']   = 2*SM + ['3/5', '1', '0'] (Higgs leg)
