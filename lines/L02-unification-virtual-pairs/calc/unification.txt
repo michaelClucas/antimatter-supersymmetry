@@ -1,0 +1,125 @@
+PDG alpha^-1(MZ): 59.014 29.594 8.475
+Set A alpha^-1(Mt=172.57): 58.689, 29.960, 9.256; yt=0.9329 lam=0.1262
+
+SM  inputs A  1-loop:
+    M12: 10^13.03 GeV (a^-1=42.48)
+    M13: 10^14.39 GeV (a^-1=40.43)
+    M23: 10^16.97 GeV (a^-1=47.06)
+    best point 10^14.39 GeV, spread max-min alpha^-1 = 3.63 (mean 41.64, rel 8.7%)
+    alpha3^-1 - alpha12^-1 at M12 = -5.55
+SM  inputs A  2-loop:
+    M12: 10^13.05 GeV (a^-1=42.28)
+    M13: 10^14.25 GeV (a^-1=40.46)
+    M23: 10^16.47 GeV (a^-1=46.21)
+    best point 10^14.25 GeV, spread max-min alpha^-1 = 3.19 (mean 41.53, rel 7.7%)
+    alpha3^-1 - alpha12^-1 at M12 = -4.91
+SM  inputs A  3-loop:
+    M12: 10^13.05 GeV (a^-1=42.27)
+    M13: 10^14.25 GeV (a^-1=40.46)
+    M23: 10^16.47 GeV (a^-1=46.19)
+    best point 10^14.24 GeV, spread max-min alpha^-1 = 3.18 (mean 41.52, rel 7.7%)
+    alpha3^-1 - alpha12^-1 at M12 = -4.90
+
+SM  inputs B  1-loop:
+    M12: 10^13.01 GeV (a^-1=42.41)
+    M13: 10^14.38 GeV (a^-1=40.35)
+    M23: 10^16.99 GeV (a^-1=47.04)
+    best point 10^14.38 GeV, spread max-min alpha^-1 = 3.67 (mean 41.57, rel 8.8%)
+    alpha3^-1 - alpha12^-1 at M12 = -5.60
+    alpha_s(MZ) required for exact unification: 0.0711
+SM  inputs B  2-loop:
+    M12: 10^13.03 GeV (a^-1=42.20)
+    M13: 10^14.23 GeV (a^-1=40.38)
+    M23: 10^16.47 GeV (a^-1=46.15)
+    best point 10^14.23 GeV, spread max-min alpha^-1 = 3.20 (mean 41.45, rel 7.7%)
+    alpha3^-1 - alpha12^-1 at M12 = -4.92
+    alpha_s(MZ) required for exact unification: 0.0738
+SM  inputs B  3-loop:
+    M12: 10^13.03 GeV (a^-1=42.19)
+    M13: 10^14.23 GeV (a^-1=40.38)
+    M23: 10^16.46 GeV (a^-1=46.12)
+    best point 10^14.23 GeV, spread max-min alpha^-1 = 3.19 (mean 41.44, rel 7.7%)
+    alpha3^-1 - alpha12^-1 at M12 = -4.91
+    alpha_s(MZ) required for exact unification: 0.0739
+
+SM A 3-loop alpha_s=0.1171: best spread 3.14, dA3(M12)=-4.83, M23=10^16.42
+SM A 3-loop alpha_s=0.1189: best spread 3.22, dA3(M12)=-4.96, M23=10^16.51
+
+MSSM inputs A Ms=1 TeV 1-loop:
+    M12: 10^16.01 GeV (a^-1=26.08)
+    M13: 10^16.17 GeV (a^-1=25.69)
+    M23: 10^16.39 GeV (a^-1=25.94)
+    best point 10^16.17 GeV, spread max-min alpha^-1 = 0.33 (mean 25.80, rel 1.3%)
+    alpha3^-1 - alpha12^-1 at M12 = -0.56
+MSSM inputs A Ms=1 TeV 2-loop:
+    M12: 10^16.21 GeV (a^-1=25.11)
+    M13: 10^16.15 GeV (a^-1=25.24)
+    M23: 10^16.07 GeV (a^-1=25.16)
+    best point 10^16.15 GeV, spread max-min alpha^-1 = 0.12 (mean 25.21, rel 0.5%)
+    alpha3^-1 - alpha12^-1 at M12 = 0.20
+MSSM inputs A Ms=2 TeV 1-loop:
+    M12: 10^15.92 GeV (a^-1=26.57)
+    M13: 10^16.12 GeV (a^-1=26.08)
+    M23: 10^16.41 GeV (a^-1=26.39)
+    best point 10^16.12 GeV, spread max-min alpha^-1 = 0.42 (mean 26.22, rel 1.6%)
+    alpha3^-1 - alpha12^-1 at M12 = -0.71
+MSSM inputs A Ms=2 TeV 2-loop:
+    M12: 10^16.11 GeV (a^-1=25.64)
+    M13: 10^16.10 GeV (a^-1=25.67)
+    M23: 10^16.08 GeV (a^-1=25.65)
+    best point 10^16.10 GeV, spread max-min alpha^-1 = 0.02 (mean 25.66, rel 0.1%)
+    alpha3^-1 - alpha12^-1 at M12 = 0.04
+MSSM inputs A Ms=3 TeV 1-loop:
+    M12: 10^15.87 GeV (a^-1=26.86)
+    M13: 10^16.09 GeV (a^-1=26.31)
+    M23: 10^16.41 GeV (a^-1=26.66)
+    best point 10^16.10 GeV, spread max-min alpha^-1 = 0.47 (mean 26.46, rel 1.8%)
+    alpha3^-1 - alpha12^-1 at M12 = -0.80
+MSSM inputs A Ms=3 TeV 2-loop:
+    M12: 10^16.05 GeV (a^-1=25.95)
+    M13: 10^16.07 GeV (a^-1=25.92)
+    M23: 10^16.08 GeV (a^-1=25.94)
+    best point 10^16.07 GeV, spread max-min alpha^-1 = 0.03 (mean 25.92, rel 0.1%)
+    alpha3^-1 - alpha12^-1 at M12 = -0.05
+MSSM inputs B Ms=1 TeV 1-loop:
+    M12: 10^15.99 GeV (a^-1=26.04)
+    M13: 10^16.16 GeV (a^-1=25.61)
+    M23: 10^16.41 GeV (a^-1=25.89)
+    best point 10^16.16 GeV, spread max-min alpha^-1 = 0.37 (mean 25.74, rel 1.4%)
+    alpha3^-1 - alpha12^-1 at M12 = -0.62
+    alpha_s(MZ) required for exact unification: 0.1099
+MSSM inputs B Ms=1 TeV 2-loop:
+    M12: 10^16.19 GeV (a^-1=25.06)
+    M13: 10^16.13 GeV (a^-1=25.18)
+    M23: 10^16.07 GeV (a^-1=25.11)
+    best point 10^16.14 GeV, spread max-min alpha^-1 = 0.10 (mean 25.15, rel 0.4%)
+    alpha3^-1 - alpha12^-1 at M12 = 0.18
+    alpha_s(MZ) required for exact unification: 0.1206
+MSSM inputs B Ms=2 TeV 1-loop:
+    M12: 10^15.90 GeV (a^-1=26.53)
+    M13: 10^16.12 GeV (a^-1=26.00)
+    M23: 10^16.42 GeV (a^-1=26.34)
+    best point 10^16.12 GeV, spread max-min alpha^-1 = 0.45 (mean 26.15, rel 1.7%)
+    alpha3^-1 - alpha12^-1 at M12 = -0.77
+    alpha_s(MZ) required for exact unification: 0.1082
+MSSM inputs B Ms=2 TeV 2-loop:
+    M12: 10^16.09 GeV (a^-1=25.59)
+    M13: 10^16.08 GeV (a^-1=25.60)
+    M23: 10^16.07 GeV (a^-1=25.59)
+    best point 10^16.08 GeV, spread max-min alpha^-1 = 0.02 (mean 25.60, rel 0.1%)
+    alpha3^-1 - alpha12^-1 at M12 = 0.02
+    alpha_s(MZ) required for exact unification: 0.1183
+MSSM inputs B Ms=3 TeV 1-loop:
+    M12: 10^15.84 GeV (a^-1=26.82)
+    M13: 10^16.09 GeV (a^-1=26.23)
+    M23: 10^16.43 GeV (a^-1=26.61)
+    best point 10^16.09 GeV, spread max-min alpha^-1 = 0.50 (mean 26.40, rel 1.9%)
+    alpha3^-1 - alpha12^-1 at M12 = -0.86
+    alpha_s(MZ) required for exact unification: 0.1071
+MSSM inputs B Ms=3 TeV 2-loop:
+    M12: 10^16.03 GeV (a^-1=25.90)
+    M13: 10^16.05 GeV (a^-1=25.85)
+    M23: 10^16.08 GeV (a^-1=25.88)
+    best point 10^16.05 GeV, spread max-min alpha^-1 = 0.04 (mean 25.86, rel 0.2%)
+    alpha3^-1 - alpha12^-1 at M12 = -0.07
+    alpha_s(MZ) required for exact unification: 0.1170

@@ -1,0 +1,5 @@
+residue result      : I*(E1 + E2)/(2*E1*E2*(-E1**2 - 2*E1*E2 - E2**2 + q0**2))
+two time orderings  : I*(-E1 - E2)/(2*E1*E2*(E1 + E2 - q0)*(E1 + E2 + q0))
+difference          : 0
+q0=0.7, E1=1.0, E2=1.3: numeric 0.00023-0.18429j   two-ordering formula 0.00000-0.18429j   (counting the Z-graph ordering twice would give 0.00000-0.24840j)
+q0=1.5, E1=1.0, E2=1.0: numeric 0.00159-0.57142j   two-ordering formula 0.00000-0.57143j   (counting the Z-graph ordering twice would give 0.00000-0.64286j)

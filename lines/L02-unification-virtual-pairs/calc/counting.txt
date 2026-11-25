@@ -1,0 +1,19 @@
+Part 1. b_i from explicit particle+antiparticle state sum: ['41/10', '-19/6', '-7']  (SM: 41/10, -19/6, -7)
+  Sum over fermion states of Y   = 0 (C-odd piece cancels between particle and antiparticle)
+  Sum of Y^2 over particles only = 10 ; over antiparticles only = 10
+  Extra contribution if antifermion states counted twice: Delta b = ['2', '2', '2'] (equal for i=1,2,3)
+  Extra contribution if anti-Higgs states counted twice:  Delta b = ['1/20', '1/12', '0']
+
+Part 2. one-loop B-ratio (b2-b3)/(b1-b2) = 5*(-w_S - 22*w_V)/(2*(w_S - 110*w_V))  -> depends on w_F? no
+  measured (a2^-1-a3^-1)/(a1^-1-a2^-1) at MZ = 0.7178;  SM value = 0.5275;  MSSM value = 0.7143
+  scalar-loop weight needed (w_V=1): w_S = [7.445204662078842]  (i.e. ~7.4 Higgs doublets)
+  gauge-loop weight needed  (w_S=1): w_V = [0.13431464216066039]
+  with that w_S: unification at 10^13.70 GeV, alpha^-1 = 38.59
+
+Part 3. two-loop gauge-only running (no Yukawa) with sector weights:
+  SM (w_F=1, w_S=1)                                      : best point 10^14.23 GeV, spread 3.20 (rel 7.7%)
+  antifermion states counted twice (w_F=3/2)             : best point 10^14.38 GeV, spread 3.28 (rel 10.3%)
+  every fermion field counted twice (w_F=2)              : best point 10^14.60 GeV, spread 3.44 (rel 15.6%)
+  particles only, no antiparticles (w_F=w_S=1/2)         : best point 10^14.18 GeV, spread 3.45 (rel 6.8%)
+  antifermion + anti-Higgs states twice (w_F=w_S=3/2)    : best point 10^14.32 GeV, spread 2.97 (rel 9.4%)
+  w_S = 7.45 (1-loop solution)                           : best point 10^13.55 GeV, spread 0.54 (rel 1.4%)

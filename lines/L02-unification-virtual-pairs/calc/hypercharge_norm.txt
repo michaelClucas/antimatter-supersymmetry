@@ -1,0 +1,2 @@
+M23 = 10^16.47 GeV, alpha_2^-1 = alpha_3^-1 = 46.19, alpha_Y^-1 = 61.83
+k needed = alpha_Y^-1/alpha_23^-1 = 1.339   (SU(5) value 5/3 = 1.667)

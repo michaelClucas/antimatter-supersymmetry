@@ -17,7 +17,7 @@ V = (math.sqrt(2) * GF) ** -0.5  # 246.22 GeV
 
 # Couplings at MZ, MS-bar
 ALPHA_S_MZ = 0.1180
-ALPHA_EM_INV_MZ = 127.951
+ALPHA_EM_INV_MZ = 127.930  # PDG 2024 (was 127.951, PDG 2022; corrected cycle 1)
 SIN2W_MZ = 0.23129
 
 

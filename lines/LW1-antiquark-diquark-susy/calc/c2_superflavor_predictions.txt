@@ -1,4 +1,4 @@
-﻿LO superflavor hyperfine predictions  Delta_baryon = 3/4 Delta_meson
+LO superflavor hyperfine predictions  Delta_baryon = 3/4 Delta_meson
   Xi_cc++ (ccu)  <-> D0bar (cbar u): meson hf =  142.01 MeV -> baryon 3/2-1/2 =  106.5 MeV
   Xi_cc+  (ccd)  <-> D-    (cbar d): meson hf =  140.60 MeV -> baryon 3/2-1/2 =  105.4 MeV
   Omega_cc (ccs) <-> Ds-   (cbar s): meson hf =  143.85 MeV -> baryon 3/2-1/2 =  107.9 MeV

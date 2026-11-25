@@ -1,0 +1,16 @@
+Weyl fermions per generation (no nu_R): 15  -> real fermionic d.o.f. 30
+  anomaly SU3^2 U1             = 0
+  anomaly SU2^2 U1             = 0
+  anomaly U1^3                 = 0
+  anomaly grav^2 U1            = 0
+  anomaly SU3^3 (L - R count)  = 0
+  number of SU(2) doublets per generation (Witten anomaly needs even): 4
+
+bosonic d.o.f.: 2*dim G + 4 (Higgs doublet real components) = 28
+  N_g=0: Str 1 = 28 - 30*N_g = 28
+  N_g=1: Str 1 = 28 - 30*N_g = -2
+  N_g=2: Str 1 = 28 - 30*N_g = -32
+  N_g=3: Str 1 = 28 - 30*N_g = -62
+  N_g=4: Str 1 = 28 - 30*N_g = -92
+Str 1 = 0 needs N_g = 28/30, not an integer. Anomaly conditions are linear/cubic in Y and independent of
+Yukawa couplings, so they cannot constrain Str m^2 or Str m^4 (masses are free parameters y_f v/sqrt2).

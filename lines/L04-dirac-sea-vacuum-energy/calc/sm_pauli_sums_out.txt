@@ -1,0 +1,38 @@
+d.o.f.: bosonic 28, fermionic 90 (nu_L only: 2 each)
+Str 1            = -62
+Str m^2          = -2.782310e+05 GeV^2
+Str m^4          = -9.939015e+09 GeV^4
+Str m^4 ln(m^2/GeV^2) = -1.031927e+11 GeV^4  (unit-dependent because Str m^4 != 0)
+
+Contributions to Str m^4 by species (GeV^4):
+   W+-      +6 x m^4 = +2.5033e+08
+   Z        +3 x m^4 = +2.0743e+08
+   h        +1 x m^4 = +2.4571e+08
+   b       -12 x m^4 = -3.6634e+03
+   t       -12 x m^4 = -1.0642e+10
+   bosons 7.0346e+08, fermions -1.0642e+10, ratio |F/B| = 15.13
+   Str m^2: bosons 7.9376e+04, fermions -3.5761e+05, ratio |F/B| = 4.51
+   neutrino part of Str m^4 = -1.261e-41 GeV^4 ; /(64 pi^2) = -1.997e-44 vs rho_Lambda 2.5e-47
+
+Dirac vs (excluded) nu_R counting: Str 1 with 4 d.o.f. per neutrino = -68
+
+Hard cutoff terms (per Visser eq. structure): rho = [Str1 L^4 + Str m^2 L^2]/(16 pi^2) - Str m^4/(64 pi^2) ln(L^2) + finite
+  Lambda=1 TeV: quartic -3.926e+11, quadratic -1.762e+09, log 2.392e+08 GeV^4; ratios to rho_Lambda: 1.6e+58, 7.0e+55, 9.6e+54
+  Lambda=M_Pl: quartic -8.723e+75, quadratic -2.626e+41, log 1.405e+09 GeV^4; ratios to rho_Lambda: 3.5e+122, 1.1e+88, 5.6e+55
+
+Dim-reg (MS-bar), Lorentz invariant: rho(mu) = sum s_i m_i^4 [ln(m_i^2/mu^2) - c_i]/(64 pi^2)
+  mu = 91.19 GeV: rho = +2.7372e+06 GeV^4,  |rho|/rho_Lambda = 1.09e+53
+  mu = 172.6 GeV: rho = +2.2811e+07 GeV^4,  |rho|/rho_Lambda = 9.12e+53
+  mu = 1000 GeV: rho = +7.8102e+07 GeV^4,  |rho|/rho_Lambda = 3.12e+54
+  mu = 1e+10 GeV: rho = +5.8533e+08 GeV^4,  |rho|/rho_Lambda = 2.34e+55
+  mu = 1.221e+19 GeV: rho = +1.2438e+09 GeV^4,  |rho|/rho_Lambda = 4.98e+55
+  rho(mu)=0 at mu* = 83.591 GeV (scheme/scale artifact: bare Lambda counterterm absorbs mu-dependence)
+  d rho / d ln mu = -Str m^4/(32 pi^2) = +3.147e+07 GeV^4  -> rho_Lambda tuned to 1 part in 1.3e+54 per e-fold
+
+Weak-scale normalisations:  Str m^4/(64 pi^2) / rho_Lambda = 6.29e+53
+Classical Higgs potential depth lambda v^4/4 = 1.188e+08 GeV^4 (not a Pauli sum; CONSTRAINTS G)
+Top mass that would give Str m^4 = 0 (other masses fixed): 87.5 GeV; Str m^2 = 0: 81.2 GeV (measured 172.57)
+Neutrino sector alone, dim-reg, sum s m^4 [ln(m^2/mu^2) - 3/2]/(64 pi^2):
+   mu=1e-09 GeV: +1.496e-43 GeV^4 = 6.0e+03 rho_Lambda
+   mu=1e-06 GeV: +4.254e-43 GeV^4 = 1.7e+04 rho_Lambda
+   mu=1e+00 GeV: +9.771e-43 GeV^4 = 3.9e+04 rho_Lambda

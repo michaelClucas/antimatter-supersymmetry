@@ -1,0 +1,5 @@
+Validation vs Buttazzo et al. (arXiv:1307.3536) eq. (61) at M_Pl = 1.22e19 GeV
+  (their result: 3-loop RGEs, NNLO thresholds; m(M_Pl) = 129.4 GeV)
+  1-loop: g1=0.6132 (ref 0.6154)  g2=0.5039 (ref 0.5055)  g3=0.4895 (ref 0.4873)  yt=0.4049 (ref 0.3825)  lam=-0.0337 (ref -0.0143)  m=138.2
+  2-loop: g1=0.6153 (ref 0.6154)  g2=0.5054 (ref 0.5055)  g3=0.4873 (ref 0.4873)  yt=0.3832 (ref 0.3825)  lam=-0.0151 (ref -0.0143)  m=139.4
+  3-loop: g1=0.6154 (ref 0.6154)  g2=0.5055 (ref 0.5055)  g3=0.4873 (ref 0.4873)  yt=0.3825 (ref 0.3825)  lam=-0.0144 (ref -0.0143)  m=139.4

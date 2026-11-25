@@ -1,0 +1,4 @@
+Delta alpha_lep(MZ), 1-loop, each lepton counted once : 0.03142   (3-loop literature 0.031498)
+  same with antileptons counted a second time          : 0.06284
+R-ratio nf=4: LO 3.333, with (1+alpha_s/pi) 3.52;  doubled counting 7.05
+R-ratio nf=5: LO 3.667, with (1+alpha_s/pi) 3.82;  doubled counting 7.64
