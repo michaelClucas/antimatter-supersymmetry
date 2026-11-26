@@ -1,6 +1,6 @@
 # STATE (overseer working memory)
 
-**Current cycle:** 5 (cycle 4 complete and committed)
+**Current cycle:** 6 (cycle 5 complete and committed)
 **Next wildcard due:** cycle 6
 
 ## How to resume (for a fresh overseer)
@@ -26,17 +26,17 @@
 
 | Line | SUSY # | Status | Gate progress / notes |
 |---|---|---|---|
-| L01b-self-conjugate-higgs | 1 | CONTINUE (fix round), TOP PRIORITY | Referee 1 (c4): MAJOR — sector-by-sector MSSM cancellation fails with sfermion D-terms, and where true it is [Q_em,SUSY]=0; "self-conjugacy blocks protection" is a non sequitur (φ†φ invariant too; the real obstacle is (c): no chirality for scalars); M_t=169.5 check ~4σ realistically and repeats HKO/MQ; "top-higgsino removes p² log" false; "Holds" items partly relabel Veltman (H3). Calculator (c4): per-sector STr M²(φ) is ξ-independent (W sector 3/2 g²+2λ, Z sector+h 3/4(g²+g'²)+4λ); R = 0.344 at M_t (0.169 charged + 0.175 self-conj), 0.790 at M_Pl, 1 at 10^22.83; same in cutoff/PV/d=2 pole; per-diagram claims gauge dependent. Log-level analogue: 14% at M_t, crosses 1 at 10^18.19 = λ near-criticality. Lit (c4): 8/8 cites OK; (a) mostly known (Martin §7.4), (b) known (Masina-Quiros Fig 1), (c) self-conjugacy-as-antimatter-analogue framing not found. Jegerlehner 10^17 vs 10^22.8 conflict must be resolved (L01 reproduced it with Δy_t=−0.029). Referees 0/3 clean. |
-| L01-weisskopf-hierarchy | 1, 4 | support for L01b | merge into L01b at promotion |
-| L05-beta-function-map | 2 (D4) | VERIFICATION | c4: identity derived and proven general (any gauge theory, minimal SUSY completion: one chiral per Weyl & per real scalar, two per complex scalar; fails for complex scalar in real rep). Mechanism: chiral multiplet adds 2+4−2=4 vs Weyl 2; H needs H+H^c; C(G)=0 makes b_11 double. Gauge-only part doubles; Yukawa part doesn't (Higgs-leg term). No uniform 3-loop factor. Antimatter phrasing true but empty (S, C are CPT-blind; identical copy gives same). Lit (c4): identity stated nowhere (new, elementary); 16 cites exist, minor fixes (Langacker-Polonsky 0.125; Jones PRD 25,581; Martin §1.3). Claim for gate = NEGATIVE result for D4/#2: no antimatter-specific structure-preserving map; plus the new general doubling theorem. Referees 0/3. |
-| LW1-antiquark-diquark-susy | 1 (neg.), 6 | CONTINUE | c4: supercharge in QCD fields; {Q,Q†} has no P_μ → internal (spectrum-generating) SUSY, cannot act on loop divergences (#1 negative strengthened: "wrong algebra"). Superflavor protects mass DIFFERENCES: SU(3) breaking 101 vs 105 MeV (96% cancel). T_cc LO predicts 3990-4005 vs observed 3874.7 (miss). #6 count: 31/40 meson-baryon pairs observed; tetraquark slots mostly relabelled ordinary mesons. Nuclear SUSY out (holes = missing nucleons). Needs data-table check. |
+| L01b-self-conjugate-higgs | 1, 4 | VERIFICATION (negative result), TOP PRIORITY | Fix round 2 done c5 (all referee-1 c4 + lit items). CLAIM at top of WORK.md: sector Λ² totals (W: 3/2 g²+2λ; Z+h: 3/4(g²+g'²)+4λ; top −6y_t²) are ξ- and regulator-independent; R=0.344 (M_t), 0.790 (M_Pl), 1 at 10^22.83; no SM symmetry enforces R=1; analogue fails at (c) (no scalar chirality), self-conjugacy irrelevant; M_t check 4.1σ (budget 0.74 GeV), credited to HKO/MQ. Jegerlehner 10^16.11 reproduced: cause is y_t(M_t) matching 0.900 vs 0.938 (7.8 decades). L01 merged by reference. Fresh referees 0/3 on the fixed version. Lit done (c4). |
+| L01-weisskopf-hierarchy | 1, 4 | merged into L01b by reference | scripts rerun c5, identical |
+| L05-beta-function-map | 2 (D4) | VERIFICATION | Referee 1 (c5): MINOR ONLY (1/3 clean). Independent sympy check confirms identity, theorem (200 random contents), 26/25, gauge-only doubling, no 3-loop factor, scope OK. Fix: theorem narrower than stated — doubling needs one-doublet SM-like parent (vector-like scalar pair → 1; 2HDM parent → 3/2, 199/104; pseudoreal (2,8,0) → 8/7); stale "iff H^c"; scheme claim incomplete (scheme-invariant entries 8 vs 2/7 vs 8/13 prove (iv)); stale cite tags. Gate item 7 open: no experimental consequence; only a mathematical consistency check (published coefficient tables must satisfy it). Overseer decision pending: counts only if framed as an explicit checkable statement. |
+| LW1-antiquark-diquark-susy | 1 (neg.), 6 | CONTINUE (fix round) | Referee 1 (c5): MAJOR fixable. Fock toy has one spatial mode and spinless antiquark → can't show "no P_μ"; correct reason Q fails to protect masses is [H,Q]≠0 (not a symmetry), not "internal"; census 31/40 → 30/40 (Ξ_cc* unobserved, R1); 96% SU(3) cancellation needs non-superflavor control (additive quark model gives same); minor: Ξ_cc+ error, isospin numerology, HLS label, Ξ_bb budget. Masses check vs PDG 2024 / LHCb. |
 
-## Queue (cycle 5)
-1. Fixer L01b: address referee 1 c4 + lit c4; integrate calculator results; merge L01 support; resolve Jegerlehner conflict; reframe claim as the gauge-invariant pair-matching statement; honest "What is new" (the (c)-chirality obstruction and the self-conjugacy framing).
-2. Referee 1 for L05 (fresh).
-3. Referee 1 for LW1 (fresh; must check data tables: T_cc digits, Metz quartet, meson-baryon pairs vs PDG).
-4. L05 fixer for lit-check minor citation items (small; can combine with a clean CLAIM.md).
-Cycle 6: wildcard due; referees 2 for L05; referee 2 for L01b after fix.
+## Queue (cycle 6)
+1. Referees A and B for L01b (fresh, parallel).
+2. Fixer L05 (referee-1 minor items; explicit gate-7 consistency statement).
+3. Fixer LW1 (referee-1 items).
+4. Wildcard explorer (due), constrained by directives D1-D3.
+Cycle 7: referees 2 and 3 for L05; referee C for L01b; referee 2 for LW1.
 
 ## Open issues carried from explorers
 - L01: runner gives m(M_Pl)=139.4 GeV vs Buttazzo 129.4 (not load-bearing); Weisskopf 1939 detail unverified.

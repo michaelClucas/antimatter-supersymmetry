@@ -36,3 +36,11 @@
 
 ## Cycle 5, 2026-11-25 (attempt 1 failed)
 - Spawns: fixer L01b, referee 1 L05, referee 1 LW1. All three stalled (stream watchdog, no progress 600s), no files written. Re-spawned.
+
+## Cycle 5, 2026-11-25 (attempt 2)
+- Spawns (3, re-run after stall): fixer L01b round 2; referee 1 L05; referee 1 LW1.
+- L01b: all c4 referee + lit items fixed; Jegerlehner discrepancy resolved (y_t matching). → verification, fresh referees.
+- L05: referee 1 MINOR ONLY (first clean referee in the experiment). Theorem scope narrower (needs one-doublet parent). → fixer, then referees 2-3.
+- LW1: referee 1 MAJOR fixable (wrong reason for no protection; census 30/40; missing control). → fixer.
+- Also: an unrelated local file (MUON_G2_PROMPT.md) was committed by mistake in cycle 4 and untracked in cycle 5 (still in history).
+- Status: no verified result. L05 1/3 referees clean.

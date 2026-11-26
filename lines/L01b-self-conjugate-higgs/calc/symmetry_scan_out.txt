@@ -3,28 +3,22 @@
 ====================================================================================================
 
   C (charge conjugation):  H -> H*, psi -> C psibar^T. Not a symmetry of the chiral gauge sector; acts on the Higgs/Yukawa sector as hermitian conjugation
-     mu^2 Hdag H                                          [mu^2   ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
-     lambda (Hdag H)^2                                    [lambda ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
-     y_t Qbar_L Htilde t_R (Htilde ~ H*)                  [y_t    ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
-     gauge kinetic |D H|^2 (g, g')                        [g, g'  ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
-     Dirac mass m Qbar_L t_R (comparison; not gauge inv.) [m      ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
-     odd power of H (comparison; not gauge inv.)          [-      ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
+     mu^2 Hdag H                                          [mu^2   ]: term -> its h.c. (by definition of the map, not computed): needs real coupling
+     lambda (Hdag H)^2                                    [lambda ]: term -> its h.c. (by definition of the map, not computed): needs real coupling
+     y_t Qbar_L Htilde t_R (Htilde ~ H*)                  [y_t    ]: term -> its h.c. (by definition of the map, not computed): needs real coupling
+     gauge kinetic |D H|^2 (g, g')                        [g, g'  ]: term -> its h.c. (by definition of the map, not computed): needs real coupling
 
   CP:  H(t,x) -> H*(t,-x); fermion bilinears -> their hermitian conjugates. Exact up to the CKM phase
-     mu^2 Hdag H                                          [mu^2   ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
-     lambda (Hdag H)^2                                    [lambda ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
-     y_t Qbar_L Htilde t_R (Htilde ~ H*)                  [y_t    ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
-     gauge kinetic |D H|^2 (g, g')                        [g, g'  ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
-     Dirac mass m Qbar_L t_R (comparison; not gauge inv.) [m      ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
-     odd power of H (comparison; not gauge inv.)          [-      ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
+     mu^2 Hdag H                                          [mu^2   ]: term -> its h.c. (by definition of the map, not computed): needs real coupling
+     lambda (Hdag H)^2                                    [lambda ]: term -> its h.c. (by definition of the map, not computed): needs real coupling
+     y_t Qbar_L Htilde t_R (Htilde ~ H*)                  [y_t    ]: term -> its h.c. (by definition of the map, not computed): needs real coupling
+     gauge kinetic |D H|^2 (g, g')                        [g, g'  ]: term -> its h.c. (by definition of the map, not computed): needs real coupling
 
   P (parity, L<->R exchange):  maps Qbar_L t_R <-> tbar_R Q_L, i.e. each Yukawa term to its h.c. (observation (b)); not a symmetry of the SM gauge sector (L doublet, R singlet)
-     mu^2 Hdag H                                          [mu^2   ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
-     lambda (Hdag H)^2                                    [lambda ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
-     y_t Qbar_L Htilde t_R (Htilde ~ H*)                  [y_t    ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
-     gauge kinetic |D H|^2 (g, g')                        [g, g'  ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
-     Dirac mass m Qbar_L t_R (comparison; not gauge inv.) [m      ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
-     odd power of H (comparison; not gauge inv.)          [-      ]: allowed iff coupling real (term -> its h.c.); coupling c -> c*
+     mu^2 Hdag H                                          [mu^2   ]: term -> its h.c. (by definition of the map, not computed): needs real coupling
+     lambda (Hdag H)^2                                    [lambda ]: term -> its h.c. (by definition of the map, not computed): needs real coupling
+     y_t Qbar_L Htilde t_R (Htilde ~ H*)                  [y_t    ]: term -> its h.c. (by definition of the map, not computed): needs real coupling
+     gauge kinetic |D H|^2 (g, g')                        [g, g'  ]: term -> its h.c. (by definition of the map, not computed): needs real coupling
 
   Z2: h -> -h  (H -> -H) alone:  sign flip of the self-conjugate field only
      mu^2 Hdag H                                          [mu^2   ]: ALLOWED, coupling invariant
@@ -82,19 +76,23 @@
       bidoublet norm, so custodial symmetry allows the mass term. Setting g' -> 0 only removes the 3/4 g'^2 piece.)
 
 ====================================================================================================
-(2) Self-conjugate scalar vs chiral fermion: invariant quadratic forms
+(2) Scalar (real OR complex) vs chiral fermion mass bilinears
 ====================================================================================================
   group-averaged quadratic form for the real 4-component Higgs (SU(2)xU(1), h->-h, CP):
 [[ 1.0000e+00 -1.5995e-17  2.7902e-19  2.9257e-17]
  [-1.5995e-17  1.0000e+00 -2.0152e-17 -1.6334e-18]
  [ 2.7902e-19 -2.0152e-17  1.0000e+00 -1.5166e-17]
  [ 2.9257e-17 -1.6334e-18 -1.5166e-17  1.0000e+00]]
-  -> proportional to the identity: sum_i phi_i^2 = 2|H|^2 is invariant under all of them. Every linear
-     symmetry of a real field preserves a positive quadratic form, so it can never forbid the mass term.
-  Weyl fermion psi under U(1): psi -> e^{i a} psi. Majorana mass psi psi -> e^{2 i a} psi psi (forbidden for a != 0, pi).
-  A self-conjugate (Majorana) fermion such as a gaugino still has this phase (R-symmetry), so self-conjugacy
-  does not remove fermion mass protection; for a self-conjugate SCALAR the only 1-dim real reps are +-1,
-  under which h^2 is even. The obstruction is the absence of a chiral phase for a spin-0 field (observation (c)).
+  -> proportional to the identity (standard: compact groups act orthogonally on real reps).
+  complex scalar (e.g. a stop), phi -> e^(i a) phi:  phi* phi -> 1 x phi* phi (invariant)
+  real scalar h, h -> -h:                            h^2      -> 1 x h^2 (invariant)
+  Weyl fermion psi -> e^(i a) psi:                   psi psi  -> exp(2*I*alpha) x psi psi (forbidden)
+  Dirac = two Weyl (chi, eta), axial chi,eta -> e^(i a): chi eta -> exp(2*I*alpha) x chi eta (forbidden)
+  -> The scalar mass bilinear always contains the conjugate field (or is a square of a real field), so it is
+     neutral under every linear internal symmetry, for real and complex scalars alike. Stops are complex and
+     unprotected too. Self-conjugacy (observation (a)) plays no role. The fermion mass is holomorphic in the
+     Weyl fields (psi psi, no psi*), so a phase rotation can forbid it, Majorana or Dirac. The obstruction is
+     the Lorentz structure of spin-0 vs spin-1/2 mass terms: observation (c) alone.
 
 ====================================================================================================
 (3) Is C = 0 an RG-invariant surface? (it must be, if a symmetry enforced it)

@@ -1,0 +1,17 @@
+Central: C(M_Pl) = 0 needs M_t* = 169.535 GeV (3-loop RGE, Buttazzo matching, als=0.1180, M_h=125.20)
+Measured direct M_t = 172.57 +- 0.29 GeV; distance = 3.04 GeV
+
+Source                                                                    equiv. dM_t (GeV)
+  alpha_s(M_Z) +-0.0009 [computed]                                          0.418
+  M_h +-0.11 [computed]                                                     0.037
+  y_t(M_t) matching theory +-0.0005 [lit, Buttazzo]                         0.087
+  RGE order 2-loop vs 3-loop [computed]                                     0.125
+  Lambda^2 coeff. 1-loop vs 2-loop (C1->C2 shift 0.10 dec, slope 1.22 dec/GeV) [lit+computed]  0.086
+  MC mass vs pole mass interpretation [lit, Hoang 2004.12915]               0.500
+  pole-mass renormalon ambiguity [lit, Beneke et al. 1605.03609]            0.110
+  experimental, direct M_t (PDG 2024)                                       0.290
+  linear-fit extrapolation (curvature est. dy=1.2e-06) [computed, crude]    0.000
+  quadrature total                                                          0.743
+
+Significance of C(M_Pl) != 0 within Buttazzo-type matching: 4.1 sigma (experimental-only: 10.5 sigma)
+Not included: the Jegerlehner matching spread (Delta y_t = -0.038 vs Buttazzo at equal inputs, ~6.8 GeV equivalent, see c5_jegerlehner_out.txt). If that matching is admitted, the condition at M_Pl is not excluded.

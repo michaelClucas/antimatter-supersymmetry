@@ -19,9 +19,9 @@ PART 1. Lambda^2 (K^2) coefficient by species, particle/antiparticle resolved  [
    [SUSY target] stop/antistop pairs  n=12  C = +5.2214  -> top + stops = +0.00e+00
    SM total C = -3.4242
    matching ratio R = C_bosons / |C_top| = 0.3442   (SUSY: stops give R = 1 exactly)
-   massive-boson real dof coupling to h: 13 (vs 12 top-sea dof, 12 stop dof)
-   mean coupling a per boson dof = 0.1382;  top/stop a = y^2/2 = 0.4351;  ratio 0.318
-   'stop-equivalent' number of boson dof (C_bos / (y^2/2)) = 4.13 of the 12 needed
+   [Landau-gauge count] boson real dof coupling to h: 13 (vs 12 top-sea dof, 12 stop dof)
+   [Landau-gauge] mean coupling a per boson dof = 0.1382;  top/stop a = y^2/2 = 0.4351;  ratio 0.318
+   [Landau-gauge] 'stop-equivalent' number of boson dof (C_bos / (y^2/2)) = 4.13 of the 12 needed
    |C| top alone -> top + SM bosons: 5.2214 -> 3.4242  (reduction 34.4%)
 
 -- tree-level couplings from PDG pole masses: lambda=0.12928 g=0.65282 g'=0.34994 y_t=0.99119
@@ -41,9 +41,9 @@ PART 1. Lambda^2 (K^2) coefficient by species, particle/antiparticle resolved  [
    [SUSY target] stop/antistop pairs  n=12  C = +5.8948  -> top + stops = +0.00e+00
    SM total C = -4.0683
    matching ratio R = C_bosons / |C_top| = 0.3098   (SUSY: stops give R = 1 exactly)
-   massive-boson real dof coupling to h: 13 (vs 12 top-sea dof, 12 stop dof)
-   mean coupling a per boson dof = 0.1405;  top/stop a = y^2/2 = 0.4912;  ratio 0.286
-   'stop-equivalent' number of boson dof (C_bos / (y^2/2)) = 3.72 of the 12 needed
+   [Landau-gauge count] boson real dof coupling to h: 13 (vs 12 top-sea dof, 12 stop dof)
+   [Landau-gauge] mean coupling a per boson dof = 0.1405;  top/stop a = y^2/2 = 0.4912;  ratio 0.286
+   [Landau-gauge] 'stop-equivalent' number of boson dof (C_bos / (y^2/2)) = 3.72 of the 12 needed
    |C| top alone -> top + SM bosons: 5.8948 -> 4.0683  (reduction 31.0%)
 
 ====================================================================================================
@@ -62,7 +62,8 @@ PART 2. Mode-by-mode vacuum-energy (Dirac sea + boson zero-point) integrand d(d^
       100000  -1.4932e+04  +2.6616e+03    +1.9648e+03           0.3098    +1.4932e+04    +0.0e+00
      1000000  -1.4932e+05  +2.6616e+04    +1.9648e+04           0.3098    +1.4932e+05    +0.0e+00
    -> With exact SUSY masses (m_stop = m_t) the stop/antistop zero-point modes cancel the top-sea modes at EVERY k
-      (not only the K^2 term). SM boson pairs have the right sign at every k but cancel only a fraction;
+      (trivially: the two integrands are the same function with opposite sign). SM bosons have the stop sign
+      for k >~ m_t only (h+G negative at small k, partly a Landau-gauge massless-G artefact) and cancel a fraction;
       the fraction -> R (Part 1) as k -> infinity. At k ~ m_t the h/G modes become negative (their a^2 v^2 term).
 
 ====================================================================================================
@@ -89,8 +90,8 @@ PART 3. Higgs at rest, time-ordered pieces of Sigma_hh: top (F, B) vs stops (sea
    = -7.4658e+04 / p for m_s = 1 TeV  (compare last column)
    plus the external-momentum log present already at m_s = 0: -(3 y^2/(8 pi^2)) m_h^2 / p = -5.8513e+02 / p
    sum = -7.5243e+04 / p  (compare m_s = 1 TeV row at p = 1e6)
-   The m_h^2 (p^2) log is a wave-function-type term; in the full MSSM it is cancelled by the top-higgsino loop
-   (the self-conjugate h's fermionic partner). It is log, not K^2.
+   The m_h^2 (p^2) log is the Higgs wave-function renormalization (anomalous dimension 3y^2/16pi^2). It is present
+   in the MSSM too (Kahler renormalization; no h-t-higgsino vertex exists). It is log, not K^2.
    covariant (k0 Wick-rotated) vs time-ordered stop bubble F+B, m_s = 300 GeV:
      p =    50.0:  covariant -2.685888e-01   F+B -2.685888e-01
      p =   300.0:  covariant -4.244455e+00   F+B -4.244455e+00
@@ -109,10 +110,21 @@ PART 4. SUSY comparison target: supertrace identities, top/stop and electroweak 
    charginos   (2 Dirac, charged pairs)     4 Tr X^+X (field-dep.) = 2*g**2*(v_d**2 + v_u**2)
    STr (bosons - fermions) = 0
    -> In SUSY the SM-like boson loops (W, Z, h, Goldstones) are themselves cancelled, by electroweakinos.
-      The self-conjugate bosons (Z, photon, neutral Higgs) are partnered by self-conjugate (Majorana) neutralinos;
-      the charged pairs (W+-, H+-) by charged Dirac pairs (charginos). Self-conjugacy is carried across the multiplet.
+      Neutral bosons (Z, photon, neutral Higgs) are partnered by neutralinos, charged ones (W+-, H+-) by charginos:
+      a consequence of [Q_em, SUSY] = 0, see the sfermion check below.
    boson side total = (3*g**2 + gp**2)*(v_d**2 + v_u**2);  fermion side total = (3*g**2 + gp**2)*(v_d**2 + v_u**2)
-   (Tr Y = 0 over Hu, Hd; sfermion D-terms cancel separately since Tr Y = 0 per generation.)
-   Charge-resolved (neutral = self-conjugate states; charged = particle/antiparticle pairs):
+   (Tr Y = 0 over Hu, Hd; sfermion D-terms cancel only summed over a whole generation, Tr Y = Tr T3 = 0.)
+   Charge-resolved, gauge+Higgs subsector only (neutral = Q = 0 block; charged = Q = +-1 block):
      neutral bosons  Z + neutral Higgs scalars: (g**2 + gp**2)*(v_d**2 + v_u**2)   vs neutralinos (Majorana): (g**2 + gp**2)*(v_d**2 + v_u**2)   difference 0
      charged bosons  W+- + charged Higgs scalars: 2*g**2*(v_d**2 + v_u**2)   vs charginos (Dirac): 2*g**2*(v_d**2 + v_u**2)   difference 0
+   (cycle 5, Referee 1 finding 1) The above holds only for the gauge+Higgs subsector.
+   Sfermion D-term masses: per complex sfermion, m^2 gets (g'^2 Y - g^2 T3)(|Hu0|^2 - |Hd0|^2)/2,
+   |Hu0|^2 = v_u^2/2. Their fermion partners get no D-term mass, so this is uncancelled within each |Q| sector:
+     |Q| = 0    sfermion D-term Tr M^2 (per generation) = (g**2 + gp**2)*(v_d - v_u)*(v_d + v_u)/4
+     |Q| = 1/3  sfermion D-term Tr M^2 (per generation) = -3*(g**2 + gp**2)*(v_d - v_u)*(v_d + v_u)/4
+     |Q| = 2/3  sfermion D-term Tr M^2 (per generation) = 3*(g**2 + gp**2)*(v_d - v_u)*(v_d + v_u)/4
+     |Q| = 1    sfermion D-term Tr M^2 (per generation) = -(g**2 + gp**2)*(v_d - v_u)*(v_d + v_u)/4
+     sum over the generation = 0  (needs Tr Y = Tr T3 = 0: mixes charge sectors)
+   -> In the full MSSM the Q = 0 sector does NOT cancel by itself (sneutrinos, which are complex, not self-conjugate).
+      Where the gauge+Higgs sector does cancel charge block by charge block, it follows from [Q_em, SUSY] = 0
+      (block-diagonal mass matrices; Martin hep-ph/9709356 sec. 7.4). Self-conjugacy plays no role.

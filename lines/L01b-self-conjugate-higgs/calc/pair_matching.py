@@ -87,9 +87,9 @@ for tag, c in (("MS-bar couplings at mu = M_t", ms), ("tree-level couplings from
     P(f"   [SUSY target] stop/antistop pairs  n=12  C = {Cs:+.4f}  -> top + stops = {Ct + Cs:+.2e}")
     P(f"   SM total C = {Cb + Ct:+.4f}")
     P(f"   matching ratio R = C_bosons / |C_top| = {Cb/abs(Ct):.4f}   (SUSY: stops give R = 1 exactly)")
-    P(f"   massive-boson real dof coupling to h: {nb} (vs 12 top-sea dof, 12 stop dof)")
-    P(f"   mean coupling a per boson dof = {Cb/nb:.4f};  top/stop a = y^2/2 = {c['y']**2/2:.4f};  ratio {Cb/nb/(c['y']**2/2):.3f}")
-    P(f"   'stop-equivalent' number of boson dof (C_bos / (y^2/2)) = {Cb/(c['y']**2/2):.2f} of the 12 needed")
+    P(f"   [Landau-gauge count] boson real dof coupling to h: {nb} (vs 12 top-sea dof, 12 stop dof)")
+    P(f"   [Landau-gauge] mean coupling a per boson dof = {Cb/nb:.4f};  top/stop a = y^2/2 = {c['y']**2/2:.4f};  ratio {Cb/nb/(c['y']**2/2):.3f}")
+    P(f"   [Landau-gauge] 'stop-equivalent' number of boson dof (C_bos / (y^2/2)) = {Cb/(c['y']**2/2):.2f} of the 12 needed")
     P(f"   |C| top alone -> top + SM bosons: {abs(Ct):.4f} -> {abs(Cb+Ct):.4f}  (reduction {100*(1-abs(Cb+Ct)/abs(Ct)):.1f}%)")
 
 # ---------------------------------------------------------------- PART 2: mode-by-mode (hole theory) at zero momentum
@@ -118,7 +118,8 @@ for k in (10, 50, 100, 200, 500, 1e3, 1e4, 1e5, 1e6):
     st = mode(k, 12, +1, c['y']**2 / 2, mt2)
     P(f"   {k:9.0f} {t:+12.4e} {wz:+12.4e} {hg:+14.4e} {(wz+hg)/abs(t):16.4f} {st:+14.4e} {t+st:+11.1e}")
 P("   -> With exact SUSY masses (m_stop = m_t) the stop/antistop zero-point modes cancel the top-sea modes at EVERY k")
-P("      (not only the K^2 term). SM boson pairs have the right sign at every k but cancel only a fraction;")
+P("      (trivially: the two integrands are the same function with opposite sign). SM bosons have the stop sign")
+P("      for k >~ m_t only (h+G negative at small k, partly a Landau-gauge massless-G artefact) and cancel a fraction;")
 P("      the fraction -> R (Part 1) as k -> infinity. At k ~ m_t the h/G modes become negative (their a^2 v^2 term).")
 
 # ---------------------------------------------------------------- PART 3: on-shell time orderings, top vs stops
@@ -172,8 +173,8 @@ P("   expected from Part 4 (m_Q = m_U = m_s, A_t = 0): d Sigma/dp -> -(3 y^2/(4 
 P(f"   = {-3*yv**2*1000.0**2/(4*math.pi**2):+.4e} / p for m_s = 1 TeV  (compare last column)")
 P(f"   plus the external-momentum log present already at m_s = 0: -(3 y^2/(8 pi^2)) m_h^2 / p = {-3*yv**2*smi.MH**2/(8*math.pi**2):+.4e} / p")
 P(f"   sum = {-3*yv**2*1000.0**2/(4*math.pi**2) - 3*yv**2*smi.MH**2/(8*math.pi**2):+.4e} / p  (compare m_s = 1 TeV row at p = 1e6)")
-P("   The m_h^2 (p^2) log is a wave-function-type term; in the full MSSM it is cancelled by the top-higgsino loop")
-P("   (the self-conjugate h's fermionic partner). It is log, not K^2.")
+P("   The m_h^2 (p^2) log is the Higgs wave-function renormalization (anomalous dimension 3y^2/16pi^2). It is present")
+P("   in the MSSM too (Kahler renormalization; no h-t-higgsino vertex exists). It is log, not K^2.")
 
 # covariant cross-check of the stop bubble (scalar loop) at fixed |p|
 def stop_bubble_cov(pp, M2, mh, c3):
@@ -238,10 +239,10 @@ P(f"   neutralinos (4 Majorana, self-conjugate) 2 Tr M^+M (field-dep.) = {sp.fac
 P(f"   charginos   (2 Dirac, charged pairs)     4 Tr X^+X (field-dep.) = {sp.factor(sp.expand(4*TrC - 4*(M2**2+mu**2)))}")
 P(f"   STr (bosons - fermions) = {sp.simplify(TrS + TrV - ferm)}")
 P("   -> In SUSY the SM-like boson loops (W, Z, h, Goldstones) are themselves cancelled, by electroweakinos.")
-P("      The self-conjugate bosons (Z, photon, neutral Higgs) are partnered by self-conjugate (Majorana) neutralinos;")
-P("      the charged pairs (W+-, H+-) by charged Dirac pairs (charginos). Self-conjugacy is carried across the multiplet.")
+P("      Neutral bosons (Z, photon, neutral Higgs) are partnered by neutralinos, charged ones (W+-, H+-) by charginos:")
+P("      a consequence of [Q_em, SUSY] = 0, see the sfermion check below.")
 P(f"   boson side total = {sp.factor(TrS + TrV)};  fermion side total = {sp.factor(ferm)}")
-P("   (Tr Y = 0 over Hu, Hd; sfermion D-terms cancel separately since Tr Y = 0 per generation.)")
+P("   (Tr Y = 0 over Hu, Hd; sfermion D-terms cancel only summed over a whole generation, Tr Y = Tr T3 = 0.)")
 # split by charge: neutral (self-conjugate after diagonalization: Z, photon, h, H, A, G0) vs charged pairs
 neutral_idx, charged_idx = (2, 3, 4, 5), (0, 1, 6, 7)
 TrS_n = sp.factor(sum(sp.diff(VD, re_[i], 2) for i in neutral_idx).subs(bg))
@@ -250,11 +251,29 @@ TrV_n = 3 * (g**2 + gp**2) * (vu**2 + vd**2) / 4
 TrV_c = 3 * 2 * g**2 * (vu**2 + vd**2) / 4
 neu = sp.expand(2 * TrN - 2 * (M1**2 + M2**2 + 2 * mu**2))
 cha = sp.expand(4 * TrC - 4 * (M2**2 + mu**2))
-P("   Charge-resolved (neutral = self-conjugate states; charged = particle/antiparticle pairs):")
+P("   Charge-resolved, gauge+Higgs subsector only (neutral = Q = 0 block; charged = Q = +-1 block):")
 P(f"     neutral bosons  Z + neutral Higgs scalars: {sp.factor(TrV_n + TrS_n)}   vs neutralinos (Majorana): {sp.factor(neu)}"
   f"   difference {sp.factor(TrV_n + TrS_n - neu)}")
 P(f"     charged bosons  W+- + charged Higgs scalars: {sp.factor(TrV_c + TrS_c)}   vs charginos (Dirac): {sp.factor(cha)}"
   f"   difference {sp.factor(TrV_c + TrS_c - cha)}")
+P("   (cycle 5, Referee 1 finding 1) The above holds only for the gauge+Higgs subsector.")
+P("   Sfermion D-term masses: per complex sfermion, m^2 gets (g'^2 Y - g^2 T3)(|Hu0|^2 - |Hd0|^2)/2,")
+P("   |Hu0|^2 = v_u^2/2. Their fermion partners get no D-term mass, so this is uncancelled within each |Q| sector:")
+R = sp.Rational
+# one generation, left-handed chiral fields: (name, T3, Y, colour, |Q|)
+sferm = [("nu~_L", R(1, 2), R(-1, 2), 1, 0), ("e~_L", R(-1, 2), R(-1, 2), 1, 1), ("e~_R*", 0, R(1), 1, 1),
+         ("u~_L", R(1, 2), R(1, 6), 3, R(2, 3)), ("d~_L", R(-1, 2), R(1, 6), 3, R(1, 3)),
+         ("u~_R*", 0, R(-2, 3), 3, R(2, 3)), ("d~_R*", 0, R(1, 3), 3, R(1, 3))]
+by_q = {}
+for name, T3, Y, nc, q in sferm:
+    tr = 2 * nc * (gp**2 * Y - g**2 * T3) * (vu**2 - vd**2) / 4  # 2 real dof per complex scalar
+    by_q[q] = sp.factor(by_q.get(q, 0) + tr)
+for q in sorted(by_q):
+    P(f"     |Q| = {str(q):4s} sfermion D-term Tr M^2 (per generation) = {by_q[q]}")
+P(f"     sum over the generation = {sp.simplify(sum(by_q.values()))}  (needs Tr Y = Tr T3 = 0: mixes charge sectors)")
+P("   -> In the full MSSM the Q = 0 sector does NOT cancel by itself (sneutrinos, which are complex, not self-conjugate).")
+P("      Where the gauge+Higgs sector does cancel charge block by charge block, it follows from [Q_em, SUSY] = 0")
+P("      (block-diagonal mass matrices; Martin hep-ph/9709356 sec. 7.4). Self-conjugacy plays no role.")
 
 with open(os.path.join(HERE, 'pair_matching_out.txt'), 'w', encoding='utf-8') as fh:
     fh.write("\n".join(out) + "\n")

@@ -6,9 +6,10 @@ Checks:
      Higgs/top sector (symmetric phase, H doublet) and report which operators are allowed/forbidden, and how
      the couplings (lambda, y_t, g, g', and the mass parameter mu^2) must transform for invariance (spurion map).
      Fermion bilinears are tracked by their chiral charges, which is all that matters for invariance.
- (2) Real-field theorem, checked: for a real (self-conjugate) scalar multiplet, any finite or compact linear
-     symmetry has an invariant quadratic form (group average of the identity) -> mass term never forbidden.
-     For a Weyl fermion a U(1) phase acts as e^{i a} and the Majorana mass psi psi has charge 2a (forbidden).
+ (2) Spin-0 vs spin-1/2 mass bilinears (cycle 5 rewrite after Referee 1 finding 2). A scalar mass term is
+     phi* phi (complex) or phi^2 (real); both are invariant under any unitary/orthogonal linear symmetry, so
+     self-conjugacy is irrelevant. A Weyl mass psi psi has no conjugate and carries charge 2a. This is
+     observation (c) alone.
  (3) RG test. A relation imposed by a symmetry of the full theory, in a mass-independent scheme, is RG
      invariant. Compute beta_C on the surface C = 0 (1 loop, analytic; 3 loop, numerical with tools/rg_sm.py).
 """
@@ -77,7 +78,9 @@ for cname, cand in CANDIDATES.items():
     for op in OPS:
         ph = phase_of(op, cand)
         if cand[3]:
-            status = "allowed iff coupling real (term -> its h.c.); coupling c -> c*"
+            if 'not gauge inv' in op[0]:
+                continue  # conjugating maps on non-gauge-invariant comparison operators are meaningless
+            status = "term -> its h.c. (by definition of the map, not computed): needs real coupling"
         elif ph == 1:
             status = "ALLOWED, coupling invariant"
         elif ph == -1:
@@ -104,7 +107,7 @@ P("      bidoublet norm, so custodial symmetry allows the mass term. Setting g' 
 
 # ---------------------------------------------------------------- (2) real-field theorem, numerical demonstration
 P("\n" + "=" * 100)
-P("(2) Self-conjugate scalar vs chiral fermion: invariant quadratic forms")
+P("(2) Scalar (real OR complex) vs chiral fermion mass bilinears")
 P("=" * 100)
 rng = np.random.default_rng(1)
 
@@ -136,12 +139,17 @@ gens.append(np.diag([1, -1, 1, 1]) @ np.eye(4))       # flip one real component 
 gens.append(np.diag([1, 1, -1, -1]))                    # CP: imaginary parts flip
 Q = random_orthogonal_group_avg(4, gens)
 P(f"  group-averaged quadratic form for the real 4-component Higgs (SU(2)xU(1), h->-h, CP):\n{np.array2string(Q, precision=4)}")
-P("  -> proportional to the identity: sum_i phi_i^2 = 2|H|^2 is invariant under all of them. Every linear")
-P("     symmetry of a real field preserves a positive quadratic form, so it can never forbid the mass term.")
-P("  Weyl fermion psi under U(1): psi -> e^{i a} psi. Majorana mass psi psi -> e^{2 i a} psi psi (forbidden for a != 0, pi).")
-P("  A self-conjugate (Majorana) fermion such as a gaugino still has this phase (R-symmetry), so self-conjugacy")
-P("  does not remove fermion mass protection; for a self-conjugate SCALAR the only 1-dim real reps are +-1,")
-P("  under which h^2 is even. The obstruction is the absence of a chiral phase for a spin-0 field (observation (c)).")
+P("  -> proportional to the identity (standard: compact groups act orthogonally on real reps).")
+ph = sp.symbols('phi')
+P(f"  complex scalar (e.g. a stop), phi -> e^(i a) phi:  phi* phi -> {sp.simplify(sp.conjugate(sp.exp(sp.I*a))*sp.exp(sp.I*a))} x phi* phi (invariant)")
+P(f"  real scalar h, h -> -h:                            h^2      -> {(-1)**2} x h^2 (invariant)")
+P(f"  Weyl fermion psi -> e^(i a) psi:                   psi psi  -> {sp.exp(2*sp.I*a)} x psi psi (forbidden)")
+P(f"  Dirac = two Weyl (chi, eta), axial chi,eta -> e^(i a): chi eta -> {sp.exp(2*sp.I*a)} x chi eta (forbidden)")
+P("  -> The scalar mass bilinear always contains the conjugate field (or is a square of a real field), so it is")
+P("     neutral under every linear internal symmetry, for real and complex scalars alike. Stops are complex and")
+P("     unprotected too. Self-conjugacy (observation (a)) plays no role. The fermion mass is holomorphic in the")
+P("     Weyl fields (psi psi, no psi*), so a phase rotation can forbid it, Majorana or Dirac. The obstruction is")
+P("     the Lorentz structure of spin-0 vs spin-1/2 mass terms: observation (c) alone.")
 
 # ---------------------------------------------------------------- (3) RG invariance of C = 0
 P("\n" + "=" * 100)

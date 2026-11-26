@@ -1,0 +1,43 @@
+Normalization check: Jegerlehner's C1 column vs 2*C from his own couplings
+  M_Z: 2C = -6.775   his C1 = -6.768
+  M_t: 2C = -6.173   his C1 = -6.110
+  (M_t row: 0.06 mismatch in his table, likely rounding/typo; M_Z row exact. Both starting points run below.)
+
+(A) Buttazzo matching, PDG 2024 (M_t=172.57, M_h=125.20, als=0.1180):
+  at M_t: yt=0.9329 lam=0.1262 g2=0.6476 g'=0.3584 g3=1.1652
+  1-loop RGE: log10 mu0 = 26.79
+  2-loop RGE: log10 mu0 = 22.98
+  3-loop RGE: log10 mu0 = 22.83
+
+(B) Buttazzo matching, Jegerlehner's physical inputs (M_t=173.5, M_H=126, als=0.1184, M_W=80.385):
+  at M_t: yt=0.9378 lam=0.1278 g2=0.6478 g'=0.3583 g3=1.1665
+  1-loop RGE: log10 mu0 = 27.36
+  2-loop RGE: log10 mu0 = 23.61
+  3-loop RGE: log10 mu0 = 23.46
+
+(J) Jegerlehner Table 1 couplings, our RGEs (his result: mu0 = 1.4e16 -> log10 = 16.15):
+  from M_Z, 1-loop: log10 mu0 = 21.06;  at M_Pl yt=0.3727 lamJ=0.0154 g2=0.5046 g'=0.4581  (his: yt 0.3510, lamJ 0.1405, g2 0.5068, g' 0.4589)
+  from M_Z, 2-loop: log10 mu0 = 16.29;  at M_Pl yt=0.3508 lamJ=0.1372 g2=0.5063 g'=0.4597  (his: yt 0.3510, lamJ 0.1405, g2 0.5068, g' 0.4589)
+  from M_Z, 3-loop: log10 mu0 = 16.11;  at M_Pl yt=0.3500 lamJ=0.1426 g2=0.5063 g'=0.4597  (his: yt 0.3510, lamJ 0.1405, g2 0.5068, g' 0.4589)
+  from M_t, 1-loop: log10 mu0 = 21.32;  at M_Pl yt=0.3746 lamJ=0.0120 g2=0.5047 g'=0.4582  (his: yt 0.3510, lamJ 0.1405, g2 0.5068, g' 0.4589)
+  from M_t, 2-loop: log10 mu0 = 17.21;  at M_Pl yt=0.3552 lamJ=0.1103 g2=0.5063 g'=0.4596  (his: yt 0.3510, lamJ 0.1405, g2 0.5068, g' 0.4589)
+  from M_t, 3-loop: log10 mu0 = 17.07;  at M_Pl yt=0.3546 lamJ=0.1142 g2=0.5063 g'=0.4596  (his: yt 0.3510, lamJ 0.1405, g2 0.5068, g' 0.4589)
+
+R = C_bos/|C_ferm| at M_t: (A) 0.344;  (J) his M_t row 0.366;  (J) M_Z row run to 173.5 0.368
+
+Attribution at mu = M_t = 173.5: start from (B) and replace one coupling by Jegerlehner's value (3-loop):
+  (B) baseline: 23.46
+  replace               yt: log10 mu0 = 15.68
+  replace              lam: log10 mu0 = 24.18
+  replace               g1: log10 mu0 = 24.29
+  replace               g2: log10 mu0 = 23.33
+  replace               g3: log10 mu0 = 23.68
+  replace           yt+lam: log10 mu0 = 16.61
+  replace            yt+g1: log10 mu0 = 16.01
+  replace  yt+lam+g1+g2+g3: log10 mu0 = 17.06
+  Delta y_t(M_t) (J - B) = -0.0376;  Buttazzo slope dy_t/dM_t = 0.00556/GeV -> equivalent Delta M_t = -6.8 GeV
+
+Delta y_t(M_t) needed on (A) to put mu0 at Jegerlehner's scales (3-loop):
+  mu0 = 1.4e16 (1304.7813)    : Delta y_t = -0.0324  (y_t(M_t) = 0.9005)
+  mu0 = 7e16 (1305.6652 text) : Delta y_t = -0.0286  (y_t(M_t) = 0.9042)
+  mu0 = M_Pl                  : Delta y_t = -0.0175  (y_t(M_t) = 0.9153)
