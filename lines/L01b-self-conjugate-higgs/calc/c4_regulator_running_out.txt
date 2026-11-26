@@ -3,7 +3,8 @@ Part A. Per-species weight of the quadratically sensitive term in three regulato
   Pauli-Villars (2 regulators, Lambda, 2 Lambda): leading term = Lambda^2 x -log(2)/(6*pi**2)  (M-independent: d/dM2 = 0)
   dim. reg.: A0 = Gamma(1-d/2)(M^2)^(d/2-1)/(4pi)^(d/2); residue at d = 2: -1/(2*pi)  (M-independent)
   => weight of species i in d^2V/dphi^2 is n_i * d^2 M_i^2/dphi^2 x (universal constant) in all three.
-     Ratios of the C_i (hence R2, the 34% / 79%) are identical in cutoff, PV and DR(d=2 pole). [established]
+     Ratios of the C_i (hence R2, the 34% / 79%) are identical in cutoff and PV (and DRED). CORRECTED c7: at the DREG d=2 pole
+     the transverse vector multiplicity is d-1 = 1, not 3, giving R2(M_t) = 0.211; see c7_regulators_out.txt.
      Caveat: only at one loop; the 2-loop Lambda^2 coefficient is scheme dependent (Einhorn-Jones, PRD 46,
      5206 (1992)), and at d = 4 in DR the term is absent.
 
@@ -13,7 +14,7 @@ Part B. STr M^4 gauge dependence: Fermi-gauge mixed block, coefficient of 1/k^4 
   lam^2 parts of the phi^4 coefficient are not. R4 below keeps only those. [established; Nielsen NPB 101, 173 (1975)]
 
 Part C. Fractions of the top (and all-fermion) sea cancelled by boson pairs, 3-loop MS-bar running
-  R2 = (C_W + C_Z+h)/C_top   [quadratic; = Lambda^2 / PV / DR(d=2) coefficient]
+  R2 = (C_W + C_Z+h)/C_top   [quadratic; = Lambda^2 / PV coefficient, n_V = 3]
   R4 = (W + Z + h + G pieces of beta_lambda, lam^0 and lam^2 terms)/(6 y_t^4)   [log; gauge + regulator invariant]
   log10 mu  R2_top R2_ferm  R4_top R4_ferm   R4 ch   R4 sc      lam
       2.24  0.3442  0.3441  0.1379  0.1379  0.0431  0.0948 +0.12617

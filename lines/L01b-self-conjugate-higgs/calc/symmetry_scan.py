@@ -46,7 +46,7 @@ CANDIDATES = {
     "CP": (1, 1, 1, True, "H(t,x) -> H*(t,-x); fermion bilinears -> their hermitian conjugates. Exact up to the CKM phase"),
     "P (parity, L<->R exchange)": (1, 1, 1, True, "maps Qbar_L t_R <-> tbar_R Q_L, i.e. each Yukawa term to its h.c. (observation (b)); not a symmetry of the SM gauge sector (L doublet, R singlet)"),
     "Z2: h -> -h  (H -> -H) alone": (-1, 1, 1, False, "sign flip of the self-conjugate field only"),
-    "Z2: H -> -H, t_R -> -t_R  ('h -> -h with L<->R sign')": (-1, 1, -1, False, "discrete chiral transformation; extended to all fields it equals the SU(2) centre element (-1 on doublets) times a (3B+L)-rotation by pi, i.e. an exact SM symmetry"),
+    "Z2: H -> -H, t_R -> -t_R  ('h -> -h with L<->R sign')": (-1, 1, -1, False, "discrete chiral transformation; extended to all fields it equals the SU(2) centre element (-1 on doublets) times a (3B+L)-rotation by pi, i.e. an exact but trivial SM symmetry: equals SU(2)_L centre x (-1)^F (refB_check), no physical content beyond gauge + Lorentz invariance"),
     "U(1) phase on H: H -> e^{i a} H": (sp.exp(sp.I * a), 1, 1, False, "hypercharge-like phase on H only"),
     "Chiral U(1)_A on top: Q_L -> e^{i a}Q_L, t_R -> e^{-i a}t_R": (1, sp.exp(sp.I * a), sp.exp(-sp.I * a), False, "protects a Dirac top mass"),
     "Chiral U(1)_A + H -> e^{-2 i a} H (PQ-like, combined)": (sp.exp(-2 * sp.I * a), sp.exp(sp.I * a), sp.exp(-sp.I * a), False, "the Yukawa's own chiral symmetry"),

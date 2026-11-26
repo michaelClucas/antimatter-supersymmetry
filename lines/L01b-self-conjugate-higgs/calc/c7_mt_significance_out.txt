@@ -1,0 +1,11 @@
+dy_t(M_t)/dM_t = 0.00556 per GeV (Buttazzo fit)
+distance M_t - M_t* = 3.03 GeV
+  delta y_t(matching)   equiv dM_t   total budget   significance
+    0.0005              0.090        0.744         4.1 sigma
+    0.0010              0.180        0.760         4.0 sigma
+    0.0020              0.360        0.821         3.7 sigma
+    0.0030              0.540        0.915         3.3 sigma
+    0.0040              0.719        1.031         2.9 sigma
+cross-section pole mass 172.4 +- 0.7 (no MC term) with delta_y = 0.003: 2.9 sigma
+Jegerlehner matching (delta_y = -0.038, 6.8 GeV equivalent): C(M_Pl) = 0 not excluded.
+Summary: 3.3-4.1 sigma within Buttazzo-type matching for delta_y in [0.0005, 0.003]; not excluded under Jegerlehner.

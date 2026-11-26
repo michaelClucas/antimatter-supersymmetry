@@ -1,6 +1,6 @@
 # STATE (overseer working memory)
 
-**Current cycle:** 7 (cycle 6 complete and committed)
+**Current cycle:** 8 (cycle 7 complete and committed)
 **Next wildcard due:** cycle 11
 
 ## How to resume (for a fresh overseer)
@@ -26,16 +26,16 @@
 
 | Line | SUSY # | Status | Gate progress / notes |
 |---|---|---|---|
-| L01b-self-conjugate-higgs | 1, 4 | CONTINUE (fix round 3), TOP PRIORITY | Referees A and B (c6) both MAJOR, no fatal; A reproduced every number. Required reframe: the obstruction is NOT "(c) no scalar chirality" (MSSM scalars have none and are protected) but that SM antimatter operations (C, CP, CPT) map particle→antiparticle of the SAME spin; there is no boson↔fermion symmetry to tie boson couplings to y_t. Also: d=2 dim-reg agreement false (R(M_t)=0.211 with d−1 vector counting; only cutoff and PV agree); R is not an observable; classical scale invariance (Bardeen) unaddressed; shift/pNGB, gauge-Higgs, holomorphy not treated; symmetry scan not exhaustive (use rigorous chain: unitary reps on H, Coleman-Mandula/HLS, pNGB needs new fields); "exact Z2" trivial (SU(2) centre × (−1)^F); #4 omits QCD-condensate EWSB (⟨q̄q⟩ breaks EW, tiny scale); 4.1σ → ~3.3-4σ with y_t matching spread; antimatter framing not load-bearing (H3) unless the same-spin argument is made central; 2 cites to verify. |
-| L05-beta-function-map | 2 (D4) | VERIFICATION | Referee 1 minor-only (1/3). Fix c6 done: theorem scoped (one-doublet parent); counterexamples verified c6_scope.py; D4 negative (CPT-blind group factors); gate 7 = consistency check vs published tables: SM (1201.5868, 1210.6873) × MSSM (9311340 eq 4.5, 9605440) all four pairings pass. Overseer accepts this as gate-7 consistency check (falsifiable by any correct table). Referees 2, 3 next. |
-| LW1-antiquark-diquark-susy | 1 (neg.), 6 | VERIFICATION | Fix c6 done: C1 [H,Q]≠0 (breaking 102 MeV charm, 33 MeV bottom ~Λ²/m_Q; 256 MeV light) so no mass protection; {Q,Q†} has no P/H (3 momentum modes, spin-1/2 Q); census 30/40, no evidential weight; control: 96% SU(3) cancellation NOT evidence for superflavor (additive model r=0; hyperfine fits −13/+14 vs obs 4.0±1.6). Predictions Ξ_cc*−Ξ_cc 107±32 (LHCb Ξ_cc⁺⁺γ), Ξ_bb*−Ξ_bb 30±4. Referee 2 next. |
-| LW2-chiral-partner-protection | 1 (partial positive), 4, 6 | CONTINUE | Wildcard c6. Positive SM-antimatter match: π⁺ EM mass divergence cancelled by q̄q partners ρ/a1 via Weinberg sum rules (DGMLY 1967), removing Λ² AND ln Λ (soft SUSY leaves a log). Δm²_π 1604 MeV² predicted vs 1261 measured; pion naturalness scale 851 MeV vs partners 775/1230 MeV. Higgs: h (0+) and G0 (0−) chiral partners, m_h/v protected, μ² not; composite route needs BSM (top condensation needs m_t ≈ 235-246 GeV). References from memory [unverified]; lit check needed. |
+| L01b-self-conjugate-higgs | 1, 4 | VERIFICATION (negative result), TOP PRIORITY | Fix round 3 done c7. CLAIM: no SM antimatter operation can enforce λ_{Ht̃t̃}=y_t² (C,P,CP,T,CPT, sea/F-S preserve spin & statistics → can't tie SFF to S⁴ couplings; CM/HLS: only spin-changing symmetry is SUSY, SM can't fill supermultiplets; C=0 not RG invariant). Shift/pNGB (via LW2), gauge-Higgs, holomorphy, Bardeen scale invariance covered. R demoted (illustration, not observable; d=2 pole R=0.211). F-b 3.3-4.1σ. #4: QCD-condensate EWSB m_W = g f_π/2 ≈ 30 MeV (overseer checked). Cite fix: hep-th/9209124 is Kleppe; Al-sarhi-Jack-Jones Z.Phys.C 55, 283 (1992). Needs 3 fresh referees on this version. |
+| L05-beta-function-map | 2 (D4) | VERIFICATION → narrowing fix | Referees: R1 minor (c5), R2 minor (c7; 300 random theories, tables fetched), R3 MAJOR fixable (c7). None fatal, no BSM → gate item 5 passes by letter, but overseer holds promotion: CLAIM (b) proved only for gauge b_i, b_ij; Yukawa (Q H^c d^c, L H^c e^c allowed vs forbidden for duplicate) and anomaly cancellation DO distinguish H^c — an antimatter-specific structure, investigate for D4; scope "one-doublet parent" too broad (SM+(8,3,0) complex → 18/17); gate 7 table check near-circular; "15% of B shift" order-dependent (~48% other order); A3.4 equivalence argument unstated; multiple U(1)s, evanescent caveat, real-scalar diagonal term, odd invariants. |
+| LW1-antiquark-diquark-susy | 1 (neg.), 6 | CONTINUE (fix round 2) | Referee 2 (c7) MAJOR fixable: "102/33 MeV breaking" is mostly HQ spin breaking that superflavor itself predicts (model ratio 0.69/0.72 vs 0.75); model not calibrated to D*−D (58 vs 142 MeV); 1/m_Q put in by hand; "[H,Q]≠0 ⇒ no protection" false (soft MSSM counterexample) → C1 must rest on compositeness + Higgs singlet under Q + HLS; antimatter not load-bearing in C1. Referee cites LHCb 2026 arXiv:2609.21921 / CERN EP news on completing the doubly-charmed family → check whether Ξ_cc* now measured (direct test of 107±32 MeV). |
+| LW2-chiral-partner-protection | 1 (context) | SUPPORT, no further work | Lit c7: 13/13 cites confirmed; nothing new (Contino §3.2 eq 90; Panico-Wulzer §5.3.2; Giudice 0801.2562 §6). Numbers match. Cited by L01b for the pNGB route. |
 
-## Queue (cycle 7)
-1. Fixer L01b round 3 (reframe around same-spin antimatter operations; all c6 referee items; can cite LW2 for the composite-scalar contrast).
-2. Referees 2 and 3 for L05 (fresh, parallel, separate files).
-3. Referee 2 for LW1.
-4. Lit check LW2.
+## Queue (cycle 8)
+1. Three fresh referees for L01b (parallel; files REVIEWS_C.md, REVIEWS_D.md, REVIEWS_E.md).
+2. Fixer L05: narrow CLAIM (b) to gauge coefficients; investigate Yukawa/anomaly distinction of H^c as antimatter-specific structure (D4, positive direction); fix scope (18/17 case); address gate-7 circularity (find a non-circular check, e.g. independent automated code output or numerical RG cross-check, or state honestly); order-dependence; A3.4 argument.
+3. Fixer LW1 round 2 (referee 2 items; verify LHCb Ξ_cc* status and compare).
+Then: one confirming referee for L05 after fix.
 
 ## Open issues carried from explorers
 - L01: runner gives m(M_Pl)=139.4 GeV vs Buttazzo 129.4 (not load-bearing); Weisskopf 1939 detail unverified.

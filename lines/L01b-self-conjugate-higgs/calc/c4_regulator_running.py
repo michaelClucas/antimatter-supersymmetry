@@ -4,7 +4,7 @@ Two quantities, both defined from the tree-level field-dependent spectrum M_i^2(
 
  R2 (quadratic level): C = (1/2) d^2/dphi^2 STr M^2(phi).  Every one-loop regulator that is applied uniformly to all
     species turns the per-species weight into n_i * d^2 M_i^2/dphi^2 times ONE universal constant: Lambda^2 (cutoff),
-    sum_j c_j Lambda_j^2 ln Lambda_j^2 (Pauli-Villars), or the residue of the pole at d = 2 (dimensional
+    sum_j c_j Lambda_j^2 ln Lambda_j^2 (Pauli-Villars), or the residue of the pole at d = 2 (dimensional [CORRECTED c7: only if n_V is held at 3, i.e. DRED; with d-1 vector counting R differs, c7_regulators.py]
     regularization; Veltman, Acta Phys. Polon. B 12, 437 (1981)). So R2 = C_bos/|C_ferm| is the same number in all
     three. In DR at d = 4 there is no such term at all: R2 has no d = 4 DR observable attached [established].
  R4 (logarithmic level): the phi^4 coefficient of STr M^4(phi), i.e. the coefficient of ln(mu) in the one-loop
@@ -55,7 +55,8 @@ A0 = sp.gamma(1 - d / 2) * M2**(d / 2 - 1) / (4 * sp.pi)**(d / 2)
 res = sp.residue(A0, d, 2)
 P(f"  dim. reg.: A0 = Gamma(1-d/2)(M^2)^(d/2-1)/(4pi)^(d/2); residue at d = 2: {sp.simplify(res)}  (M-independent)")
 P("  => weight of species i in d^2V/dphi^2 is n_i * d^2 M_i^2/dphi^2 x (universal constant) in all three.")
-P("     Ratios of the C_i (hence R2, the 34% / 79%) are identical in cutoff, PV and DR(d=2 pole). [established]")
+P("     Ratios of the C_i (hence R2, the 34% / 79%) are identical in cutoff and PV (and DRED). CORRECTED c7: at the DREG d=2 pole")
+P("     the transverse vector multiplicity is d-1 = 1, not 3, giving R2(M_t) = 0.211; see c7_regulators_out.txt.")
 P("     Caveat: only at one loop; the 2-loop Lambda^2 coefficient is scheme dependent (Einhorn-Jones, PRD 46,")
 P("     5206 (1992)), and at d = 4 in DR the term is absent.")
 
@@ -84,7 +85,7 @@ def split(cc):
 
 
 P("\nPart C. Fractions of the top (and all-fermion) sea cancelled by boson pairs, 3-loop MS-bar running")
-P("  R2 = (C_W + C_Z+h)/C_top   [quadratic; = Lambda^2 / PV / DR(d=2) coefficient]")
+P("  R2 = (C_W + C_Z+h)/C_top   [quadratic; = Lambda^2 / PV coefficient, n_V = 3]")
 P("  R4 = (W + Z + h + G pieces of beta_lambda, lam^0 and lam^2 terms)/(6 y_t^4)   [log; gauge + regulator invariant]")
 f = run(nloops=3, mu_max=1e32)
 P(f"  {'log10 mu':>8s} {'R2_top':>7s} {'R2_ferm':>7s} {'R4_top':>7s} {'R4_ferm':>7s} {'R4 ch':>7s} {'R4 sc':>7s} {'lam':>8s}")

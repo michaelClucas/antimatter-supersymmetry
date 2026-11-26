@@ -1,0 +1,57 @@
+S1. Antimatter operations preserve the Lorentz representation (spin) of the field
+  C: max |C L* C^-1 - L| over 5 random Lorentz transformations = 2.5e-16  -> psi^c is a spin-1/2 Dirac field
+  P: max |P J P^-1 - J| = 0.0e+00;  T: max |T J* T^-1 + J| = 0.0e+00  (J -> -J, antiunitary)
+  J^2 on the Dirac spinor = [0.75 0.75 0.75 0.75] = j(j+1) with j = 1/2; every map above commutes with J^2
+  C J^2* C^-1 - J^2 = 0.0e+00. Bosons: phi -> phi* (scalar to scalar), W+_mu <-> -W-_mu (vector to vector).
+  Statistics: none of these maps changes (-1)^F, which is (-1)^{2j} by spin-statistics.
+  => every SM antimatter operation (C, CP, CPT; sea / Feynman-Stueckelberg relabelings) maps spin j to spin j.
+
+S2. Field-type class of each coupling entering C (S = scalar, F = Weyl fermion, V = vector)
+  y_t   (Q t^c H)              class S F F
+  y_b, y_tau, other Yukawas    class S F F
+  lam   (|H|^4)                class S S S S
+  g, g' in |D H|^2             class V S S, V V S S
+  g, g' in psi-bar D psi       class V F F
+  g, g' in F_mu nu^2           class V V V, V V V V
+  A spin- and statistics-preserving linear map sends S->S, F->F, V->V, so it maps each class into itself.
+  Gauge universality ties g in V S S to g in V F F (same gauge field, same group).
+  Nothing ties y_t (class S F F, with S a scalar not a gauge field) to lam (S^4) or to g: the only symmetry that
+  could is one mapping S <-> F or S <-> V. S <-> V is gauge-Higgs unification (H = A_5, extra dimensions: BSM).
+  S <-> F is supersymmetry (S3). Shift symmetry h -> h + c is non-linear and mixes classes of different degree,
+  but requires h to be a Goldstone of a larger broken group: new fields (LW2 Sec. 3).
+
+S3. SUSY: the generator changes J_z by 1/2, and the F-term ties the stop quartic to y_t^2
+  [J_z, Q_1] = -0.5 Q_1: Q_1 acting on a state of J_z = m gives J_z = m -0.5
+  [J_z, Q_2] = +0.5 Q_2: Q_2 acting on a state of J_z = m gives J_z = m +0.5
+  W = y H Q U ; V_F = |dW/dQ|^2 + |dW/dU|^2 = Q*h*y*conjugate(Q)*conjugate(h)*conjugate(y) + U*h*y*conjugate(U)*conjugate(h)*conjugate(y)
+  -> stop quartic |H|^2(|Q|^2+|U|^2) with coefficient |y|^2: lambda_{H stop stop} = y_t^2, and m_top = y <H>.
+  top sector (1/2) d^2/dphi^2 STr M^2 = 0  (stops +6*y**2, top -6*y**2)
+  The relation lambda_{H stop stop} = y_t^2 holds because Q maps the top (j=1/2) into the stop (j=0). No map in S1 can.
+
+S4. Can SM states be grouped into supermultiplets? (same SU3 x SU2 x U1_Y, spin differs by 1/2)
+  fermion Q    (3, 2, 1/6)        scalar/vector partner in SM: none
+  fermion u^c  (-3, 1, -2/3)      scalar/vector partner in SM: none
+  fermion d^c  (-3, 1, 1/3)       scalar/vector partner in SM: none
+  fermion L    (1, 2, -1/2)       scalar/vector partner in SM: ['H']
+  fermion e^c  (1, 1, 1)          scalar/vector partner in SM: none
+  boson   H         (1, 2, 1/2)   fermion partner in SM: ['L']
+  boson   G (gluon) (8, 1, 0)     fermion partner in SM: none
+  boson   W         (1, 3, 0)     fermion partner in SM: none
+  boson   B         (1, 1, 0)     fermion partner in SM: none
+  Only H ~ L* matches in quantum numbers (the old 'Higgs as sneutrino' idea); it does not help the top loop,
+  which needs a colour-triplet scalar. No SM state has the quantum numbers of t~_L or t~_R.
+  dof: 28 bosonic vs 90 fermionic (CONSTRAINTS G): STr 1 != 0, so no SUSY representation exists on SM content.
+  Supersymmetrizing the SM therefore requires new fields, excluded by A1 and by C3.
+
+S5. Could C = 0 hold accidentally at all scales? (one-loop beta of C on C = 0; 3-loop numerics)
+  16 pi^2 beta_C |_(C=0) = 33*g**4 + 63*g**2*gp**2/2 - 162*g**2*y**2 + 96*g3**2*y**2 + 17*gp**4 - 46*gp**2*y**2 + 126*y**4  (not identically zero)
+  3-loop: C = 0 at mu0 = 10^22.83 GeV, dC/dln mu there = +0.0203 (a transverse crossing, not an invariant surface)
+  one-loop beta_C/(16pi^2) evaluated with mu0 couplings = +0.0202
+
+S6. Classical scale invariance (Bardeen, FERMILAB-CONF-95-391-T)
+  In MS-bar, beta_{mu^2} = mu^2 x (function of dimensionless couplings): mu^2 = 0 is RG invariant. [established]
+  This is the SM's only internal handle on mu^2. It is not a boson-fermion relation: dilatations commute with
+  J^2, so it constrains the dimensionful mu^2, not C. It is broken by the trace anomaly (dimensional transmutation).
+  Test of the scale-invariant SM (tree mu^2 = 0, CW potential, no Higgs-loop term): B = (6M_W^4+3M_Z^4-12m_t^4)/(64pi^2 v^4) = -4.39e-03
+  B < 0: the stationary point at phi != 0 is a maximum, so no radiative EWSB (reproduces L01 cw_radiative_ewsb, B = -4.3e-3 with m_h included).
+  The measured spectrum (m_h = 125.2, m_t = 172.57) requires a tree mu^2 = m_h^2/2 = (88.5 GeV)^2 != 0, so classical scale invariance is explicitly broken in the SM itself.

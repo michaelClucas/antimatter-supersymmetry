@@ -28,7 +28,7 @@
      Dirac mass m Qbar_L t_R (comparison; not gauge inv.) [m      ]: ALLOWED, coupling invariant
      odd power of H (comparison; not gauge inv.)          [-      ]: forbidden unless coupling -> -coupling (spurion sign flip)
 
-  Z2: H -> -H, t_R -> -t_R  ('h -> -h with L<->R sign'):  discrete chiral transformation; extended to all fields it equals the SU(2) centre element (-1 on doublets) times a (3B+L)-rotation by pi, i.e. an exact SM symmetry
+  Z2: H -> -H, t_R -> -t_R  ('h -> -h with L<->R sign'):  discrete chiral transformation; extended to all fields it equals the SU(2) centre element (-1 on doublets) times a (3B+L)-rotation by pi, i.e. an exact but trivial SM symmetry: equals SU(2)_L centre x (-1)^F (refB_check), no physical content beyond gauge + Lorentz invariance
      mu^2 Hdag H                                          [mu^2   ]: ALLOWED, coupling invariant
      lambda (Hdag H)^2                                    [lambda ]: ALLOWED, coupling invariant
      y_t Qbar_L Htilde t_R (Htilde ~ H*)                  [y_t    ]: ALLOWED, coupling invariant

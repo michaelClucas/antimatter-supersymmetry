@@ -52,3 +52,10 @@
 - LW1: fixed ([H,Q]≠0 quantified; control shows SU(3) cancellation is not superflavor evidence). → referee 2.
 - LW2 (new): first positive SM-antimatter match — pion EM mass protected by q̄q partners (ρ, a1) via Weinberg sum rules, more completely than soft SUSY; Higgs μ² not protected without BSM compositeness. → lit check.
 - Status: no verified result. L05 1/3 clean referees.
+
+## Cycle 7, 2026-11-25
+- Spawns (5): fixer L01b round 3; referees 2, 3 for L05; referee 2 for LW1; lit check LW2.
+- L01b: reframed around same-spin antimatter operations + CM/HLS; all c6 items addressed. → 3 fresh referees.
+- L05: R2 minor, R3 major (claim (b) only proven for gauge coefficients; Yukawa/anomaly distinguish H^c; gate-7 near-circular). Gate item 5 passes by letter (no fatal, no BSM across 3 referees) but promotion held for narrowing fix.
+- LW1: referee 2 major fixable. LW2: nothing new → support only.
+- Status: no verified result.

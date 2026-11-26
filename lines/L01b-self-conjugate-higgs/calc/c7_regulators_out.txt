@@ -1,0 +1,16 @@
+Sector coefficients with transverse multiplicity d-1 (xi drops out):
+  W = (d*g**2 - g**2 + 4*lam)/2
+  Z+h = (d*g**2 + d*gp**2 - g**2 - gp**2 + 16*lam)/4
+  d=4 (cutoff, PV, DRED): W = 3*g**2/2 + 2*lam, Z+h = 3*g**2/4 + 3*gp**2/4 + 4*lam
+  d=2 pole of DREG     : W = g**2/2 + 2*lam, Z+h = g**2/4 + gp**2/4 + 4*lam
+
+R = C_bos/|C_ferm| (3-loop running, Buttazzo matching, PDG 2024)
+  log10 mu    R(n_V=3: cutoff/PV/DRED)   R(n_V=d-1=1: DREG d=2 pole)
+     2.24     0.344                      0.211
+    10.00     0.508                      0.176
+    16.00     0.667                      0.184
+    19.09     0.790                      0.216
+  mu0 (R=1): n_V=3 -> 10^22.83 GeV ; n_V=1 -> no crossing below 10^29.9 GeV
+
+Conclusion: R and mu0 are regulator-dependent numbers, not observables. In d=4 DREG/MS-bar the term is absent.
+Cutoff and PV agree because both weight every physical dof of a 4D field equally; DREG's d=2 pole does not.

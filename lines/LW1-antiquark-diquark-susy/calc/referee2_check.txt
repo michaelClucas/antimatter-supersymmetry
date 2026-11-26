@@ -1,0 +1,37 @@
+(1) 3/4 rule from heavy-quark spin + colour algebra
+   Casimir of diquark colour: 1.3333 (3bar: 4/3)
+   P (S_1 T_1^a) P = c S_D T_D^a with c = 0.2500 (max deviation 1.4e-17); two quarks -> 0.50
+   meson S.S levels [-0.75  0.25] -> split 1.000;  baryon (1/2)S_D.S_q levels [-0.5   0.25] -> split 0.750  => ratio 0.750
+
+(2) Part B model rebuilt (3 momentum modes, contact hyperfine, same parameters as c6)
+   charm: ||B|| full space  101.6 MeV;  colour-singlet only  101.6 MeV
+      recoil-only breaking (singlet):  17.2 MeV;  hyperfine-only (singlet): 100.4 MeV
+      lowest meson levels (MeV, deg): [(np.float64(1831.3), np.int64(1)), (np.float64(1876.9), np.int64(2)), (np.float64(1889.2), np.int64(3)), (np.float64(1940.4), np.int64(6))]
+      lowest baryon levels (MeV, deg): [(np.float64(3397.6), np.int64(2)), (np.float64(3422.1), np.int64(4)), (np.float64(3437.6), np.int64(4)), (np.float64(3463.2), np.int64(8))]
+   bottom: ||B|| full space   32.5 MeV;  colour-singlet only   32.5 MeV
+      recoil-only breaking (singlet):   5.6 MeV;  hyperfine-only (singlet):  32.1 MeV
+      lowest meson levels (MeV, deg): [(np.float64(5047.6), np.int64(1)), (np.float64(5063.8), np.int64(3)), (np.float64(5064.3), np.int64(2)), (np.float64(5080.7), np.int64(6))]
+      lowest baryon levels (MeV, deg): [(np.float64(9782.2), np.int64(2)), (np.float64(9790.7), np.int64(4)), (np.float64(9794.0), np.int64(4)), (np.float64(9802.5), np.int64(8))]
+   Scaling: kappa_eff/(m_q m_Q) = DM*(3/16)*16/3 ... hyperfine coefficient = DM by construction; c6 sets DM = 142 MeV * m_c/m_Q, so m_Q ||B_hf|| = const is an input, not an output.
+
+(3) P1/P2 arithmetic
+   3/4 x D*0-D0 (142.014) = 106.5 MeV
+   3/4 x D*+-D+ (140.603) = 105.5 MeV
+   3/4 x Ds*-Ds (143.8) = 107.9 MeV
+   3/4 x B*-B (45.21) = 33.9 MeV
+   B*-B as used in c2 (5324.75-5279.41) = 45.34; vs isospin-avg B (5279.565): 45.19
+   R_cc(lat) = 0.583; kappa/s_c = -0.223; 1/m_Q transport: R_bb = 0.695 -> Xi_bb*-Xi_bb = 31.4 MeV
+   alt. transport alpha_s(mv) ratio ~0.67: Xi_bb*-Xi_bb = 28.9 MeV
+   alt. transport alpha_s^2 ratio ~0.45: Xi_bb*-Xi_bb = 30.5 MeV
+   alt. transport no reduction (1.0): Xi_bb*-Xi_bb = 26.4 MeV
+
+(2b) Model spectrum in the colour-singlet, total-momentum-0 sector, with J identified
+   charm: meson levels (MeV,J,deg) [(np.float64(1831.3), np.float64(0.0), 1), (np.float64(1889.2), np.float64(1.0), 3), (np.float64(2059.4), np.float64(0.0), 1)]
+          baryon levels (MeV,J,deg) [(np.float64(3397.6), np.float64(0.5), 2), (np.float64(3437.6), np.float64(1.5), 4), (np.float64(3599.8), np.float64(0.5), 2)]
+          ground hyperfine: meson 57.9 MeV (calibration target 142.0), baryon 40.0 MeV, ratio 0.691
+   charm, no recoil: meson levels (MeV,J,deg) [(np.float64(1828.0), np.float64(0.0), 1), (np.float64(1888.9), np.float64(1.0), 3), (np.float64(2011.0), np.float64(0.0), 1)]
+                     baryon levels (MeV,J,deg) [(np.float64(3396.8), np.float64(0.5), 2), (np.float64(3437.4), np.float64(1.5), 4), (np.float64(3574.8), np.float64(0.5), 2)]
+                     ground hyperfine: meson 61.0 MeV (calibration target 142.0), baryon 40.7 MeV, ratio 0.667
+   bottom: meson levels (MeV,J,deg) [(np.float64(5047.6), np.float64(0.0), 1), (np.float64(5063.8), np.float64(1.0), 3), (np.float64(5244.3), np.float64(0.0), 1)]
+           baryon levels (MeV,J,deg) [(np.float64(9782.2), np.float64(0.5), 2), (np.float64(9794.0), np.float64(1.5), 4), (np.float64(9972.9), np.float64(0.5), 2)]
+           ground hyperfine: meson 16.3 MeV (calibration target 45.3), baryon 11.8 MeV, ratio 0.724
