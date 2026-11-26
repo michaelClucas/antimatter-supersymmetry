@@ -65,7 +65,7 @@
    toy SU(2)xU(1), Weyl (2,+-1/2),(1,+-1); complex scalars (2,1/2),(3,1): Phi*
       off-diag/abelian (i,j, SUSY, nonSUSY, ratio): [((1, 1), 34, 17, 2), ((1, 2), 54, 27, 2), ((2, 1), 18, 9, 2)]
       non-abelian diag (i, SUSY, nonSUSY): [(2, 38, -49/3)]
-   toy SU(2)xSU(3), Weyl 2x(2,3) [+conj implied], complex scalar (3,8): MINIMAL SUSY (one chiral (3,8)): 
+   toy SU(2)xSU(3), Weyl (2,3) + (2,3bar) [same S,C; anomaly-free], complex scalar (3,8): MINIMAL SUSY (one chiral (3,8)): 
       off-diag/abelian (i,j, SUSY, nonSUSY, ratio): [((1, 2), 208, 200, 26/25), ((2, 1), 78, 75, 26/25)]
       non-abelian diag (i, SUSY, nonSUSY): [(1, 189, 257/2), (2, 392/3, 148/3)]
    same, Phi* (two chirals (3,8)): 
@@ -79,6 +79,8 @@
    complex scalars S_c, real scalars S_r. Let Phi*(T) = vector multiplets for each G_i + chiral multiplets
    F u S_r u {s, s' : s in S_c} with s' any rep having the same (S_i, C_j) as s (e.g. conj(s)). Then
    b_ij[Phi*(T)] = 2 b_ij[T] for all i != j and for every abelian i = j. Proof: per-field weights of section 0;
-   the delta_ij pieces are proportional to C(G_i), zero for U(1). Minimal supersymmetrization equals Phi*
-   exactly when every complex scalar needs a second chiral multiplet (anomaly / holomorphy), as for any scalar
-   with nonzero U(1) charge or in a complex rep; it fails for complex scalars in real reps (test d).
+   the delta_ij pieces are proportional to C(G_i), zero for U(1).
+   Minimal supersymmetrization equals Phi* only when the complex scalars have no anomaly-free vector-like pairing
+   among themselves and each one's fermion partner needs a NEW conjugate partner. The one-doublet SM is such a case.
+   Counterexamples (c6_scope.py): complex scalar in a real rep (3,8) -> 26/25; pseudoreal (2,8,0) -> 8/7;
+   vector-like scalar pair -> 1; 2HDM parent -> MSSM gives 3/2 and 199/104. The factor 2 belongs to the parent choice.

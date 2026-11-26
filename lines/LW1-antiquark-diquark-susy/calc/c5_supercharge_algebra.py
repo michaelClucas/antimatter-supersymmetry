@@ -19,8 +19,9 @@ Two levels.
       3. [D_b, D_a^dag] is NOT delta_ab: the composite diquark is not a canonical boson. The deviation
          is a quark-number-type operator.
     So {Q, Q^dag} is again built from number / colour-density operators only.
-All operators act on modes at one point (one spatial mode). In the field theory each operator is
-integrated over space with no derivative, so {Q, Q^dag} contains no P_mu. See WORK.md cycle 4.
+All operators act on modes at one point (one spatial mode), and in (B) the antiquark is SPINLESS, so the
+(B) operator Q is fermionic with spin 0. This toy cannot test anything about momentum (cycle-5 referee 1,
+finding 1). Superseded for those questions by c6_hq_commutator.py (3 momentum modes, spin-1/2 antiquark).
 """
 import itertools
 import numpy as np
@@ -195,5 +196,5 @@ for nq, nab, lab in [(0, 1, "1 antiquark (meson-side constituent)"), (2, 0, "2 q
     print(f"  spectrum of {{Q,Q^dag}} in sector {lab}: " + ", ".join(f"{v:g} (x{c})" for v, c in zip(vals, cnt)))
 print()
 print("Result: in both realisations {Q, Q^dag} is a sum of number, spin and colour-density operators.")
-print("Compare Poincare SUSY: {Q_alpha, Qbar_betadot} = 2 sigma^mu P_mu. Here no P_mu appears.")
-print("=> internal (spectrum-generating) superalgebra, of the same type as Iachello's nuclear U(m|n).")
+print("One spatial mode: this toy cannot show presence or absence of P_mu (see c6_hq_commutator.py).")
+print("=> non-relativistic spectrum-generating superalgebra, same type as Iachello's nuclear U(m|n).")

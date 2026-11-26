@@ -44,3 +44,11 @@
 - LW1: referee 1 MAJOR fixable (wrong reason for no protection; census 30/40; missing control). → fixer.
 - Also: an unrelated local file (MUON_G2_PROMPT.md) was committed by mistake in cycle 4 and untracked in cycle 5 (still in history).
 - Status: no verified result. L05 1/3 referees clean.
+
+## Cycle 6, 2026-11-25
+- Spawns (5): referees A, B for L01b; fixer L05; fixer LW1; wildcard (→ LW2-chiral-partner-protection).
+- L01b: both referees MAJOR (no fatal). Key correction: obstruction is absence of a boson↔fermion symmetry (antimatter operations preserve spin), not "no scalar chirality". → fix round 3.
+- L05: fixed; consistency check against 4 published table pairings passes. → referees 2, 3.
+- LW1: fixed ([H,Q]≠0 quantified; control shows SU(3) cancellation is not superflavor evidence). → referee 2.
+- LW2 (new): first positive SM-antimatter match — pion EM mass protected by q̄q partners (ρ, a1) via Weinberg sum rules, more completely than soft SUSY; Higgs μ² not protected without BSM compositeness. → lit check.
+- Status: no verified result. L05 1/3 clean referees.

@@ -1,0 +1,7 @@
+H    centre=-1 (3B+L)pi=+1 -> Z2=-1 | centre*(-1)^F=-1
+Q_L  centre=-1 (3B+L)pi=-1 -> Z2=+1 | centre*(-1)^F=+1
+u_R  centre=+1 (3B+L)pi=-1 -> Z2=-1 | centre*(-1)^F=-1
+d_R  centre=+1 (3B+L)pi=-1 -> Z2=-1 | centre*(-1)^F=-1
+L_L  centre=-1 (3B+L)pi=-1 -> Z2=+1 | centre*(-1)^F=+1
+e_R  centre=+1 (3B+L)pi=-1 -> Z2=-1 | centre*(-1)^F=-1
+Z2 == SU(2) centre x (-1)^F on all fields: True

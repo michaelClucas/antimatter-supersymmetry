@@ -1,22 +1,22 @@
-(1) Light-flavour independence of the superpartner difference
+﻿(1) Light-flavour independence of the superpartner difference
    q   M(QQq)-M(Qbar q) [J=1/2 vs 0-]   spin-avg version (Delta_B = 3/4 Delta_M)
    u    1756.71 +- 0.38                     1721.21 +- 0.38
-   d    1750.31 +- 1.60                     1715.16 +- 1.60
+   d    1750.31 +- 1.83                     1715.16 +- 1.83
    s    1757.55 +- 1.30                     1721.59 +- 1.30
    SU(3) breaking in mesons  D_s - <D>      =  101.1 MeV
    SU(3) breaking in baryons Om_cc - <Xi_cc> =  105.1 MeV
-   residual (non-cancelled part) = +4.0 +- 1.5 MeV = +4.0% of the SU(3) breaking
+   residual (non-cancelled part) = +4.0 +- 1.6 MeV = +4.0% of the SU(3) breaking
    spread of Delta_q over u,d,s = 7.2 MeV on a ~1755 MeV difference
    for scale: light-dof energy Lambda-bar ~ Mbar(D) - M(J/psi)/2 = 423 MeV [conjecture: crude m_c]; it cancels in Delta_q entirely at LO
 
 (2) Isospin: QED breaks superflavor (charge of cc = +4/3, of cbar = -2/3)
    Model [conjecture]: M = ... + delta*(n_d - n_u) + E_c * (Q_heavy x Q_light), E_c = alpha<1/r> same in both
    D+ - D0 = delta + (2/3) E_c ;  Xi_cc+ - Xi_cc++ = delta - (4/3) E_c
-   data: D+ - D0 = 4.82 +- 0.07, Xi_cc+ - Xi_cc++ = -1.58 +- 1.64
-   => E_c = 3.20 +- 0.82 MeV (<1/r>^-1 = 0.45 fm), delta = 2.69 +- 0.55 MeV
-   delta ~ 2.7 MeV is the size of m_d - m_u (PDG: ~2.5 MeV at 2 GeV). Zero d.o.f.: plausibility only.
-   Sign check: superflavor without QED predicts equal isospin splittings; data have opposite signs,
-   which is what the opposite-sign charge products (+2/3 vs -4/3) require.
+   data: D+ - D0 = 4.82 +- 0.07, Xi_cc+ - Xi_cc++ = -1.58 +- 1.87
+   => E_c = 3.20 +- 0.94 MeV (<1/r>^-1 = 0.45 fm), delta = 2.69 +- 0.62 MeV
+   Zero d.o.f.: plausibility only. delta is an effective hadronic parameter, not the MS-bar m_d - m_u
+   (cycle 6: that comparison removed, [speculation]). Superflavor without QED predicts equal isospin
+   splittings; the data have opposite signs, but the baryon sign is only 0.8 sigma from zero.
 
 (3) T_cc+ as superflavor partner of the anti-Lambda_c (both have light [ud]-type spin-0 dof)
    Delta_B = LO 3/4      : Mbar(Xi_cc) = 3691.4, Mbar(D) = 1973.2, M(T_cc) = 4005 MeV; observed 3874.7; miss +130 MeV (+3.4%)

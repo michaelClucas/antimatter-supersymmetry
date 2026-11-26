@@ -1,0 +1,16 @@
+(a) Lambda^2 coefficient: h (S) = -N_c*y**2/(8*pi**2) ; G0 (P) = -N_c*y**2/(8*pi**2) ; equal: True
+    S - P (exact, cutoff) = N_c*m2*y**2*(m2 + (Lambda2 + m2)*(log((Lambda2 + m2)/m2) - 1))/(4*pi**2*(Lambda2 + m2))
+    S - P leading:  N_c*m2*y**2/(4*pi**2) * ln Lambda^2   (proportional to m_t^2: order parameter)
+    m->0 check at fixed Lambda (chiral limit): S - P -> 0
+    [CW cross-check: V_top = -(12/64pi^2) M^4 ln(M^2/L^2), M^2=y^2h^2/2, gives +3y^4/(64pi^2) h^4 ln(L^2/M^2): positive quartic from tbar-t, i.e. beta_lambda contains -6 y^4 (Buttazzo eq. 101 normalisation)]
+(b) Veltman bracket = -8.221e+04 GeV^2 (CONSTRAINTS G: ~ -8.2e4)
+    |delta m_h^2| = m_h^2 at Lambda_nat: full SM 552 GeV; top-antitop only 458 GeV
+    pion analogue (c1): Lambda_nat = 851 MeV, partners rho 775 / a1 1230 MeV  -> found
+    Higgs: partner-like states needed near 458 GeV; LHC: stop > ~1200-1300 GeV, gluino > ~2200 GeV (CONSTRAINTS C3)
+    ratio (LHC stop bound / Lambda_nat,top) ~ 2.7; Barbieri-Giudice-type tuning ~ (ratio)^2 = 7
+(c) QCD sigma [f0(500) pole Re (CCL 2006) ]: m_sigma = 441 MeV, m_sigma/f_pi = 4.79, lambda_eff = m^2/(2f^2) = 11.5
+(c) QCD sigma [PDG range low              ]: m_sigma = 400 MeV, m_sigma/f_pi = 4.34, lambda_eff = m^2/(2f^2) = 9.4
+(c) QCD sigma [PDG range high             ]: m_sigma = 550 MeV, m_sigma/f_pi = 5.97, lambda_eff = m^2/(2f^2) = 17.8
+    SM Higgs: m_h/v = 0.508, lambda = m_h^2/(2v^2) = 0.129
+    f0(500) pole Im/Re = 272/441 = 0.62 (broad, strongly coupled); h: Gamma_SM/m = 4.1e-3/125 = 3.3e-05
+    QCD qbar-q condensate share of v^2 (one light doublet, f_pi^2/v^2) = 1.40e-07; M_W(QCD only) = g f_pi/2 = 30.0 MeV

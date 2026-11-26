@@ -1,0 +1,22 @@
+﻿Rows: 40.  Both members observed: 30  (c5d: 31; Xi_cc* row moved to PRED)
+  baryon predicted/unobserved: 5;  meson predicted: 4;  meson unconfirmed: 1
+  of the 30, meson-baryon rows whose meson has a J^P conflict: 1 (D(2600)?n/Lambda_c(2625) [PDG: D1*(2600) is 1-, slot needs 2-])
+  both observed and no meson J^P conflict: 29 / 40
+  tetraquark-slot J^P conflicts (slot counted as filled in c5d): D0(2550) in row D2*(2460)/Sigma_c(2520) [LHCb: 0-, slot needs 1+]
+
+Per-sector statistics (rows with both observed):
+  light   n=15  mean |dM/M| = 0.069  mean |dM| =   97 MeV  max |dM| =  254 MeV (K2(1770) / Lambda(1520))
+  charm   n= 8  mean |dM/M| = 0.021  mean |dM| =   54 MeV  max |dM| =  136 MeV (D1(2420) / Lambda_c(2286))
+  bottom  n= 6  mean |dM/M| = 0.014  mean |dM| =   81 MeV  max |dM| =  112 MeV (Bs2*(5840) / Xi_b(5945))
+  2heavy  n= 1  mean |dM/M| = 0.027  mean |dM| =   96 MeV  max |dM| =   96 MeV (h_c(3525) / Xi_cc(3621))
+  (h1/N: |dM| = 227 MeV; c5 WORK.md mislabelled the 254 MeV maximum as h1/N)
+
+Tetraquark slots:
+  EXO : all rows  2;  rows with observed baryon  1  (pi1(1600))
+  DEB : all rows  8;  rows with observed baryon  8
+  QQB : all rows 13;  rows with observed baryon 10
+  PRED: all rows  6;  rows with observed baryon  5
+  NONE: all rows 11;  rows with observed baryon 11
+
+Selection bias: the Nielsen-Brodsky tables were assembled from already known hadrons, so a high observed
+fraction is expected by construction. The count has no evidential weight for SUSY result #6.

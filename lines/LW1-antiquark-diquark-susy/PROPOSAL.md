@@ -4,7 +4,7 @@ Wildcard explorer, cycle 1.
 
 ## Idea
 
-The only boson-fermion (super)symmetry actually seen in Standard Model spectra is hadronic: mesons (q qbar) and baryons (q [qq]) line up as approximate supermultiplets. The map that relates them replaces an **antiquark** (fermion, colour 3bar) with a **diquark** (boson, colour 3bar, since antisym(3x3) = 3bar). So the SM's one realised SUSY-like structure is built on antimatter: the antiquark is the fermionic member, and its "superpartner" is a composite of two quarks with the same colour charge. [established as a structural fact; references below]
+An approximate boson-fermion (super)symmetry is seen in Standard Model hadron spectra: mesons (q qbar) and baryons (q [qq]) line up as approximate supermultiplets. The map that relates them replaces an **antiquark** (fermion, colour 3bar) with a **diquark** (boson, colour 3bar, since antisym(3x3) = 3bar). (Cycle 6 wording, convention-independent: every supermultiplet pairs a matter object with an antimatter object in the same colour representation, e.g. Qbar <-> QQ or Q <-> Qbar Qbar, so a world without antiquarks has none. It is not the SM's only realised boson-fermion symmetry: nuclear dynamical SUSY is another, but that one involves no antimatter.) [established as a structural fact; references below]
 
 Two levels:
 
@@ -19,7 +19,7 @@ Two levels:
 
 ## Falsifiable output
 
-Superflavor predicts M(Xi_cc*++) - M(Xi_cc++) = (3/4)[M(D*0) - M(D0)] = 106.5 MeV at leading order (lattice QCD: ~83 MeV). Not yet measured. LHCb can test it.
+Superflavor predicts M(Xi_cc*++) - M(Xi_cc++) = (3/4)[M(D*0) - M(D0)] = 106.5 MeV at leading order (lattice QCD: ~83 MeV). Not yet measured. LHCb can test it. Cycle 6: see the CLAIM at the top of WORK.md (107 +- 32 MeV; Xi_bb* - Xi_bb = 30 +- 4 MeV; the #1 negative now rests on [H,Q] != 0).
 
 ## Scope
 

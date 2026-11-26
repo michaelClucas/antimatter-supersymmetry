@@ -80,3 +80,55 @@ Nothing fatal, and no BSM leakage. The SM numerics are right. Four of the interp
 - the top-higgsino p² claim (false)
 
 After the fixes the line is a correct but largely known restatement of the Veltman-condition literature. Its scope for passing gate items 6 and 7 is limited.
+
+## Referee A (cycle 6)
+
+**Verdict: MAJOR ISSUES (fixable).** No fatal error, no BSM content in any mechanism. The numbers reproduce. Two claim items are wrong as worded.
+
+Independent check: `calc/refA_check.py` → `calc/refA_check_out.txt` (own sympy plus tools/rg_sm.py).
+
+**Reproduced:**
+- W sector 3/2 g² + 2λ, Z sector 3/4(g²+g'²) + λ, h 3λ, top −6y_t². Each is ξ-independent in background R_ξ and in Fermi gauge, with the Fermi mixed block solved for its roots.
+- The one-loop β_C on C = 0 matches the WORK §4 polynomial exactly.
+- R = 0.344 (0.169 + 0.175) at M_t, 0.790 at M_Pl. μ₀ = 10^22.83 / 10^22.98 / 10^26.79 at 3 / 2 / 1 loops.
+- M_t* = 169.535 GeV, α_s shift 0.418 GeV, 0.74 GeV total, 4.1σ.
+- CW numbers (L01): top threshold 78.6 GeV and m_h(W,Z only) = 9.8 GeV check by hand. β(m²) ∝ m² in MS-bar is correct for the SM's single mass parameter.
+
+**Findings**
+
+1. **MAJOR. CLAIM 5, §4, "What is new" 1: "the analogue fails at (c) alone" is a non sequitur.**
+   - Problem: (c) holds equally in the MSSM. Stops and Higgs scalars carry no chirality and are still Λ²-protected. A property shared by the SM and SUSY cannot be the point where the SM fails to match SUSY.
+   - What (c) does show (correctly, 't Hooft): no *internal* linear symmetry can protect a scalar mass. SUSY gets around (c) only through a spacetime boson-fermion symmetry that ties h to a fermion whose mass is chirally protected. The SM has no such symmetry and no such partner, and that absence is the failure point.
+   - Fix: restate as "(c) rules out internal-symmetry protection of h²; SUSY evades (c) through a boson-fermion symmetry the SM lacks; (a) and (b) are irrelevant to h²". Drop "alone". The novelty framing in "What is new" 1 has to follow.
+
+2. **MAJOR (fixable by deletion). CLAIM 1, C4.2, H2 checklist: "the totals are the same with ... the d = 2 pole of dim reg" is false as stated.**
+   - Problem: in dim reg the transverse vector multiplicity is d − 1. At the d = 2 pole it weights each vector by 1, not 3.
+     - W sector → g²/2 + 2λ, Z sector → (g²+g'²)/4 + λ (still ξ-independent).
+     - R(M_t) → 0.211 instead of 0.344 (refA_check part 1(iii), part 4).
+   - c4_regulator_running Part A shows only that the scalar integral's residue is M-independent. It silently holds n_i at its d = 4 value, which is a dimensional-reduction prescription.
+   - This is the known ambiguity of the d = 2-pole definition of quadratic divergences. Al-sarhi-Jack-Jones, whom the line cites with "content not read", is likely about exactly this, so read it.
+   - Also: a 4D hard cutoff on gauge loops is not gauge invariant. Its agreement with PV depends on routing, so it needs a one-line caveat.
+   - Fix: claim agreement only in cutoff and PV, with n_vector = 3, or in dimensional reduction. State that the d = 2 pole with d − 1 vector counting gives a different R. H2 is still met by cutoff plus PV.
+
+3. **MINOR. §4 and symmetry_scan (1): "C is invariant under every candidate, so none can force C = 0" is invalid reasoning for symmetries that relate different fields.**
+   - SUSY forces λ_{ht̃t̃} = y_t² while C (a singlet) is invariant. The scan covers only phase and sign maps on single fields.
+   - The RG argument (C = 0 not RG invariant) is the general one and does carry item 4. Lead with it and demote the invariance remark.
+   - The scan omits classical scale invariance (Bardeen 1995), the standard SM-only candidate for the hierarchy problem. It acts on μ², not on the dimensionless C, and is anomalous. Say so in one line, so that "covers the SM's candidate symmetries" is complete. A shift symmetry h → h + c is not an SM symmetry, broken by λ and y_t; one line.
+
+4. **MINOR. Gate item 7.**
+   - F-a is a mathematical identity: per-gauge-direction ξ-independence of STr M², a consequence of independent gauge parameters plus the Nielsen identity. Only a calculational error can "falsify" it, and "specific to this line" overstates it.
+   - The CLAIM also generalizes from three gauge families to "any linear gauge that preserves U(1)_em" without proof.
+   - F-b is a genuine empirically falsifiable consistency check (future M_t and α_s), but it is HKO/MQ's and conditional on the matching.
+   - Item 7 is met, weakly, via F-b. Say so plainly, and call F-a a verification identity, not a falsifiable prediction.
+
+5. **MINOR. §5b: 4.1σ.**
+   - The y_t matching is treated as all-or-nothing: Buttazzo ±0.0005, or Jegerlehner's −0.038 excluded entirely. An intermediate matching spread of 0.003 in y_t, about 0.54 GeV, lowers this to 3.3σ (refA_check, illustrative).
+   - Using the cross-section pole mass (172.4 ± 0.7) instead of the MC mass gives about 3.5σ.
+   - Fix: quote "≈3.5-4σ within Buttazzo-type matching". Give the reason Jegerlehner's y_t is disfavoured, e.g. the y_t(M_t) actually obtained by Bednyakov et al. 1507.08833 and Kniehl-Pikelner-Veretin. It is currently "abstract only".
+
+6. **MINOR. Citations (spot check).**
+   - Al-sarhi-Jack-Jones: verify arXiv hep-th/9209124 and give the journal ref (Z. Phys. C 55, 283 (1992), as I recall, unverified). Then read it (see 2).
+   - Martin eq. (1.13) as the generic soft log: verify the equation number against the current arXiv version.
+   - All others spot-checked (HKO, MQ, Jones, Jegerlehner, Buttazzo, Hoang, Beneke et al., 't Hooft 1980, Nielsen, CW) look right.
+
+**No issues found on:** BSM content (MSSM appears only as a comparison target), numerology (the μ₀ near-equality and R4 are flagged under H1), the CW/#4 statement, and the CONSTRAINTS checklist (A-H all addressed; the H2 wording needs the fix in 2).

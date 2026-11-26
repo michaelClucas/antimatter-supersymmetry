@@ -1,0 +1,25 @@
+1. Sector Lambda^2 coefficients C_i = (1/2) d^2/dphi^2 STr M^2
+  BG R_xi : W = 3*g**2/2 + 2*lam,  Z = 3*g**2/4 + 3*gp**2/4 + lam,  h = 3*lam,  top = -6*y**2
+  Fermi   : W = 3*g**2/2 + 2*lam,  Z = 3*g**2/4 + 3*gp**2/4 + lam
+  vector weight (d-1): W = (d*g**2 - g**2 + 4*lam)/2,  Z = (d*g**2 + d*gp**2 - g**2 - gp**2 + 4*lam)/4  (d=2: W=g**2/2 + 2*lam, Z=g**2/4 + gp**2/4 + lam)
+
+2. 16pi^2 beta_C on C=0: 33*g**4 + 63*g**2*gp**2/2 - 162*g**2*y**2 + 96*g3**2*y**2 + 17*gp**4 - 46*gp**2*y**2 + 126*y**4
+   difference from WORK sec.4 polynomial: 0
+
+3. Sectors and R (3-loop, Buttazzo matching, PDG 2024)
+  log10mu=  2.24  W=0.882 Z+h=0.916 ferm=5.223  R=0.344  (W 0.169, Z+h 0.175)
+  log10mu= 10.00  W=0.492 Z+h=0.375 ferm=1.706  R=0.508  (W 0.288, Z+h 0.220)
+  log10mu= 16.00  W=0.392 Z+h=0.315 ferm=1.061  R=0.667  (W 0.370, Z+h 0.297)
+  log10mu= 19.09  W=0.363 Z+h=0.321 ferm=0.866  R=0.790  (W 0.419, Z+h 0.371)
+  log10mu= 22.83  W=0.337 Z+h=0.352 ferm=0.689  R=1.000  (W 0.489, Z+h 0.511)
+  mu0 (3-loop RGE): 10^22.83
+  mu0 (2-loop RGE): 10^22.98
+  mu0 (1-loop RGE): 10^26.79
+  y_t(M_t) = 0.9329, lam(M_t) = 0.1262
+  M_t* (C(M_Pl)=0) = 169.535 GeV; distance 3.04 GeV
+  dM_t* from alpha_s +-0.0009: 0.418 GeV
+  budget as quoted: total 0.744 GeV -> 4.1 sigma
+  budget + yt matching 2-loop EW spread 0.003 in y_t (~0.54 GeV): total 0.919 GeV -> 3.3 sigma
+  using indirect sigma(tt) pole mass 172.4 +- 0.7 GeV alone: 3.5 sigma (+ alpha_s, renormalon; no MC term)
+
+4. R(M_t) if transverse vectors weighted by d-1 = 1 at the d=2 pole: 0.211 (vs 0.344)

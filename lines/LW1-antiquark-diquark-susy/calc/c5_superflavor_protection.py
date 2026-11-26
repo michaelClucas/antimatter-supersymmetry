@@ -23,7 +23,7 @@ import numpy as np
 D0, Dp, Ds = (1864.84, 0.05), (1869.66, 0.05), (1968.35, 0.07)
 Dst0, Dstp, Dsst = (2006.85, 0.05), (2010.26, 0.05), (2112.2, 0.4)
 Xicc_pp = (3621.55, 0.38)          # LHCb JHEP 02 (2020) 049
-Xicc_p = (3619.97, 1.6)            # LHCb PRL 137, 021902 (2026); +1.90/-1.30 syst symmetrised -> ~1.6 total
+Xicc_p = (3619.97, 1.83)           # LHCb PRL 137, 021902 (2026); 0.83 stat, 0.26 syst, +1.90/-1.30 lifetime -> +2.09/-1.56 (cycle 6 fix)
 Omcc_p = (3725.9, 1.3)             # LHCb arXiv:2609.21921 (preprint), errors in quadrature
 Lc = (2286.46, 0.14)               # PDG 2024
 DstpD0_thr = Dstp[0] + D0[0]
@@ -67,9 +67,9 @@ Ec = (a - b) / 2.0; eEc = q(ea, eb) / 2
 dl = (2 * a + b) / 3.0; edl = q(2 * ea / 3, eb / 3)
 print(f"   data: D+ - D0 = {a:.2f} +- {ea:.2f}, Xi_cc+ - Xi_cc++ = {b:+.2f} +- {eb:.2f}")
 print(f"   => E_c = {Ec:.2f} +- {eEc:.2f} MeV (<1/r>^-1 = {197.327/ (Ec*137.036) :.2f} fm), delta = {dl:.2f} +- {edl:.2f} MeV")
-print("   delta ~ 2.7 MeV is the size of m_d - m_u (PDG: ~2.5 MeV at 2 GeV). Zero d.o.f.: plausibility only.")
-print("   Sign check: superflavor without QED predicts equal isospin splittings; data have opposite signs,")
-print("   which is what the opposite-sign charge products (+2/3 vs -4/3) require.")
+print("   Zero d.o.f.: plausibility only. delta is an effective hadronic parameter, not the MS-bar m_d - m_u")
+print("   (cycle 6: that comparison removed, [speculation]). Superflavor without QED predicts equal isospin")
+print(f"   splittings; the data have opposite signs, but the baryon sign is only {abs(b)/eb:.1f} sigma from zero.")
 
 print("\n(3) T_cc+ as superflavor partner of the anti-Lambda_c (both have light [ud]-type spin-0 dof)")
 dM = 0.5 * ((Dst0[0] - D0[0]) + (Dstp[0] - Dp[0]))

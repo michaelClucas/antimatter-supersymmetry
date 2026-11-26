@@ -1,0 +1,8 @@
+(a) 1-loop SM: y_t(M_t)=0.9329, y_t(1e15)=0.4582, y_t(M_Pl)=0.4018, monotonic decreasing=True, lambda(M_Pl)=-0.0294
+(a) 2-loop SM: y_t(M_t)=0.9329, y_t(1e15)=0.4363, y_t(M_Pl)=0.3805, monotonic decreasing=True, lambda(M_Pl)=-0.0110
+(a) 3-loop SM: y_t(M_t)=0.9329, y_t(1e15)=0.4356, y_t(M_Pl)=0.3798, monotonic decreasing=True, lambda(M_Pl)=-0.0103
+(b) 1-loop: y_t pole at Lambda=1e+15 needs y_t(M_t)=1.3309 (meas 0.9329, x1.427) -> m_t ~ 246 GeV [approx] vs 172.57
+(b) 1-loop: y_t pole at Lambda=1e+19 needs y_t(M_t)=1.2718 (meas 0.9329, x1.363) -> m_t ~ 235 GeV [approx] vs 172.57
+    2-loop: no pole found for y_t(M_t) < 3; the truncated 2-loop beta_yt has a spurious large-y zero, so the pole
+    condition is only meaningful at 1 loop (as in BHL's leading-order analysis). [conjecture: standard truncation artefact, not checked here]
+    BHL 1990 (full RG + compositeness of lambda): m_t ~ 218 GeV at Lambda = 1e19 [from memory; check]

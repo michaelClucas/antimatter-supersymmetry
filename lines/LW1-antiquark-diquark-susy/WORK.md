@@ -2,6 +2,33 @@
 
 Labels: [established] / [conjecture] / [speculation]. Scripts in `calc/`, outputs in matching `.txt`.
 
+## CLAIM (cycle 6, supersedes the cycle-4 headline in sec. 17)
+
+**Object.** The SM realises an approximate boson-fermion map in hadrons: every supermultiplet pairs a matter object with an antimatter object in the same colour representation (antiquark ↔ 3̄ diquark, or quark ↔ 3 anti-diquark). The supercharge is Q_σ = Σ_a D_a† q̄_{a,σ} (light version, LFHQCD) or Q_{m,σ} = Σ_a D_{a,m}† Q̄_{a,σ} (heavy-quark superflavor, Q̄ ↔ (QQ)_3̄). A world without antiquarks has none of these multiplets. [established]
+
+**C1 (SUSY #1, negative) [established].** This supercharge cannot protect any scalar mass, Higgs or hadronic, because it is not a symmetry of the QCD Hamiltonian: [H, Q] ≠ 0.
+- Data: partners are non-degenerate (Ξ_cc − D ≈ 1.75 GeV; LFHQCD pairs split by 50-250 MeV). [established]
+- Explicit commutator (c6_hq_commutator): in a constituent Hamiltonian with kinetic energy and the colour-magnetic hyperfine term (De Rújula-Georgi-Glashow form), [H, Q] = δQ + B. The offset δ ≈ m_(QQ) − m_Q̄ ≈ m_Q is removable only by subtracting the separately conserved heavy-quark number. The genuine breaking is ‖B‖ = 102 MeV (charm) and 33 MeV (bottom), with m_Q‖B‖ constant, so B = O(Λ²/m_Q) and vanishes only as m_Q → ∞. For the light (LFHQCD-type) map, ‖B‖ = 256 MeV and Q applied to the meson ground state gives a baryon-sector state with energy spread 137 MeV. [established for the model; the model is QCD-inspired, not QCD]
+- No exact version exists: by Haag-Łopuszański-Sohnius, an exact fermionic symmetry of a Lorentz-invariant S-matrix must have {Q, Q̄} ∝ P_μ (plus central charges). QCD has none, so no hadron-level image of Q can be made exact. [established theorem; caveats in sec. 19]
+- The bosonic members are composite above ~1 GeV, so there is no bosonic loop in the UV to cancel against. [established]
+
+**C2 (SUSY #6) [established, weak].** All hadronic "superpartners" are known hadrons: 30/40 meson-baryon pairs in the Nielsen-Brodsky tables have both members observed (29 without a J^P conflict). The tables were built from known states, so this has no evidential weight. In tetraquark slots with an observed baryon, 1 state (π1(1600)) is unambiguously exotic. Hadronic SUSY says nothing about why elementary superpartners are absent.
+
+**C3 (control, negative) [established for the models used].** The cancellation of light-flavour SU(3) breaking between superflavor partners (residual r_SF = +4.0 ± 1.6 MeV of 101 MeV) is not evidence for superflavor. The additive quark model, which has SU(3) breaking and no superflavor, predicts r = 0 for every pair. Two hyperfine-model fits with no superflavor tie predict −13 and +14 MeV. The data show that pairs where the strange quark sits next to a heavy source (D_s*, B_s, Ω_cc) have |r| ≤ 14 MeV, while pairs where it shares a light diquark have |r| = 10-80 MeV (median 24). That pattern is heavy-quark symmetry in general, not superflavor specifically.
+
+**Falsifiable predictions** (QCD-derived relation, BVR 2005; numbers below are this line's evaluation):
+- **P1.** M(Ξ_cc*⁺⁺) − M(Ξ_cc⁺⁺) = 107 ± 32 MeV (LO superflavor, 30% power-counting band, not a Gaussian error); dynamical lattice mean 83 ± 9 MeV. So M(Ξ_cc*⁺⁺) ≈ 3705-3728 MeV. [established relation; band is a conjecture] If Δ < 135 MeV (central values), the state decays only by M1 to Ξ_cc γ (photon ~80-110 MeV); above 138 MeV Ξ_cc π opens. Test: LHCb (Run 3 data, Upgrade II) search for Ξ_cc⁺⁺γ; no search is published as of 2026-11-25. Kill: Δ outside roughly [40, 170] MeV (the 2× band, naive), or a ratio [Ξ_cc*−Ξ_cc]/[D*−D] far outside 0.5-0.9. [experimental feasibility: conjecture]
+- **P2.** M(Ξ_bb*) − M(Ξ_bb) = 30 ± 4 MeV (lattice-calibrated refinement of BVR's 34 ± 4; within 1σ of LO and lattice, so it does not discriminate). Needs Ξ_bb itself (unobserved) plus a ~30 MeV M1 photon. Only LHCb Upgrade II-era statistics could reach it. [conjecture]
+- **Consistency check.** The u/d/s superpartner differences M(QQq) − M(Q̄q) must agree up to flavour-dependent 1/m_c corrections, whose size the heavy-flavour pair B_s − B vs D_s − D puts at ~14 MeV. Observed spread 7.2 MeV (sec. 14). Passes, but (C3) the AQM passes it too. Any new doubly-charmed J = 3/2 state (e.g. Ω_cc*) must keep Δ_B/Δ_M in the same band as P1.
+
+**What is new** (LITCHECK sec. 3; restatement otherwise):
+1. The #1 negative written as an explicit [H, Q] ≠ 0 computation with the breaking quantified (O(Λ²/m_Q), 102/33 MeV) and closed by HLS. LITCHECK item 4 found no paper stating the hierarchy-problem consequence (search INSPIRE + web, not exhaustive). New only as an explicit statement and check; no new physics.
+2. The control in C3: a new negative check showing a "partner cancellation" claimed in cycle 4 is not superflavor-specific.
+3. The lattice-calibrated Ξ_bb* number (P2), with the spread over five charm lattice inputs. Minor refinement of BVR.
+Known and not claimed: the meson-baryon antiquark ↔ diquark map (Miyazawa 1966, Catto-Gürsey 1985, Lichtenberg 1999, Dosch et al. 2015), the 3/4 relation and P1 (Savage-Wise 1990, BVR 2005, Fleming-Mehen 2006).
+
+**Status.** Documented negative result for #1 plus a restated QCD prediction. Does not reproduce any SUSY result.
+
 ## 1. Why the antiquark is the fermionic member
 
 - SU(3)_c: 3 x 3 = 3bar (antisymmetric) + 6 (symmetric). The antisymmetric diquark has the same Casimir (4/3) as an antiquark, and <T_x . T_q> = -4/3 in the colour singlet for x = antiquark or 3bar diquark. Verified numerically in `calc/c1_color_and_spin.py`. [established]
@@ -89,10 +116,10 @@ What exists in the literature [established]: BVR eq. (35) generalises the relati
 
 Corrected predictions [conjecture, error model stated in the script]:
 - **Ξ_cc*⁺⁺ − Ξ_cc⁺⁺ = 107 ± 32 MeV** from the EFT alone (LO ± 30% power counting, the FM/BVR estimate). The lattice value 83 MeV sits at −22%, a −0.7σ pull. No EFT calculation beats this band, because the charm correction is not computable in closed form. With the lattice as calibration: 83 ± 9 MeV, i.e. M(Ξ_cc*⁺⁺) ≈ 3705 ± 9 MeV. The LO value is 3728 ± 32 MeV.
-- **Ξ_bb* − Ξ_bb = 30 ± 4 MeV.** This is the line's real prediction after corrections: charm-calibrated 1/m_Q-type correction transported to bottom, enveloping the 1/m_Q and 1/(m_Q v) scalings, plus BVR's 10% for unmodelled α_s²(m_b v) terms. It is 1.0σ below LO (34.0) and 0.5σ from lattice (34.6 ± 7.8).
-- Updated falsifier for charm: Ξ_cc* − Ξ_cc outside [75, 138] MeV at 1σ, or [43, 170] at 2σ. The old [60, 125] band was ad hoc. Use the 2σ band as the kill criterion.
+- **Ξ_bb* − Ξ_bb = 30 ± 4 MeV.** (Corrected cycle 6: a refinement of BVR, not "the line's real prediction". It is within 1σ of LO and lattice, so it does not discriminate; the κ calibration on Brown+ charm vs Brown+ bottom is correlated. Spread over five lattice charm inputs added in c6_xibb_budget: range 28.3-33.6, total still ±4.) Original text: charm-calibrated 1/m_Q-type correction transported to bottom, enveloping the 1/m_Q and 1/(m_Q v) scalings, plus BVR's 10% for unmodelled α_s²(m_b v) terms. It is 1.0σ below LO (34.0) and 0.5σ from lattice (34.6 ± 7.8).
+- Updated falsifier for charm: Ξ_cc* − Ξ_cc outside [75, 138] MeV at 1σ, or [43, 170] at 2σ. The old [60, 125] band was ad hoc. Use the 2σ band as the kill criterion. (Corrected cycle 6: the ±32 is a power-counting estimate, so the "2σ" band is naive, not a Gaussian interval. The 1σ upper edge 139 MeV is above the Ξ_cc⁺⁺π⁰ (135.0) and Ξ_cc⁺π⁺ (138.0) thresholds.)
 
-Experimental status [established, INSPIRE 2026-11-25]: Ξ_cc⁺⁺ observed (LHCb 2017, mass 3621.55 ± 0.38 MeV, 2019). Ξ_cc⁺ observed in Run 3 (LHCb, PRL 137, 021902 (2026)). Ω_cc⁺ observed (LHCb, arXiv:2609.21921, 3725.9 MeV). **No J = 3/2 doubly heavy baryon has been observed or searched for in a published LHCb analysis.** For every central estimate Δ < m_π⁰, so Ξ_cc* decays only by M1 to Ξ_cc γ, with a photon of ~80-110 MeV in the rest frame (width ~keV-tens of keV, Cui et al. PRD 97, 034018). This is experimentally hard at LHCb. The falsifier is real but not near-term. [established kinematics; experimental feasibility is a conjecture]
+Experimental status [established, INSPIRE 2026-11-25]: Ξ_cc⁺⁺ observed (LHCb 2017, mass 3621.55 ± 0.38 MeV, 2019). Ξ_cc⁺ observed in Run 3 (LHCb, PRL 137, 021902 (2026)). Ω_cc⁺ observed (LHCb, arXiv:2609.21921, 3725.9 MeV). **No J = 3/2 doubly heavy baryon has been observed or searched for in a published LHCb analysis.** For every central estimate Δ < m_π⁰ (but not across the whole band; see c6_xibb_budget), so Ξ_cc* decays only by M1 to Ξ_cc γ, with a photon of ~80-110 MeV in the rest frame (width ~keV-tens of keV, Cui et al. PRD 97, 034018). This is experimentally hard at LHCb. The falsifier is real but not near-term. [established kinematics; experimental feasibility is a conjecture]
 
 ### 10. Status after cycle 3
 
@@ -148,14 +175,14 @@ Constituent level [established algebra, numerically checked]: with antiquark mod
 
 Q_s is a colour singlet, fermionic, carries spin 1/2 and baryon number +1. The anticommutator is number and spin operators. With Q_{iα} = D_i† d_α for all boson modes i and fermion modes α, the algebra closes on u(m|n), the same superalgebra type as Iachello's nuclear U(6|m) (Catto-Gürsey 1985 for the hadronic case). With H = m_D N_D + m_d̄ N_d̄ + (colour-singlet light part), c5a checks [H, Q] = (m_D − m_d̄) Q: Q is a ladder operator with a fixed energy offset, not a conserved charge.
 
-QCD level [established as an identity, numerically checked in a 15-mode Fock space]: the diquark is not a field. Writing D_a† ∝ ε_abc(u†_{b↑} d†_{c↓} − u†_{b↓} d†_{c↑}) (normalised so ⟨0|D_a D_a†|0⟩ = 1), the supercharge is cubic in quark operators,
+(Corrected cycle 6: the 15-mode toy below has one spatial mode and a SPINLESS antiquark, so its Q is a spin-0 fermionic operator and it cannot say anything about P_μ. Replaced by c6_hq_commutator Part A, sec. 18.) QCD level [established as an identity, numerically checked in a 15-mode Fock space]: the diquark is not a field. Writing D_a† ∝ ε_abc(u†_{b↑} d†_{c↓} − u†_{b↓} d†_{c↑}) (normalised so ⟨0|D_a D_a†|0⟩ = 1), the supercharge is cubic in quark operators,
 
     Q = Σ_a D_a† ā_a ∝ Σ ε_abc u†_b d†_c ā_a  (spin-singlet contraction implied),
 
 and c5a verifies: Q is a colour singlet, changes fermion number by 3, and
 {Q, Q†} = Σ_a D_a†D_a + Σ_ab ā_b† ā_a [D_b, D_a†] exactly, with [D_b, D_a†] = δ_ab − K_ab, where K is a quark bilinear (Pauli blocking; max deviation 2 in the test space). The eigenvalues of {Q, Q†} in the 2q+1q̄ sector are 0.5, 1, 1.5, 2. So it is not even a clean number operator, but it commutes with N_q, N_q̄ and colour, and contains no derivative.
 
-Comparison with Poincaré SUSY [established + argument]:
+Comparison with Poincaré SUSY (corrected cycle 6: "no P_μ" is an [argument], not numerically checked by c5a; "internal" is the wrong label, since Q_s carries spin 1/2 and does not commute with rotations; HLS relabelled; see sec. 19) [established + argument]:
 - In the field theory each mode operator becomes ∫d³x of a local product with no derivative, so {Q, Q†} is ∫d³x of densities. No P_μ appears. Poincaré SUSY has {Q_α, Q̄_β̇} = 2σ^μ_αβ̇ P_μ, which is what makes H = (1/4)Σ{Q, Q†} and forces boson and fermion loops to match at every momentum.
 - Haag-Łopuszański-Sohnius (Nucl. Phys. B 88, 257 (1975); cited in 1604.06746's reference list): a fermionic charge that commutes with the S-matrix of an interacting 4D relativistic theory must have {Q, Q̄} ∝ P_μ (plus central charges). Our {Q, Q†} is not of that form and is not central. So Q cannot be an exact symmetry of QCD. [conjecture as stated, follows from the theorem; the escape is that in the heavy-quark limit boosts are broken by the fixed heavy-quark velocity, so HLS does not constrain superflavor there]
 - Classification: **internal, spectrum-generating (dynamical) supersymmetry**. It is the same type as nuclear SUSY, not spacetime SUSY. [established for the constituent algebra; conjecture that no QCD-level improvement changes this, supported by HLS]
@@ -183,16 +210,16 @@ At leading order, the light degrees of freedom see the same static 3̄ source in
 | s: Ω_cc⁺ − D_s⁺ | 1757.6 ± 1.3 |
 
 - SU(3) breaking: 101.1 MeV in mesons (D_s − ⟨D⟩), 105.1 MeV in baryons (Ω_cc − ⟨Ξ_cc⟩). Residual not cancelled: **+4.0 ± 1.5 MeV, i.e. 4% of the breaking**. [established numbers; Ω_cc⁺ mass is from a 2026 preprint, arXiv:2609.21921]
-- This is a genuine partner cancellation of a nonperturbative, flavour-dependent contribution, at the 96% level. It protects a mass difference between partners, not an absolute mass. Superflavor relates states whose masses differ by m_Q + E_bind ≈ 1.75 GeV. In #1 language: the analogue of "the scalar mass inherits the fermion's protection" is "the baryon's light-sector energy equals the meson's". The masses themselves get no protection. [conjecture on the interpretation]
-- QED breaks superflavor explicitly: the cc diquark has charge +4/3 and c̄ has −2/3. A two-parameter decomposition [conjecture, zero d.o.f., plausibility only] gives E_c = α⟨1/r⟩ = 3.2 ± 0.8 MeV (⟨1/r⟩⁻¹ ≈ 0.45 fm) and δ = 2.7 ± 0.6 MeV ≈ m_d − m_u. It explains why the isospin splittings have opposite sign: D⁺ − D⁰ = +4.8 and Ξ_cc⁺ − Ξ_cc⁺⁺ = −1.6 MeV. So the SM's own gauge interactions break this supersymmetry at the MeV level, because the partners carry different electric charge. That is the opposite of SUSY, where partners carry identical gauge charges by construction. [established kinematics; interpretation is a conjecture]
-- T_cc⁺ test. Superflavor also maps c (3) ↔ c̄c̄ (3), so T_cc = cc ū d̄ is the partner of the anti-Λ_c. Then M(T_cc) = M(Λ_c) + M̄(Ξ_cc) − M̄(D), the Eichten-Quigg-type relation (PRL 119, 202002 (2017), arXiv:1707.09575, title and abstract checked). This gives 4005 MeV at LO (3990 with the lattice hyperfine). Observed 3874.7 MeV (LHCb, Nat. Commun. 13, 3351 (2022), arXiv:2109.01056, title/journal checked; 0.36 MeV below D*⁺D⁰ [keV digits uncertain, from memory]). The miss is +115 to +130 MeV, 3%. The size is that of a 1/m_c correction, but it flips the qualitative call: superflavor at LO says unbound, nature says bound. [established numbers]
+- (Corrected cycle 6: error is ±1.6 MeV with the full Ξ_cc⁺ error; the "genuine partner cancellation" reading is withdrawn, because the additive quark model gives the same cancellation with no superflavor. See sec. 20.) This is a genuine partner cancellation of a nonperturbative, flavour-dependent contribution, at the 96% level. It protects a mass difference between partners, not an absolute mass. Superflavor relates states whose masses differ by m_Q + E_bind ≈ 1.75 GeV. In #1 language: the analogue of "the scalar mass inherits the fermion's protection" is "the baryon's light-sector energy equals the meson's". The masses themselves get no protection. [conjecture on the interpretation]
+- (Corrected cycle 6: the δ ≈ m_d − m_u match is removed; δ is an effective hadronic parameter and m_d − m_u is a scheme-dependent current-mass difference. The baryon isospin sign is 0.8σ from zero. Any physical reading below is [speculation].) QED breaks superflavor explicitly: the cc diquark has charge +4/3 and c̄ has −2/3. A two-parameter decomposition [conjecture, zero d.o.f., plausibility only] gives E_c = α⟨1/r⟩ = 3.2 ± 0.8 MeV (⟨1/r⟩⁻¹ ≈ 0.45 fm) and δ = 2.7 ± 0.6 MeV ≈ m_d − m_u. It explains why the isospin splittings have opposite sign: D⁺ − D⁰ = +4.8 and Ξ_cc⁺ − Ξ_cc⁺⁺ = −1.6 MeV. So the SM's own gauge interactions break this supersymmetry at the MeV level, because the partners carry different electric charge. That is the opposite of SUSY, where partners carry identical gauge charges by construction. [established kinematics; interpretation is a conjecture]
+- T_cc⁺ test. Superflavor also maps c (3) ↔ c̄c̄ (3), so T_cc = cc ū d̄ is the partner of the anti-Λ_c. Then M(T_cc) = M(Λ_c) + M̄(Ξ_cc) − M̄(D), the Eichten-Quigg-type relation (PRL 119, 202002 (2017), arXiv:1707.09575, title and abstract checked). This gives 4005 MeV at LO (3990 with the lattice hyperfine). Observed 3874.7 MeV (LHCb, Nat. Commun. 13, 3351 (2022), arXiv:2109.01056, title/journal checked; 0.36 MeV below D*⁺D⁰; δm_pole = −360 ± 40 keV, confirmed by referee 1). The miss is +115 to +130 MeV, 3%. The size is that of a 1/m_c correction, but it flips the qualitative call: superflavor at LO says unbound, nature says bound. [established numbers]
 - T_bb (predicted deeply bound) and Ξ_bb are unobserved. Under ruling R1 they are not evidence.
 
 ### 15. #6: hadronic supermultiplets, counted (c5d)
 
 Assignments from Nielsen & Brodsky, arXiv:1802.09652 (Tables 4-7, read from the PDF this cycle; Greek letters reconstructed from mass and J^P). The tetraquark rule (T = R B⁻, L_T = L_B) is from 1604.06746 sec. 2.3. Their earlier light candidates (1604.06746) were f0(980) for N, a1(1260) for Δ, and two I = 0 states (Greek lost; probably ω(1420)/ω(1650) [unverified]) for N(1520). The later paper changed N's partner to f0(500). The assignments are not stable. Double-heavy extension: Nielsen, Brodsky, de Téramond, Dosch, Navarra, Zou, PRD 98, 034002 (2018), arXiv:1805.11567 (checked).
 
-Meson-baryon pairs: 40 rows, **31 with both members observed**, 4 with a predicted (unobserved) meson, 4 with a predicted baryon (all Ξ_bb-type or Ξ_cc(3900)), 1 with an unconfirmed meson (f2(1640)).
+(Corrected cycle 6, c6_census: 30/40 both observed, not 31. The row χ_c2(3556)/"Ξ_cc(3621) as 3/2⁺" used the unobserved J = 3/2 Ξ_cc*, a ruling-R1 breach; it is now PRED. Double-heavy n = 1. Max light |ΔM| = 254 MeV is K2(1770)/Λ(1520); h1/N is 227 MeV. EXO counted only where the baryon is observed: 1 (π1(1600)). QQB = 13 over all rows, 10 in rows with an observed baryon. J^P conflicts: D(2600) is 1⁻ in PDG (slot needs 2⁻), D0(2550) is 0⁻ per LHCb (slot needs 1⁺). Selection bias makes the count non-evidential.) Meson-baryon pairs: 40 rows, **31 with both members observed**, 4 with a predicted (unobserved) meson, 4 with a predicted baryon (all Ξ_bb-type or Ξ_cc(3900)), 1 with an unconfirmed meson (f2(1640)).
 
 | sector | n | mean \|ΔM/M\| | mean \|ΔM\| | max \|ΔM\| |
 |---|---|---|---|---|
@@ -221,7 +248,136 @@ Iachello (PRL 44, 772 (1980)) and the Metz et al. quartet (PRL 83, 1542 (1999): 
 - New [established numbers]: superflavor cancels 96% of the light-flavour SU(3) breaking between superpartners (residual 4.0 ± 1.5 MeV). This is the only quantitative "partner cancellation" found, and it protects differences, not masses.
 - New [established numbers]: T_cc LO superflavor miss of +115 to +130 MeV (wrong side of threshold). #6 count: 31/40 meson-baryon pairs observed; 2/23 tetraquark slots are confirmed exotics, 13/23 are relabelled q̄q.
 - LFHQCD's SUSY QM has a real zero-mode protection (pion), and it coincides with chiral symmetry.
-- Bearing on #1: negative result strengthened from "composite, so no UV control" to "wrong algebra: {Q,Q†} has no P_μ, so no loop-momentum cancellation is possible even in principle". Bearing on #6: no explanatory power beyond "the partners were already observed".
+- (Corrected cycle 6: the next bullet's headline is overstated. Replaced by "Q is not a symmetry ([H,Q] ≠ 0), and HLS forbids an exact version"; see CLAIM C1 and sec. 19.) Bearing on #1: negative result strengthened from "composite, so no UV control" to "wrong algebra: {Q,Q†} has no P_μ, so no loop-momentum cancellation is possible even in principle". Bearing on #6: no explanatory power beyond "the partners were already observed".
 - Novelty [conjecture, not lit-checked]: the explicit cubic QCD supercharge and its non-canonical anticommutator, the HLS classification argument, and the u/d/s residual and T_cc numbers as SUSY-analogue tests. The individual physics facts are known (Catto-Gürsey; Eichten-Quigg; LHCb masses).
 - Constraints: same as section 11. The only new inputs are hadron masses (PDG 2024, LHCb 2022/2026). No BSM, no unobserved state used as evidence (Ξ_bb, T_bb, B_s0(5800) etc. only listed as unconfirmed). H1: no fitted numerology. The isospin decomposition is explicitly zero-d.o.f. and labelled plausibility only.
 - Open: a referee should check the Greek-letter reconstruction in c5d against the 1802.09652 PDF, and the T_cc pole value (keV digits).
+
+## Cycle 6: fix round (referee 1, cycle 5)
+
+New scripts: `calc/c6_hq_commutator.py`, `calc/c6_superflavor_control.py`, `calc/c6_census.py`, `calc/c6_xibb_budget.py`. c5_superflavor_protection.py (Ξ_cc⁺ error, isospin text) and c5_supercharge_algebra.py (docstring and closing lines) were patched. All twelve scripts were rerun from inside `calc/` and their `.txt` outputs regenerated.
+
+### 18. {Q, Q†} with momentum and spin (c6a, Part A)
+
+Toy: 3-site ring (crystal momentum k = 0, 1, 2), distinguishable flavours s (spectator), u, d (diquark) and q̄ (antiquark), each with colour 3 × spin 2 × momentum 3 = 18 states. Meson sector |s q̄⟩: 324 states. Baryon sector |s u d⟩: 5832 states. Local scalar 3̄ diquark D†_{a,P} = Σ_k ε_abc (u†_{b↑,k} d†_{c↓,P−k} − ↑↔↓)/norm. Q_σ = Σ_{a,P} D†_{a,P} q̄_{a,σ,P}.
+
+Results [established for the toy]:
+- Q_σ lowers S_z by the removed antiquark spin, [S_+, Q_↑] = −Q_↓, [S_+, Q_↓] = 0: (Q_↓, −Q_↑) is a genuine spin-1/2 doublet. Colour singlet and momentum-conserving to machine precision.
+- Meson sector: {Q_σ, Q_τ†} = Σ_{a,P} q̄†_{a,τ,P} q̄_{a,σ,P} exactly, so Σ_σ{Q_σ, Q_σ†} = N_q̄ = 1 on every meson state. A least-squares fit to c0 + c1 H_kin + c2 P gives c0 = 1, c1 ~ 1e-16, c2 ~ 1e-19. Its spectrum is {1} in each total-momentum sector, while H_kin ranges over 0.83-1.09 GeV.
+- Baryon sector: Σ_σ Q_σ Q_σ† = 2Π, Π the projector onto (s quark) ⊗ (local scalar diquark).
+- So {Q, Q†} contains nothing proportional to P or H. [argument] This follows because Q is a local product with no derivative. It restates that Q is a non-relativistic ladder operator. It is not an independent reason why Q fails to protect masses. That reason is sec. 19.
+
+### 19. [H, Q] ≠ 0: the actual reason (c6a, Parts A and B)
+
+Hamiltonian (QCD-inspired constituent model; De Rújula, Georgi, Glashow, PRD 12, 147 (1975) for the hyperfine form) [established model form]:
+H = Σ_i (constituent mass + kinetic energy) + Σ_{i<j} V_ij,  V_ij = −κ (λ_i·λ_j)(S_i·S_j)/(m_i m_j) × contact,
+with λ → −λ* for 3̄ objects. For the q-(QQ) pair the sum over the two heavy quarks, projected on (3̄, spin 1), gives the same operator with weight 1/2 in terms of the diquark generators, because the projector factorises into colour ⊗ spin and P λ_1 P = λ_D/2, P S_1 P = S_D/2. That reproduces the 3/4 rule (c1).
+
+Part A (light map, q̄ ↔ [ud], m_s = 0.50, m_u = m_d = m_q̄ = 0.33 GeV, p0 = 0.35 GeV, κ set so the s-q̄ contact splitting is 0.40 GeV):
+
+| H | ‖[H,Q]‖ | best offset δ | ‖[H,Q] − δQ‖ |
+|---|---|---|---|
+| kinetic + masses | 550 MeV | 431 MeV | 174 MeV |
+| hyperfine only | 327 MeV | −227 MeV | 224 MeV |
+| full | 412 MeV | 203 MeV | 256 MeV |
+
+Q applied to the meson ground state (648 MeV) gives a baryon-sector state with ⟨H_B⟩ = 1162 MeV and energy spread σ_E = 137 MeV (baryon ground state 1006 MeV). Q maps an eigenstate onto a superposition of eigenstates, so it is not a symmetry even up to a constant shift. [established for the model]
+
+Part B (heavy map Q̄ ↔ (QQ)_3̄ spin 1, light quark m = 0.33 GeV, p0 = 0.40 GeV [assumption], κ fixed by D*−D or B*−B):
+
+| | offset δ | ‖B‖ hyperfine only | ‖B‖ recoil only | ‖B‖ both |
+|---|---|---|---|---|
+| charm (m_c = M(J/ψ)/2) | 1531 MeV | 100.4 MeV | 17.2 MeV | 101.6 MeV |
+| bottom (m_b = M(Υ)/2) | 4725 MeV | 32.1 MeV | 5.6 MeV | 32.5 MeV |
+
+With κ scaled as 1/m_Q, m_Q‖B‖ = 157 MeV·GeV for m_Q from 1.5 to 500 GeV. So [H, Q] = δQ + B with B = O(Λ²/m_Q). [established for the model]
+
+Reading [established unless marked]:
+1. Q is not conserved. The offset δ ≈ m_Q is removable only by subtracting the separately conserved heavy-quark number (what HQET does). The remainder B vanishes only at m_Q → ∞. At physical charm it is ~100 MeV, ~25% of the light-dof energy Λ̄ ≈ 0.4 GeV. At bottom it is ~33 MeV. For the light map there is no heavy limit at all and the breaking is O(Λ_QCD).
+2. The hadron data say the same without a model: the partners are non-degenerate (sec. 14, 15).
+3. HLS (Nucl. Phys. B 88, 257 (1975)) closes the door on an exact version: an exact fermionic symmetry of a Lorentz-invariant S-matrix must have {Q, Q̄} ∝ P_μ plus central charges. QCD has no such symmetry. Caveats: HLS assumes a Lorentz-invariant S-matrix of asymptotic states (here hadrons), and Q acts on confined constituents, so HLS applies to any hadron-level image of Q. In the heavy-quark limit the fixed heavy-quark velocity breaks boosts, which is why superflavor can be an exact symmetry of the m_Q → ∞ effective theory without contradicting HLS. "Q is not an exact symmetry of QCD" is [established] (data + this section). Only "no QCD-level improvement changes the classification" stays [conjecture].
+4. Label: Q is a non-relativistic spectrum-generating superalgebra whose anticommutator is not proportional to P. It is not "internal", since it carries spin 1/2.
+5. Consequence for #1: a symmetry that protects a mass must commute with H. This one does not. A hypothetical exact Bose-Fermi symmetry with equal couplings would cancel loops however its algebra was written, and HLS then forces it to be Poincaré SUSY. Plus compositeness above ~1 GeV. That is the full negative.
+
+### 20. Control for the SU(3)-breaking cancellation (c6b)
+
+Corrected error first: Ξ_cc⁺ total +2.09/−1.56 MeV (0.83 stat, 0.26 syst, +1.90/−1.30 lifetime), symmetrised 1.83. r_SF = +4.0 ± 1.6 MeV (1.2 MeV if the Ω_cc⁺ ext and lifetime terms are treated as correlated with the Ξ_cc masses; 1.6 quoted).
+
+Controls, residual r = Δ_s(X) − (D_s − ⟨D⟩), Δ_s = strange minus non-strange member:
+
+| pair | relation to D | r (MeV) |
+|---|---|---|
+| Ω_cc − Ξ_cc | superflavor | +4.0 |
+| D_s* − D* | HQ spin | +2.5 |
+| B_s − B | HQ flavour | −13.7 |
+| B_s* − B* | HQ spin+flavour | −10.4 |
+| K* − ρ, φ − K* | none | +17.2, +24.8 |
+| Σ* − Δ, Ξ* − Σ*, Ω − Ξ* | none | +51.5, +47.7, +38.0 |
+| Ξ_c′ − Σ_c, Ξ_c* − Σ_c*, Ω_c − Ξ_c′, Ω_c* − Ξ_c* | none (light spin-1 diquark) | +23.9, +26.4, +15.7, +19.2 |
+| Ξ_b′ − Σ_b, Ξ_b* − Σ_b*, Ω_b − Ξ_b′ | none | +20.8, +20.2, +9.7 |
+| Ξ_c − Λ_c, Ξ_b − Λ_b | none (light spin-0 diquark) | +81.5, +73.7 |
+
+Non-superflavor, non-heavy-symmetry pairs: n = 14, median |r| = 24 MeV, range 10-82. [established numbers; PDG 2024 masses transcribed]
+
+Models:
+- Additive quark model (SU(3) breaking, no superflavor): r = 0 for every pair, by construction. Its fit to 34 ground-state hadrons has rms 89 MeV. Its error on the 17 control residuals has rms 36 MeV.
+- DGG hyperfine model, meson and baryon coefficients free (no superflavor tie; the tie would be A_B/A_M = 0.5, fits give 0.35): (3a) common light masses + constants, rms 20 MeV, r_SF = −13.2 MeV. (3b) Griffiths-style separate meson/baryon light masses, rms 23 MeV, r_SF = +14.2 MeV. Both get the control residuals badly wrong (rms ~50 MeV), so they bracket a generic expectation of |r_SF| ≲ 15 MeV rather than predict it.
+
+Verdict [established for these models]: the observed r_SF = +4.0 ± 1.6 MeV is reproduced by the additive quark model with no superflavor. **It is not evidence for superflavor.** The "96% partner cancellation" language of sec. 14 and 17 is withdrawn. What the data show is a pattern: strange quarks next to a heavy source (D_s*, B_s, Ω_cc) give |r| ≤ 14 MeV, strange quarks inside a light diquark give 10-80 MeV. That is heavy-quark symmetry in general (light-heavy spin coupling suppressed by 1/m_Q), of which superflavor is one instance. "Superflavor protects differences, not masses" stays as a statement of what the symmetry would do. The SUSY-protection analogy is dropped.
+
+Isospin (finding 5): Ξ_cc⁺ − Ξ_cc⁺⁺ = −1.58 ± 1.87 MeV is 0.8σ from zero, so "opposite sign" is not established. The zero-d.o.f. solve E_c = 3.2 ± 0.9, δ = 2.7 ± 0.6 MeV is kept as arithmetic only. The δ ≈ m_d − m_u comparison is removed. [speculation: any physical reading]
+
+### 21. Bookkeeping (c6c, c6d)
+
+- Census: 30/40 both observed (29/40 without the D(2600) J^P conflict). Double-heavy n = 1. Light max |ΔM| = 254 MeV is K2(1770)/Λ(1520); h1/N is 227 MeV. QQB: 13 over all rows (c5d "status counts" line), 10 in rows with an observed baryon (c5d's stats line printed n = 11 because it still counted the Ξ_cc* row as observed). The headline number is 13 slots, 10 usable. EXO in rows with an observed baryon: 1 (π1(1600)); Zc(3900) sits in a row whose baryon is unobserved. Tetraquark-slot conflict: D0(2550) is 0⁻ (LHCb), slot needs 1⁺. Selection bias: the tables were built from known states, so the observed fraction carries no evidential weight.
+- Ξ_bb budget: κ from each of five dynamical charm inputs (Brown+ Ξ_cc and Ω_cc, Alexandrou-Kallidonis, PACS-CS, Mathur-Padmanath Ω_cc 76(6)(6)) and two scalings gives 28.3-33.6 MeV. Adding that spread to c4's ±3.7 leaves 30 ± 4 MeV. Called a refinement, not a test.
+- Ξ_cc* thresholds: Ξ_cc⁺⁺π⁰ at 135.0, Ξ_cc⁺π⁺ at 138.0 MeV. The EFT 1σ upper edge (139) is above both, so "M1 only" holds for central values only.
+- T_cc (finding 10): this line's LO 4005 MeV vs Eichten-Quigg's 3978 MeV differ by 27 MeV. EQ include a hyperfine term between the cc diquark and the light antidiquark and use their own inputs; I have not checked their full text, so the difference is noted, not reconciled. Both are 100+ MeV above the observed 3874.7, so "LO superflavor says unbound" is unaffected.
+- Metz et al. quartet (¹⁹⁴Pt, ¹⁹⁵Pt, ¹⁹⁵Au, ¹⁹⁶Au): referee 1 confirms from memory. Abstract not re-checked this cycle; tag changed to [referee-confirmed, abstract not re-read].
+- Framing (finding 9): superflavor maps Q̄ ↔ QQ and equally Q ↔ Q̄Q̄ (used for T_cc). Which member is "the antiquark" depends on the C convention. Convention-independent wording (used in CLAIM and PROPOSAL): every supermultiplet pairs a matter object with an antimatter object in the same colour representation, so a world without antiquarks has none.
+
+### 22. Response to referee 1 (cycle 5)
+
+| # | Finding | Response |
+|---|---|---|
+| 1 | Toy cannot show "no P_μ"; spinless antiquark; "internal" wrong; real reason is [H,Q] ≠ 0 | Accepted. New toy with 3 momentum modes and spin-1/2 antiquarks (sec. 18): Q is a spin-1/2 doublet; {Q,Q†} has no P or H component, labelled [argument] and demoted. [H,Q] computed explicitly with a colour-magnetic Hamiltonian (sec. 19): breaking 102 MeV (charm), 33 MeV (bottom), O(Λ²/m_Q); 256 MeV for the light map. #1 negative restated as (i) not conserved, (ii) HLS forbids an exact version, (iii) composite bosons. "Internal" replaced. c5a docstring says the old toy antiquark is spinless. |
+| 2 | Ξ_cc* counted as observed (R1) | Accepted. 30/40, double-heavy n = 1, EXO with observed baryon = 1 (c6_census). |
+| 3 | 96% cancellation not specific to superflavor | Accepted, and the answer is that it is not evidence for superflavor at all. Controls (17 pairs) and three models (AQM, two DGG fits) in sec. 20. SUSY-protection wording dropped. |
+| 4 | Ξ_cc⁺ error | Fixed: +2.09/−1.56, residual 4.0 ± 1.6 (c5c patched, c6b). |
+| 5 | Isospin numerology | m_d − m_u match removed, sign stated as 0.8σ, readings labelled [speculation]. |
+| 6 | HLS label | "Not exact" now [established]; HLS caveats (asymptotic hadron states, confined constituents, heavy-quark escape) stated in sec. 19. |
+| 7 | Error budgets | 2σ band called naive; threshold caveat added; Ξ_bb called a refinement; lattice-input spread added (c6_xibb_budget). |
+| 8 | Bookkeeping | Max |ΔM| label, QQB 13 vs 10, J^P conflicts flagged, selection bias stated (sec. 21). |
+| 9 | Antimatter framing | Convention-independent wording adopted (CLAIM, PROPOSAL). |
+| 10 | T_cc vs Eichten-Quigg | Difference noted, not reconciled; conclusion unaffected (sec. 21). |
+| Inputs | T_cc keV tag, Metz tag | T_cc tag replaced by −360 ± 40 keV. Metz tag downgraded to referee-confirmed. |
+
+### 23. CONSTRAINTS checklist (cycle 6, replaces sec. 11)
+
+| ID | Status | How |
+|---|---|---|
+| A1 | Pass | Only quarks, antiquarks, gluons. Diquarks are qq correlations inside hadrons (lattice: hep-lat/0609004, arXiv:2106.09080), not fields. The c6a "diquark modes" are composite states built from quark operators (Part A) or a stated constituent-model approximation (Part B). No superpartner in any mechanism. Unobserved states (Ξ_cc*, Ξ_bb, T_bb) are predictions only, never evidence (R1, now also in the census). |
+| A2 | Pass | No neutrino input. |
+| A3 | Pass with caveat | pNRQCD/NRQCD/HQET are EFTs of QCD. LFHQCD and the DGG/AQM constituent models are models, not equivalent reformulations. They are labelled as such and used only as controls or illustrations. The [H,Q] ≠ 0 conclusion does not depend on them: the data and HLS give it independently. |
+| B1-B4 | Pass | All relations are C-symmetric: antihadron spectra identical. No particle-antiparticle mass, q/m, moment or spectroscopy difference. |
+| B5 | Pass | No gravitational claim. |
+| B6 | Pass | No lepton g-factor effect. |
+| B7, B10 | Pass | No CP- or T-odd operator. The hyperfine term is P- and T-even. θ̄ not used. |
+| B8, B9 | Pass | CKM not used. Baryon CP violation untouched. |
+| C1, C2 | Pass (N/A) | No Higgs or EW input. #1 is addressed only as a negative statement. |
+| C3 | Pass | All "partners" are observed hadrons or QCD-predicted states below 11 GeV. Consistent with LHC nulls. Does not explain the absence of elementary superpartners (CLAIM C2). |
+| C4 | Pass | No g-2 claim. |
+| D | Pass | α_s(M_Z) = 0.1180 for 2-loop running in c4. Diquarks add nothing to beta functions. No unification claim. |
+| E2, E3 | Pass | η, Ω_b not used. |
+| E4 | Pass | No vacuum-energy claim. |
+| E6-E8 | Pass | No neutrino or N_eff content. |
+| E9 | Pass | No symmetric cosmology or antimatter domains. |
+| E10 | Pass | No baryogenesis claim. Q changes B by 1 only as a spectral map between sectors, not a process. |
+| F1, F3 | Pass | No B-violating transition. Q relates spectra; it is not in the Hamiltonian. |
+| F2 | Pass | No sphaleron/instanton use. |
+| G | Pass | Hierarchy only as a negative statement. No regulator-based claim, no Veltman bracket used. |
+| H1 | Pass | 3/4 from spin-colour algebra (c1). The c6b models are fitted controls and labelled; the cycle-4 numerology (δ ≈ m_d − m_u, "96% protection") is withdrawn. |
+| H2 | Pass | No loop integrals. LL vs NLL c_F difference is inside the stated band. |
+| H3 | Pass | No interpretation-based mechanism. |
+| H4 | Pass | c1-c6 committed with `.txt` outputs, all rerun this cycle from `calc/`. |
+(E1, E5: dark matter is out of scope by directive D1; no DM claim is made.)

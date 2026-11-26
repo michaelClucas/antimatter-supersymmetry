@@ -1,0 +1,54 @@
+﻿(0) Superflavor residual with corrected errors
+   Xi_cc+ total error: +2.09 / -1.56 MeV (symmetrised 1.83); c5c used 1.6 (lifetime term only)
+   D_s - <D> = 101.1, Omega_cc - <Xi_cc> = 105.1, r_SF = +4.0 MeV
+   error: all pieces uncorrelated 1.6 MeV; with ext/lifetime correlations 1.2 MeV. Quoted: r_SF = +4.0 +- 1.6 MeV (4% of the breaking)
+
+(1) AQM prediction: r = 0 for every pair below (no superflavor in the AQM).
+(2) Observed strange-minus-nonstrange differences and residual r = Delta_s(X) - Delta_s(D) [MeV]
+   D_s - D           (reference)                  101.1   r =   +0.0
+   Omega_cc - Xi_cc  superflavor partner of D     105.1   r =   +4.0
+   D_s* - D*         HQ spin partner              103.6   r =   +2.5
+   B_s - B           HQ flavour partner            87.4   r =  -13.7
+   B_s* - B*         HQ spin+flavour               90.7   r =  -10.4
+   K* - rho          light meson                  118.3   r =  +17.2
+   phi - K*          light meson                  125.9   r =  +24.8
+   Sigma* - Delta    light baryon                 152.6   r =  +51.5
+   Xi* - Sigma*      light baryon                 148.8   r =  +47.7
+   Omega - Xi*       light baryon                 139.0   r =  +38.0
+   Xi_c' - Sigma_c   light spin-1 diquark         125.0   r =  +23.9
+   Xi_c* - Sigma_c*  light spin-1 diquark         127.5   r =  +26.4
+   Omega_c - Xi_c'   light spin-1 diquark         116.8   r =  +15.7
+   Omega_c* - Xi_c*  light spin-1 diquark         120.3   r =  +19.2
+   Xi_b' - Sigma_b   light spin-1 diquark         121.9   r =  +20.8
+   Xi_b* - Sigma_b*  light spin-1 diquark         121.3   r =  +20.2
+   Omega_b - Xi_b'   light spin-1 diquark         110.8   r =   +9.7
+   Xi_c - Lambda_c   light spin-0 diquark         182.6   r =  +81.5
+   Xi_b - Lambda_b   light spin-0 diquark         174.8   r =  +73.7
+   non-superflavor, non-heavy-symmetry pairs: n = 14, median |r| = 24.3, min 9.7, max 81.5 MeV
+   heavy-quark spin/flavour partners of D: |r| = 2.5, 13.7, 10.4 MeV
+   superflavor pair: |r| = 4.0 MeV
+   Note: the 'none' pairs with the largest |r| (Xi_c - Lambda_c, Xi_b - Lambda_b, Sigma* - Delta) are those
+   where the s quark enters a light diquark whose spin-spin energy depends on 1/(m_u m_s) vs 1/m_u^2.
+
+(3) DGG hyperfine model with free meson/baryon coefficients (no superflavor relation imposed)
+   [3a common light masses + C_M, C_B] fit to 34 hadrons (Xi_cc, Omega_cc excluded): rms 20.3 MeV; A_B/A_M = 0.355 (a superflavor tie would be 0.5)
+      predicted Xi_cc = 3698, Omega_cc = 3853 MeV (obs 3621, 3726); D_s - D = 168.0 (obs 101.1)
+      r_SF(model) = -13.2 MeV vs observed +4.0;  model error on the 17 control residuals: rms 62.6 MeV
+   [3b Griffiths: separate meson/baryon light masses, C = 0] fit to 34 hadrons (Xi_cc, Omega_cc excluded): rms 23.1 MeV; A_B/A_M = 0.348 (a superflavor tie would be 0.5)
+      predicted Xi_cc = 3683, Omega_cc = 3846 MeV (obs 3621, 3726); D_s - D = 149.2 (obs 101.1)
+      r_SF(model) = +14.2 MeV vs observed +4.0;  model error on the 17 control residuals: rms 53.8 MeV
+   [AQM, A = 0] fit rms = 89 MeV; r(any pair) = 0 identically; error on the control residuals: rms 36.4 MeV
+
+   Verdict [established for these models]: the AQM (no superflavor) predicts r_SF = 0; the two DGG fits
+   (no superflavor tie) predict r_SF = -13.2 and +14.2 MeV. The observed +4.0 +- 1.6
+   MeV is reproduced by the AQM with no superflavor, so it is NOT evidence for superflavor. The data do show
+   a pattern: pairs where the s quark sits next to a heavy source (D_s*, B_s, Omega_cc) have |r| <~ 14 MeV,
+   pairs where it shares a light diquark have |r| = 10-80 MeV. That pattern is heavy-quark symmetry
+   (suppressed light-heavy spin coupling), of which superflavor is one instance; it does not single it out.
+
+(4) Isospin decomposition, numerology removed
+   D+ - D0 = +4.82 +- 0.07;  Xi_cc+ - Xi_cc++ = -1.58 +- 1.87 MeV  (0.8 sigma from zero)
+   two-parameter, zero-d.o.f. solve: E_c = 3.2 +- 0.9, delta = 2.7 +- 0.6 MeV
+   The opposite sign of the two isospin splittings is a 0.8 sigma statement. delta is an effective hadronic
+   parameter (current-mass difference + light-quark EM self-energy + isospin dependence of the hyperfine term);
+   it is not compared with the MS-bar m_d - m_u. [speculation: any physical reading of E_c, delta]

@@ -1,0 +1,50 @@
+﻿======================================================================================
+PART A. Quark-level toy: 3 momentum modes, spin-1/2 antiquark, local scalar 3bar diquark
+  diquark states orthonormal: max|<D|D'> - delta| = 2.2e-16
+  [S_z, Q_up] + (+0.5) Q = 0.0e+00   (Q_sigma lowers S_z by the removed antiquark spin)
+  [S_z, Q_dn] + (-0.5) Q = 0.0e+00   (Q_sigma lowers S_z by the removed antiquark spin)
+  [S_+, Q_up] + Q_dn = 0.0e+00,  [S_+, Q_dn] = 0.0e+00  -> (Q_dn, -Q_up) is a spin-1/2 doublet (the antiquark annihilator's transformation)
+  max_A |[T_A, Q]| = 0.0e+00  (colour singlet)
+  |T Q - Q T| (translation) = 2.4e-16  (Q conserves total momentum)
+
+  {Q_s, Q_t^dag} on the meson sector (|s abar>):
+    s=0 t=0: |{Q_s,Q_t^dag} - abar^dag_t abar_s (summed over colour, momentum)| = 2.2e-16
+    s=0 t=1: |{Q_s,Q_t^dag} - abar^dag_t abar_s (summed over colour, momentum)| = 2.2e-16
+    s=1 t=0: |{Q_s,Q_t^dag} - abar^dag_t abar_s (summed over colour, momentum)| = 2.2e-16
+    s=1 t=1: |{Q_s,Q_t^dag} - abar^dag_t abar_s (summed over colour, momentum)| = 2.2e-16
+  sum_s {Q_s,Q_s^dag} = N_abar = 1 on every meson state: max dev 2.2e-16
+  least-squares fit sum_s {Q_s,Q_s^dag} = c0 + c1 H_kin + c2 P:  c0 = 1.0000, c1 = +3.5e-16, c2 = -2.6e-19
+    total crystal momentum K=0: spec {Q,Q^dag} = [1.],  H_kin range [0.830, 1.091] GeV
+    total crystal momentum K=1: spec {Q,Q^dag} = [1.],  H_kin range [0.940, 1.091] GeV
+    total crystal momentum K=2: spec {Q,Q^dag} = [1.],  H_kin range [0.940, 1.091] GeV
+  baryon sector: sum_s Q_s Q_s^dag = 2 Pi, Pi = projector onto (s quark) x (local scalar diquark): Tr = 324 = 2 x 18 x 9, ||Pi^2 - Pi|| = 2.8e-17
+  => {Q,Q^dag} is a number/projector operator, identical in every momentum sector. Nothing ~ P or H.
+     This is a property of the local, derivative-free Q chosen here [argument]; it is not an
+     independent reason for the absence of protection (see Part B and WORK.md sec. 19).
+
+  H = sqrt(p^2+m^2) per constituent + contact colour-magnetic V_ij; m_s=0.5, m_u=m_d=m_abar=0.33 GeV, p0=0.35 GeV, kappa=0.0124 GeV^3
+   kinetic + masses only:       ||[H,Q]|| =   550.1 MeV, best offset delta =   430.7 MeV, ||[H,Q] - delta Q|| =  174.4 MeV
+   hyperfine only:              ||[H,Q]|| =   327.3 MeV, best offset delta =  -227.3 MeV, ||[H,Q] - delta Q|| =  223.6 MeV
+   full H:                      ||[H,Q]|| =   412.1 MeV, best offset delta =   203.4 MeV, ||[H,Q] - delta Q|| =  255.7 MeV
+   meson ground state E_M = 648 MeV (deg. 1); Q_up|M>: <H_B> = 1162 MeV, energy spread sigma_E = 137 MeV; baryon ground E_B = 1006 MeV
+   sigma_E > 0: Q maps the meson ground state onto a superposition of baryon eigenstates, so Q is not
+   a symmetry even after subtracting a constant offset. [established for this model]
+
+======================================================================================
+PART B. Heavy-source model, calibrated: q + Qbar (spin 1/2)  vs  q + (QQ)_3bar (spin 1, compact)
+  charm  (m_c = M(J/psi)/2): offset delta =   1531 MeV (= m_(QQ) - m_Qbar + recoil difference; removable by subtracting the conserved heavy-quark number)
+     genuine breaking ||[H,Q] - delta Q||: hyperfine only 100.4 MeV, recoil only  17.2 MeV, both 101.6 MeV
+     meson hyperfine input 142.0 MeV -> baryon J=3/2-1/2 in this model = 106.5 MeV (3/4 rule)
+  bottom (m_b = M(Y1S)/2): offset delta =   4725 MeV (= m_(QQ) - m_Qbar + recoil difference; removable by subtracting the conserved heavy-quark number)
+     genuine breaking ||[H,Q] - delta Q||: hyperfine only  32.1 MeV, recoil only   5.6 MeV, both  32.5 MeV
+     meson hyperfine input 45.3 MeV -> baryon J=3/2-1/2 in this model = 34.0 MeV (3/4 rule)
+
+  Scaling with the heavy mass (kappa ~ 1/m_Q from heavy-quark spin symmetry, D*-D scaled as m_c/m_Q):
+    m_Q =    1.55 GeV: ||B|| =  101.61 MeV,  m_Q ||B|| =   157.3 MeV GeV,  offset    1.53 GeV
+    m_Q =    4.73 GeV: ||B|| =   33.26 MeV,  m_Q ||B|| =   157.3 MeV GeV,  offset    4.72 GeV
+    m_Q =   15.00 GeV: ||B|| =   10.49 MeV,  m_Q ||B|| =   157.3 MeV GeV,  offset   15.00 GeV
+    m_Q =   50.00 GeV: ||B|| =    3.15 MeV,  m_Q ||B|| =   157.3 MeV GeV,  offset   50.00 GeV
+    m_Q =  500.00 GeV: ||B|| =    0.31 MeV,  m_Q ||B|| =   157.3 MeV GeV,  offset  500.00 GeV
+  => [H, Q] = delta Q + B with B = O(Lambda^2/m_Q) -> 0 only as m_Q -> infinity. At physical charm the
+     breaking is O(100 MeV), at bottom O(30 MeV), i.e. ~25% and ~8% of the light-dof energy Lambda-bar ~ 0.4 GeV.
+     Q is never a symmetry of H itself: the offset delta ~ m_Q cannot be removed by any light-sector dynamics.

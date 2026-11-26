@@ -1,4 +1,4 @@
-==============================================================================
+﻿==============================================================================
 (A) Constituent level: d_{a,s} fermions (6 modes), D_a bosons (3 modes, n<=2)
   max |{Q_s,Q_t^dag} - (delta_st N_D + sum_a d_at^dag d_as)| on untruncated subspace = 1.8e-15
   => {Q_up,Q_up^dag} + {Q_dn,Q_dn^dag} = 2 N_D + N_dbar   (number operators only)
@@ -22,5 +22,5 @@
   spectrum of {Q,Q^dag} in sector 2 quarks + 1 antiquark: 0.5 (x144), 1 (x27), 1.5 (x24), 2 (x3)
 
 Result: in both realisations {Q, Q^dag} is a sum of number, spin and colour-density operators.
-Compare Poincare SUSY: {Q_alpha, Qbar_betadot} = 2 sigma^mu P_mu. Here no P_mu appears.
-=> internal (spectrum-generating) superalgebra, of the same type as Iachello's nuclear U(m|n).
+One spatial mode: this toy cannot show presence or absence of P_mu (see c6_hq_commutator.py).
+=> non-relativistic spectrum-generating superalgebra, same type as Iachello's nuclear U(m|n).

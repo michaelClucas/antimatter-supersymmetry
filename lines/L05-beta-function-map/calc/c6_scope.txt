@@ -1,0 +1,23 @@
+1. Gate item 7: published two-loop gauge tables vs b_ij(SUSY) = 2 b_ij(one-doublet parent), i != j and (1,1)
+   field-content formulas reproduce all four tables (MSS, BPV for all n_G; FJJ for all n_G; MV at n_G = 3): OK
+   MV 9311340 / MSS 1201.5868 (n_G=3): ratios ['2']  -> PASS
+      non-abelian diagonal ratios (not covered by the theorem): b22 30/7, b33 -7/13
+   FJJ 9605440 / MSS 1201.5868 (all n_G): ratios ['2']  -> PASS
+   MV 9311340 / BPV 1210.6873 (n_G=3): ratios ['2']  -> PASS
+      non-abelian diagonal ratios (not covered by the theorem): b22 30/7, b33 -7/13
+   FJJ 9605440 / BPV 1210.6873 (all n_G): ratios ['2']  -> PASS
+
+2. Scope: the doubling needs a one-doublet SM-like parent (exactly one complex doublet -> H + H^c)
+   SM (one doublet) -> MSSM, all n_G: ['2']
+   2HDM parent -> MSSM: {(1, 1): 199/104, (1, 2): 3/2, (1, 3): 2, (2, 1): 3/2, (2, 3): 2, (3, 1): 2, (3, 2): 2}
+      -> (1,2),(2,1) = 3/2, (1,1) = 199/104; colour-mixed entries stay 2 (the Higgs is colourless).
+   vector-like scalar pair (2,1,+-1/2), minimal SUSY = 2 chirals: {(1, 1): 1, (1, 2): 1, (2, 1): 1}
+   complex scalar (2,8,0) pseudoreal, minimal SUSY = 1 chiral: {(1, 2): 8/7, (2, 1): 8/7}
+      same with Phi* (2 chirals): {(1, 2): 2, (2, 1): 2}
+   complex scalar (3,8) real rep, minimal SUSY = 1 chiral: {(1, 2): 26/25, (2, 1): 26/25}
+      same with Phi* (2 chirals): {(1, 2): 2, (2, 1): 2}
+   SM -> SUSY with H only (no H_d): {(1, 1): 389/199, (1, 2): 5/3, (1, 3): 2, (2, 1): 5/3, (2, 3): 2, (3, 1): 2, (3, 2): 2}
+   MSSM content with H_d replaced by a second Y=+1/2 doublet chiral: identical b_ij (asserted)
+
+3. Phi* theorem (two chirals per complex scalar, one per Weyl / real scalar) on 200 random SM-group contents
+   ratio 2 on every i != j and (1,1): OK (seed 20261125)

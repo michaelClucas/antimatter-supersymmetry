@@ -1,0 +1,19 @@
+﻿Xi_bb* - Xi_bb transported from each charm lattice input (MeV):
+  input                                        R_cc   1/m_Q    1/(m_Q v)
+  Xi_cc  Brown+ 1409.0497                     0.583    31.5     29.7
+  Xi_cc  Alexandrou-Kallidonis 1704.02647     0.535    30.8     28.5
+  Xi_cc  PACS-CS 1301.4743                    0.725    33.6     33.4
+  Omega_cc Brown+ 1409.0497                   0.583    31.5     29.7
+  Omega_cc Mathur-Padmanath 1807.00174        0.528    30.7     28.3
+  range over inputs and scalings: [28.3, 33.6] -> centre 31.0, half-width 2.7
+  c4 value 30.4 +- 3.7; adding the input spread (flat, sigma = half-width/sqrt3 = 1.5):  Xi_bb* - Xi_bb = 30 +- 4 MeV
+  Compare: LO 34.0, BVR eq.(37) 34 +- 4, Brown+ lattice 34.6 +- 7.8. Within 1 sigma of all three: the number does not discriminate. It is a refinement of BVR, not an independent test.
+  Kappa calibrated on Brown+ charm and compared to Brown+ bottom is a correlated comparison (same ensembles).
+
+Xi_cc*++ strong-decay thresholds (MeV):
+  Xi_cc++ pi0 : Delta > 135.0;   Xi_cc+ pi+ : Delta > 138.0
+  LO                 Delta = 106.5: M1 only (Xi_cc gamma)
+  lattice mean       Delta =  83.5: M1 only (Xi_cc gamma)
+  EFT 1 sigma upper  Delta = 138.5: pi decays open
+  EFT 2 sigma upper  Delta = 170.5: pi decays open
+  The band 107 +- 32 is a power-counting estimate, not a Gaussian error; the [43, 170] '2 sigma' band is naive.

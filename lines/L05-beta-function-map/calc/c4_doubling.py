@@ -301,7 +301,7 @@ assert all(r[3] == 2 for r in rows)
 th23 = Theory([("SU2", 2, 3, False), ("SU3", 3, 8, False)])
 X = th23.rep([(3, 2, 2), (8, 3, 3)])  # (3,8) real rep
 wq = [th23.rep([(2, R(1, 2), R(3, 4)), (3, R(1, 2), R(4, 3))]), th23.rep([(2, R(1, 2), R(3, 4)), (3, R(1, 2), R(4, 3))])]
-rows_min = test("toy SU(2)xSU(3), Weyl 2x(2,3) [+conj implied], complex scalar (3,8): MINIMAL SUSY (one chiral (3,8))",
+rows_min = test("toy SU(2)xSU(3), Weyl (2,3) + (2,3bar) [same S,C; anomaly-free], complex scalar (3,8): MINIMAL SUSY (one chiral (3,8))",
                 th23, wq, [X], [], wq + [X])
 rows_phi = test("same, Phi* (two chirals (3,8))", th23, wq, [X], [], wq + [X, X])
 assert any(r[3] != 2 for r in rows_min) and all(r[3] == 2 for r in rows_phi)
@@ -312,8 +312,10 @@ P("\n   THEOREM (two loops, gauge part, any gauge group G = prod G_i, any matter
 P("   complex scalars S_c, real scalars S_r. Let Phi*(T) = vector multiplets for each G_i + chiral multiplets")
 P("   F u S_r u {s, s' : s in S_c} with s' any rep having the same (S_i, C_j) as s (e.g. conj(s)). Then")
 P("   b_ij[Phi*(T)] = 2 b_ij[T] for all i != j and for every abelian i = j. Proof: per-field weights of section 0;")
-P("   the delta_ij pieces are proportional to C(G_i), zero for U(1). Minimal supersymmetrization equals Phi*")
-P("   exactly when every complex scalar needs a second chiral multiplet (anomaly / holomorphy), as for any scalar")
-P("   with nonzero U(1) charge or in a complex rep; it fails for complex scalars in real reps (test d).")
+P("   the delta_ij pieces are proportional to C(G_i), zero for U(1).")
+P("   Minimal supersymmetrization equals Phi* only when the complex scalars have no anomaly-free vector-like pairing")
+P("   among themselves and each one's fermion partner needs a NEW conjugate partner. The one-doublet SM is such a case.")
+P("   Counterexamples (c6_scope.py): complex scalar in a real rep (3,8) -> 26/25; pseudoreal (2,8,0) -> 8/7;")
+P("   vector-like scalar pair -> 1; 2HDM parent -> MSSM gives 3/2 and 199/104. The factor 2 belongs to the parent choice.")
 
 open(__file__.replace(".py", ".txt"), "w", encoding="utf-8").write("\n".join(out) + "\n")

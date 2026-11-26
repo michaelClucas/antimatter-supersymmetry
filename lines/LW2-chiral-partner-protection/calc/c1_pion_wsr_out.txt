@@ -1,0 +1,16 @@
+(a) J(m2,L) large-L: L + log(m2**m2/L**m2)  [= L - m2 ln L + m2 ln m2]
+    sum_i c_i J(m_i): coeff of L = c1 + c2 + c3 ; coeff of ln L = -M1*c1 - M2*c2 - M3*c3 ; constant = M1*c1*log(M1) + M2*c2*log(M2) + M3*c3*log(M3)
+    => WSR1 (sum c = 0) kills Lambda^2; WSR2 (sum c m^2 = 0) kills ln Lambda; result finite = sum c_i m_i^2 ln m_i^2
+(b) WSR1+WSR2 solution: F_V^2 = f_pi**2*m_A**2/((m_A - m_V)*(m_A + m_V)) , F_A^2 = f_pi**2*m_V**2/((m_A - m_V)*(m_A + m_V))
+    DGMLY closed form reproduced: True
+    pion-only (point-like, c_pi only): Delta m^2 = +(3 alpha/4 pi) Lambda^2 (quadratically divergent)
+(c) measured m(pi+)^2 - m(pi0)^2 = 1261.2 MeV^2  (Delta m = 4.5936 MeV)
+    naive photon loop (3a/4pi) L^2 equals it at L_nat = 851 MeV   [m_rho = 775.26, m_a1 = 1230.0]
+    DGMLY [PDG a1            ] Delta m^2 =  1603.7 MeV^2 -> Delta m = 5.82 MeV  (ratio to meas 1.27)
+    DGMLY [a1-40             ] Delta m^2 =  1559.1 MeV^2 -> Delta m = 5.66 MeV  (ratio to meas 1.24)
+    DGMLY [a1+40             ] Delta m^2 =  1647.5 MeV^2 -> Delta m = 5.97 MeV  (ratio to meas 1.31)
+    DGMLY [KSRF a1=sqrt2*rho ] Delta m^2 =  1451.5 MeV^2 -> Delta m = 5.27 MeV  (ratio to meas 1.15)
+    note: m_u-m_d contributes to pi+ - pi0 only at O((m_u-m_d)^2), ~0.1 MeV [established, Gasser-Leutwyler]
+(d) top+stop: Lambda^2 coefficient of d2V/dphi2 at 0: 0
+    top+stop: d2V/dphi2 at phi=0 = log((mtilde2/Lambda**2)**(3*mtilde2*y**2/(8*pi**2)))  = -(3 y^2/8pi^2) mtilde^2 ln(Lambda^2/mtilde^2): log survives in softly broken SUSY
+    => QCD (WSR1+WSR2) cancels both Lambda^2 and ln Lambda for pi+; soft SUSY cancels only Lambda^2.

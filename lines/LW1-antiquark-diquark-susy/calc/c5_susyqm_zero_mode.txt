@@ -1,4 +1,4 @@
-1. Undeformed LFHQCD-type SUSY QM (lam = 1, g = 1)
+﻿1. Undeformed LFHQCD-type SUSY QM (lam = 1, g = 1)
    H_M (meson side):   [-0.  4.  8. 12. 16. 20.]  exact 4n: [0, 4, 8, 12, 16, 20]
    H_B (baryon side):  [ 4.  8. 12. 16. 20. 24.]  exact 4(n+1): [4, 8, 12, 16, 20, 24]
    pairing: H_M level n+1 vs H_B level n, max diff = 1.19e-05; unpaired zero mode E0 = -7.03e-07

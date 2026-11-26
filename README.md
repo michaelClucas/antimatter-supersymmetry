@@ -36,11 +36,12 @@ A line becomes a result only if: it makes a specific claim about a SUSY result; 
 ## Status
 
 <!-- STATUS:BEGIN -->
-**Cycle 4 complete (2026-11-25).** No verified results yet. Dark matter removed from scope by the experimenter.
+**Cycle 6 complete (2026-11-25).** No verified results yet. Dark matter removed from scope by the experimenter.
 
-- **L01b (Higgs mass, main thread):** The SM's boson pair loops (W sector, Z sector + Higgs) carry the stop-like sign and cancel a gauge- and regulator-independent fraction of the top/antitop loop: 34% at the weak scale, 79% at the Planck scale, 100% only at 10²²·⁸ GeV. No SM symmetry enforces the match; the obstruction is that scalars carry no chirality. In fix round.
-- **L05 (beta functions, in verification):** Theorem: under minimal SUSY completion every mixed two-loop gauge beta coefficient (and the abelian diagonal) exactly doubles, in any gauge theory. Not found in the literature. It does not single out antimatter: counting each state's CP conjugate separately gives the same numbers as any duplicate copy. Answer to "is there an antimatter-SUSY beta-function isometry?": no antimatter-specific one.
-- **LW1 (hadronic SUSY):** QCD's antiquark↔diquark symmetry is internal (its anticommutator has no momentum), so it cannot protect masses the way SUSY does; it does protect partner mass differences (96% cancellation of SU(3) breaking).
+- **L01b (Higgs mass, main thread):** SM boson pair loops cancel 34% of the top/antitop loop at the weak scale, 79% at the Planck scale (cutoff/Pauli-Villars). Referees agree no SM symmetry enforces full cancellation; the precise obstruction is that every SM antimatter operation (C, CP, CPT) maps a particle to an antiparticle of the same spin, so nothing ties boson couplings to the top Yukawa the way SUSY does. Fix round 3.
+- **LW2 (new, positive match):** the SM does contain an antimatter-built protection of a scalar mass. The charged pion's electromagnetic mass divergence is cancelled by quark-antiquark partner states (ρ, a₁) through the Weinberg sum rules, removing both the quadratic and log divergence, and the partners sit where naturalness says (851 MeV estimate vs 775/1230 MeV). It works for composite scalars; extending it to the elementary Higgs needs new physics.
+- **L05 (beta functions, in verification, 1/3 referees clean):** two-loop mixed gauge coefficients double under SUSY completion of a one-doublet theory; checked against four published table pairings. No antimatter-specific map exists.
+- **LW1 (hadronic SUSY, in verification):** QCD's antiquark↔diquark supercharge does not commute with the Hamiltonian, so it protects no mass. Predicts Ξ_cc*−Ξ_cc = 107 ± 32 MeV.
 <!-- STATUS:END -->
 
 Every file distinguishes established physics, conjecture and speculation. Subagent output is a claim until a referee and a calculation back it.

@@ -1,4 +1,4 @@
-meson fit:  sqrt(lam) = 0.551 GeV, rms dM^2 = 0.304 GeV^2
+﻿meson fit:  sqrt(lam) = 0.551 GeV, rms dM^2 = 0.304 GeV^2
 baryon fit: sqrt(lam) = 0.513 GeV, rms dM^2 = 0.192 GeV^2
 lam_meson / lam_baryon = 1.156  (exact SUSY: 1)
   rho(770)     M^2=0.601  fit=0.608  resid=-0.007
