@@ -101,7 +101,7 @@ def build(model):
     """model: 'SM', '2HDM', 'DUP'. Returns list of real scalars and list of Yukawa matrices Y^a (NF x NF), with
     -L = 1/2 Y^a_ij psi_i psi_j phi_a + h.c."""
     # complex doublets present
-    doublets = {"SM": ["H"], "2HDM": ["Hu", "Hd"], "DUP": ["H", "Hp"]}[model]
+    doublets = {"SM": ["H"], "2HDM": ["Hu", "Hd"], "DUP": ["H", "Hp"], "T1": ["H", "H2"]}[model]
     reals = [(dname, comp, part) for dname in doublets for comp in range(2) for part in (0, 1)]
     ridx = {k: i for i, k in enumerate(reals)}
     NS = len(reals)
@@ -117,10 +117,10 @@ def build(model):
         for a in range(NS):
             if vec[a] != 0:
                 Y[a][i, j] += coef*vec[a]; Y[a][j, i] += coef*vec[a]
-    up = {"SM": "H", "2HDM": "Hu", "DUP": "H"}[model]
+    up = {"SM": "H", "2HDM": "Hu", "DUP": "H", "T1": "H"}[model]
     # conjugate doublet components: X^c = (X_2*, -X_1*)  (index 0 = upper)
     def dn(comp):
-        if model == "SM":
+        if model in ("SM", "T1"):   # T1: type-I 2HDM, both Yukawas on H, second doublet H2 Yukawa-free
             return ("H", 1 - comp, True, 1 if comp == 0 else -1)
         if model == "2HDM":
             return ("Hd", comp, False, 1)
@@ -198,6 +198,12 @@ for k in SMk:
 P("   decomposition (asserted):  2HDM-II = fermion legs + own-doublet leg;  SM = fermion legs + Y2(S) + vertex")
 P("     identification terms SM - 2HDM-II:", {k: tuple(a - b for a, b in zip(row(res['SM'][k]), row(res['2HDM'][k]))) for k in SMk})
 P("     = [Y2(S) - gamma(own doublet)] + vertex, vertex = -2 y_b^2 in beta_t, -2 y_t^2 in beta_b, 0 in beta_tau")
+# cycle 10 (referee 4, F2): type-I 2HDM (one doublet in both Yukawas, a second Yukawa-free doublet)
+resT1 = extract("T1")
+for k in SMk:
+    assert row(resT1[k]) == row(res["SM"][k])
+P("   type-I 2HDM (H in both Yukawas via H and H^c, extra doublet H2 Yukawa-free): Yukawa part identical to the SM,")
+P("     including the vertex term (asserted). The vertex and Y2(S) cross terms track 'one field in both Yukawas'.")
 P("   sum rule: Y2(S)_SM = gamma_Yuk(H_u) + gamma_Yuk(H_d) = 3y_t^2 + (3y_b^2 + y_tau^2): the SM Higgs leg sees both")
 P("     MSSM Higgs legs because H^c is the conjugate of the same field. The vertex term exists only for that reason")
 P("     (it is a charged-scalar exchange between the y_t and y_b vertices, which share the single H).")
@@ -285,12 +291,27 @@ SMt = lwx_g4("Q", "u", "H", 1)
 known_t = [R(1187, 600), R(-23, 4), -108, R(-9, 20), R(19, 15), 9]
 assert co(SMt) == known_t
 P("   SM y_t g^4 terms (g1^4, g2^4, g3^4, g1g2, g1g3, g2g3):", co(SMt))
-P("     = (1187/600, -23/4, -108, -9/20, 19/15, 9), the standard SM values (as recalled, not re-read); the g3^4 entry -108 equals")
+P("     = (1187/600, -23/4, -108, -9/20, 19/15, 9), = Luo-Xiao hep-ph/0207271 (PRL 90 (2003) 011601) eq. (6) at n_g = 3")
+P("       (read from the paper, cycle 10; see the literature table below); the g3^4 entry -108 also equals")
 P("       -2(202/3 - 20 n_f/9), n_f = 6, the two-loop QCD quark-mass anomalous dimension (Nachtmann-Wetzel NPB 187 (1981) 333)")
 assert -2*(R(202, 3) - R(20, 9)*6) == -108
 MSt = susy_g4(("Q", "u", "H"))
 assert co(MSt) == [R(2743, 450), R(15, 2), R(-16, 9), 1, R(136, 45), 8]
-P("   MSSM y_t g^4 terms:", co(MSt), "(agree with the standard MSSM values as recalled by the author; not re-read from a paper this cycle)")
+P("   MSSM y_t g^4 terms:", co(MSt), "(= Martin-Vaughn hep-ph/9311340 eq. (4.12), read cycle 10)")
+# Literature table (read from the papers in cycle 10). SM: Luo-Xiao hep-ph/0207271 eqs. (6)-(8), as functions of n_g;
+# MSSM: Martin-Vaughn hep-ph/9311340 eqs. (4.12), (4.14), (4.16). Order (g1^4, g2^4, g3^4, g1g2, g1g3, g2g3), GUT g1.
+ng = 3
+LIT_SM = {"y_t": [R(9, 200) + R(29, 45)*ng, -(R(35, 4) - ng), -(R(404, 3) - R(80, 9)*ng), R(-9, 20), R(19, 15), 9],
+          "y_b": [-(R(29, 200) + R(1, 45)*ng), -(R(35, 4) - ng), -(R(404, 3) - R(80, 9)*ng), R(-27, 20), R(31, 15), 9],
+          "y_tau": [R(51, 200) + R(11, 5)*ng, -(R(35, 4) - ng), 0, R(27, 20), 0, 0]}
+LIT_MSSM = {"y_t": [R(2743, 450), R(15, 2), R(-16, 9), 1, R(136, 45), 8],
+            "y_b": [R(287, 90), R(15, 2), R(-16, 9), 1, R(8, 9), 8],
+            "y_tau": [R(27, 2), R(15, 2), 0, R(9, 5), 0, 0]}
+for yname, legs in (("y_t", ("Q", "u", "H")), ("y_b", ("Q", "d", "Hc")), ("y_tau", ("L", "e", "Hc"))):
+    assert co(lwx_g4(*legs, 1)) == LIT_SM[yname], yname
+    assert co(susy_g4(legs)) == LIT_MSSM[yname], yname
+P("   Literature check (cycle 10): computed SM g^4 terms of y_t, y_b, y_tau = Luo-Xiao hep-ph/0207271 eqs. (6)-(8) at n_g = 3;")
+P("   computed MSSM g^4 terms = Martin-Vaughn hep-ph/9311340 eqs. (4.12), (4.14), (4.16). All 36 entries asserted equal.")
 for yname, legs in (("y_t", ("Q", "u", "H")), ("y_b", ("Q", "d", "Hc")), ("y_tau", ("L", "e", "Hc"))):
     s1, s2, ms = co(lwx_g4(legs[0], legs[1], legs[2], 1)), co(lwx_g4(legs[0], legs[1], legs[2], 2)), co(susy_g4(legs))
     rat = [(m/s if s != 0 else ("0/0" if m == 0 else "x/0")) for m, s in zip(ms, s1)]
@@ -333,8 +354,8 @@ yt2 = expand(sum(gamma2_yuk(sidx[x]) for x in tops))
 P("   MSSM beta^(2)_{y_t}/y_t, Yukawa-dependent part:", yt2)
 expect = -22*yt**4 - 5*yb**4 - 5*yt**2*yb**2 - yb**2*yl**2 + (R(6, 5)*g1**2 + 6*g2**2 + 16*g3**2)*yt**2 + R(2, 5)*g1**2*yb**2
 assert expand(yt2 - expect) == 0
-P("   = -22y_t^4 - 5y_b^4 - 5y_t^2y_b^2 - y_b^2y_tau^2 + (6/5g1^2 + 6g2^2 + 16g3^2)y_t^2 + 2/5 g1^2 y_b^2 (asserted against")
-P("     the standard MSSM result as recalled, e.g. Barger-Berger-Ohmann PRD 47 (1993) 1093; not re-read this cycle)")
+P("   = -22y_t^4 - 5y_b^4 - 5y_t^2y_b^2 - y_b^2y_tau^2 + (6/5g1^2 + 6g2^2 + 16g3^2)y_t^2 + 2/5 g1^2 y_b^2 (asserted; equals")
+P("     Martin-Vaughn hep-ph/9311340 eq. (4.12) restricted to the third generation, read cycle 10)")
 P("   The SM two-loop Yukawa^4 and g^2 Yukawa^2 terms were not recomputed here.")
 
 open(__file__.replace(".py", ".txt"), "w", encoding="utf-8").write("\n".join(out) + "\n")

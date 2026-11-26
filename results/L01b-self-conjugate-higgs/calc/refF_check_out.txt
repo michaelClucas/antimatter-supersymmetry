@@ -1,0 +1,20 @@
+(1P) pole form
+  C_pole = -4.0683 +- 0.0199 (PDG) -> 205 sigma; +MC 0.5 GeV: +- 0.0395 -> 103 sigma
+  C_pole = 0 needs m_t = 96.06 GeV
+(1M) MS-bar at M_t, Buttazzo fit formulas
+  couplings: lam=0.12617, yt=0.93286, g2=0.64764, gY=0.35843, g3=1.16516
+  C_MSbar = -3.4259 +- 0.0199 -> 172 sigma; wide (MC 0.5, dyt 0.003): +- 0.0496 -> 69 sigma
+  C = 0 needs y_t(M_t) = 0.5470, kappa_t = 0.586
+  Jegerlehner y_t = 0.9005: C = -3.070
+  pole - MSbar difference = -0.642 (one-loop matching, both far from 0)
+(6) sectors at M_t
+  W 0.882  Z+h 0.916  F 5.223  R = 0.344  3lam/6yt^2 = 0.072  6lam/6yt^2 = 0.145
+(3) own 1-loop RGE
+  [Buttazzo y_t] 1-loop: max C on [M_t, M_Pl] = -0.405; C = 0 at 10^26.78, dC/dln mu = +0.0236
+  [Jegerlehner y_t 0.9005] 1-loop: max C on [M_t, M_Pl] = -0.050; C = 0 at 10^20.14, dC/dln mu = +0.0201
+(4) H^c and twin counterfactual
+  Jacobian rank of (H^c, H) wrt H: 4; |H^c|^2-|H|^2 = 0.0e+00; |H^c^dag H| = 0.0e+00
+  H_B := H^c, kappa = -1.0: Hessian eigenvalues (complex-field normalization) = [0. 0. 0. 8.]; ratio nonzero/kappa = -8.000
+(5) CW B
+  B = -4.387e-03
+  QCD EWSB: M_W = g f_pi/2 = 30.0 MeV; x sqrt3 = 52.0 MeV; v/f_pi = 2673; f_pi^2/v^2 = 1.40e-07

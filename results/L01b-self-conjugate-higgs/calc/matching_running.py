@@ -69,10 +69,13 @@ def Mt_for_zero_at(mu):
     return brentq(g, 160.0, 175.0)
 
 
-P("\nFalsifiable M_t (pole) at which boson pairs exactly match fermion seas (R = 1), other inputs central:")
+P("\nM_t (pole) at which boson pairs exactly match fermion seas (R = 1), other inputs central:")
+P("   [WITHDRAWN c4/c10: the sigma values below use the experimental M_t error (0.29 GeV) only and are not a")
+P("    significance. See c5_mt_budget_out.txt (0.74 GeV budget, 4.1 sigma) and c7_mt_significance_out.txt.]")
 for name, mu in (("M_Pl = 1.22e19 GeV", MPL), ("reduced M_Pl = 2.4e18 GeV", 2.435e18), ("10^16 GeV", 1e16)):
     mt = Mt_for_zero_at(mu)
-    P(f"   R = 1 at {name:26s}: M_t = {mt:.2f} GeV  ({(mt - smi.MT)/0.29:+.1f} sigma from {smi.MT} +- 0.29)")
+    P(f"   R = 1 at {name:26s}: M_t = {mt:.2f} GeV  ({(mt - smi.MT)/0.29:+.1f} 'sigma' from {smi.MT} +- 0.29,"
+      f" withdrawn)")
 v = smi.V
 br = smi.MH**2 + 2 * smi.MW**2 + smi.MZ**2
 P(f"   R = 1 at the EW scale (tree, pole masses): m_t = sqrt((m_h^2+2M_W^2+M_Z^2)/4) = {math.sqrt(br/4):.1f} GeV,"

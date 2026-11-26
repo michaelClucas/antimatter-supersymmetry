@@ -34,6 +34,8 @@
    decomposition (asserted):  2HDM-II = fermion legs + own-doublet leg;  SM = fermion legs + Y2(S) + vertex
      identification terms SM - 2HDM-II: {'y_t': (0, 1, 1), 'y_b': (1, 0, 0), 'y_tau': (3, 0, 0)}
      = [Y2(S) - gamma(own doublet)] + vertex, vertex = -2 y_b^2 in beta_t, -2 y_t^2 in beta_b, 0 in beta_tau
+   type-I 2HDM (H in both Yukawas via H and H^c, extra doublet H2 Yukawa-free): Yukawa part identical to the SM,
+     including the vertex term (asserted). The vertex and Y2(S) cross terms track 'one field in both Yukawas'.
    sum rule: Y2(S)_SM = gamma_Yuk(H_u) + gamma_Yuk(H_d) = 3y_t^2 + (3y_b^2 + y_tau^2): the SM Higgs leg sees both
      MSSM Higgs legs because H^c is the conjugate of the same field. The vertex term exists only for that reason
      (it is a charged-scalar exchange between the y_t and y_b vertices, which share the single H).
@@ -49,9 +51,12 @@
 
 4. Two-loop pure-gauge (g^4) terms of 16pi^2... beta_y / y
    SM y_t g^4 terms (g1^4, g2^4, g3^4, g1g2, g1g3, g2g3): [1187/600, -23/4, -108, -9/20, 19/15, 9]
-     = (1187/600, -23/4, -108, -9/20, 19/15, 9), the standard SM values (as recalled, not re-read); the g3^4 entry -108 equals
+     = (1187/600, -23/4, -108, -9/20, 19/15, 9), = Luo-Xiao hep-ph/0207271 (PRL 90 (2003) 011601) eq. (6) at n_g = 3
+       (read from the paper, cycle 10; see the literature table below); the g3^4 entry -108 also equals
        -2(202/3 - 20 n_f/9), n_f = 6, the two-loop QCD quark-mass anomalous dimension (Nachtmann-Wetzel NPB 187 (1981) 333)
-   MSSM y_t g^4 terms: [2743/450, 15/2, -16/9, 1, 136/45, 8] (agree with the standard MSSM values as recalled by the author; not re-read from a paper this cycle)
+   MSSM y_t g^4 terms: [2743/450, 15/2, -16/9, 1, 136/45, 8] (= Martin-Vaughn hep-ph/9311340 eq. (4.12), read cycle 10)
+   Literature check (cycle 10): computed SM g^4 terms of y_t, y_b, y_tau = Luo-Xiao hep-ph/0207271 eqs. (6)-(8) at n_g = 3;
+   computed MSSM g^4 terms = Martin-Vaughn hep-ph/9311340 eqs. (4.12), (4.14), (4.16). All 36 entries asserted equal.
    y_t: SM [1187/600, -23/4, -108, -9/20, 19/15, 9]
           2HDM-II [1267/600, -21/4, -108, -9/20, 19/15, 9]
           MSSM [2743/450, 15/2, -16/9, 1, 136/45, 8]
@@ -69,6 +74,6 @@
 
 5. MSSM two-loop Yukawa-dependent terms (Martin-Vaughn gamma^(2), legs summed; SUSY side only)
    MSSM beta^(2)_{y_t}/y_t, Yukawa-dependent part: 2*g1**2*y_b**2/5 + 6*g1**2*y_t**2/5 + 6*g2**2*y_t**2 + 16*g3**2*y_t**2 - 5*y_b**4 - 5*y_b**2*y_t**2 - y_b**2*y_tau**2 - 22*y_t**4
-   = -22y_t^4 - 5y_b^4 - 5y_t^2y_b^2 - y_b^2y_tau^2 + (6/5g1^2 + 6g2^2 + 16g3^2)y_t^2 + 2/5 g1^2 y_b^2 (asserted against
-     the standard MSSM result as recalled, e.g. Barger-Berger-Ohmann PRD 47 (1993) 1093; not re-read this cycle)
+   = -22y_t^4 - 5y_b^4 - 5y_t^2y_b^2 - y_b^2y_tau^2 + (6/5g1^2 + 6g2^2 + 16g3^2)y_t^2 + 2/5 g1^2 y_b^2 (asserted; equals
+     Martin-Vaughn hep-ph/9311340 eq. (4.12) restricted to the third generation, read cycle 10)
    The SM two-loop Yukawa^4 and g^2 Yukawa^2 terms were not recomputed here.

@@ -1,5 +1,11 @@
 # Antimatter x Supersymmetry: a free-range agent experiment
 
+> **Verified results (cycle 10, 2026-11-25).**
+> 1. **Higgs mass (SUSY #1, #4), negative** ([results/L01b-self-conjugate-higgs](results/L01b-self-conjugate-higgs/SUMMARY.md)). SM antimatter reproduces the structure of SUSY's cancellation (boson pair loops cancel 34% of the top/antitop Λ² term at M_t, 79% at M_Pl) but nothing in the SM enforces it. Every antimatter operation preserves spin, so none can tie y_t to the boson couplings the way SUSY does. Antimatter also cannot act as a twin-Higgs partner: H^c = iσ₂H* is a function of H, so |H|² + |H^c|² = 2|H|² and nothing cancels. Strong argument, not a formal proof.
+> 2. **Beta functions (SUSY #2, experimenter question D4), exact map but not an antimatter map** ([results/L05-beta-function-map](results/L05-beta-function-map/SUMMARY.md)). Two-loop off-diagonal gauge coefficients double exactly under SUSY completion of a one-doublet theory (b_ij^MSSM = 2 b_ij^SM). Gauge coefficients cannot tell a conjugate field from a duplicate, so antimatter is not load-bearing.
+>
+> Gate item 7 was met by a retrodiction (L01b) and a mathematical consistency check (L05), per experimenter ruling D6, not by a new prediction.
+
 **Question.** Can antimatter physics, restricted strictly to Standard Model content, explain the results attributed to supersymmetry (SUSY), either replacing SUSY or reproducing its successes through a different mechanism?
 
 The SUSY "results" under test:
@@ -36,12 +42,14 @@ A line becomes a result only if: it makes a specific claim about a SUSY result; 
 ## Status
 
 <!-- STATUS:BEGIN -->
-**Cycle 6 complete (2026-11-25).** No verified results yet. Dark matter removed from scope by the experimenter.
+**Cycle 10 complete (2026-11-25). Gate passed by L01b and L05; experiment halted per the halt condition.** Dark matter removed from scope by the experimenter.
 
-- **L01b (Higgs mass, main thread):** SM boson pair loops cancel 34% of the top/antitop loop at the weak scale, 79% at the Planck scale (cutoff/Pauli-Villars). Referees agree no SM symmetry enforces full cancellation; the precise obstruction is that every SM antimatter operation (C, CP, CPT) maps a particle to an antiparticle of the same spin, so nothing ties boson couplings to the top Yukawa the way SUSY does. Fix round 3.
-- **LW2 (new, positive match):** the SM does contain an antimatter-built protection of a scalar mass. The charged pion's electromagnetic mass divergence is cancelled by quark-antiquark partner states (ρ, a₁) through the Weinberg sum rules, removing both the quadratic and log divergence, and the partners sit where naturalness says (851 MeV estimate vs 775/1230 MeV). It works for composite scalars; extending it to the elementary Higgs needs new physics.
-- **L05 (beta functions, in verification, 1/3 referees clean):** two-loop mixed gauge coefficients double under SUSY completion of a one-doublet theory; checked against four published table pairings. No antimatter-specific map exists.
-- **LW1 (hadronic SUSY, in verification):** QCD's antiquark↔diquark supercharge does not commute with the Hamiltonian, so it protects no mass. Predicts Ξ_cc*−Ξ_cc = 107 ± 32 MeV.
+- **L01b + L01 (Higgs mass, #1 and #4):** verified negative result, see `results/`.
+- **L05 (beta functions, #2):** verified doubling theorem, antimatter-blind, see `results/`.
+- **LW1 (hadronic SUSY):** parked as context. QCD's antiquark↔diquark supercharge protects mass differences, not masses ([H,Q] ≠ 0). Predicts Ξ_cc*−Ξ_cc = 107 ± 32 MeV (unmeasured).
+- **LW2 (pion EM mass):** support only. ρ, a₁ (q̄q states) cancel the pion's EM mass divergence via Weinberg sum rules; known result, needs compositeness.
+- **Scrapped:** L02, L04 (restatements), L03 (out of scope), S1 (stopped). See `scrap/INDEX.md`.
+- **Not addressed by any line:** #5 beyond the scrapped L04 restatement; #6 (an SM-only account trivially predicts no superpartners).
 <!-- STATUS:END -->
 
 Every file distinguishes established physics, conjecture and speculation. Subagent output is a claim until a referee and a calculation back it.

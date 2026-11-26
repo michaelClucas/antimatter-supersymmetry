@@ -1,0 +1,23 @@
+v = 246.2196 GeV
+(1) Veltman bracket = -82213.0 GeV^2 (CONSTRAINTS G: ~ -8.2e4)
+    C_pole(M_t) = -4.0683; sigma(PDG) = 0.0199 -> 205 sigma; +0.5 GeV MC: sigma = 0.0395 -> 103 sigma
+    rows: Mt 0.0198, Mh 0.0014, MW 0.0002, MZ 0.0000, MC 0.0342
+    C_pole = 0 at m_t = 96.06 GeV
+(2) Buttazzo fits at M_t: y_t=0.93286 lam=0.12617 g=0.64764 g'=0.35843
+    C_MS(M_t) = -3.4259;  boson sum = 1.7971, fermion sum = 5.2231;  R = 0.3441
+    PDG + y_t th 0.0005                                    : sigma = 0.0199 -> |C|/sigma = 172.1
+    PDG + MC 0.5 + y_t 0.003                               : sigma = 0.0496 -> |C|/sigma = 69.1
+    PDG + MC 0.5 + y_t 0.038 (Buttazzo-Jegerlehner spread) : sigma = 0.4269 -> |C|/sigma = 8.0
+    rows: Mt 0.0181, Mh 0.0014, MW 0.0002, als 0.0060
+    pole form minus MS-bar form = -0.642 (scheme difference, not inside any quoted sigma)
+    with Jegerlehner y_t = 0.9005: C_MS = -3.0700
+(3) own crude matching (QCD-only y_t, tree lam, 1-loop g,g'): as(M_t)=0.1077, mbar(mbar)=162.97, y_t=0.9322, lam=0.1293, g=0.6482, g'=0.3587
+    C_own(M_t) = -3.3982, R = 0.3485
+(4) own 1-loop RGEs (no y_b, y_tau): C = 0 at log10 mu = 26.78  (line: 26.79 at 1 loop)
+    tools/rg_sm 2-loop: C = 0 at log10 mu = 22.984, dC/dln mu = +0.0204, max C on [M_t, M_Pl] = -0.190
+    tools/rg_sm 3-loop: C = 0 at log10 mu = 22.833, dC/dln mu = +0.0203, max C on [M_t, M_Pl] = -0.182
+    3-loop: C(M_Pl) = -0.1819
+    3-loop, y_t(M_t) = 0.9005: zero at log10 mu = 16.151, slope +0.0240
+    3-loop, own crude matching start: zero at log10 mu = 22.088, slope +0.0202
+    M_t 172.28: zero at 22.483
+    M_t 172.86: zero at 23.178

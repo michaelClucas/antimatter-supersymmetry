@@ -1,11 +1,12 @@
 """L01b cycle 9: gate-7 consistency check for the no-go (Referee E c8 finding 5, Referee C c7 finding 8).
 
-The no-go says no symmetry of the SM Lagrangian enforces C = 0. Its observable consequences:
-  (i)  C(M_t) != 0, with the measured inputs;
-  (ii) if C(mu) crosses zero, it does so transversally (dC/dln mu != 0), i.e. C = 0 is not an RG-invariant
-       relation (reduction of couplings, Zimmermann) along the measured trajectory.
-A measurement that put C(M_t) at zero within errors, or a trajectory that touches C = 0 tangentially and
-stays there, would falsify (i) or (ii).
+The no-go says no symmetry of the SM Lagrangian enforces C = 0. Retrodiction (c10 wording, Referees F, G, H):
+an exact enforcing symmetry would make C vanish identically along the trajectory (RG-invariant zero,
+dC/dln mu = 0). The measured C(mu) is non-zero at M_t and has a single transverse zero. This is weak: a generic
+trajectory also crosses transversally, an accidental zero at M_t would be allowed by the no-go (so C(M_t) = 0 is
+not a falsifier), and the check cannot tell "no symmetry" from "an approximate symmetry broken hard".
+Part (iii) (c10) gives the conservative significance with the Buttazzo-Jegerlehner y_t spread, the scheme
+difference, the slope matching shift, and C in the DREG d = 2 pole counting.
 
 C = 6 lam + 9/4 g^2 + 3/4 g'^2 - 6 y_t^2 - 6 y_b^2 - 2 y_tau^2 (CONSTRAINTS G normalization; y_b, y_tau included
 as in the sector table). Two determinations:
@@ -111,7 +112,8 @@ mt_pole0 = math.sqrt((PDG24['Mh']**2 + 2 * PDG24['MW']**2 + PDG24['MZ']**2) / 4)
 P(f"  C_pole = 0 would need m_t = {mt_pole0:.2f} GeV; measured 172.57 +- 0.29 -> "
   f"{(PDG24['Mt']-mt_pole0)/math.hypot(0.29, 0.5):.0f} sigma with MC term")
 P("  The two determinations differ (-4.07 vs -3.43) by the one-loop matching of the couplings; both are")
-P("  quoted. The conclusion C(M_t) != 0 holds in either, by > 65 sigma (smallest: MS-bar with MC term and y_t spread 0.003).")
+P("  quoted. The sigmas above are input errors at fixed convention with a y_t spread of at most 0.003;")
+P("  the headline significance uses the conservative Buttazzo-Jegerlehner spread, see (iii) below.")
 
 P("\n" + "=" * 96)
 P("(ii) Sign of C(mu) on [M_t, M_Pl] and transversality of any crossing (3-loop RGEs)")
@@ -133,8 +135,10 @@ def crossing(p, yt_override=None):
     return l0, slope, cmax, g
 
 
+slopes = {}
 for lab, yo in (("Buttazzo matching", None), ("Jegerlehner y_t = 0.9005", 0.9005)):
     l0, s0, cmax, g = crossing(PDG24, yo)
+    slopes[lab] = s0
     P(f"  [{lab}]  max of C on [M_t, M_Pl] = {cmax:.3f} (< 0: no zero below M_Pl)" if cmax < 0 else
       f"  [{lab}]  max of C on [M_t, M_Pl] = {cmax:.3f} (zero below M_Pl)")
     P(f"      C = 0 at log10 mu0 = {l0:.2f};  dC/dln mu at mu0 = {s0:+.4f}")
@@ -152,11 +156,45 @@ for lab, yo in (("Buttazzo matching", None), ("Jegerlehner y_t = 0.9005", 0.9005
     for l in (2.24, 10, 16, 19.09):
         P(f"      C(10^{l}) = {g(l):+.3f}")
 
-P("\nInterpretation [computed]: C(M_t) is negative at > 65 sigma in either determination; C stays negative up")
-P("to M_Pl with Buttazzo matching and crosses zero only at 10^22.8 GeV (10^16 with Jegerlehner's y_t), with a")
-P("non-zero slope. Both facts would have come out differently if an SM symmetry enforced C = 0. A one-scale")
-P("crossing with non-zero slope is what an accidental zero looks like; an RG-invariant (symmetry or")
-P("reduction-of-couplings) relation would give C = 0 with dC/dln mu = 0 along the trajectory.")
+P("\n" + "=" * 96)
+P("(iii) Conservative significance (c10, Referee H F2; Referee F F6)")
+P("=" * 96)
+p = PDG24
+yt0 = couplings(p)['yt']
+dCdyt = 12 * yt0
+DYT_BJ = 0.938 - 0.900   # Buttazzo vs Jegerlehner y_t(M_t) at equal physical inputs (c5_jegerlehner, WORK 5c)
+DYT_DMT = 0.00556        # dy_t(M_t)/dM_t per GeV (Buttazzo fit), as used above
+dmt_equiv = DYT_BJ / DYT_DMT
+P(f"  y_t matching spread Buttazzo - Jegerlehner = {DYT_BJ:.3f}  (= {dmt_equiv:.2f} GeV equivalent in M_t)")
+cM, sM = report("(M) MS-bar + MC 0.5 GeV + y_t spread 0.038 (conservative)", C_msbar, p, ERR24,
+                {"MC vs pole (0.5 GeV)": dCdyt * DYT_DMT * 0.5, "y_t matching 0.038": dCdyt * DYT_BJ})
+dCdmt = 24 * p['Mt'] / v**2
+cP, sP = report("(P) pole form + MC 0.5 GeV + same spread as m_t shift (pole-form analogue)", C_pole, p, ERR24,
+                {"MC vs pole (0.5 GeV)": dCdmt * 0.5, "y_t spread as M_t shift": dCdmt * dmt_equiv})
+scheme = cP - cM
+P(f"  scheme difference pole - MS-bar = {scheme:+.3f}  (systematic of the convention, not an input error)")
+for lab, c0, s0 in (("MS-bar", cM, sM), ("pole", cP, sP)):
+    tot = math.hypot(s0, abs(scheme))
+    P(f"  {lab:6s}: |C|/sigma = {abs(c0)/s0:.1f} (conservative spread); with the scheme difference added in"
+      f" quadrature: sigma = {tot:.3f}, |C|/sigma = {abs(c0)/tot:.1f}")
+P(f"  every determination lies in [{min(cP, cM, cJ):.2f}, {max(cP, cM, cJ):.2f}]")
+sb, sj = slopes["Buttazzo matching"], slopes["Jegerlehner y_t = 0.9005"]
+P(f"  slope dC/dln mu at the crossing: {sb:+.4f} (Buttazzo) vs {sj:+.4f} (Jegerlehner); matching shift"
+  f" {abs(sj-sb):.4f} -> slope / shift = {sb/abs(sj-sb):.1f}. Sign robust; the 'slope/sigma = 93' above uses"
+  f" PDG input errors only.")
+# d = 2 pole of DREG with d - 1 = 1 transverse vector polarization (c7_regulators)
+cc = couplings(p)
+gY2 = (cc.get('gY') or math.sqrt(0.6) * cc['g1'])**2
+cbos_d2 = 0.5 * cc['g2']**2 + 2 * cc['lam'] + 0.25 * (cc['g2']**2 + gY2) + 4 * cc['lam']
+cf = 6 * cc['yt']**2 + 6 * cc['yb']**2 + 2 * cc['ytau']**2
+P(f"  DREG d = 2 pole (n_V = 1): C(M_t) = {cbos_d2 - cf:.3f}  (R = {cbos_d2/cf:.3f}); cutoff/PV (n_V = 3): {cM:.3f}")
+
+P("\nInterpretation [computed]: C(M_t) is negative in every determination, about 8 sigma from zero with the")
+P("conservative matching spread. C stays negative up to M_Pl with Buttazzo matching and crosses zero at")
+P("10^22.8 GeV (10^16 with Jegerlehner's y_t), with non-zero slope. An exact enforcing symmetry would make C")
+P("vanish identically (RG-invariant zero, dC/dln mu = 0). This is a weak retrodiction: a generic trajectory")
+P("also crosses transversally, an accidental zero at M_t would not contradict the no-go, and the check cannot")
+P("distinguish 'no symmetry' from 'an approximate symmetry broken hard'.")
 
 with open(os.path.join(HERE, 'c9_C_measured_out.txt'), 'w', encoding='utf-8') as fh:
     fh.write("\n".join(out) + "\n")

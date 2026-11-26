@@ -1,6 +1,6 @@
 # STATE (overseer working memory)
 
-**Current cycle:** 10 (cycle 9 complete; AWAITING EXPERIMENTER DECISIONS on gate 7 for L05 and L01b, LW1 parking, history rewrite)
+**Current cycle:** 10 complete. HALTED: gate passed by L01b and L05 (promoted to results/). Resume only on experimenter instruction.
 **Next wildcard due:** cycle 11
 
 ## How to resume (for a fresh overseer)
@@ -26,8 +26,8 @@
 
 | Line | SUSY # | Status | Gate progress / notes |
 |---|---|---|---|
-| L01b-self-conjugate-higgs | 1, 4 | VERIFICATION → fix round 4, TOP PRIORITY | Referees c8: C MAJOR (step-2 lemma "spin-preserving ⇒ can't relate y_t to λ, g" true only for global linear maps; counterexamples gauge invariance, pNGB, scale inv.+Gildener-Weinberg, twin Z2; fix: enumerate SM Lagrangian symmetry group + measured C≠0 with transverse crossing; CM/HLS scope; "strong argument, not proof"), D MINOR (all 18 scripts reproduce; all numbers independently recomputed; factor ~2700 is 1-doublet only (~1540 for 3); E1/E5 missing; PDG 2026 note; 3.3σ lower end arbitrary), E MAJOR (twin Higgs / same-spin protection missed; antimatter can't be the twin because H^c is not independent: |H|²+|H^c|²=2|H|²; H↔H^c is SU(2)_R element iσ₂; custodial limit dropped y_b; h self-loop 7.2% uncredited; gate 7 not met: F-b can't falsify a no-go allowing accidental zeros). None fatal, no BSM. Promotion held. Gate-7 candidate: the no-go implies C is not symmetry-enforced to vanish; measured C(M_t) = −4.07 ± (small) ≠ 0 is a falsifiable consistency check (a measurement giving C=0 at all scales would falsify). |
-| L05-beta-function-map | 2 (D4) | VERIFICATION, final confirming referee | Narrowing fix c8: CLAIM (b) restricted to b_i, b_ij, compared 3-loop gauge-only entries (invariant under conjugating any subset of image fields); A3.4 argument stated. Yukawa: no exact identity; fermion legs double; SM vertex term (−2y_b² in β_yt, −2y_t² in β_yb) tracks one doublet coupling to both u and d (also present in type-I 2HDM; absent in MSSM/2HDM-II); not specifically an antimatter identity (referee 4 F2); g⁴ ratios non-uniform; SM two-loop Yuk⁴, g²y² not done. Gate 7: cross-method check (SM diagrammatic MSS/BPV vs SUSY NSVZ) passes; mathematical only. Overseer: will accept gate 7 as a consistency check if the confirming referee finds it non-circular. |
+| L01b-self-conjugate-higgs | 1, 4 | **VERIFIED c10 → results/** (with L01). Referees F, G MINOR, H MAJOR on gate-7 wording, fixed in round 5. | Prior notes:  Referees c8: C MAJOR (step-2 lemma "spin-preserving ⇒ can't relate y_t to λ, g" true only for global linear maps; counterexamples gauge invariance, pNGB, scale inv.+Gildener-Weinberg, twin Z2; fix: enumerate SM Lagrangian symmetry group + measured C≠0 with transverse crossing; CM/HLS scope; "strong argument, not proof"), D MINOR (all 18 scripts reproduce; all numbers independently recomputed; factor ~2700 is 1-doublet only (~1540 for 3); E1/E5 missing; PDG 2026 note; 3.3σ lower end arbitrary), E MAJOR (twin Higgs / same-spin protection missed; antimatter can't be the twin because H^c is not independent: |H|²+|H^c|²=2|H|²; H↔H^c is SU(2)_R element iσ₂; custodial limit dropped y_b; h self-loop 7.2% uncredited; gate 7 not met: F-b can't falsify a no-go allowing accidental zeros). None fatal, no BSM. Promotion held. Gate-7 candidate: the no-go implies C is not symmetry-enforced to vanish; measured C(M_t) = −4.07 ± (small) ≠ 0 is a falsifiable consistency check (a measurement giving C=0 at all scales would falsify). |
+| L05-beta-function-map | 2 (D4) | **VERIFIED c10 → results/**. Referee-4 minors fixed. | Prior notes:  Narrowing fix c8: CLAIM (b) restricted to b_i, b_ij, compared 3-loop gauge-only entries (invariant under conjugating any subset of image fields); A3.4 argument stated. Yukawa: no exact identity; fermion legs double; SM vertex term (−2y_b² in β_yt, −2y_t² in β_yb) tracks one doublet coupling to both u and d (also present in type-I 2HDM; absent in MSSM/2HDM-II); not specifically an antimatter identity (referee 4 F2); g⁴ ratios non-uniform; SM two-loop Yuk⁴, g²y² not done. Gate 7: cross-method check (SM diagrammatic MSS/BPV vs SUSY NSVZ) passes; mathematical only. Overseer: will accept gate 7 as a consistency check if the confirming referee finds it non-circular. |
 | LW1-antiquark-diquark-susy | 1 (neg.) | PARKED, awaiting experimenter | Fix 2 c8: C1 rests on compositeness + Higgs singlet under Q + HLS; antimatter NOT load-bearing in C1 (fixer's own verdict). Residuals: Ξ_cc*−Ξ_cc − 3/4(D*−D) = −13.6 MeV (−13%), bottom −7 to −8%, lattice −22%. Experiment: Ξ_cc⁺ 3619.97 MeV (PRL 137, 021902) and Ω_cc⁺ 3725.9 MeV (arXiv:2609.21921) observed; no J=3/2 Ξ_cc*, no Ξ_bb → P1 untested. Overseer proposed parking as context; asked experimenter (D5 said LW1 very relevant). |
 | LW2-chiral-partner-protection | 1 (context) | SUPPORT, no further work | |
 
@@ -35,14 +35,16 @@
 - L05 confirming referee (REVIEWS_4.md): MINOR only; gate items 1-6 PASS, item 7 FAIL (cross-method table check is not independent of the proof's formulas; only an arithmetic slip could fail it). Minor: 3-loop "any subset" conjugation asserted not computed (restrict to anomaly-free images); vertex-term wording; A3.4 scheme class; two-loop Yukawa values "as recalled".
 - L01b fix round 4 done: CLAIM = no symmetry of the SM Lagrangian, antimatter operations included, enforces cancellation of the top Λ² term; covers SUSY (needs spin-changing operator) and twin Higgs (needs independent partner field; H^c is a function of H, Jacobian rank 4, |H|²+|H^c|²=2|H|², with H_B:=H^c the Λ² term is not cancelled; H↔H^c = iσ₂ ∈ SU(2)_R). Labelled strong argument, not proof. Gate 7 candidate G7 (retrodiction): C(M_t) = −3.426±0.050 (MS-bar, 69σ), −4.068±0.040 (pole, 103σ); single transverse zero at 10^22.83 GeV, slope +0.0203±0.0002. 7 new citations from memory need lit check (incl. de Wit-Freedman). Lit check 2 (LITCHECK_2.md): non-independence argument not in print; rest known.
 
-## Decisions pending from experimenter (asked cycle 9)
-1. Gate 7 for pure-math / no-go lines (L05 identity; L01b retrodiction): accept a mathematical or retrodictive consistency check, or hold strictly?
-2. LW1: park or continue.
-3. Rewrite public history to remove MUON_G2_PROMPT.md?
+## Decisions from experimenter
+- D6 (cycle 10): Gate item 7 may be met by a mathematical consistency check (L05) or a retrodictive check against measured data (L01b). Results promoted this way carry a note saying which kind of check met item 7. L01b still needs 3 fresh referees on the round-4 version before promotion.
+- LW1 and history rewrite: no answer given. Default applied: LW1 stays parked as context; public history NOT rewritten (needs explicit yes).
 
-## Queue (cycle 10, after decisions)
-- L01b: lit check for the 7 new citations; then 3 fresh referees on round-4 version.
-- L05: small fix for referee 4 minors (anomaly-free restriction; 'as recalled' values verified).
+## Cycle 10 outcomes
+- L01b: LITCHECK_3 all 7 c9 citations verified. Referees F MINOR, G MINOR, H MAJOR (gate-7 falsifier (i) contradicted the accidental-zero allowance; 69σ used an unjustified y_t spread). Fix round 5 (two fixers; first stalled mid-way): gate 7 restated as weak retrodiction, headline 8.0σ/8.7σ, BRST/worldline/asymptotic symmetries added, scale-invariance reasoning corrected. Promoted with L01.
+- L05: referee-4 minors fixed (three-loop claim restricted; c10_conj.py; Yukawa values verified vs Luo-Xiao, Martin-Vaughn). Promoted.
+
+## Queue (if resumed)
+- Optional: physical-consequence search for L05; LW1 if experimenter wants it; SUSY #5, #6 untouched beyond L04.
 
 ## Open issues carried from explorers
 - L01: runner gives m(M_Pl)=139.4 GeV vs Buttazzo 129.4 (not load-bearing); Weisskopf 1939 detail unverified.

@@ -74,7 +74,8 @@
   C(M_t) = 0 would need y_t(M_t) = 0.5470 (kappa_t = 0.586), i.e. a top 'mass' y v/sqrt2 = 95.2 GeV (MS-bar)
   C_pole = 0 would need m_t = 96.06 GeV; measured 172.57 +- 0.29 -> 132 sigma with MC term
   The two determinations differ (-4.07 vs -3.43) by the one-loop matching of the couplings; both are
-  quoted. The conclusion C(M_t) != 0 holds in either, by > 65 sigma (smallest: MS-bar with MC term and y_t spread 0.003).
+  quoted. The sigmas above are input errors at fixed convention with a y_t spread of at most 0.003;
+  the headline significance uses the conservative Buttazzo-Jegerlehner spread, see (iii) below.
 
 ================================================================================================
 (ii) Sign of C(mu) on [M_t, M_Pl] and transversality of any crossing (3-loop RGEs)
@@ -93,8 +94,38 @@
       C(10^16) = -0.008
       C(10^19.09) = +0.147
 
-Interpretation [computed]: C(M_t) is negative at > 65 sigma in either determination; C stays negative up
-to M_Pl with Buttazzo matching and crosses zero only at 10^22.8 GeV (10^16 with Jegerlehner's y_t), with a
-non-zero slope. Both facts would have come out differently if an SM symmetry enforced C = 0. A one-scale
-crossing with non-zero slope is what an accidental zero looks like; an RG-invariant (symmetry or
-reduction-of-couplings) relation would give C = 0 with dC/dln mu = 0 along the trajectory.
+================================================================================================
+(iii) Conservative significance (c10, Referee H F2; Referee F F6)
+================================================================================================
+  y_t matching spread Buttazzo - Jegerlehner = 0.038  (= 6.83 GeV equivalent in M_t)
+  (M) MS-bar + MC 0.5 GeV + y_t spread 0.038 (conservative): C(M_t) = -3.4259
+      sigma from Mt                    : 0.0181
+      sigma from Mh                    : 0.0014
+      sigma from MW                    : 0.0002
+      sigma from MZ                    : 0.0000
+      sigma from als                   : 0.0060
+      sigma from MC vs pole (0.5 GeV)  : 0.0311
+      sigma from y_t matching 0.038    : 0.4254
+      total sigma = 0.4269   ->  C(M_t) = -3.426 +- 0.427,  |C|/sigma = 8
+  (P) pole form + MC 0.5 GeV + same spread as m_t shift (pole-form analogue): C(M_t) = -4.0683
+      sigma from Mt                    : 0.0198
+      sigma from Mh                    : 0.0014
+      sigma from MW                    : 0.0002
+      sigma from MZ                    : 0.0000
+      sigma from als                   : 0.0000
+      sigma from MC vs pole (0.5 GeV)  : 0.0342
+      sigma from y_t spread as M_t shift: 0.4669
+      total sigma = 0.4686   ->  C(M_t) = -4.068 +- 0.469,  |C|/sigma = 9
+  scheme difference pole - MS-bar = -0.642  (systematic of the convention, not an input error)
+  MS-bar: |C|/sigma = 8.0 (conservative spread); with the scheme difference added in quadrature: sigma = 0.771, |C|/sigma = 4.4
+  pole  : |C|/sigma = 8.7 (conservative spread); with the scheme difference added in quadrature: sigma = 0.795, |C|/sigma = 5.1
+  every determination lies in [-4.07, -3.07]
+  slope dC/dln mu at the crossing: +0.0203 (Buttazzo) vs +0.0240 (Jegerlehner); matching shift 0.0037 -> slope / shift = 5.5. Sign robust; the 'slope/sigma = 93' above uses PDG input errors only.
+  DREG d = 2 pole (n_V = 1): C(M_t) = -4.119  (R = 0.211); cutoff/PV (n_V = 3): -3.426
+
+Interpretation [computed]: C(M_t) is negative in every determination, about 8 sigma from zero with the
+conservative matching spread. C stays negative up to M_Pl with Buttazzo matching and crosses zero at
+10^22.8 GeV (10^16 with Jegerlehner's y_t), with non-zero slope. An exact enforcing symmetry would make C
+vanish identically (RG-invariant zero, dC/dln mu = 0). This is a weak retrodiction: a generic trajectory
+also crosses transversally, an accidental zero at M_t would not contradict the no-go, and the check cannot
+distinguish 'no symmetry' from 'an approximate symmetry broken hard'.

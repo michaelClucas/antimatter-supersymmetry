@@ -1,0 +1,30 @@
+(1) H^c identities
+  max |(|H|^2+|H^c|^2-2|H|^2)|, |H^c^dag H| over 1000 random H: 0.00e+00
+  Jacobian shape (8, 4), numerical rank 4  (claim: 4)
+
+(2) Is H -> H^c (fermions untouched) a symmetry of the Yukawa operators?
+  O_t(H^c, t) / O_b(H, t) = -1.000000-0.000000j   (H^c^c = -H: top operator -> -(bottom-type operator with t_R))
+  So H -> H^c alone maps (Q^dag H^c) t_R to -(Q^dag H) t_R, a different operator with hypercharge mismatch;
+  it is a symmetry only combined with t_R <-> b_R and y_t = y_b, g' = 0: the custodial element, as WORK sec. 4d says.
+
+(3) Charge conjugation commutes with Lorentz on Dirac spinors (Dirac rep)
+  max |(i g2) S* (i g2)^-1 - S| over 200 random Lorentz elements: 1.44e-14
+
+(4) Sector totals of C from field-dependent masses (C_i = 1/2 d^2/dphi^2 STr M_i^2)
+  W sector   = 3*g**2/2 + 2*lam
+  Z+h sector = 3*g**2/4 + 3*gp**2/4 + 4*lam
+  fermions   = -6*y_b**2 - 6*y_t**2 - 2*y_tau**2
+  total C    = 9*g**2/4 + 3*gp**2/4 + 6*lam - 6*y_b**2 - 6*y_t**2 - 2*y_tau**2
+  C at tree level in masses = 3*(2*MW**2 + MZ**2 + mh**2 - 4*mt**2)/v**2
+  (claim: (3/v^2)(m_h^2 + 2 M_W^2 + M_Z^2 - 4 m_t^2))
+  pole-mass form with PDG 2024 centrals: bracket = -8.2213e+04 GeV^2, C = -4.068  (WORK: -4.068)
+
+(5) Twin counterfactual H_B := H^c, independent derivation
+  vev^2 = -kappa/(2*lambda);  Hessian eigenvalues = {-4*kappa: 1, 0: 3}
+
+(6) Fermion determinant vs squared (bosonic) operator, random chiral D
+  |g5 D g5 + D| = 0.0e+00
+  2 ln det(D+m) = 20.1604809414-4.44e-16i ;  ln det(m^2 - D^2) = 20.1604809414-6.14e-16i
+  => ln Z_F = +1/2 Tr ln(m^2 - D^2), ln Z_B = -1/2 Tr ln(m^2 - D^2): equal operators, opposite sign.
+  The second-order / worldline rewriting maps the top loop onto a bosonic operator with the same
+  field-dependent mass m_t^2(h) and keeps (-1)^F. No cancellation follows from it.

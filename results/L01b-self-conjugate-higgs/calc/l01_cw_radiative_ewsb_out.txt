@@ -1,0 +1,22 @@
+(A) V = A phi^4 + B phi^4 ln(phi^2/mu^2); stationary at v => A = B*(log(mu**4/v**4) - 1)/2; V''(v) = 8*B*v**2
+    -> need B > 0 for a minimum; m_h^2 = 8 B v^2.
+    W,Z,top             : sum n m^4 = -1.0185e+10 GeV^4,  B = -4.387e-03,  m_h^2 = -2127.7 GeV^2  -> B < 0: stationary point is a MAXIMUM, no radiative EWSB
+    W,Z,top,h           : sum n m^4 = -9.9390e+09 GeV^4,  B = -4.281e-03,  m_h^2 = -2076.4 GeV^2  -> B < 0: stationary point is a MAXIMUM, no radiative EWSB
+    W,Z only (no top)   : sum n m^4 = +4.5775e+08 GeV^4,  B = +1.972e-04,  m_h^2 = +95.6 GeV^2  -> m_h = 9.78 GeV
+    top mass above which B<0, self-consistent (m_h output; = W,Z-only threshold): 78.6 GeV  (measured 172.57)
+    [for comparison, feeding measured m_h=125.2 into B (circular): 87.5 GeV]
+    Pure-scale-invariant SM would also need m_h ~ 10 GeV (Weinberg/Linde-type bound, W,Z only),
+    in conflict with m_h = 125.2 GeV even if the top were absent.
+
+(B) MS-bar m^2(mu) (sign convention: m^2 > 0 is the broken phase). GeV values are illustrative only:
+    the shared runner gives m(M_Pl) = 139.4 GeV vs Buttazzo eq. (61f) 129.4 GeV (unresolved). The sign
+    conclusion does not depend on this, since beta(m^2) is proportional to m^2 whatever its coefficients.
+    log10 mu =   2.24: m(mu) = 131.5 GeV   (m^2 > 0)
+    log10 mu =   5.00: m(mu) = 139.8 GeV   (m^2 > 0)
+    log10 mu =  10.00: m(mu) = 143.8 GeV   (m^2 > 0)
+    log10 mu =  15.00: m(mu) = 142.4 GeV   (m^2 > 0)
+    log10 mu =  19.09: m(mu) = 139.7 GeV   (m^2 > 0)
+    log10 mu =  20.00: m(mu) = 139.0 GeV   (m^2 > 0)
+    beta(m^2) is proportional to m^2 at every loop order (eq. 100 of 1307.3536): m^2 = 0 is a fixed
+    point and the sign cannot change under running. In the MSSM, m_Hu^2 changes sign because its beta
+    function contains additive soft masses (stop/squark masses), which the SM does not have.

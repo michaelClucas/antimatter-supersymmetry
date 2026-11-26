@@ -1,0 +1,77 @@
+C from d^2/dphi^2 of (Lambda^2/32pi^2) STr M^2, times 16pi^2/Lambda^2:  C = 9*g**2/4 + 3*gprime**2/4 + 6*lambda - 6*y_t**2
+  in masses: C = 3*(2*M_W**2 + M_Z**2 + m_h**2 - 4*m_t**2)/v**2
+  -> shift of the |H|^2 coefficient: delta mu^2 = C Lambda^2/(16 pi^2)  (= 1PI h self-energy at fixed v)
+  physical m_h^2 at the shifted minimum (bare mu^2, lambda fixed) = -C_eff*Lambda**2/(8*pi**2) + 2*mu2_bare
+  -> delta m_h^2 = -C_eff*Lambda**2/(8*pi**2)  = 2 x delta mu^2 in magnitude; i.e.
+     |delta m_h^2| = (3 Lambda^2/(8 pi^2 v^2)) |m_h^2 + 2 M_W^2 + M_Z^2 - 4 m_t^2|, the standard form.
+
+Per-species contributions to C (C_i = n_i (-1)^F a_i with M_i^2 = a_i phi^2 + const):
+  W+  (antiparticle: W-)           C_i = 3*g**2/4       = +0.3146 at M_t
+  W-  (antiparticle: W+)           C_i = 3*g**2/4       = +0.3146 at M_t
+  G+  (antiparticle: G-)           C_i = lambda         = +0.1262 at M_t
+  G-  (antiparticle: G+)           C_i = lambda         = +0.1262 at M_t
+  Z   (self-conjugate)             C_i = 3*g**2/4 + 3*gprime**2/4 = +0.4109 at M_t
+  h   (self-conjugate)             C_i = 3*lambda       = +0.3785 at M_t
+  G0  (self-conjugate)             C_i = lambda         = +0.1262 at M_t
+  photon (self-conj., massless)    C_i = 0              = +0.0000 at M_t
+  t   (antiparticle: tbar)         C_i = -3*y_t**2      = -2.6107 at M_t
+  tbar (antiparticle: t)           C_i = -3*y_t**2      = -2.6107 at M_t
+  sum reproduces C. Signs: every boson +, every fermion -, whether or not the field is self-conjugate.
+  Self-conjugate bosons (Z, h, G0) alone: +0.9156; charged boson pairs (W+W-, G+G-) alone: +0.8815
+  W mass matrix, real basis (W1,W2): trace 2*M2; charge basis (W+,W-): [[M2, 0], [0, M2]], trace 2*M2
+  -> the Lambda^2 coefficient is Tr over the mass-squared matrix, invariant under the unitary map
+     between 'particle/antiparticle' (charge) eigenstates and real self-conjugate components.
+     A Dirac top (4 real-component dof per colour) = two degenerate Majorana components, same trace.
+     So 'which states are antiparticles' is a basis label that C cannot depend on; the sign is (-1)^F.
+
+Pole masses (PDG 2024): m_h=125.2, M_W=80.369, M_Z=91.1876, m_t=172.57, v=246.22
+  bracket m_h^2+2M_W^2+M_Z^2-4m_t^2 = -82213 GeV^2;  C = -4.068
+  m_t needed for C=0 at these masses: 96.1 GeV
+  m_h needed for C=0 at m_t=172.57: 312.9 GeV
+
+Running MS-bar couplings (rg_sm.py; Buttazzo et al. 1307.3536 matching + RGEs):
+  at mu=M_t: lam=0.12617 yt=0.93286 g2=0.64764 gY=0.35843 g3=1.1652
+  C(M_t) MS-bar = -3.426
+  C(mu) at selected scales (3-loop):
+    log10 mu=  2.24: C=-3.4259   [6lam=+0.7570, gauge=1.0401, -6yt^2=-5.2214]
+    log10 mu=  4.00: C=-2.1768   [6lam=+0.4158, gauge=0.9862, -6yt^2=-3.5776]
+    log10 mu=  6.00: C=-1.4989   [6lam=+0.2091, gauge=0.9333, -6yt^2=-2.6404]
+    log10 mu=  8.00: C=-1.1051   [6lam=+0.0891, gauge=0.8882, -6yt^2=-2.0817]
+    log10 mu= 10.00: C=-0.8396   [6lam=+0.0167, gauge=0.8498, -6yt^2=-1.7055]
+    log10 mu= 12.00: C=-0.6422   [6lam=-0.0263, gauge=0.8175, -6yt^2=-1.4329]
+    log10 mu= 14.00: C=-0.4852   [6lam=-0.0502, gauge=0.7906, -6yt^2=-1.2251]
+    log10 mu= 16.00: C=-0.3537   [6lam=-0.0612, gauge=0.7689, -6yt^2=-1.0610]
+    log10 mu= 18.00: C=-0.2392   [6lam=-0.0633, gauge=0.7522, -6yt^2=-0.9278]
+    log10 mu= 19.09: C=-0.1819   [6lam=-0.0616, gauge=0.7453, -6yt^2=-0.8652]
+    log10 mu= 20.00: C=-0.1358   [6lam=-0.0590, gauge=0.7407, -6yt^2=-0.8172]
+    log10 mu= 22.00: C=-0.0391   [6lam=-0.0500, gauge=0.7348, -6yt^2=-0.7236]
+    log10 mu= 25.00: C=+0.1014   [6lam=-0.0298, gauge=0.7385, -6yt^2=-0.6071]
+    log10 mu= 30.00: C=+0.3625   [6lam=+0.0203, gauge=0.7977, -6yt^2=-0.4553]
+
+Zero crossing of C(mu):
+  1-loop RGEs, central inputs: log10(mu0/GeV) = 26.788
+  2-loop RGEs, central inputs: log10(mu0/GeV) = 22.983
+  3-loop RGEs, central inputs: log10(mu0/GeV) = 22.832
+  (M_Pl = 1.22e19 -> log10 = 19.09; reduced Planck 2.4e18 -> 18.39)
+
+Parametric dependence (3-loop):
+  M_t =  171.70: log10 mu0 = 21.772
+  M_t =  172.28: log10 mu0 = 22.482
+  M_t =  172.86: log10 mu0 = 23.178
+  M_t =  173.44: log10 mu0 = 23.855
+  M_t =  171.57: log10 mu0 = 21.611
+  M_t =  170.57: log10 mu0 = 20.367
+  alpha_s = 0.1171: log10 mu0 = 23.354
+  alpha_s = 0.1189: log10 mu0 = 22.308
+  M_h = 124.87: log10 mu0 = 22.943
+  M_h = 125.53: log10 mu0 = 22.720
+  Buttazzo et al. inputs (Mt=173.34, Mh=125.15, as=0.1184):
+    log10 mu0 = 23.543
+
+To move the zero to 7e16 GeV (Jegerlehner 1305.6652) need y_t(M_t) shifted by -0.0286 (to 0.9042); then y_t(M_Pl) = 0.3563
+  equivalent pole-mass shift via eq.(57) slope 0.00556/GeV: -5.1 GeV
+To put the zero at M_Pl need delta y_t(M_t) = -0.0175  (~ -3.2 GeV in M_t)
+  (a shift in GeV; no significance quoted: the MC-vs-pole top-mass ambiguity (~0.5 GeV) and the
+   y_t matching theory error are not included, and mu0 itself is scheme dependent)
+
+Context: lambda(mu)=0 at log10 mu = 10.66 (3-loop)

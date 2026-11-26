@@ -28,8 +28,10 @@ Input dependence of the crossing (3-loop):
    {'Mh': 125.09}: log10 mu0 = 22.869
    {'Mh': 125.31}: log10 mu0 = 22.795
 
-Falsifiable M_t (pole) at which boson pairs exactly match fermion seas (R = 1), other inputs central:
-   R = 1 at M_Pl = 1.22e19 GeV        : M_t = 169.53 GeV  (-10.5 sigma from 172.57 +- 0.29)
-   R = 1 at reduced M_Pl = 2.4e18 GeV : M_t = 168.96 GeV  (-12.5 sigma from 172.57 +- 0.29)
-   R = 1 at 10^16 GeV                 : M_t = 166.83 GeV  (-19.8 sigma from 172.57 +- 0.29)
+M_t (pole) at which boson pairs exactly match fermion seas (R = 1), other inputs central:
+   [WITHDRAWN c4/c10: the sigma values below use the experimental M_t error (0.29 GeV) only and are not a
+    significance. See c5_mt_budget_out.txt (0.74 GeV budget, 4.1 sigma) and c7_mt_significance_out.txt.]
+   R = 1 at M_Pl = 1.22e19 GeV        : M_t = 169.53 GeV  (-10.5 'sigma' from 172.57 +- 0.29, withdrawn)
+   R = 1 at reduced M_Pl = 2.4e18 GeV : M_t = 168.96 GeV  (-12.5 'sigma' from 172.57 +- 0.29, withdrawn)
+   R = 1 at 10^16 GeV                 : M_t = 166.83 GeV  (-19.8 'sigma' from 172.57 +- 0.29, withdrawn)
    R = 1 at the EW scale (tree, pole masses): m_t = sqrt((m_h^2+2M_W^2+M_Z^2)/4) = 96.1 GeV, or m_h = 312.9 GeV at the measured m_t

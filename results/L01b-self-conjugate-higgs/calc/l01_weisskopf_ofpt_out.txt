@@ -1,0 +1,36 @@
+Integrands d(delta m)/dk and their large-k expansion (x = 1/k):
+  C1 (one-electron Coulomb)        = alpha/pi
+      large k: alpha/pi
+  Cs (sea exchange Coulomb)        = alpha*m/(pi*sqrt(k**2 + m**2)) - alpha/pi
+      large k: alpha*(-k + m)/(pi*k)
+  Ta (e + gamma intermediate)      = alpha*k*(m - sqrt(k**2 + m**2))/(pi*sqrt(k**2 + m**2)*(k - m + sqrt(k**2 + m**2)))
+      large k: alpha*(-2*k + m)/(4*pi*k)
+  Tb (Pauli-blocked pair)          = alpha*k*(m + sqrt(k**2 + m**2))/(pi*sqrt(k**2 + m**2)*(k + m + sqrt(k**2 + m**2)))
+      large k: alpha*(2*k + m)/(4*pi*k)
+  Tneg (no-sea neg-energy jump)    = alpha*k*(m + sqrt(k**2 + m**2))/(pi*sqrt(k**2 + m**2)*(-k + m + sqrt(k**2 + m**2)))
+      large k: alpha*k/(pi*m) + alpha/(2*pi) - alpha*m/(4*pi*k)
+
+Hole-theory total integrand (C1+Cs+Ta+Tb):
+  alpha*m*(2*k + sqrt(k**2 + m**2))/(pi*(k**2 + k*sqrt(k**2 + m**2) + m**2))
+  large-k expansion: 3*alpha*m/(2*pi*k)
+  O(k^0) term (would be a LINEAR divergence): 0
+  coefficient of 1/k (log divergence): 3*alpha*m/(2*pi)   expected 3 alpha m/(2 pi) = 3*alpha*m/(2*pi)
+
+Linear-divergence bookkeeping (k -> infinity limit of each integrand, i.e. coefficient of K):
+  C1 (one-electron Coulomb)       : alpha/pi
+  Cs (sea exchange Coulomb)       : -alpha/pi
+  Ta (e + gamma intermediate)     : -alpha/(2*pi)
+  Tb (Pauli-blocked pair)         : alpha/(2*pi)
+  Tneg (no-sea neg-energy jump)   : oo
+  Coulomb  C1 + Cs : 0
+  Transverse Ta + Tb: 0
+  Tneg / k as k->inf (quadratic divergence coefficient of K^2/2): alpha/(pi*m)
+
+Chiral-symmetry check: hole-theory integrand at m = 0:
+  0   (vanishes identically -> delta m proportional to m)
+  Ta+Tb at m=0: 0;  C1+Cs at m=0: 0
+  one-electron theory C1+Ta at m=0: alpha/(2*pi)  (nonzero -> mass generated from m=0)
+  K/m =    1e+02: delta m / (alpha m/pi) = 7.697520;  minus (3/2) ln(K/m) = 0.789765
+  K/m =    1e+04: delta m / (alpha m/pi) = 14.605231;  minus (3/2) ln(K/m) = 0.789721
+  K/m =    1e+06: delta m / (alpha m/pi) = 21.512987;  minus (3/2) ln(K/m) = 0.789721
+  -> delta m = (3 alpha/2pi) m [ln(K/m) + c], c = (2/3)*(constant above); c is cutoff-scheme dependent.

@@ -72,3 +72,10 @@
 - L05: minor only; gate items 1-6 pass, item 7 fails (no non-circular check possible for a pure identity).
 - L01b: claim now covers SUSY and twin-Higgs routes; C(M_t) = −4.068 ± 0.040 (pole form), 103σ from zero. Non-independence argument unpublished per lit check.
 - Experimenter asked to rule on gate 7 for math/no-go lines. Loop paused on that decision.
+
+## Cycle 10, 2026-11-25
+- Experimenter ruling D6: gate item 7 may be met by a mathematical or retrodictive consistency check. LW1 and history rewrite unanswered; defaults applied (LW1 parked; no history rewrite).
+- Spawns (7): lit check L01b citations; referees F, G, H for L01b; fixer L05 (referee-4 minors); fixer L01b round 5 (stalled at watchdog after partial edits) and a finishing fixer.
+- L01b: all citations verified; F, G MINOR, H MAJOR (gate-7 wording), none fatal, no BSM; fixed. All scripts rerun from results/ (exit 0).
+- L05: minors fixed; all scripts rerun from results/ (exit 0, referee2_check excluded).
+- PROMOTED: L01b (with L01) and L05 to results/ with SUMMARY.md. Halt condition met (gate passed).

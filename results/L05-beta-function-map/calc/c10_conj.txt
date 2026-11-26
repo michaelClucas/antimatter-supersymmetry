@@ -1,0 +1,18 @@
+content: (Tr Y^3, Tr Y, SU2^2 Y, SU3^2 Y, SU3^3, #doublets, O = sum Y C2 C3 d)
+  SM                         ('0', '0', '0', '0', '0', '12', '3')
+  SMbar                      ('0', '0', '0', '0', '0', '12', '-3')
+  T_dbl = SM+SMbar           ('0', '0', '0', '0', '0', '24', '0')
+  DUP = SM+SM                ('0', '0', '0', '0', '0', '24', '6')
+  MSSM (H~u+H~d)             ('0', '0', '0', '0', '0', '14', '3')
+  MSSM with duplicate H~u    ('1/2', '2', '1/2', '0', '0', '14', '3')
+
+Results (asserted):
+  SM, SMbar, T_dbl and DUP are anomaly-free (all five anomaly coefficients 0, even doublet count).
+  The MSSM fermion content is anomaly-free; replacing H~d by a duplicate H~u makes it anomalous.
+  O = 3 (SM), -3 (SMbar), 0 (T_dbl), 6 (DUP): T_dbl and DUP are both anomaly-free but differ in this
+  conjugation-odd non-anomaly trace (1 per generation in the SM). Anomaly freedom alone therefore does not make
+  the pair (T_dbl, DUP) indistinguishable at three loops unless such traces are absent from the three-loop
+  gauge-only entries; that was not checked (no general three-loop formula in this line).
+  SMbar vs SM: every field conjugated at once is the same theory after the gauge-field relabelling
+  A^a T^a -> A^a (-T^a*) (an automorphism of the Lie algebra; g1 -> -g1 for U(1)); O flips sign, consistent with
+  O entering gauge-only coefficients, if at all, only at even powers or multiplied by another odd trace.

@@ -1,0 +1,33 @@
+spin sum |u^dag beta v|^2 = 2*p**2/(m**2 + p**2)   (vanishes as p->0: scalar couples to P-wave pair)
+  F (forward, h->t tbar): dSigma/dp = 3*p**4*y**2/(2*pi**2*(m**2 + p**2)*(m_h - 2*sqrt(m**2 + p**2)))
+      large p: 9*m**2*y**2/(8*pi**2*p) - 3*m_h**2*y**2/(16*pi**2*p) - 3*m_h*y**2/(8*pi**2) - 3*p*y**2/(4*pi**2)
+  B (backward / Z-graph / vacuum pair): dSigma/dp = -3*p**4*y**2/(2*pi**2*(m**2 + p**2)*(m_h + 2*sqrt(m**2 + p**2)))
+      large p: 9*m**2*y**2/(8*pi**2*p) - 3*m_h**2*y**2/(16*pi**2*p) + 3*m_h*y**2/(8*pi**2) - 3*p*y**2/(4*pi**2)
+  F+B: dSigma/dp = -3*p**4*y**2/(2*pi**2*(m**2 + p**2)*(m_h + 2*sqrt(m**2 + p**2))) + 3*p**4*y**2/(2*pi**2*(m**2 + p**2)*(m_h - 2*sqrt(m**2 + p**2)))
+      large p: 9*m**2*y**2/(4*pi**2*p) - 3*m_h**2*y**2/(8*pi**2*p) - 3*p*y**2/(2*pi**2)
+  coefficient of p (quadratic div, coefficient of K^2/2) in F: -3*y**2/(4*pi**2), in B: -3*y**2/(4*pi**2)
+  -> both orderings have the SAME sign; total Sigma ~ -3*y**2/(4*pi**2) K^2 (3-momentum cutoff)
+  covariant 4D Euclidean cutoff gives -N_c y^2 Lambda^2/(8 pi^2) = -3*y**2/(8*pi**2) Lambda^2;
+  the K^2 coefficient differs by a factor 2: quadratic-divergence coefficients are regulator dependent.
+  F+B at m_top = 0: 6*p**3*y**2/(pi**2*(m_h - 2*p)*(m_h + 2*p))  (does NOT vanish: no symmetry forces Sigma ~ m_h^2)
+
+Covariant (k0 integrated numerically, Wick-rotated) vs time-ordered F+B, m_t=1, m_h=0.72, y=1:
+  p=  0.1: covariant -0.00001718   F+B -0.00001718
+  p=  0.5: covariant -0.00758304   F+B -0.00758304
+  p=  1.0: covariant -0.05745688   F+B -0.05745688
+  p=  3.0: covariant -0.39440443   F+B -0.39440443
+  p= 10.0: covariant -1.49922593   F+B -1.49922593
+
+Light fermion (2 m_f < m_h), e.g. b, c, tau: forward ordering F has denominator (m_h - 2E)
+  F > 0 for p < p* = sqrt(-m**2 + m_h**2/4), pole at p* (on-shell h -> f fbar), F < 0 for p > p*; B < 0 for all p.
+  numerically (units of m_f, m_h/m_f = 29.95): p* = 14.9427
+    p =     7.471: F = +5.60250e-01   B = -1.85094e-01
+    p =    13.448: F = +9.16975e+00   B = -4.80229e-01
+    p =    16.437: F = -1.37168e+01   B = -6.50532e-01
+    p =    44.828: F = -5.11104e+00   B = -2.55171e+00
+    p =   448.280: F = -3.52423e+01   B = -3.29637e+01
+  UV: coefficient of p in F and B is still -3*y**2/(4*pi**2) each (independent of m_f, m_h):
+  the Lambda^2 term from every fermion is negative. Pointwise sign-definiteness at all p holds only for 2m_f > m_h (top).
+  |Im Sigma| from the F pole = 3*y**2*(-4*m**2 + m_h**2)**(3/2)/(16*pi*m_h)
+  m_h Gamma_LO(h->f fbar) (standard, y = sqrt2 m_f/v) = 3*y**2*(-4*m**2 + m_h**2)**(3/2)/(16*pi*m_h)
+  difference: 0  -> the forward ordering's threshold pole is the physical decay.
