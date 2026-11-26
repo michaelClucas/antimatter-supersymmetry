@@ -1,0 +1,38 @@
+1. SM + complex scalar (8,3,0) [SU(3) octet, SU(2) triplet, Y=0; a real rep]. Still exactly one Higgs doublet.
+   minimal SUSY / parent: {(1, 1): 2, (1, 2): 2, (1, 3): 2, (2, 1): 2, (2, 3): 18/17, (3, 1): 2, (3, 2): 18/17}
+   Phi* / parent        : {(1, 1): 2, (1, 2): 2, (1, 3): 2, (2, 1): 2, (2, 3): 2, (3, 1): 2, (3, 2): 2}
+   -> 18/17 on (2,3),(3,2) for minimal SUSY (referee 2 reproduced); Phi* gives 2. 'One Higgs doublet' is not enough;
+      the hypothesis is: the parent's only complex scalar is one |Y|=1/2 doublet (real scalars in real reps allowed,
+      see next line), equivalently: minimal SUSY completion = Phi*.
+   with a REAL (8,3,0) scalar in the parent, one chiral = Phi*, ratio 2 everywhere (asserted).
+
+2. Non-abelian diagonal entry under Phi*: doubles iff 25 C(G) = 7 S_F - 4 S_Sc - 2 S_Sr
+   (b_ii[Phi*] - 2 b_ii[T]) * 3/(2 C(G)) = 25*CG - 7*S_F + 4*S_c + 2*S_r
+   = (25 C(G) - 7 S_F + 4 S_Sc + 2 S_Sr): criterion with the real-scalar term (asserted).
+
+3. Conjugation blindness, and its limit
+   100 random contents, random subsets conjugated: b_i and b_ij unchanged (Weyl, complex scalar, chiral) - asserted.
+   Reason: they depend on fields only through S_i(R), C_j(R) (quadratic in Y, T^a), which obey S(Rbar)=S(R), C(Rbar)=C(R).
+   odd mixed trace sum_f Y C2 C3 d over one generation = 1 (not an anomaly coefficient; flips sign under conjugation)
+   -> such traces can in principle enter higher-loop gauge betas; 'conjugate = duplicate' is proved only for b_i, b_ij
+      and the three-loop gauge-only entries actually compared in C4.5, not to all orders.
+
+4. Order dependence of the 'H^c step' share of the B shift
+   B: SM 115/218 -> full 5/7, total shift 285/1526 = 0.1868
+   marginal increment of each step, by ordering:
+     Hc -> Hchiral -> gaugino:  Hc  15.0%, Hchiral  62.9%, gaugino  22.1%
+     Hc -> gaugino -> Hchiral:  Hc  15.0%, gaugino   6.8%, Hchiral  78.2%
+     Hchiral -> Hc -> gaugino:  Hchiral  30.3%, Hc  47.6%, gaugino  22.1%
+     Hchiral -> gaugino -> Hc:  Hchiral  30.3%, gaugino  10.4%, Hc  59.3%
+     gaugino -> Hc -> Hchiral:  gaugino   3.3%, Hc  18.5%, Hchiral  78.2%
+     gaugino -> Hchiral -> Hc:  gaugino   3.3%, Hchiral  37.3%, Hc  59.3%
+   Shapley shares (average over the 6 orderings): {'Hc': '35.8%', 'Hchiral': '52.9%', 'gaugino': '11.3%'}
+   H^c step range over orderings: 15.0% .. 59.3%; Shapley 35.8%
+   order-independent: in r the H^c step is a factor 2 of 22/3; log share ln2/ln(22/3) = 34.8%
+
+5. Gate 7 cross-method: NSVZ-expanded SUSY b_ij vs direct-diagrammatic SM tables
+   NSVZ two-loop expansion reproduces the MSSM b_ij(n_G) of FJJ / Martin-Vaughn (asserted).
+   NSVZ / MSS 1201.5868 (QGRAF/MINCER diagrams): ratios on i!=j and (1,1), all n_G: ['2'] -> PASS
+   NSVZ / BPV 1210.6873 (background-field diagrams): ratios on i!=j and (1,1), all n_G: ['2'] -> PASS
+   Neither side uses the Machacek-Vaughn or Jones/Martin-Vaughn general two-loop formulas from which the theorem is proved.
+   This is still a mathematical consistency check (no measurement can test it).

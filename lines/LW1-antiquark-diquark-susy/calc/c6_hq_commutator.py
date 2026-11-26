@@ -305,7 +305,8 @@ for lab, mQ, DM in [("charm  (m_c = M(J/psi)/2)", 1.5485, 0.142014), ("bottom (m
           f" subtracting the conserved heavy-quark number)")
     print(f"     genuine breaking ||[H,Q] - delta Q||: hyperfine only {1000*Bhf:5.1f} MeV, recoil only {1000*Brec:5.1f} MeV,"
           f" both {1000*Bfull:5.1f} MeV")
-    print(f"     meson hyperfine input {1000*hfM:.1f} MeV -> baryon J=3/2-1/2 in this model = {750*hfM:.1f} MeV (3/4 rule)")
+    print(f"     kappa convention: contact eigenvalue 1 gives {1000*hfM:.1f} MeV -> {750*hfM:.1f} MeV by the analytic 3/4"
+          f" formula. NOT the model's ground-state splitting (58 MeV charm); recalibrated in c8_breaking_recalibrated.py")
     rows.append((lab, Bfull, Bhf, Brec))
 print("\n  Scaling with the heavy mass (kappa ~ 1/m_Q from heavy-quark spin symmetry, D*-D scaled as m_c/m_Q):")
 for mQ in [1.5485, 4.7302, 15.0, 50.0, 500.0]:
@@ -313,6 +314,8 @@ for mQ in [1.5485, 4.7302, 15.0, 50.0, 500.0]:
     HM, HB, Qs = heavy_model(mQ, DM)
     delta, Bf = breaking(HM, HB, Qs)
     print(f"    m_Q = {mQ:7.2f} GeV: ||B|| = {1000*Bf:7.2f} MeV,  m_Q ||B|| = {1000*Bf*mQ:7.1f} MeV GeV,  offset {delta:7.2f} GeV")
+print("  NOTE (cycle 8): the 1/m_Q here is imposed through DM ~ 1/m_Q (HQET input), not derived; ||B|| is mostly")
+print("  heavy-quark spin breaking whose pattern superflavor predicts. See c8_breaking_recalibrated.py for the split.")
 print("  => [H, Q] = delta Q + B with B = O(Lambda^2/m_Q) -> 0 only as m_Q -> infinity. At physical charm the")
 print("     breaking is O(100 MeV), at bottom O(30 MeV), i.e. ~25% and ~8% of the light-dof energy Lambda-bar ~ 0.4 GeV.")
 print("     Q is never a symmetry of H itself: the offset delta ~ m_Q cannot be removed by any light-sector dynamics.")

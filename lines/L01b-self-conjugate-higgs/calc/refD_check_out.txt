@@ -1,0 +1,27 @@
+M_t: g2=0.64764 gY=0.35843 g3=1.1652 yt=0.93286 lam=0.12617
+M_t sectors: W=0.8815 Zh=0.9156 F=5.2231 R=0.3441 C=-3.4259
+(3/v^2)(mh^2+2MW^2+MZ^2-4mt^2) with pole masses = -4.0683
+d=2 pole (n_V=1): R(M_t)=0.2113
+log10 mu=10.00: Zh=0.3748 W=0.4917 F=1.7061 R=0.5079
+log10 mu=16.00: Zh=0.3152 W=0.3925 F=1.0614 R=0.6667
+log10 mu=19.09: Zh=0.3211 W=0.3626 F=0.8656 R=0.7898
+3-loop mu0 = 10^22.832, dC/dln mu = +0.0203
+1-loop (rg_sm) mu0 = 10^26.79
+2-loop (rg_sm) mu0 = 10^22.98
+n_V=1: max C over 10^2.24..10^31.9 = -0.0789 at 10^31.84
+own 1-loop RGE mu0 = 10^26.79
+M_t* (C(M_Pl)=0) = 169.535 GeV; distance = 3.035
+  alpha_s +0.0009: M_t* = 169.953 (shift +0.418)
+  alpha_s -0.0009: M_t* = 169.117 (shift -0.418)
+  M_h +0.11: M_t* shift +0.037
+  2-loop RGE: M_t* shift -0.125
+  dy=0.0005: budget 0.747, signif 4.07 sigma
+  dy=0.003: budget 0.917, signif 3.31 sigma
+  dy=0.004: budget 1.033, signif 2.94 sigma
+  sigma(tt) pole 172.4+-0.7, dy=0.003: 2.87 sigma
+CW B = -4.387e-03; top threshold m_t = 78.6 GeV; W,Z-only m_h = sqrt(8 B_WZ) v = 9.78 GeV; tree mu = 88.53
+QCD EWSB n_d=1: M_W = 30.06 MeV
+QCD EWSB n_d=3: M_W = 52.07 MeV
+f_pi^2/v^2 = 1.399e-07; dM_W = 5.62 keV; v/f_pi = 2673
+beta_C on C=0: 33*g**4 + 63*g**2*gp**2/2 - 162*g**2*y**2 + 96*g3**2*y**2 + 17*gp**4 - 46*gp**2*y**2 + 126*y**4
+difference from WORK S5 polynomial: 0

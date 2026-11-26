@@ -59,3 +59,10 @@
 - L05: R2 minor, R3 major (claim (b) only proven for gauge coefficients; Yukawa/anomaly distinguish H^c; gate-7 near-circular). Gate item 5 passes by letter (no fatal, no BSM across 3 referees) but promotion held for narrowing fix.
 - LW1: referee 2 major fixable. LW2: nothing new → support only.
 - Status: no verified result.
+
+## Cycle 8, 2026-11-25
+- Spawns (5): referees C, D, E for L01b; fixer L05 (narrowing); fixer LW1 round 2.
+- L01b: C major, D minor, E major; none fatal, no BSM. Gaps: lemma overclaims; twin Higgs route missing (antimatter can't be the twin since H^c is the same field); gate 7. → fix round 4.
+- L05: claim (b) narrowed to gauge coefficients; Yukawa sector has no exact identity but contains an SM-only vertex term that exists because H^c ≡ H*. → confirming referee.
+- LW1: antimatter not load-bearing in its claim; new LHCb Ξ_cc⁺ and Ω_cc⁺ masses; Ξ_cc* unmeasured. → parked pending experimenter.
+- Status: no verified result.

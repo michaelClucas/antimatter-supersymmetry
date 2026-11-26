@@ -1,0 +1,4 @@
+16pi^2 beta_C|_{C=0} = 33*g**4 + 63*g**2*gp**2/2 - 162*g**2*y**2 + 96*g3**2*y**2 + 17*gp**4 - 46*gp**2*y**2 + 126*y**4
+difference from WORK.md S5: 0
+tree C(pole masses) = -4.068
+GW: m_h^2 = 8 B v^2 needs B>0; B = -4.387e-03

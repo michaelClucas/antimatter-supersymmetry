@@ -1,4 +1,4 @@
-﻿Rows: 40.  Both members observed: 30  (c5d: 31; Xi_cc* row moved to PRED)
+Rows: 40.  Both members observed: 30  (c5d: 31; Xi_cc* row moved to PRED)
   baryon predicted/unobserved: 5;  meson predicted: 4;  meson unconfirmed: 1
   of the 30, meson-baryon rows whose meson has a J^P conflict: 1 (D(2600)?n/Lambda_c(2625) [PDG: D1*(2600) is 1-, slot needs 2-])
   both observed and no meson J^P conflict: 29 / 40

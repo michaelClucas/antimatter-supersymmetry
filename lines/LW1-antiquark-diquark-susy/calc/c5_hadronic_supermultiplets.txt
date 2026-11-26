@@ -1,4 +1,4 @@
-﻿sector  meson            baryon               dM/M(m-b)  tetraquark         dM/M(t-b) tstat
+sector  meson            baryon               dM/M(m-b)  tetraquark         dM/M(t-b) tstat
 light   h1(1170)         N(939)                  +0.216  f0(500)               -0.656 DEB  pole 400-550
 light   eta2(1645)       N(1520)                 +0.065  -                            NONE I=0 1-+ slot empty
 light   a2(1320)         Delta(1232)             +0.068  a1(1260)              -0.002 QQB  

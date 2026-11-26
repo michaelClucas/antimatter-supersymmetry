@@ -1,0 +1,50 @@
+==========================================================================================
+c8a. Superflavor breaking, recalibrated (colour-singlet sector)
+------------------------------------------------------------------------------------------
+Check vs c6/referee 2 at the c6 kappa (0.01361 GeV^3): ||B|| = 101.6 MeV (c6: 101.6), ground-state D*-D = 57.9 MeV (referee 2: 57.9), ratio 0.691 (0.691)
+   light-quark kinetic term commutes with Q: ||[K_q,Q]|| = 0.0e+00
+
+(1) Calibration on the model's own ground state: kappa = 0.02795 GeV^3 = 2.054 x c6 value
+  charm  m_Q=1.5485: meson J=1-0  142.0 MeV, baryon 3/2-1/2   92.9 MeV, ratio 0.654 (LO superflavor 0.750)
+  bottom m_Q=4.7302: meson J=1-0   37.3 MeV, baryon 3/2-1/2   26.0 MeV, ratio 0.697 (LO superflavor 0.750)
+  bottom meson splitting is a model PREDICTION from the charm kappa: 37.3 MeV vs PDG B*-B 45.34 MeV (-18%)
+  bottom recalibrated on its own (kappa_b = 0.03301 = 1.181 kappa_c): meson 45.34, baryon 31.2 MeV, ratio 0.689, r_hf = -2.8 MeV (-8.2%)
+  for comparison, dynamical lattice (Brown+ 2014): Xi_cc*-Xi_cc = 82.8 +- 9.2 MeV -> ratio 0.583, r_hf = -23.7 MeV (-22%)
+
+(2) Decomposition of [H,Q] = delta Q + [V_hf,Q] + ([K_X,Q] - delta_X Q)   (operator norms, max over Q_{m,s})
+  charm : delta =   1531 MeV;  ||[V_hf,Q]|| =  206.3 MeV (HQ spin breaking, superflavor-covariant at first order);  ||recoil|| =  17.2 MeV (genuine);  total ||B|| =  206.9 MeV
+  bottom: delta =   4725 MeV;  ||[V_hf,Q]|| =   67.5 MeV (HQ spin breaking, superflavor-covariant at first order);  ||recoil|| =   5.6 MeV (genuine);  total ||B|| =   67.7 MeV
+
+(3) Observable superflavor residuals (zero at LO superflavor)
+  charm : r_hf = Delta_B - (3/4)Delta_M =  -13.6 MeV (-12.8% of the 3/4 prediction);  without recoil  -18.5 MeV
+          r_avg = (Mbar_B - Mbar_M) - m_Q =   +4.1 MeV;  without recoil   +6.2 MeV
+  bottom: r_hf = Delta_B - (3/4)Delta_M =   -2.0 MeV ( -7.0% of the 3/4 prediction);  without recoil   -2.3 MeV
+          r_avg = (Mbar_B - Mbar_M) - m_Q =   +0.6 MeV;  without recoil   +0.8 MeV
+
+(4) Scaling with m_Q at FIXED kappa (1/m_Q from the operator form, not from the target). Fitted exponents are output.
+   m_Q =    1.55: Delta_M  142.01  |r_hf|  13.613  |r_avg|   4.080  ||[V,Q]||  206.30  ||rec||  17.22  (MeV)
+   m_Q =    4.73: Delta_M   37.32  |r_hf|   1.973  |r_avg|   0.633  ||[V,Q]||   67.54  ||rec||   5.64  (MeV)
+   m_Q =   15.00: Delta_M   10.58  |r_hf|   0.202  |r_avg|   0.066  ||[V,Q]||   21.30  ||rec||   1.78  (MeV)
+   m_Q =   50.00: Delta_M    3.06  |r_hf|   0.018  |r_avg|   0.006  ||[V,Q]||    6.39  ||rec||   0.53  (MeV)
+   m_Q =  150.00: Delta_M    1.01  |r_hf|   0.002  |r_avg|   0.001  ||[V,Q]||    2.13  ||rec||   0.18  (MeV)
+   Delta_M       ~ m_Q^-1.02   (fit over m_Q = 15-150 GeV)
+   |r_hf|        ~ m_Q^-2.00   (fit over m_Q = 15-150 GeV)
+   |r_avg|       ~ m_Q^-2.00   (fit over m_Q = 15-150 GeV)
+   ||[V_hf,Q]||  ~ m_Q^-1.00   (fit over m_Q = 15-150 GeV)
+   ||recoil||    ~ m_Q^-1.00   (fit over m_Q = 15-150 GeV)
+
+Reading:
+ - The hyperfine piece of [H,Q] is heavy-quark spin breaking. Its meson/baryon matrix elements are tied by the
+   superflavor Clebsch 1/2 (the 3/4 rule), so its norm is NOT a measure of superflavor violation.
+ - Genuine superflavor violation in this model: the recoil operator (source mass m_Q vs 2 m_Q) and the observable
+   residuals r_hf, r_avg. r_hf comes from second order in the hyperfine spurion (it mixes the ground configuration
+   with excited ones, differently in the two sectors) plus recoil, i.e. O(Lambda^2/m_Q^2)-type effects that LO
+   superflavor does not constrain.
+ - Toy limitation: the ground configuration has both constituents at zero momentum, so the first-order source
+   recoil <p^2>/(2 m_X) vanishes there and r_avg, r_hf start at O(1/m_Q^2). In QCD the source kinetic energy
+   (lambda_1-type terms) differs between meson and baryon at O(Lambda^2/m_Q), so the real genuine breaking starts at
+   O(Lambda/m_Q) relative to the hyperfine splitting; the 1/m_Q^2 exponents above are a property of this toy.
+ - The charm calibration needs 2.05x the c6 kappa because the contact term has eigenvalue 1/3 on the kinetic ground
+   configuration and mixes in excited configurations at second order; that same mixing is what makes the bottom
+   prediction from the charm kappa 18% low.
+ - Model status: QCD-inspired constituent model, illustrative parameters (m_q = 0.33, p0 = 0.40 GeV).

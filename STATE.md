@@ -1,6 +1,6 @@
 # STATE (overseer working memory)
 
-**Current cycle:** 8 (cycle 7 complete and committed)
+**Current cycle:** 9 (cycle 8 complete and committed)
 **Next wildcard due:** cycle 11
 
 ## How to resume (for a fresh overseer)
@@ -26,16 +26,16 @@
 
 | Line | SUSY # | Status | Gate progress / notes |
 |---|---|---|---|
-| L01b-self-conjugate-higgs | 1, 4 | VERIFICATION (negative result), TOP PRIORITY | Fix round 3 done c7. CLAIM: no SM antimatter operation can enforce λ_{Ht̃t̃}=y_t² (C,P,CP,T,CPT, sea/F-S preserve spin & statistics → can't tie SFF to S⁴ couplings; CM/HLS: only spin-changing symmetry is SUSY, SM can't fill supermultiplets; C=0 not RG invariant). Shift/pNGB (via LW2), gauge-Higgs, holomorphy, Bardeen scale invariance covered. R demoted (illustration, not observable; d=2 pole R=0.211). F-b 3.3-4.1σ. #4: QCD-condensate EWSB m_W = g f_π/2 ≈ 30 MeV (overseer checked). Cite fix: hep-th/9209124 is Kleppe; Al-sarhi-Jack-Jones Z.Phys.C 55, 283 (1992). Needs 3 fresh referees on this version. |
-| L05-beta-function-map | 2 (D4) | VERIFICATION → narrowing fix | Referees: R1 minor (c5), R2 minor (c7; 300 random theories, tables fetched), R3 MAJOR fixable (c7). None fatal, no BSM → gate item 5 passes by letter, but overseer holds promotion: CLAIM (b) proved only for gauge b_i, b_ij; Yukawa (Q H^c d^c, L H^c e^c allowed vs forbidden for duplicate) and anomaly cancellation DO distinguish H^c — an antimatter-specific structure, investigate for D4; scope "one-doublet parent" too broad (SM+(8,3,0) complex → 18/17); gate 7 table check near-circular; "15% of B shift" order-dependent (~48% other order); A3.4 equivalence argument unstated; multiple U(1)s, evanescent caveat, real-scalar diagonal term, odd invariants. |
-| LW1-antiquark-diquark-susy | 1 (neg.), 6 | CONTINUE (fix round 2) | Referee 2 (c7) MAJOR fixable: "102/33 MeV breaking" is mostly HQ spin breaking that superflavor itself predicts (model ratio 0.69/0.72 vs 0.75); model not calibrated to D*−D (58 vs 142 MeV); 1/m_Q put in by hand; "[H,Q]≠0 ⇒ no protection" false (soft MSSM counterexample) → C1 must rest on compositeness + Higgs singlet under Q + HLS; antimatter not load-bearing in C1. Referee cites LHCb 2026 arXiv:2609.21921 / CERN EP news on completing the doubly-charmed family → check whether Ξ_cc* now measured (direct test of 107±32 MeV). |
-| LW2-chiral-partner-protection | 1 (context) | SUPPORT, no further work | Lit c7: 13/13 cites confirmed; nothing new (Contino §3.2 eq 90; Panico-Wulzer §5.3.2; Giudice 0801.2562 §6). Numbers match. Cited by L01b for the pNGB route. |
+| L01b-self-conjugate-higgs | 1, 4 | VERIFICATION → fix round 4, TOP PRIORITY | Referees c8: C MAJOR (step-2 lemma "spin-preserving ⇒ can't relate y_t to λ, g" true only for global linear maps; counterexamples gauge invariance, pNGB, scale inv.+Gildener-Weinberg, twin Z2; fix: enumerate SM Lagrangian symmetry group + measured C≠0 with transverse crossing; CM/HLS scope; "strong argument, not proof"), D MINOR (all 18 scripts reproduce; all numbers independently recomputed; factor ~2700 is 1-doublet only (~1540 for 3); E1/E5 missing; PDG 2026 note; 3.3σ lower end arbitrary), E MAJOR (twin Higgs / same-spin protection missed; antimatter can't be the twin because H^c is not independent: |H|²+|H^c|²=2|H|²; H↔H^c is SU(2)_R element iσ₂; custodial limit dropped y_b; h self-loop 7.2% uncredited; gate 7 not met: F-b can't falsify a no-go allowing accidental zeros). None fatal, no BSM. Promotion held. Gate-7 candidate: the no-go implies C is not symmetry-enforced to vanish; measured C(M_t) = −4.07 ± (small) ≠ 0 is a falsifiable consistency check (a measurement giving C=0 at all scales would falsify). |
+| L05-beta-function-map | 2 (D4) | VERIFICATION, final confirming referee | Narrowing fix c8: CLAIM (b) restricted to b_i, b_ij, compared 3-loop gauge-only entries (invariant under conjugating any subset of image fields); A3.4 argument stated. Yukawa: no exact identity; fermion legs double; SM vertex term (−2y_b² in β_yt, −2y_t² in β_yb) exists only because H^c ≡ H* (antimatter identity) and is absent in MSSM; g⁴ ratios non-uniform; SM two-loop Yuk⁴, g²y² not done. Gate 7: cross-method check (SM diagrammatic MSS/BPV vs SUSY NSVZ) passes; mathematical only. Overseer: will accept gate 7 as a consistency check if the confirming referee finds it non-circular. |
+| LW1-antiquark-diquark-susy | 1 (neg.) | PARKED, awaiting experimenter | Fix 2 c8: C1 rests on compositeness + Higgs singlet under Q + HLS; antimatter NOT load-bearing in C1 (fixer's own verdict). Residuals: Ξ_cc*−Ξ_cc − 3/4(D*−D) = −13.6 MeV (−13%), bottom −7 to −8%, lattice −22%. Experiment: Ξ_cc⁺ 3619.97 MeV (PRL 137, 021902) and Ω_cc⁺ 3725.9 MeV (arXiv:2609.21921) observed; no J=3/2 Ξ_cc*, no Ξ_bb → P1 untested. Overseer proposed parking as context; asked experimenter (D5 said LW1 very relevant). |
+| LW2-chiral-partner-protection | 1 (context) | SUPPORT, no further work | |
 
-## Queue (cycle 8)
-1. Three fresh referees for L01b (parallel; files REVIEWS_C.md, REVIEWS_D.md, REVIEWS_E.md).
-2. Fixer L05: narrow CLAIM (b) to gauge coefficients; investigate Yukawa/anomaly distinction of H^c as antimatter-specific structure (D4, positive direction); fix scope (18/17 case); address gate-7 circularity (find a non-circular check, e.g. independent automated code output or numerical RG cross-check, or state honestly); order-dependence; A3.4 argument.
-3. Fixer LW1 round 2 (referee 2 items; verify LHCb Ξ_cc* status and compare).
-Then: one confirming referee for L05 after fix.
+## Queue (cycle 9)
+1. Fixer L01b round 4: narrow step-2 lemma; add twin-Higgs/same-spin protection route and the H^c-not-independent argument (|H|²+|H^c|²=2|H|²; H↔H^c ∈ SU(2)_R); custodial y_b; credit h self-loop; gate 7 via measured C(M_t)≠0; "strong argument" framing; referee D minor items.
+2. Confirming referee for L05 (fresh) on narrowed CLAIM; explicit gate 1-7 judgement incl. gate-7 circularity.
+3. Literature checker for L01b's new claim: is "antiparticles cannot serve as the twin / same-spin partner because H^c is not an independent field" or the same-spin no-go for SM antimatter in print?
+LW1 waits on experimenter.
 
 ## Open issues carried from explorers
 - L01: runner gives m(M_Pl)=139.4 GeV vs Buttazzo 129.4 (not load-bearing); Weisskopf 1939 detail unverified.

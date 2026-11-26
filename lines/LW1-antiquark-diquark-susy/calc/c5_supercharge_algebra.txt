@@ -1,4 +1,4 @@
-﻿==============================================================================
+==============================================================================
 (A) Constituent level: d_{a,s} fermions (6 modes), D_a bosons (3 modes, n<=2)
   max |{Q_s,Q_t^dag} - (delta_st N_D + sum_a d_at^dag d_as)| on untruncated subspace = 1.8e-15
   => {Q_up,Q_up^dag} + {Q_dn,Q_dn^dag} = 2 N_D + N_dbar   (number operators only)

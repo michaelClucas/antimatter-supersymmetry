@@ -1,4 +1,4 @@
-﻿======================================================================================
+======================================================================================
 PART A. Quark-level toy: 3 momentum modes, spin-1/2 antiquark, local scalar 3bar diquark
   diquark states orthonormal: max|<D|D'> - delta| = 2.2e-16
   [S_z, Q_up] + (+0.5) Q = 0.0e+00   (Q_sigma lowers S_z by the removed antiquark spin)
@@ -34,10 +34,10 @@ PART A. Quark-level toy: 3 momentum modes, spin-1/2 antiquark, local scalar 3bar
 PART B. Heavy-source model, calibrated: q + Qbar (spin 1/2)  vs  q + (QQ)_3bar (spin 1, compact)
   charm  (m_c = M(J/psi)/2): offset delta =   1531 MeV (= m_(QQ) - m_Qbar + recoil difference; removable by subtracting the conserved heavy-quark number)
      genuine breaking ||[H,Q] - delta Q||: hyperfine only 100.4 MeV, recoil only  17.2 MeV, both 101.6 MeV
-     meson hyperfine input 142.0 MeV -> baryon J=3/2-1/2 in this model = 106.5 MeV (3/4 rule)
+     kappa convention: contact eigenvalue 1 gives 142.0 MeV -> 106.5 MeV by the analytic 3/4 formula. NOT the model's ground-state splitting (58 MeV charm); recalibrated in c8_breaking_recalibrated.py
   bottom (m_b = M(Y1S)/2): offset delta =   4725 MeV (= m_(QQ) - m_Qbar + recoil difference; removable by subtracting the conserved heavy-quark number)
      genuine breaking ||[H,Q] - delta Q||: hyperfine only  32.1 MeV, recoil only   5.6 MeV, both  32.5 MeV
-     meson hyperfine input 45.3 MeV -> baryon J=3/2-1/2 in this model = 34.0 MeV (3/4 rule)
+     kappa convention: contact eigenvalue 1 gives 45.3 MeV -> 34.0 MeV by the analytic 3/4 formula. NOT the model's ground-state splitting (58 MeV charm); recalibrated in c8_breaking_recalibrated.py
 
   Scaling with the heavy mass (kappa ~ 1/m_Q from heavy-quark spin symmetry, D*-D scaled as m_c/m_Q):
     m_Q =    1.55 GeV: ||B|| =  101.61 MeV,  m_Q ||B|| =   157.3 MeV GeV,  offset    1.53 GeV
@@ -45,6 +45,8 @@ PART B. Heavy-source model, calibrated: q + Qbar (spin 1/2)  vs  q + (QQ)_3bar (
     m_Q =   15.00 GeV: ||B|| =   10.49 MeV,  m_Q ||B|| =   157.3 MeV GeV,  offset   15.00 GeV
     m_Q =   50.00 GeV: ||B|| =    3.15 MeV,  m_Q ||B|| =   157.3 MeV GeV,  offset   50.00 GeV
     m_Q =  500.00 GeV: ||B|| =    0.31 MeV,  m_Q ||B|| =   157.3 MeV GeV,  offset  500.00 GeV
+  NOTE (cycle 8): the 1/m_Q here is imposed through DM ~ 1/m_Q (HQET input), not derived; ||B|| is mostly
+  heavy-quark spin breaking whose pattern superflavor predicts. See c8_breaking_recalibrated.py for the split.
   => [H, Q] = delta Q + B with B = O(Lambda^2/m_Q) -> 0 only as m_Q -> infinity. At physical charm the
      breaking is O(100 MeV), at bottom O(30 MeV), i.e. ~25% and ~8% of the light-dof energy Lambda-bar ~ 0.4 GeV.
      Q is never a symmetry of H itself: the offset delta ~ m_Q cannot be removed by any light-sector dynamics.

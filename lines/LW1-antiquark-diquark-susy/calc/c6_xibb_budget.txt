@@ -1,4 +1,4 @@
-﻿Xi_bb* - Xi_bb transported from each charm lattice input (MeV):
+Xi_bb* - Xi_bb transported from each charm lattice input (MeV):
   input                                        R_cc   1/m_Q    1/(m_Q v)
   Xi_cc  Brown+ 1409.0497                     0.583    31.5     29.7
   Xi_cc  Alexandrou-Kallidonis 1704.02647     0.535    30.8     28.5

@@ -1,4 +1,4 @@
-﻿(0) Superflavor residual with corrected errors
+(0) Superflavor residual with corrected errors
    Xi_cc+ total error: +2.09 / -1.56 MeV (symmetrised 1.83); c5c used 1.6 (lifetime term only)
    D_s - <D> = 101.1, Omega_cc - <Xi_cc> = 105.1, r_SF = +4.0 MeV
    error: all pieces uncorrelated 1.6 MeV; with ext/lifetime correlations 1.2 MeV. Quoted: r_SF = +4.0 +- 1.6 MeV (4% of the breaking)

@@ -1,50 +1,62 @@
 # L05 WORK - beta-function map: SM in antiparticle labelling vs SUSY
 
-## CLAIM (cycle 6)
+## CLAIM (cycle 8; supersedes cycle 6)
 
-Scripts: `calc/c6_scope.py` (scope and published tables), `calc/c4_doubling.py` (derivation), `calc/c4_threeloop.py` (three loops), `calc/referee1_check.py` (referee 1's independent check). All exact sympy rationals, all identities asserted. Run each from `calc/`.
+Scripts: `calc/c8_scope.py` (scope fixes, order dependence, cross-method gate-7 check), `calc/c8_yukawa.py` (Yukawa sector and anomalies), `calc/c6_scope.py` (published tables, counterexamples), `calc/c4_doubling.py` (derivation), `calc/c4_threeloop.py` (three loops). Exact sympy rationals, every identity asserted. Run each from `calc/`.
 
-**(a) Theorem** [established; proof C4.2]. Let T be a 4d gauge theory with group Π G_i, Weyl fermions F, complex scalars S_c and real scalars S_r. Two-loop gauge coefficients b_ij are defined by dg_i/dt = g_i³/(16π²) b_i + g_i³/(16π²)² Σ_j b_ij g_j² + (Yukawa terms). They are the same in MS-bar and DR-bar and under any redefinition G_i = g_i + (terms ∝ g_i³), the form allowed by β_i ∝ g_i³ (`c4_threeloop.py` §0 asserts the two-loop part is unchanged). Let Φ*(T) be: one vector multiplet per G_i; one chiral multiplet per Weyl fermion and per real scalar; two chiral multiplets per complex scalar s, the second with the same (S_i, C_j) as s (s̄ is the anomaly-safe choice). Then
+**(a) Theorem** [established; proof C4.2]. Let T be a 4d gauge theory with group Π G_i containing **at most one U(1) factor**, Weyl fermions F, complex scalars S_c and real scalars S_r. Define the two-loop gauge coefficients by dg_i/dt = g_i³/(16π²) b_i + g_i³/(16π²)² Σ_j b_ij g_j² + (Yukawa terms). b_i and b_ij are unchanged under every redefinition G_i = g_i + (terms ∝ g_i³) (`c4_threeloop.py` §0), so they are the same in MS-bar and in any scheme related to it this way. (For a non-SUSY T in DRED, this holds when the ε-scalar (evanescent) couplings are treated as independent couplings; the line only ever compares a non-SUSY T in MS-bar with a SUSY theory in DR-bar, which is unaffected.) Let Φ*(T) be: one vector multiplet per G_i; one chiral multiplet per Weyl fermion and per real scalar; two chiral multiplets per complex scalar s, the second with the same (S_i, C_j) as s (s̄ is the anomaly-safe choice). Then
 
-  b_ij[Φ*(T)] = 2 b_ij[T]  for every i ≠ j and every abelian i = j.
+  b_ij[Φ*(T)] = 2 b_ij[T]  for every i ≠ j and for the abelian i = j.
 
-Non-abelian diagonal entries do not double (SM → MSSM: 30/7 and −7/13), and neither do the two-loop Yukawa terms (the MSSM has an extra Higgs-leg term).
+Non-abelian diagonal entries double iff 25 C(G_i) = 7 Σ_F S_i − 4 Σ_Sc S_i − 2 Σ_Sr S_i (`c8_scope.py` §2; fails in the SM: 30/7 and −7/13). The Yukawa terms of the gauge betas do not double (MSSM has an extra Higgs-leg term, §2.4).
+- *Several U(1) factors* [conjecture]. With two or more U(1)s there is kinetic mixing and the abelian couplings form a matrix (Luo and Xiao, hep-ph/0212152). Every two-loop abelian term is a per-field weight (Weyl 2, complex scalar 4, chiral 4) times a charge polynomial with no C(G) factor, so the doubling very likely persists, but this is not shown here. Irrelevant for the SM corollary (one U(1)).
 
-*Corollary (SM).* Take a parent that is SM-like: its only complex scalar is one doublet H with |Y| = 1/2, mapped to H_u = H and H_d = H^c. The second doublet is required by higgsino anomaly cancellation and holomorphy. Then minimal SUSY = Φ*, and b_ij^MSSM = 2 b_ij^SM on i ≠ j and (1,1), for every n_G.
+*Corollary (SM).* Hypotheses, stated exactly: the parent's gauge group is SU(3)×SU(2)×U(1); its only complex scalar is one doublet H with |Y| = 1/2; real scalars, if any, sit in real reps and get one chiral multiplet each. Equivalently: the minimal SUSY completion equals Φ*. Then H → H_u, H^c → H_d gives b_ij^MSSM = 2 b_ij^SM on i ≠ j and (1,1), for every n_G.
 
-*Scope.* The factor 2 is a property of the pair (one-doublet parent, Φ*), not of the MSSM. Wherever minimal SUSY ≠ Φ*, it fails (`c6_scope.py` §2):
-- vector-like scalar pair (2,1,±1/2): ratio 1;
-- 2HDM parent → the same MSSM: 3/2 on (1,2), (2,1) and 199/104 on (1,1);
-- complex scalar in the pseudoreal (2,8,0), minimal SUSY one chiral: 8/7;
-- complex scalar in the real (3,8), minimal SUSY one chiral: 26/25.
+*Scope.* "One Higgs doublet" alone is not enough. SM + one complex (8,3,0) scalar has one doublet, but its minimal SUSY completion (one chiral (8,3,0), anomaly-free and Witten-safe) gives 18/17 on (2,3), (3,2) (`c8_scope.py` §1, referee 2 reproduced); Φ* (two chirals) gives 2, and a real (8,3,0) gives 2. Other counterexamples where minimal SUSY ≠ Φ* (`c6_scope.py` §2): vector-like scalar pair (2,1,±1/2): 1; 2HDM parent → MSSM: 3/2 on (1,2), (2,1), 199/104 on (1,1); complex (2,8,0) pseudoreal: 8/7; complex (3,8): 26/25. The factor 2 belongs to the pair (parent, Φ*).
 
-**(b) Negative result for directive D4** [established]. No structure-preserving map from SM beta functions to SUSY beta functions is specific to antimatter.
-- b_ij depends on field content only through Dynkin indices S_i and Casimirs C_j, and both are invariant under R → R̄ (CPT-blind). So "every SM field plus its CP conjugate counted as an independent field" (T_dbl, C4.3) gives the same b_ij as "every SM field duplicated". In the same way, H_d = H^c cannot be told apart from a second Y = +1/2 doublet (`c6_scope.py` §2, asserted).
-- Conjugation only selects the anomaly-free option. That input comes from anomaly cancellation, not from the beta function.
-- Prop. 1: relabelling particle and antiparticle states changes no coefficient.
-- The map that does preserve structure (Φ*) acts on field content. Its "antimatter" description is a relabelling. At three loops even that map has no uniform factor in any background-field-compatible scheme: the scheme-invariant entries give 8, 8/13 and 2/7 (C4.5).
+**(b) Negative result for D4, restricted to what is proved** [established].
 
-**(c) Gate item 7: explicit consistency check** [established; checked].
-> Every correct published two-loop gauge-coefficient table for a one-Higgs-doublet parent and its minimal SUSY completion satisfies b_ij(SUSY) = 2 b_ij(parent) for i ≠ j and for (1,1), at every n_G. For a 2HDM parent, the same MSSM table must instead give 3/2 on (1,2), (2,1) and 199/104 on (1,1).
+*Excluded class.* Let Ψ be any map from SM field content to the field content of a gauge theory (SUSY or not), and judge Ψ only by the gauge-only coefficients of Ψ(SM): b_i, the two-loop b_ij, and the three-loop gauge-only entries compared in C4.5. These coefficients depend on the fields only through spin, dimension, Dynkin indices S_i(R) and Casimirs C_j(R). S(R̄) = S(R) and C(R̄) = C(R). So replacing any subset of the image fields by their conjugates leaves all of them unchanged (`c8_scope.py` §3, 100 random contents, asserted). Consequences:
+- H_d = H^c (Y = −1/2) and a second Y = +1/2 doublet give identical b_i, b_ij;
+- T_dbl (every SM field plus an independent CP-conjugate copy) and a plain duplicate of the SM give identical b_i, b_ij;
+- Prop. 1 (§1.1): relabelling particle and antiparticle states changes no coefficient.
+So no map judged by these coefficients can certify an antimatter (conjugation) reading: a conjugate and a duplicate are indistinguishable to them.
 
-Checked in `c6_scope.py` §1 against two independent SM tables and two independent MSSM tables:
-- SM: Mihaila-Salomon-Steinhauser, arXiv:1201.5868, eq. (5) (all n_G).
-- SM: Bednyakov-Pikelner-Velizhanin, arXiv:1210.6873, eqs. (4.3)-(4.5) (n_G and N_c general; read with N_c = 3).
-- MSSM: Martin-Vaughn, hep-ph/9311340, eq. (4.5) (n_G = 3).
-- MSSM: Ferreira-Jack-Jones, hep-ph/9605440 (all n_g).
+*Not excluded.* (1) Maps judged by Yukawa structure or anomaly cancellation: these do see R vs R̄ (part (b′)). (2) Higher-loop gauge coefficients. Conjugation-odd traces that are not anomaly coefficients exist (e.g. Σ_f Y_f C₂(f) C₃(f) d(f) = 1 per SM generation, `c8_scope.py` §3) and could in principle appear in products of fermion loops beyond the orders checked. "Conjugate = duplicate" is a statement about b_i, b_ij and the compared three-loop entries only.
 
-All four SM × MSSM pairings pass, and no table fails. A failure would have falsified either that table or the theorem.
+*Any equivalent formulation (A3.4).* An allowed reformulation (division-algebra, NCG, Clifford, Dirac sea, Feynman-Stueckelberg, conjugate-Weyl basis, Furey ideals) must reproduce SM physics in the sector used. Then its gauge beta functions are the SM ones up to a coupling redefinition G_i = g_i + O(g_i³), which leaves b_i and b_ij unchanged (`c4_threeloop.py` §0). So in every equivalent formulation b = (41/10, −19/6, −7), B = 115/218, and the SM two-loop running misses unification (spread 3.20 in α⁻¹, §2.5). That negative for SUSY result #2 is standard. This argument does not depend on the Furey or Dixon details (§1.3, Open question (c)), which are therefore not needed for (b). What the line adds is the accounting and the identity.
 
-Note: the arXiv text of Martin-Vaughn eq. (4.5) prints the first row as (199/25, 27/5, 88/5), the same row = i convention used here. LITCHECK row 7 reports a transposed print. That may describe the journal version, which was not checked here.
+**(b′) Positive direction for D4: where the conjugate IS singled out** [established; `c8_yukawa.py`; Part C8].
+1. *Operator selection.* With one doublet, gauge invariance forces the SM to write the up-type Yukawa with H and the down-type and lepton Yukawas with its conjugate H^c = iσ₂H*. That is the H_u / H_d pattern of the MSSM. In a holomorphic superpotential, Q H_d d^c and L H_d e^c exist only if the second doublet superfield has the conjugate charges (Y = −1/2); with a duplicate Y = +1/2 doublet, y_b = y_τ = 0 is forced. In a non-SUSY theory the same choice is a field redefinition (a Y = +1/2 doublet H′ gives d and e masses through H′^c; the betas are identical, asserted). So the SM supplies the pattern, and SUSY holomorphy is what turns "conjugate vs duplicate" into a real distinction.
+2. *Anomalies.* Higgsinos alone: Tr Y³ = 1/4, Tr Y = 1, SU(2)²U(1) = 1/4, odd Witten parity. Adding a duplicate higgsino: Tr Y³ = 1/2 (not cancelled). Adding the conjugate: all zero. The anomaly-free pair H̃_u, H̃_d is one Dirac fermion whose particle and antiparticle carry the charges of H and H^c.
+3. *Yukawa beta functions: no exact identity of the doubling type.* One loop, computed from component formulas (asserted against the standard SM and MSSM results):
+   - SM = (fermion-leg terms) + Y₂(S) + (vertex term); MSSM = 2 × (fermion-leg terms) + (own-doublet leg), no vertex term.
+   - Fermion-leg Yukawa terms double exactly.
+   - The SM Higgs-leg term splits exactly: Y₂(S) = 3y_t² + 3y_b² + y_τ² = γ(H_u) + γ(H_d). This sum rule holds because H^c is the conjugate of the same field.
+   - The SM vertex term (−2y_b² in β_{y_t}, −2y_t² in β_{y_b}) exists only because the up and down Yukawas share that one field. The map drops it.
+   - Gauge parts: fermion legs scale by 2/3, not 2, and the MSSM adds a Higgs-leg term.
+   - Two-loop pure-gauge (g⁴) terms: no uniform ratio. For y_t the MSSM/SM ratios are 10972/3561, −30/23, 4/243, −20/9, 136/57 and 8/9. These terms are conjugation-blind.
+   The conjugation-sensitive content of the Yukawa sector is therefore (i) a selection rule (which operators exist, and anomaly freedom) and (ii) the identification terms (the Y₂(S) sum and the vertex term), which the map H^c → H_d removes. Neither is a structure-preserving relation between SM and MSSM beta-function numbers. None of this changes one-loop B, and none of it is a mechanism: the second doublet is A1-forbidden.
 
-Honest limit: this check is mathematical. The line predicts nothing for any SM measurement, and nothing in it is a mechanism.
+**(c) Gate item 7: mathematical consistency check only** [established].
+> For the SM and its minimal SUSY completion, b_ij(SUSY) = 2 b_ij(SM) on i ≠ j and (1,1), at every n_G.
 
-**(d) What is new** (per LITCHECK §3) [established that it was not found in the check; not proof of absence]:
-1. The exact two-loop identity, its proof from per-field weights, and its scope (one-doublet parent; counterexamples 1, 3/2, 199/104, 8/7, 26/25).
+Checked in `c8_scope.py` §5 by two derivations that do not use the general two-loop formulas from which the theorem is proved:
+- SM side: the tables of Mihaila-Salomon-Steinhauser (arXiv:1201.5868; direct evaluation of more than 10⁶ Feynman diagrams with QGRAF/q2e/exp/MINCER) and Bednyakov-Pikelner-Velizhanin (arXiv:1210.6873; background-field-gauge diagrams).
+- SUSY side: the NSVZ formula (Novikov-Shifman-Vainshtein-Zakharov, NPB 229, 381 (1983), obtained from instanton calculus), expanded to two loops with the one-loop chiral anomalous dimension.
+
+Both SM tables pass for all n_G. The MSSM tables of Martin-Vaughn and Ferreira-Jack-Jones also pass (`c6_scope.py` §1). A failure would have shown an error in the theorem or in one of the independent derivations. No independent automated-code output (PyR@TE, SARAH) was compared; those codes implement the same general formulas, so the comparison would not be more independent.
+
+Honest limit: this is a mathematical consistency check. Its outcome is fixed by mathematics, and no measurement can test it. The line makes no prediction for any SM observable. If gate 7 requires physical falsifiability, this line does not meet it.
+
+**(d) What is new** (per LITCHECK §3) [established that these were not found in the literature check; not proof of absence]:
+1. The two-loop identity, its proof from per-field weights, and its exact scope.
 2. The spin/orbital decomposition attributing all of the MSSM's B − 1/2 to the Dirac higgsino (§2.1).
-3. The three-loop comparison restricted to scheme-invariant entries (8 vs 8/13 vs 2/7). [not literature-checked]
+3. The three-loop comparison restricted to scheme-invariant entries (8 vs 8/13 vs 2/7) [not literature-checked].
+4. The one-loop Yukawa decomposition SM ↔ 2HDM-II ↔ MSSM (fermion legs ×2, Y₂(S) = γ(H_u) + γ(H_d), vertex dropped) [elementary; not literature-checked].
 
-Everything else is standard: the map itself, the B values, the running, the 2HDM step, Prop. 1.
+Everything else is standard: the map, the B values, the running, the 2HDM step, Prop. 1, the H_u/H_d anomaly and holomorphy argument (Martin primer §1.3, §6.1), and the order-dependent attribution in §2.2.
 
 ---
 
@@ -90,7 +102,7 @@ Each generation is a complete SU(5) set (10 = Q + u^c + e^c, 5̄ = d^c + L), so 
 
 ### 1.3 Definition (iii): Furey ideal basis
 
-Furey, "Charge quantization from a number operator", PLB 742 (2015) 195, arXiv:1603.04078, DOI 10.1016/j.physletb.2015.01.023 [abstract verified]: one generation from ladder operators of C⊗O, number operator/3 = electric charge, SU(3)_c × U(1)_em generators. The minimal left ideal organises states as 1 ⊕ 3 ⊕ 3̄ ⊕ 1 graded by charge, mixing particle and antiparticle states in one ideal (which states sit in which ideal: from memory of the full text, [unverified]). Scope A3: this sector is equivalent to the SM only for SU(3)_c × U(1)_em (below the EW scale); the unification test needs SU(2)_L × U(1)_Y. Beta coefficients depend only on representation content (A3.4), so (iii) gives the same b as (ii) in the equivalent sector and adds nothing here. Dixon's R⊗C⊗H⊗O was not used.
+Furey, "Charge quantization from a number operator", PLB 742 (2015) 195, arXiv:1603.04078, DOI 10.1016/j.physletb.2015.01.023 [abstract verified]: one generation from ladder operators of C⊗O, number operator/3 = electric charge, SU(3)_c × U(1)_em generators. The minimal left ideal organises states as 1 ⊕ 3 ⊕ 3̄ ⊕ 1 graded by charge, mixing particle and antiparticle states in one ideal (which states sit in which ideal: from memory of the full text, [unverified]). Scope A3: this sector is equivalent to the SM only for SU(3)_c × U(1)_em (below the EW scale); the unification test needs SU(2)_L × U(1)_Y. Beta coefficients depend only on representation content (A3.4), so (iii) gives the same b as (ii) in the equivalent sector and adds nothing here. Dixon's R⊗C⊗H⊗O was not used. (Cycle 8: CLAIM (b) does not rely on this section; the A3.4 argument there covers every equivalent formulation.)
 
 **Chosen definition**: (ii), with (i) as the per-state decomposition. (ii) is the only one in which a SUSY completion is even definable, since chiral superfields must be left-chiral.
 
@@ -147,7 +159,7 @@ Partial maps (`beta_map.py` §4, `running.py` one-loop α_s from exact unificati
 | full Phi(SM) | −2/3 | 0.7143 | 0.1166 |
 | measured | | | 0.1180 ± 0.0009 |
 
-The antimatter-interpretable step alone moves B by 0.028 of the 0.187 needed (15%); in r it supplies a factor 2 of 22/3. The rest needs spin-1/2 partners. [established arithmetic]
+B is nonlinear in r, so the share of the B shift assigned to each step depends on the order of the steps (corrected cycle 8, `c8_scope.py` §4). The H^c step gives 15.0% if applied first and 59.3% if applied last (47.6% right after H → chiral, referee 3). Its Shapley value (average over all 6 orderings) is 35.8%; H → chiral gets 52.9% and the gaugino step 11.3%. The order-independent statement is multiplicative: in r the H^c step is a factor 2 of 22/3 (log share ln 2 / ln(22/3) = 34.8%). The rest needs spin-1/2 partners. [established arithmetic]
 
 ### 2.3 Two loop: an exact homothety
 
@@ -186,7 +198,7 @@ These reproduce the standard MSSM results (cf. L02 `unification.txt`: SM 2-loop 
 
 - **Rep-space metric** (Dynkin index / Killing form tr_R(T^aT^b) = T(R)δ^ab): Phi is the identity on the rep data of every fermion and every gauge field, so it is an isometry on those sectors. On the scalar sector it sends H to H ⊕ H^c, doubling the norm; not an isometry. [established, trivial]
 - **b-space**: any two vectors in R³ are related by many linear maps; that carries no information. The unification test sees b only through its class in P(R³/⟨(1,1,1)⟩) ≅ RP¹, coordinate B. Maps b -> λb + μ(1,1,1) (λ > 0) preserve the unification verdict; adding complete multiplets is such a map. Phi is not: it moves B from 115/218 to 5/7. Phi creates unification; it does not preserve it.
-- **RG flow**: one-loop flow in α⁻¹ space is translation by −b t/2π. Phi acts on theory space (field content), not on coupling space. With identical data at M_S the trajectories split immediately; there is no nontrivial map on coupling space intertwining the two flows other than the trivial affine ones of the previous point. Phi does not commute with RG flow in any non-trivial sense.
+- **RG flow** (reworded cycle 8, referee 3 finding 5): one-loop flow in α⁻¹ space is translation by −b t/2π. Phi acts on theory space (field content), not on coupling space. At one loop any invertible linear A with A·b_SM ∝ b_MSSM conjugates the two flows (up to rescaling t), and there are infinitely many such A. These maps exist without constraint and carry no information. Requiring A to fix the unification locus (the (1,1,1) direction) and to map the measured boundary data at M_Z to itself rules them out, because B changes. So Phi does not commute with RG flow in any sense that constrains the physics.
 - **Two loops**: the nearest thing to a structure-preserving property is §2.3, a homothety by 2 on the inter-group block of b_ij (and b₁₁), which requires a one-doublet parent and a second |Y| = 1/2 doublet chiral multiplet (H^c or any copy with the same S, C).
 
 ---
@@ -215,9 +227,9 @@ Tags updated in cycle 6 per LITCHECK.md.
 2. **The map.** Phi (Weyl field incl. u^c, d^c, e^c -> chiral; H and H^c -> two chiral; self-conjugate gauge field -> vector multiplet with self-conjugate gaugino) is natural, needs the conjugate basis to be defined, and sends SM content exactly to MSSM content. It is the standard MSSM construction in antimatter-labelled language. [established]
 3. **What it preserves.** Rep/Dynkin data of fermions and gauge fields (isometry there), anomaly freedom, the Yukawa structure, SU(5) completeness of matter (so matter stays irrelevant to B). At two loops it acts as exact multiplication by 2 on all off-diagonal b_ij and b₁₁. This needs the parent to have exactly one doublet, mapped to H + H^c; any second |Y| = 1/2 doublet chiral multiplet works equally (see CLAIM (a)). [established arithmetic]
 4. **What it does not preserve.** B: 115/218 -> 5/7. It does not commute with RG flow. It is not an isometry of b-space or coupling space under any natural metric found.
-5. **Does it carry SM to MSSM unification?** Yes by construction (2-loop spread 3.20 -> 0.09 at M_S = 1 TeV). But the B shift is produced by new states. The only antimatter-interpretable step (H^c independent) supplies a factor 2 of the required 22/3 in r and 15% of the B shift, and it is itself a second Higgs doublet (A1-forbidden as a mechanism). The other 85% needs gaugino/higgsino spin-1/2 states. In the spin decomposition all of the MSSM's B − 1/2 comes from one Dirac fermion with the Higgs's charges, which the SM does not have (L has H^c's quantum numbers but is a single Weyl field). [established arithmetic]
-6. **Net for D4.** A natural, antimatter-labelled, structure-preserving map exists (Phi), but it is SUSY completion; it does not turn SM antimatter into a mechanism for unification. It gives a precise accounting: SM-only content cannot reach B ≈ 0.72 under any CPT-respecting reinterpretation (Prop. 1), and the gap is exactly the Dirac-higgsino spin term plus the gaugino correction to the gauge term.
-7. **Falsifiable consequence.** None for SM experiments: the line makes no new SM prediction. The explicit checkable statement is CLAIM (c). Checkable mathematical claims: Prop. 1; the homothety identity of §2.3; the decomposition of §2.1. A conditional consequence: if any future SM-only reformulation claims MSSM-like unification, it must change r by 22/3 without new states; Prop. 1 says a relabelling of particle/antiparticle states cannot do that, so such a claim would have to change the state set or the loop weights (L02's reweighting territory, already constrained there).
+5. **Does it carry SM to MSSM unification?** Yes by construction (2-loop spread 3.20 -> 0.09 at M_S = 1 TeV). But the B shift is produced by new states. The only antimatter-interpretable step (H^c independent) supplies a factor 2 of the required 22/3 in r; its share of the B shift is order-dependent (15% first, 59% last, Shapley 36%, §2.2). It is itself a second Higgs doublet (A1-forbidden as a mechanism). The remainder needs gaugino/higgsino spin-1/2 states. In the spin decomposition all of the MSSM's B − 1/2 comes from one Dirac fermion with the Higgs's charges, which the SM does not have (L has H^c's quantum numbers but is a single Weyl field). [established arithmetic]
+6. **Net for D4.** (Superseded in detail by CLAIM (b), (b′).) A natural, antimatter-labelled map exists (Phi), but it is SUSY completion; it does not turn SM antimatter into a mechanism for unification. It gives a precise accounting: SM-only content cannot reach B ≈ 0.72 under any CPT-respecting reinterpretation (Prop. 1), and the gap is exactly the Dirac-higgsino spin term plus the gaugino correction to the gauge term.
+7. **Falsifiable consequence.** None for SM experiments: the line makes no new SM prediction. The explicit checkable statement is CLAIM (c), a mathematical consistency check only. Checkable mathematical claims: Prop. 1; the homothety identity of §2.3; the decomposition of §2.1. A conditional consequence: if any future SM-only reformulation claims MSSM-like unification, it must change r by 22/3 without new states; Prop. 1 says a relabelling of particle/antiparticle states cannot do that, so such a claim would have to change the state set or the loop weights (L02's reweighting territory, already constrained there).
 
 Open questions: (a) does the two-loop homothety extend to three loops (answered in C4.5: no, in any background-field-compatible scheme)? (b) is there an interpretation of the diagonal remainder C_i[(50/3)C_i − (14/3)W_i + (8/3)S_{H,i}]? (c) the Furey/Dixon ideal structure in the full SU(3)×SU(2)×U(1) sector was not examined.
 
@@ -286,7 +298,7 @@ b_ij^MSSM = 4 Σ_Weyl S_iC_j + 4·[S_iC_j(H) + S_iC_j(H^c)] = 2·(2 Σ_Weyl S_iC
 This holds term by term (matter and Higgs separately) and identically in n_G. `c4_doubling.py` §1 gives MSSM − 2·SM = diag(0, 208/3 − 56 n_G/3, 150 − 28 n_G).
 
 - **Why b_11 doubles.** Every δ_ij term is proportional to C(G_i), and C(U(1)) = 0. So the abelian diagonal entry has the same form as an off-diagonal one: there is no gauge self-interaction and the U(1) gaugino is neutral.
-- **Why b_22, b_33 do not double.** The δ_ij parts are not in ratio 2. These are the gauge loop (−34/3 C²), the gaugino (+16/3 C²), and the C(G)-weighted matter terms (10/3 and 2/3 in the SM vs 2 in SUSY). A non-abelian diagonal entry doubles iff 25 C(G) = 7 Σ_F S − 4 Σ_Sc S. In the SM this fails: SU(2) gives 50 vs 40, SU(3) gives 75 vs 42.
+- **Why b_22, b_33 do not double.** The δ_ij parts are not in ratio 2. These are the gauge loop (−34/3 C²), the gaugino (+16/3 C²), and the C(G)-weighted matter terms (10/3 and 2/3 in the SM vs 2 in SUSY). A non-abelian diagonal entry doubles iff 25 C(G) = 7 Σ_F S − 4 Σ_Sc S − 2 Σ_Sr S (real-scalar term added cycle 8, `c8_scope.py` §2). In the SM (no real scalars) this fails: SU(2) gives 50 vs 40, SU(3) gives 75 vs 42.
 - **Role of H^c.** The identity needs the second Higgs chiral multiplet to have the same S_i, C_j as H. Conjugation guarantees this, since S and C are invariant under R → R̄. But b_ij cannot tell H^c from a second Y = +1/2 doublet: both give the same numbers (asserted). The conjugate is selected by higgsino anomaly cancellation and holomorphy, not by the beta function. Without H^c the off-diagonal ratios are 5/3 for (1,2) and (2,1), and 389/199 for (1,1).
 - **Yukawa terms (full result).** c_i^MSSM = 2 c_i^SM + (Higgs-leg term). Example, y_t: (26/5, 6, 4) = 2·(17/10, 3/2, 2) + (9/5, 3, 0). The fermion legs double exactly. The scalar leg is absent from the non-SUSY two-loop Yukawa term, so in the MSSM it is an extra contribution. Only c_3 doubles, because the Higgs is colourless. So the gauge-only part of b_ij doubles (off-diagonal entries and (1,1)), but the full two-loop gauge beta function (gauge + Yukawa) does not. Numerically there is also y_f^MSSM = y_f^SM / sinβ or / cosβ on top.
 
@@ -346,7 +358,7 @@ The pieces containing the Higgs (n_G⁰) break any uniform scaling, e.g. c_1(12)
 ### C4.6 Conclusion
 
 1. **Theorem, not SM coincidence** [established]. The two-loop off-diagonal and abelian doubling holds for any gauge theory under Φ* (one chiral multiplet per Weyl fermion and per real scalar, two per complex scalar). It all follows from one fact: a chiral multiplet's mixed weight 4 S_iC_j is twice a Weyl fermion's and equal to a complex scalar's.
-2. **For D4.** The structure-preserving map is Φ* acting on field content. What it preserves is the two-loop mixed-gauge block, up to a factor 2 (a homothety). The only antimatter input is that the second Higgs multiplet must have H's (S, C), and the conjugate H^c has them. The beta function cannot tell H^c from any other copy, so the identity does not single out antimatter. At three loops it is no longer a uniform scaling: the per-multiplet factor becomes 2³ for single-matter-loop mixed terms and 54/11 for two-matter-loop terms, and the Higgs and gaugino pieces are non-uniform. [established arithmetic; interpretation conjecture]
+2. **For D4.** The structure-preserving map is Φ* acting on field content. What it preserves is the two-loop mixed-gauge block, up to a factor 2 (a homothety). The only antimatter input is that the second Higgs multiplet must have H's (S, C), and the conjugate H^c has them. The gauge coefficients b_i, b_ij cannot tell H^c from any other copy, so the identity does not single out antimatter (the Yukawa sector and anomalies do, see Part C8). At three loops it is no longer a uniform scaling: the per-multiplet factor becomes 2³ for single-matter-loop mixed terms and 54/11 for two-matter-loop terms, and the Higgs and gaugino pieces are non-uniform. [established arithmetic; interpretation conjecture]
 3. **Novelty.** Once the weight table is written down, the identity follows in two lines from standard formulas. LITCHECK found no printed statement; see CLAIM (d).
 4. **Checkable consequences.**
    (a) Any model obtained from a non-SUSY parent by Φ* has b_ij^off = 2 b_ij^off(parent). Checked against four published tables in cycle 6 (CLAIM (c)).
@@ -379,7 +391,7 @@ Scripts rerun in cycle 6 from `calc/` (timeouts 300-500 s): `beta_map.py`, `runn
 
 ---
 
-## CONSTRAINTS checklist (cycle 6, complete)
+## CONSTRAINTS checklist (cycle 6; superseded by the cycle-8 checklist at the end)
 
 - **A1** SM antimatter only. Pass. No mechanism uses non-SM content. MSSM, Φ*, T_dbl and the counterexample toys (2HDM, vector-like pair, (2,8), (3,8)) are comparison targets or mathematical test cases only. Treating H^c as an independent field is a second Higgs doublet, and T_dbl is mirror doubling; both are A1-forbidden as mechanisms and flagged as such.
 - **A2** Neutrino mass. Pass. No neutrino mass term is used and neither field content has a ν_R. The two-loop b_ij would change by zero for a gauge-singlet ν_R (S_i = 0).
@@ -415,3 +427,133 @@ Scripts rerun in cycle 6 from `calc/` (timeouts 300-500 s): `beta_map.py`, `runn
 - **H2** Regulator independence. Pass. The two-loop b_ij (the theorem) are scheme-independent under every background-field-compatible redefinition (asserted in `c4_threeloop.py` §0). The three-loop statement (iv) uses only scheme-invariant entries. 54/11 is labelled scheme-dependent. The MS-bar vs DR-bar shift in running.py is marked [approx].
 - **H3** Interpretations are not mechanisms. Pass. The conjugate basis and the per-state split are relabellings. Prop. 1 and CLAIM (b) state that they cannot change any coefficient.
 - **H4** Runnable scripts. Pass. Every quantitative claim is in calc/beta_map.py, running.py, c4_doubling.py, c4_threeloop.py, c6_scope.py (or referee1_check.py), and each output is saved next to its script.
+
+---
+
+## Part C8: Yukawa sector and anomalies, the positive direction for D4 (cycle 8)
+
+Script: `calc/c8_yukawa.py` (output `c8_yukawa.txt`). Exact sympy, third generation only, every identity asserted.
+
+### C8.1 Operator selection [established]
+Hypercharge sums with Q(1/6), u^c(−2/3), d^c(1/3), L(−1/2), e^c(1) (§1 of the script):
+- With one doublet: Q u^c needs Y = +1/2 (H). Q d^c and L e^c need Y = −1/2, i.e. H^c = iσ₂H*. The SM is forced to use the field for up-type masses and its conjugate for down-type and lepton masses.
+- Holomorphic superpotential with the second doublet of conjugate type H_d (Y = −1/2): Q H_u u^c, Q H_d d^c and L H_d e^c are all allowed. The three SM Yukawas map one to one. This is the standard construction (Martin, hep-ph/9709356, §6.1).
+- With a duplicate H′ (Y = +1/2): Q d^c and L e^c have no holomorphic partner, so y_b = y_τ = 0 is forced.
+- Non-SUSY: a Y = +1/2 H′ gives d and e masses through H′^c. The 2HDM-II (H_u, H_d) and the "duplicate" 2HDM (H, H′ via H′^c) have identical one-loop Yukawa betas (asserted). They are related by a field redefinition.
+
+So conjugate vs duplicate is a real distinction only in the chiral-superfield formalism, where conjugating a scalar would flip its partner's chirality. The SM's contribution is the pattern (H for up, H^c for down and leptons), which is forced by one doublet plus hypercharge.
+
+### C8.2 Anomalies [established]
+Higgsino contributions (LH Weyl; SM fermions cancel by themselves; 12 SM doublets per 3 generations, even):
+
+| higgsinos | Tr Y³ | Tr Y | SU(2)²U(1) | added doublets (Witten) |
+|---|---|---|---|---|
+| H̃_u only | 1/4 | 1 | 1/4 | 1 (odd) |
+| H̃_u + H̃_d (conjugate) | 0 | 0 | 0 | 2 (even) |
+| H̃_u + H̃′ (duplicate) | 1/2 | 2 | 1/2 | 2 (even) |
+
+Only the conjugate pair works. H̃_u + H̃_d form one Dirac fermion whose particle state has H's charges and whose antiparticle state has H^c's. This is the same object as the "Dirac higgsino" of §2.1, which carries all of the MSSM's B − 1/2. The anomaly argument is textbook (Martin §1.3). The line's contribution is to state it as the place where conjugation, rather than duplication, is required.
+
+### C8.3 One-loop Yukawa betas [established]
+The non-SUSY results were computed from the general component formula (Machacek-Vaughn NPB 236 (1984) 221; Luo-Wang-Xiao, hep-ph/0211440, eq. (33)), with explicit real scalar components, two-component fermions and κ = 1/2. The SUSY results use β_Y = Yγ + perms with γ = ½YY* − 2g²C (Martin-Vaughn). The SM and MSSM outputs match the standard results (asserted). Coefficients of (y_t², y_b², y_τ²) in 16π²β_y/y:
+
+| | y_t | y_b | y_τ |
+|---|---|---|---|
+| SM | (9/2, 3/2, 1) | (3/2, 9/2, 1) | (3, 3, 5/2) |
+| 2HDM-II (= duplicate 2HDM) | (9/2, 1/2, 0) | (1/2, 9/2, 1) | (0, 3, 5/2) |
+| MSSM | (6, 1, 0) | (1, 6, 1) | (0, 3, 4) |
+
+Decomposition (asserted):
+- 2HDM-II = F + D, where F is the fermion-leg term ½Y₂(F) and D is the leg term of the Yukawa's own doublet, γ(H_u) = 3y_t² or γ(H_d) = 3y_b² + y_τ².
+- SM = F + Y₂(S) + V. Y₂(S) = 3y_t² + 3y_b² + y_τ² **= γ(H_u) + γ(H_d)**. V is the vertex term 2Y^bY^{†a}Y^b: −2y_b² in β_{y_t}, −2y_t² in β_{y_b}, and 0 in β_{y_τ}.
+- MSSM = 2F + D, with no vertex term (non-renormalisation).
+
+Under H → H_u, H^c → H_d:
+- the fermion-leg terms double exactly, the Yukawa counterpart of Weyl 2 → chiral 4;
+- the SM Higgs-leg term splits into the two MSSM Higgs legs, and each Yukawa keeps only its own share;
+- the vertex term is dropped.
+The two "identification" terms, the cross pieces of Y₂(S) and V, exist only because H^c is the conjugate of the same field H. They are the conjugation-specific content of the SM Yukawa betas, and they are exactly what the map removes. SM − 2HDM-II = (0, 1, 1), (1, 0, 0), (3, 0, 0).
+
+Gauge parts: the SM has −3ΣC over the two fermion legs, and the MSSM has −2ΣC over all three legs. MSSM − (2/3)·SM = −2C(Higgs leg) = −(3/10)g₁² − (3/2)g₂² for all three Yukawas (asserted). This term is conjugation-blind, since C(H) = C(H^c).
+
+### C8.4 Two-loop [established for the parts computed]
+- Pure-gauge g⁴ terms. SM and 2HDM-II use Luo-Wang-Xiao eq. (35) with the product-group rules (two Casimirs on different lines → product of sums; single-line insertions → sum over factors). The SM y_t values (1187/600, −23/4, −108, −9/20, 19/15, 9) for (g₁⁴, g₂⁴, g₃⁴, g₁²g₂², g₁²g₃², g₂²g₃²) agree with the standard SM values as recalled (not re-read from Arason et al. or Luo-Xiao this cycle; [uncertain] except g₃⁴). The g₃⁴ entry equals −2(202/3 − 20n_f/9) at n_f = 6, the two-loop QCD quark-mass anomalous dimension (Nachtmann-Wetzel, NPB 187, 333 (1981)), an independent check. The MSSM values come from the two-loop chiral anomalous dimension (Martin-Vaughn eq. (2.4)): (2743/450, 15/2, −16/9, 1, 136/45, 8); these match the MSSM values as recalled [uncertain as a literature match]. For y_t the MSSM/SM ratios are 10972/3561, −30/23, 4/243, −20/9, 136/57 and 8/9. The y_b and y_τ ratios are equally non-uniform. These terms depend only on Casimirs, so they are conjugation-blind (asserted).
+- MSSM Yukawa-dependent two-loop terms (SUSY side): −22y_t⁴ − 5y_b⁴ − 5y_t²y_b² − y_b²y_τ² + (6/5 g₁² + 6g₂² + 16g₃²)y_t² + (2/5)g₁²y_b² (asserted against the standard result as recalled, e.g. Barger-Berger-Ohmann PRD 47, 1093 (1993); not re-read this cycle, [uncertain] as a literature match, exact as a computation from the Martin-Vaughn formula).
+- **Not done:** the SM two-loop Yukawa⁴ and g²·Yukawa² terms were not recomputed. The two-loop identification-term analysis is therefore open. [The general expectation that SUSY has no vertex-type terms at any order follows from the non-renormalisation theorem; whether the SM two-loop identification terms have a closed form analogous to the one-loop sum rule is open.]
+
+### C8.5 Verdict on an antimatter-specific identity [established for one loop; two-loop Yukawa-dependent part open]
+There is no exact antimatter-specific identity of the doubling type in the Yukawa sector. The exact statements are:
+- (i) The selection rule. The SM's forced use of H and H^c is the MSSM's H_u/H_d structure. Holomorphy and higgsino anomaly cancellation require the image of H^c to carry conjugate charges.
+- (ii) The one-loop sum rule Y₂(S)_SM = γ(H_u) + γ(H_d), together with the vertex term. Both exist because H^c ≡ H*, and both are removed by the map.
+- (iii) The fermion-leg doubling, which is the Yukawa analogue of the gauge doubling. It is conjugation-blind.
+
+So the conjugate enters as a constraint on which SUSY completion exists, not as a relation between beta-function numbers. This is a structural correspondence. [interpretation: it is the precise sense in which "the SM already uses the antimatter Higgs where the MSSM uses H_d"; it is textbook content stated in antimatter language, and it is not a mechanism.]
+
+---
+
+## Response to referees 2 and 3 (cycle 7)
+
+Scripts rerun in cycle 8 from `calc/` (timeout 550 s each): `beta_map.py`, `running.py`, `c4_doubling.py`, `c4_threeloop.py`, `c6_scope.py`, plus the new `c8_scope.py` and `c8_yukawa.py`. The referee scripts were not rerun. Output comparison: see the end of this section.
+
+**Referee 2**
+1. *[Moderate] CLAIM (b) broader than proved.* Accepted. CLAIM (b) is restricted to maps judged by b_i, b_ij and the compared three-loop gauge-only entries. The excluded class and the not-excluded class (Yukawa, anomalies, higher loops) are stated. The Yukawa and anomaly distinction is investigated in Part C8 and summarised in CLAIM (b′).
+2. *[Minor] Loop-order statement; odd invariants.* Accepted. CLAIM (b) now says "conjugate = duplicate" is proved only for those coefficients. An explicit conjugation-odd non-anomaly trace (Σ Y C₂C₃d = 1 per generation) is printed in `c8_scope.py` §3.
+3. *[Moderate] Gate 7 near-circular; "one-Higgs-doublet parent" too broad.*
+   - (a) The check is now done across methods. The SM side uses directly computed diagrammatic tables (MSS: QGRAF/MINCER, more than 10⁶ diagrams; BPV: background field). The SUSY side uses NSVZ, which comes from instanton calculus, expanded to two loops. Neither side uses the MV or Martin-Vaughn general formulas. The check is still stated as mathematical only (CLAIM (c)).
+   - (b) The SM + complex (8,3,0) counterexample is reproduced (18/17, `c8_scope.py` §1). The hypothesis now reads: "the only complex scalar is one |Y| = 1/2 doublet; real scalars in real reps allowed; equivalently minimal SUSY = Φ*".
+4. *[Minor] Several U(1)s.* The theorem is restricted to at most one U(1). The multi-U(1) case is stated as a conjecture with its reason, citing Luo-Xiao hep-ph/0212152 for the kinetic-mixing formalism.
+5. *[Minor] DR-bar for a non-SUSY parent.* Added to CLAIM (a): it holds with evanescent ε-scalar couplings treated as independent. The comparison actually used (SM in MS-bar, MSSM in DR-bar) is unaffected.
+6. *[Minor] Real-scalar diagonal term.* The criterion is now 25C(G) = 7ΣF S − 4ΣSc S − 2ΣSr S, derived symbolically (`c8_scope.py` §2), in CLAIM (a) and C4.2.
+7. *[Note] The theorem is not about antimatter.* Agreed. This is stated in CLAIM (b). The positive antimatter-specific content is now isolated in (b′) and is a selection rule, not a beta-function identity.
+
+**Referee 3**
+1. *[MAJOR] No stated class of excluded maps; false for the Yukawa part.* Accepted. Fixed as for referee 2 item 1. The referee's suggested wording is adopted in substance, and the Yukawa terms are worked out exactly at one loop (C8.3). The referee asked why this does not rescue a unification mechanism. Two reasons: the conjugation-sensitive content is a selection rule plus identification terms that the map removes, and none of it touches one-loop B. The second doublet stays A1-forbidden.
+2. *[MODERATE] "Any equivalent formulation".* The A3.4 argument is added explicitly to CLAIM (b). The negative for #2 is stated as standard. Open question (c) (Furey/Dixon) is marked as not bearing on it.
+3. *[MODERATE] 15% order-dependent.* Fixed in §2.2 and Conclusion item 5. All 6 orderings are printed: the H^c step gets 15.0% to 59.3% (47.6% in the referee's ordering), with Shapley value 35.8%. The order-independent statement is the factor 2 of 22/3 in r (log share 34.8%). The cycle-3 H1 wording is corrected in the cycle-8 checklist.
+4. *[MODERATE] Gate 7 weak.* Handled as for referee 2 item 3. The w_S three-loop test (C4.6 4(b)) was not done: I could not obtain a general product-group three-loop non-SUSY formula with scalars that I could verify within this cycle. Recommendation to the overseer: record gate 7 as "mathematical consistency check only, no physical falsifiability".
+5. *[MINOR] Coupling-space overstatement.* §2.6 is reworded as suggested.
+6. *[MINOR] E1, E5 and the m_H label.* Added to the cycle-8 checklist. C1 now reads 125.20 GeV.
+7. *[MINOR] Labels.* CLAIM (b) is now the scoped statement, tagged [established]. The interpretive sentences in (b′) carry [interpretation]. CLAIM (b) no longer relies on the Furey material.
+
+**Script reruns (cycle 8).** All five pre-existing scripts exit 0 with every assert passing; their outputs are identical to the committed `.txt` files (ignoring BOM/CRLF). `c8_scope.py` and `c8_yukawa.py` exit 0; outputs `c8_scope.txt`, `c8_yukawa.txt`.
+
+---
+
+## CONSTRAINTS checklist (cycle 8, complete; supersedes cycle 6)
+
+- **A1** SM antimatter only. Pass. No mechanism uses non-SM content. The following are comparison targets or mathematical test cases only, never mechanisms: MSSM, Φ*, T_dbl, the 2HDM-II, the duplicate 2HDM, SM + (8,3,0), and the other toy parents. H^c as an independent field (a second doublet) and T_dbl (mirror doubling) are A1-forbidden as mechanisms and flagged as such. Part C8 uses higgsinos only to state which SUSY completion exists.
+- **A2** Neutrino mass. Pass. No ν mass term and no ν_R. A gauge-singlet ν_R would change b_ij by zero.
+- **A3** Reformulations. Pass. CLAIM (b) gives the A3.4 argument: any equivalent formulation has the SM b_i, b_ij. Basis (ii) is a relabelling. Furey (iii) is not used for any number or for the negative.
+- **B1** K0/K0bar mass. Pass. No particle/antiparticle mass difference is introduced; Prop. 1 is a CPT identity.
+- **B2** p̄/p q/m. Pass. Same reason.
+- **B3** p̄ magnetic moment. Pass. Not affected; no new interaction.
+- **B4** Antihydrogen 1S-2S. Pass. Not affected.
+- **B5** ALPHA-g. Pass. Gravity is not involved.
+- **B6** e⁻/e⁺ g-factor. Pass. Not affected.
+- **B7** Electron EDM. Pass. No new CP violation.
+- **B8** CKM CP violation. Pass. Not used. Gauge coefficients are CP-blind at the orders used. Yukawas are taken real, third generation only.
+- **B9** Baryon CP violation. Pass. Not used.
+- **B10** Neutron EDM. Pass. No θ̄ or new CP phase.
+- **C1** m_H = 125.20 ± 0.11 GeV (PDG 2024, via tools/sm_inputs.py). Pass. It enters only through tools/rg_sm.py matching for the Yukawas at M_Z (running.py).
+- **C2** EW and top inputs. Pass. PDG 2024 via tools/sm_inputs.py.
+- **C3** LHC SUSY limits. Pass. The line predicts no superpartners. The MSSM comparison with M_S ≤ 1 TeV is excluded for coloured states, so M_S = 3 and 10 TeV are also shown (§2.5). No superpartner signatures are expected because none exist in any mechanism.
+- **C4** Muon g-2. Pass. Not addressed, not claimed.
+- **D** Gauge couplings at M_Z. Pass. PDG 2024 via tools/. Loop orders stated: 2-loop gauge and 1-loop Yukawa in running.py; exact coefficients elsewhere. The CPT identity of D is reproduced in §1.1.
+- **E1** Ω_c h². Not used. Dark matter is out of scope per directive D1.
+- **E2** Baryon density. Pass. Not used.
+- **E3** η. Pass. Not used.
+- **E4** Dark energy. Pass. Not used.
+- **E5** Dark-matter properties. Not used. Out of scope per D1.
+- **E6** N_eff. Pass. No new light states.
+- **E7** Σm_ν. Pass. Not used.
+- **E8** KATRIN. Pass. Not used.
+- **E9** Symmetric cosmologies. Pass. Not used; no antimatter domains.
+- **E10** Baryogenesis. Pass. Not used.
+- **F1** Proton decay. Pass. The 10^16.0-16.3 GeV scale belongs to the comparison target only; no GUT is proposed.
+- **F2** Sphalerons. Pass. Not used.
+- **F3** n-n̄. Pass. Not used.
+- **G** Hierarchy and vacuum-energy facts. Pass. Not used.
+- **H1** No numerology. Pass. Every number follows from field content via standard formulas, and every identity is exact and asserted. Corrected wording: the share of the B shift per step is order-dependent. All orderings and the Shapley value are given, and only the factor 2 in r is order-independent.
+- **H2** Regulator independence. Pass. b_i and b_ij are invariant under every redefinition G = g + O(g³). The DRED/evanescent caveat for a non-SUSY parent is stated. The three-loop statement uses scheme-invariant entries only. 54/11 is labelled scheme-dependent. The one-loop Yukawa coefficients are scheme-independent in mass-independent schemes. The two-loop Yukawa g⁴ comparison is MS-bar (SM) vs DR-bar (MSSM) and is labelled as such.
+- **H3** Interpretations are not mechanisms. Pass. Relabellings change no coefficient (Prop. 1, CLAIM (b)). The C8 "antimatter Higgs" reading is labelled as interpretation.
+- **H4** Runnable scripts. Pass. Every quantitative claim is in calc/*.py, with outputs saved alongside.

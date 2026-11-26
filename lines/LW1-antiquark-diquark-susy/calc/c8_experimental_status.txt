@@ -1,0 +1,18 @@
+Doubly heavy baryons, status 2026-11-25
+  Xi_cc++ (ccu, 1/2+)     3621.55        +-0.38 MeV   observed 2017; mass 1911.08594
+  Xi_cc+  (ccd, 1/2+)     3619.97   +2.09/-1.56 MeV   observed 2026, 2603.28456 / PRL 137, 021902
+  Omega_cc+ (ccs, 1/2+)   3725.90        +-1.25 MeV   observed 2026, 2609.21921 (preprint)
+  not observed: Xi_cc*++, Xi_cc*+ (3/2+); Omega_cc*+ (3/2+); Xi_bb, Xi_bb* (all); Omega_bb; Xi_bc, Omega_bc; T_bb
+
+  Omega_cc+ - Xi_cc++ = 104.3 MeV (CERN EP: 'about 104 MeV heavier')
+
+P1 (Xi_cc* - Xi_cc): NO measurement exists. Pass/fail cannot be assigned.
+  LO superflavor (this line)        106.5 +- 32.0 MeV  -> M(Xi_cc*++) = 3728 MeV
+  dynamical lattice (Brown+ 2014)    82.8 +-  9.2 MeV  -> M(Xi_cc*++) = 3704 MeV
+  LO - lattice = 23.7 MeV. A measurement with total error <= 5 MeV separates them at 2.3 sigma (lattice error included) and tests the 3/4 relation itself.
+  Omega_cc* - Omega_cc: LO 3/4 x (Ds*-Ds) = 107.9 MeV; lattice 83.8 +- 5.5 MeV; unmeasured.
+
+P2 (Xi_bb* - Xi_bb = 30 +- 4 MeV): Xi_bb itself unobserved; untested.
+
+R1 status change: Xi_cc+ (PRL 137, 021902) and Omega_cc+ (arXiv:2609.21921, 8.7 sigma) are observed states and may
+count as evidence (they were already used as inputs in c6b). Xi_cc*, Omega_cc*, Xi_bb(*), T_bb stay predictions only.

@@ -19,7 +19,7 @@ Two levels:
 
 ## Falsifiable output
 
-Superflavor predicts M(Xi_cc*++) - M(Xi_cc++) = (3/4)[M(D*0) - M(D0)] = 106.5 MeV at leading order (lattice QCD: ~83 MeV). Not yet measured. LHCb can test it. Cycle 6: see the CLAIM at the top of WORK.md (107 +- 32 MeV; Xi_bb* - Xi_bb = 30 +- 4 MeV; the #1 negative now rests on [H,Q] != 0).
+Superflavor predicts M(Xi_cc*++) - M(Xi_cc++) = (3/4)[M(D*0) - M(D0)] = 106.5 MeV at leading order (lattice QCD: ~83 MeV). Not yet measured. LHCb can test it. Cycle 8: see the CLAIM at the top of WORK.md (107 +- 32 MeV, still unmeasured as of 2026-11-25: LHCb has observed Xi_cc+ and Omega_cc+ but no J=3/2 state; Xi_bb* - Xi_bb = 30 +- 4 MeV; the #1 negative rests on compositeness, the Higgs being a Q-singlet, and HLS, and does not use antimatter).
 
 ## Scope
 

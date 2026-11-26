@@ -1,4 +1,4 @@
-﻿(a) SU(3) colour
+(a) SU(3) colour
   C2(3)    = 1.333333
   C2(3bar) = 1.333333
   C2 on antisym(3x3) nonzero eigs: [np.float64(1.333333)]  dim = 3

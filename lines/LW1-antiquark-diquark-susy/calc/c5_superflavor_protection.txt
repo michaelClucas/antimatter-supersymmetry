@@ -1,4 +1,4 @@
-﻿(1) Light-flavour independence of the superpartner difference
+(1) Light-flavour independence of the superpartner difference
    q   M(QQq)-M(Qbar q) [J=1/2 vs 0-]   spin-avg version (Delta_B = 3/4 Delta_M)
    u    1756.71 +- 0.38                     1721.21 +- 0.38
    d    1750.31 +- 1.83                     1715.16 +- 1.83
