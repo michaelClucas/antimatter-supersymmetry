@@ -67,13 +67,15 @@
   under it or that carries a nonzero charge).
 
   C under spurion maps:
-     y_t -> -y_t                 : C -> 9*g**2/4 + 3*gprime**2/4 + 6*lambda - 6*y_t*conjugate(y_t)  (changed: False)
-     y_t -> e^{ia} y_t           : C -> 9*g**2/4 + 3*gprime**2/4 + 6*lambda - 6*y_t*conjugate(y_t)  (changed: False)
-     y_t -> y_t*                 : C -> 9*g**2/4 + 3*gprime**2/4 + 6*lambda - 6*y_t*conjugate(y_t)  (changed: False)
-     g -> -g, g' -> -g'          : C -> 9*g**2/4 + 3*gprime**2/4 + 6*lambda - 6*y_t*conjugate(y_t)  (changed: False)
-     custodial limit g' -> 0     : C -> 9*g**2/4 + 6*lambda - 6*y_t*conjugate(y_t)  (changed: True)
+     y_t -> -y_t                 : C -> 9*g**2/4 + 3*gprime**2/4 + 6*lambda - 6*y_b**2 - 6*y_t*conjugate(y_t)  (changed: False)
+     y_t -> e^{ia} y_t           : C -> 9*g**2/4 + 3*gprime**2/4 + 6*lambda - 6*y_b**2 - 6*y_t*conjugate(y_t)  (changed: False)
+     y_t -> y_t*                 : C -> 9*g**2/4 + 3*gprime**2/4 + 6*lambda - 6*y_b**2 - 6*y_t*conjugate(y_t)  (changed: False)
+     g -> -g, g' -> -g'          : C -> 9*g**2/4 + 3*gprime**2/4 + 6*lambda - 6*y_b**2 - 6*y_t*conjugate(y_t)  (changed: False)
+     custodial limit g'->0, y_t=y_b=y: C -> 9*g**2/4 + 6*lambda - 12*y**2  (changed: True)
      (custodial SU(2)_L x SU(2)_R: g' and y_t - y_b are spurions that break it; |H|^2 is the O(4)-invariant
-      bidoublet norm, so custodial symmetry allows the mass term. Setting g' -> 0 only removes the 3/4 g'^2 piece.)
+      bidoublet norm, so custodial symmetry allows the mass term. The custodial limit needs g' -> 0 AND y_t = y_b;
+      it gives C = 9/4 g^2 + 6 lambda - 12 y^2, further from zero, and imposes no relation. Corrected c9: the
+      c8 version set only g' -> 0 and dropped y_b. See c9_twin_antimatter.py for the H <-> H^c = i sigma_2 check.)
 
 ====================================================================================================
 (2) Scalar (real OR complex) vs chiral fermion mass bilinears

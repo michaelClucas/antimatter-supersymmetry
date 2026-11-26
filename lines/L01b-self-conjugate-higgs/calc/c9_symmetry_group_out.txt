@@ -1,0 +1,60 @@
+==============================================================================================================
+(1)-(2) Elements of the SM symmetry group acting on the Higgs-sector operators
+==============================================================================================================
+  SU(2)_L (random element)                     mu:same  lam:same  t:same  b:same   coupling action: trivial
+  U(1)_Y (random angle)                        mu:same  lam:same  t:same  b:same   coupling action: trivial
+  SU(3)_c: Q, t_R, b_R triplets, H singlet; colour contraction Q^dag_i t_i invariant -> trivial
+  U(1)_B (quarks B = 1/3)                      mu:same  lam:same  t:same  b:same   coupling action: trivial
+  U(1)_Le, U(1)_Lmu, U(1)_Ltau: act on lepton doublets / e_R only; Higgs-sector operators untouched -> trivial
+    (B + L anomalous; B - L and L_i - L_j anomaly-free; all are phase rotations, coupling action trivial)
+  custodial SU(2)_R (Phi -> Phi R^dag): |H|^2 same: True, |H|^4 same: True; Yukawa sum y(O_t + O_b) same: True only for y_t = y_b
+    coupling action: trivial on lam, g; g' and y_t - y_b are spurions (approximate symmetry)
+  C   : H -> H* (conj. rep.), psi -> psi^c: each operator -> its hermitian conjugate; y -> y*  (C broken by g, g')
+  P   : psi_L <-> psi_R: maps O_t to an operator with no SM coupling; broken maximally by SU(2)_L
+  CP  : each operator -> its h.c.; y_ij -> y_ij* (broken by the CKM phase, B8)
+  T   : antiunitary; same coupling action as CP (CPT exact)
+  CPT : exact; maps every operator to its h.c. -> trivial on hermitian L
+  classical scale invariance: dimensionless couplings untouched; mu^2 a spurion of dimension 2 (anomalous)
+  rephasing of t_R, b_R (flavour U(1)s): y_t -> e^{ia} y_t, y_b -> e^{ib} y_b
+
+==============================================================================================================
+(3) C under the coupling-space action of every element
+==============================================================================================================
+  gauge / B / L_i / CPT           : C invariant: True
+  C, CP, T (y -> y*)              : C invariant: True
+  t_R, b_R rephasing              : C invariant: True
+  sign flips g -> -g, g' -> -g'   : C invariant: True
+  Every element acts DIAGONALLY on (lam, g, g', |y_t|, |y_b|): no element maps one operator into a different
+  one, so none relates lam or g to y_t, and C is an invariant (uncharged) function, free to take any value.
+  Gauge invariance is the one inhomogeneous symmetry: it ties the V-S-S, V-V-S-S, V-F-F, V^3, V^4 vertices
+  to one g per factor, but |H|^4 and (Q^dag H^c) t_R are separately invariant (checked above), so it leaves
+  lam and y_t independent.
+
+==============================================================================================================
+(4) Gildener-Weinberg (scale invariance + dimensional transmutation) with SM content
+==============================================================================================================
+  B = (6 M_W^4 + 3 M_Z^4 - 12 m_t^4)/(64 pi^2 v^4) = -4.3871e-03  (< 0: no GW minimum; scalon m^2 = 8 B v^2 < 0)
+  GW fixes the scalon mass by STr M^4 (B), a relation among g^4, y_t^4 and lam^2-type terms, not C (STr M^2).
+  With SM content B < 0, so the relation is unavailable even before asking about C.
+
+==============================================================================================================
+(5) QCD-condensate EWSB scale factors (Referee D 1)
+==============================================================================================================
+  n_d = 1: v / (sqrt(n_d) f_pi) = 2673
+  n_d = 3: v / (sqrt(n_d) f_pi) = 1543
+  (f_pi held at 92.1 MeV for n_d = 3: [approx]; the chiral-limit f differs by several percent.)
+
+==============================================================================================================
+(6) F-b significance vs the y_t matching spread (Referee D 5); rows from c5_mt_budget / c7_mt_significance
+==============================================================================================================
+  delta y_t = 0.0005 ( 0.09 GeV):  4.1 sigma
+  delta y_t = 0.0010 ( 0.18 GeV):  4.0 sigma
+  delta y_t = 0.0030 ( 0.54 GeV):  3.3 sigma
+  delta y_t = 0.0050 ( 0.90 GeV):  2.6 sigma
+  delta y_t = 0.0075 ( 1.35 GeV):  2.0 sigma
+  delta y_t = 0.0100 ( 1.80 GeV):  1.6 sigma
+  delta y_t = 0.0380 ( 6.83 GeV):  0.4 sigma
+  significance falls to 3 sigma at delta y_t = 0.0038
+  significance falls to 2 sigma at delta y_t = 0.0074
+  significance falls to 1 sigma at delta y_t = 0.0164
+  The spread between published matchings (Buttazzo 0.938 vs Jegerlehner 0.900 at equal inputs) is 0.038.

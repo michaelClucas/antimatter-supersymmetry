@@ -66,3 +66,9 @@
 - L05: claim (b) narrowed to gauge coefficients; Yukawa sector has no exact identity but contains an SM-only vertex term that exists because H^c ≡ H*. → confirming referee.
 - LW1: antimatter not load-bearing in its claim; new LHCb Ξ_cc⁺ and Ω_cc⁺ masses; Ξ_cc* unmeasured. → parked pending experimenter.
 - Status: no verified result.
+
+## Cycle 9, 2026-11-25
+- Spawns (3): fixer L01b round 4; confirming referee L05; lit check L01b new claim.
+- L05: minor only; gate items 1-6 pass, item 7 fails (no non-circular check possible for a pure identity).
+- L01b: claim now covers SUSY and twin-Higgs routes; C(M_t) = −4.068 ± 0.040 (pole form), 103σ from zero. Non-independence argument unpublished per lit check.
+- Experimenter asked to rule on gate 7 for math/no-go lines. Loop paused on that decision.

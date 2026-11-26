@@ -96,14 +96,18 @@ P("  under it or that carries a nonzero charge).")
 
 # check C's invariance under all spurion maps explicitly
 lam, g, gp, yt = sp.symbols('lambda g gprime y_t')
-Cexpr = 6 * lam + sp.Rational(9, 4) * g**2 + sp.Rational(3, 4) * gp**2 - 6 * yt * sp.conjugate(yt)
+yb, yc = sp.symbols('y_b y', positive=True)
+# corrected c9 (Referee E c8 finding 2): the bottom term -6 y_b^2 is kept so the custodial limit y_t = y_b is visible
+Cexpr = 6 * lam + sp.Rational(9, 4) * g**2 + sp.Rational(3, 4) * gp**2 - 6 * yt * sp.conjugate(yt) - 6 * yb**2
 maps = {"y_t -> -y_t": {yt: -yt}, "y_t -> e^{ia} y_t": {yt: sp.exp(sp.I * a) * yt}, "y_t -> y_t*": {yt: sp.conjugate(yt)},
-        "g -> -g, g' -> -g'": {g: -g, gp: -gp}, "custodial limit g' -> 0": {gp: 0}}
+        "g -> -g, g' -> -g'": {g: -g, gp: -gp}, "custodial limit g'->0, y_t=y_b=y": {gp: 0, yt: yc, yb: yc}}
 P("\n  C under spurion maps:")
 for k, m in maps.items():
     P(f"     {k:28s}: C -> {sp.simplify(Cexpr.subs(m, simultaneous=True))}  (changed: {sp.simplify(Cexpr.subs(m, simultaneous=True) - Cexpr) != 0})")
 P("     (custodial SU(2)_L x SU(2)_R: g' and y_t - y_b are spurions that break it; |H|^2 is the O(4)-invariant")
-P("      bidoublet norm, so custodial symmetry allows the mass term. Setting g' -> 0 only removes the 3/4 g'^2 piece.)")
+P("      bidoublet norm, so custodial symmetry allows the mass term. The custodial limit needs g' -> 0 AND y_t = y_b;")
+P("      it gives C = 9/4 g^2 + 6 lambda - 12 y^2, further from zero, and imposes no relation. Corrected c9: the")
+P("      c8 version set only g' -> 0 and dropped y_b. See c9_twin_antimatter.py for the H <-> H^c = i sigma_2 check.)")
 
 # ---------------------------------------------------------------- (2) real-field theorem, numerical demonstration
 P("\n" + "=" * 100)

@@ -1,0 +1,68 @@
+================================================================================================
+(A) H^c = i sigma2 H* is a function of H, not an independent field
+================================================================================================
+  |H|^2   = p1**2/2 + p2**2/2 + p3**2/2 + p4**2/2
+  |H^c|^2 - |H|^2 = 0
+  |H|^2 + |H^c|^2 = p1**2 + p2**2 + p3**2 + p4**2   (= 2|H|^2)
+  H^c^dag H = 0   (the would-be H-H^c mixing bilinear vanishes identically)
+  real components of (H, H^c): 8; rank of d(H,H^c)/d(p1..p4) = 4  (4 = no new d.o.f.)
+  (U H)^c - U H^c for generic U in SU(2): [0, 0]  (H^c is a doublet built from H)
+  Count of independent gauge-invariant quadratic operators:
+    field space {H}        : |H|^2 only (H^c^dag H = 0, |H^c|^2 = |H|^2)                  -> 1
+    field space {H_A, H_B} (independent twin): |H_A|^2, |H_B|^2, H_A^dag H_B, h.c. -> rank 4
+  A Z2 can relate the coefficients of two DIFFERENT invariants (|H_A|^2 <-> |H_B|^2). C, CP and CPT map
+  |H|^2 to itself, so on the 1-dimensional space of SM Higgs bilinears they impose no relation at all.
+
+================================================================================================
+(B) Counterfactual: twin Z2 with an independent H_B vs 'antimatter twin' H_B := H^c
+================================================================================================
+  independent twin (8 real fields): stationarity gives kappa = -f**2*lambda
+    mass matrix eigenvalues {value: multiplicity} = {0: 7, 2*f**2*lambda: 1}
+    7 exact zeros: the U(4) -> U(3) Goldstones. The SM-like Higgs lives in these directions (after gauging,
+    3 are eaten by the twin W, Z and 3 by ours; one pNGB is the light h). The Lambda^2 coefficient kappa
+    sets only the radial mode. Explicit U(4) breaking delta(|H_A|^4 + |H_B|^4), Z2-symmetric, lifts h:
+    V on the vacuum circle (H_A = f sin th, H_B = f cos th): f**2*(delta*f**2*(sin(theta)**4 + cos(theta)**4) + f**2*lambda + 2*kappa)/4
+    d^2V/dth^2 = delta*f**4*(-8*sin(theta)**4 + 8*sin(theta)**2 - 1)  (at th = pi/4: delta*f**4);  d/dkappa of it = 0
+    The pNGB curvature is set by delta (log-sized in twin models), and is kappa-independent at fixed f;
+    so the top-loop Lambda^2 term never reaches the pNGB mass. That is the twin protection [established, CGH 2005].
+
+  'antimatter twin' H_B := H^c: V = kappa(|H|^2+|H^c|^2) + lambda(...)^2 = h**4*lambda + h**2*kappa on H = (h,0)/sqrt2
+    m_h^2 = V''(h_min) = -4*kappa   (proportional to kappa, i.e. to the Lambda^2 term: no protection)
+    4x4 mass matrix eigenvalues = {-4*kappa: 1, 0: 3}
+    3 zeros are the SM Goldstones G+-, G0 (eaten). The 4th, h, is the RADIAL mode: there is no extra
+    angular direction to host a pNGB, because H^c adds no degrees of freedom (A). And kappa(|H|^2+|H^c|^2)
+    = 2 kappa|H|^2 double-counts: the top loop is computed once (see D).
+
+================================================================================================
+(C) The particle <-> antiparticle swap of the doublet is the custodial SU(2)_R element i sigma2
+================================================================================================
+  Phi = (H^c, H);  Tr Phi^dag Phi = p1**2 + p2**2 + p3**2 + p4**2
+  Phi R^dag with R = i sigma2: columns -> (H, -H^c)? True
+  det R = 1, R R^dag = Matrix([[1, 0], [0, 1]])  -> R in SU(2)_R: continuous, internal, spin-preserving
+  (-H^c)^c = H? True  (the swapped matrix is again a bidoublet)
+  Tr (Phi R^dag)^dag (Phi R^dag) - Tr Phi^dag Phi = 0
+  The swap leaves kappa Tr Phi^dag Phi invariant for every kappa: it constrains nothing in C. SU(2)_R rotates
+  (t_R, b_R); it is not chirality L <-> R. Parity is broken maximally by the SU(2)_L gauge coupling (9/4 g^2 in C).
+
+================================================================================================
+(D) The antitop is already inside the top's Lambda^2 term
+================================================================================================
+  one Dirac top, 4 states per colour (2 spin x particle/antiparticle): C_top = (1/2) d^2/dh^2 [-4 N_c m_t^2(h)] = -6*y_t**2
+  The antitop states are 2 of those 4. A 'twin' made of antitops would count them twice. C, CP, CPT map the
+  top loop into itself (same field, same |y_t|^2), so they relate y_t to y_t: an identity, nothing to cancel.
+  A twin needs t_B with its own y_B coupling to H_B: new fields, excluded by CONSTRAINTS A1.
+
+================================================================================================
+(E) Custodial limit (with y_b) and the h self-loop
+================================================================================================
+  C (top, bottom)                      = 9*g**2/4 + 3*g'**2/4 + 6*lambda - 6*y_b**2 - 6*y_t**2
+  custodial limit g' -> 0, y_t = y_b = y: 9*g**2/4 + 6*lambda - 12*y**2
+  at M_t (MS-bar, PDG 2024): C = -3.426;  custodial limit with y = y_t: -8.742  (further from zero; no relation imposed)
+  h self-loop 3 lambda = 0.3785; top 6 y_t^2 = 5.2214; share = 0.0725
+  all scalars (h 3lam + G0 lam + G+- 2lam) 6 lambda = 0.7570; share = 0.1450
+  per real dof: h -> 3 lambda, each Goldstone -> lambda; complex G+- = 2 real dof x lambda.
+  The self-conjugate h has the stop sign and the largest single scalar weight (3 lambda vs lambda), because
+  d^2(lambda h^4/4)/dh^2 = 3 lambda h^2 (the quartic's combinatorics), not because h is its own antiparticle.
+  Pure-scalar term: delta m_h^2 propto lambda Lambda^2 = (m_h^2 / 2v^2) Lambda^2: proportional to m_h^2 but
+  multiplied by Lambda^2/v^2, not by a log. No Weisskopf softening: that needed delta m propto m with an
+  enhanced (chiral) symmetry at m = 0; m_h^2 -> 0 enlarges only scale symmetry (S6).

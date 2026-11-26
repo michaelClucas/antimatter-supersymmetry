@@ -19,6 +19,9 @@ S2. Field-type class of each coupling entering C (S = scalar, F = Weyl fermion, 
   could is one mapping S <-> F or S <-> V. S <-> V is gauge-Higgs unification (H = A_5, extra dimensions: BSM).
   S <-> F is supersymmetry (S3). Shift symmetry h -> h + c is non-linear and mixes classes of different degree,
   but requires h to be a Goldstone of a larger broken group: new fields (LW2 Sec. 3).
+  [argument, narrowed c9 (Referee C): holds for GLOBAL, HOMOGENEOUS, LINEAR maps only. Gauge invariance,
+   nonlinear/pNGB realizations, scale invariance + Gildener-Weinberg and a twin Z2 on an enlarged field space
+   evade it; each is shown unavailable with SM content in c9_symmetry_group.py and c9_twin_antimatter.py.]
 
 S3. SUSY: the generator changes J_z by 1/2, and the F-term ties the stop quartic to y_t^2
   [J_z, Q_1] = -0.5 Q_1: Q_1 acting on a state of J_z = m gives J_z = m -0.5

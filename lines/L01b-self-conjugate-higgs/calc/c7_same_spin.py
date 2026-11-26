@@ -102,6 +102,9 @@ P("  Nothing ties y_t (class S F F, with S a scalar not a gauge field) to lam (S
 P("  could is one mapping S <-> F or S <-> V. S <-> V is gauge-Higgs unification (H = A_5, extra dimensions: BSM).")
 P("  S <-> F is supersymmetry (S3). Shift symmetry h -> h + c is non-linear and mixes classes of different degree,")
 P("  but requires h to be a Goldstone of a larger broken group: new fields (LW2 Sec. 3).")
+P("  [argument, narrowed c9 (Referee C): holds for GLOBAL, HOMOGENEOUS, LINEAR maps only. Gauge invariance,")
+P("   nonlinear/pNGB realizations, scale invariance + Gildener-Weinberg and a twin Z2 on an enlarged field space")
+P("   evade it; each is shown unavailable with SM content in c9_symmetry_group.py and c9_twin_antimatter.py.]")
 
 # ------------------------------------------------------------------ S3: SUSY changes spin and ties couplings
 P("\nS3. SUSY: the generator changes J_z by 1/2, and the F-term ties the stop quartic to y_t^2")
