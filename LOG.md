@@ -33,3 +33,6 @@
 - Results: L01b fractions are gauge- and regulator-independent at sector level (0.344 at M_t, 0.790 at M_Pl); referee found MAJOR fixable issues. L05 doubling is a general theorem of minimal SUSY completion, new per lit check, but antimatter-blind. LW1: hadronic SUSY is internal (no P in {Q,Q†}), so cannot protect masses; protects mass differences.
 - Triage: L05 → verification (negative result for D4 + new theorem). L01b → fix round. LW1 → continue (referee next).
 - Status: no verified result.
+
+## Cycle 5, 2026-11-25 (attempt 1 failed)
+- Spawns: fixer L01b, referee 1 L05, referee 1 LW1. All three stalled (stream watchdog, no progress 600s), no files written. Re-spawned.
